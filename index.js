@@ -1,6 +1,8 @@
 const express = require ("express");
 var app = express();
 
+app.use("/",express.static("./public")); 
+
 var time = require("time");
 var now = new time.Date();
 
