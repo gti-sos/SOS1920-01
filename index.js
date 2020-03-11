@@ -3,9 +3,8 @@ var app = express();
 
 app.use("/",express.static("./public")); 
 
-var time = require("time");
-var now = new time.Date();
 
+var port = process.env.PORT || 80;
 
 now.setTimezone("UTC-1");
 
@@ -13,6 +12,9 @@ app.get("/public",(request,response) => {
 	response.send(index.html);
 });
 
-app.listen(80);
-
-console.log("Server already");
+app.listen(port,() => {
+	
+		console.log("Server start");
+	
+	});
+console.log("Starting server...");
