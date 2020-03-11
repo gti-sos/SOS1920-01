@@ -9,8 +9,8 @@ var now = new time.Date();
 
 now.setTimezone("UTC-1");
 
-app.get("/time",(request,response) => {
-	response.send("<html>"+now.toString()+"</html>");
+app.get("/public",(request,response) => {
+	response.send(index.html);
 });
 
 app.listen(80);
