@@ -6,10 +6,8 @@ app.use("/",express.static("./public"));
 
 var port = process.env.PORT || 80;
 
-now.setTimezone("UTC-1");
-
 app.get("/public",(request,response) => {
-	response.send(index.html);
+	response.send("hola");
 });
 
 app.listen(port,() => {
