@@ -10,10 +10,18 @@ app.use("/",express.static("./public"));
 
 //now.setTimezone("UTC-1");
 
+var port = process.env.PORT || 80;
+
 app.get("/public",(request,response) => {
-	response.send(index.html);
+	response.send("index.html");
 });
 
 app.listen(port);
 
 console.log("Server already");
+app.listen(port,() => {
+	
+		console.log("Server start");
+	
+	});
+
