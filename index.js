@@ -7,7 +7,7 @@ app.use("/",express.static("./public"));
 var port = process.env.PORT || 80;
 
 app.get("/public",(request,response) => {
-	response.send("hola");
+	response.send("index.html");
 });
 
 app.listen(port,() => {
