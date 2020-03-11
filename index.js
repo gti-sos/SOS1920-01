@@ -1,16 +1,18 @@
 const express = require ("express");
 var app = express();
 
-var time = require("time");
-var now = new time.Date();
+app.use("/",express.static("./public")); 
 
 
-now.setTimezone("UTC-1");
+var port = process.env.PORT || 80;
 
-app.get("/time",(request,response) => {
-	response.send("<html>"+now.toString()+"</html>");
+app.get("/public",(request,response) => {
+	response.send("index.html");
 });
 
-app.listen(80);
-
-console.log("Server already");
+app.listen(port,() => {
+	
+		console.log("Server start");
+	
+	});
+console.log("Starting server...");
