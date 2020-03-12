@@ -9,11 +9,8 @@ app.get("/public",(request,response) => {
 	response.send("index.html");
 });
 
-app.listen(port);
-
 console.log("Server already");
 app.listen(port,() => {
-	
 		console.log("Server start");
 	
 	});
