@@ -1,5 +1,9 @@
 const express = require ("express");
+<<<<<<< HEAD
 const bodyParser = require("body-parser");
+=======
+const bodyParser = require("bodyParser");
+>>>>>>> e49e2c13cac1eefc46614f91002a30ca19546169
 
 var app = express();
 
