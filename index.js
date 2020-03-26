@@ -12,7 +12,12 @@ var BASE_API_USE = "/api/v1";
 app.get("/public",(request,response) => {
 	response.send("index.html");
 });
-	
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////// Antonio Escobar Núñez /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 ////////////////////////////
 ///////////DATOS////////////
 ////////////////////////////
@@ -116,19 +121,33 @@ app.get(BASE_API_USE+"/emigrants-stats/:country/:year", (req,res) => {
 
 //////////////////////////////////////////////////////// POST /api/v1/emigrants-stats
 app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
-    var newStat = req.body;
 	
-	if ((newStat== "") || (newStat.country==null) || (newStat.year==null) || 
-        (newStat.em_man==null) || (newStat.em_woman==null) || (newStat.em_totals==null)){
-	   
-		res.sendStatus(400,"Bad request");
-		
-	}else{
-		emigrants_stats.push(newStat);
-		res.sendStatus(201,"Created");
-	}
+	var newStat = req.body;
+	var countryUpd = req.body.country;
+	var yearUpd = req.body.year;
+		var filtrado = emigrants_stats.filter((c) => {
+			return (c.country == countryUpd && c.year == yearUpd);
+		});
+		if((newStat == "") || (newStat.country == null) || (newStat.year == null) || (newStat.em_man == null) || (newStat.em_woman == null) || 					(newStat.em_totals == null)){
+			
+			res.sendStatus(400,"Bad request");
+			
+		} else if(filtrado.length >= 1){
+			res.sendStatus(409,"Confict");
+		} else {
+			emigrants_stats.push(newStat);
+			res.sendStatus(201,"Created");
+		}
+	});
 
-});
+//////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country
+	app.post(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
+//////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country/year
+	app.post(BASE_API_USE+"/emigrants-stats/:country/:year",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
 ///////////////////////////
 //////POSTMAN DELETE///////
@@ -178,7 +197,7 @@ app.delete(BASE_API_USE+"/emigrants-stats",(req,res)=>{
 });
 
 ////////////////////////
-//////////PUT///////////
+//////POSTMAN PUT///////
 ////////////////////////
 
 /////////////////////////////////////////////////////// Put Recurso concreto
@@ -206,7 +225,15 @@ app.put(BASE_API_USE+"/emigrants-stats/:country/:year", (req, res) =>{
 			res.sendStatus(200,"OK");
 		}
 	});
+///////////////////////////////////////////////////////////////// PUT General "error"
+	app.put(BASE_API_USE+"/emigrants-stats",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
+//////////////////////////////////////////////////////////////////PUT General "error"
+	app.put(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
 
 ///////////////////////
