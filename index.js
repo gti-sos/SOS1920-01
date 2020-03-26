@@ -239,7 +239,7 @@ app.put(BASE_API_USE+"/emigrants-stats/:country/:year", (req, res) =>{
 
 //-------------- API Juanfran -----------
 var natality_stats = [
-	{//2017
+	{
 		country : "spain",
 		year: 2017,
 		natality_totals : 393181,
@@ -274,7 +274,7 @@ var natality_stats = [
 		natality_men : 387030,
 		natality_women : 367754
 	},
-	{//2015
+	{
 		country : "spain",
 		year: 2015,
 		natality_totals : 420290,
@@ -309,7 +309,7 @@ var natality_stats = [
 		natality_men : 398760,
 		natality_women : 377986
 	},
-	{//2010
+	{
 		country : "spain",
 		year: 2010,
 		natality_totals : 486575,
@@ -393,7 +393,7 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
 // --------------- loadInitialDataInitialData ----------------------
  app.get(BASE_API_USE + "/natality-stats/loadInitialData", (req, res) => {
 	 var natality_stats = [
-	{//2017
+	{
 		country : "spain",
 		year: 2017,
 		natality_totals : 393181,
@@ -428,7 +428,7 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
 		natality_men : 387030,
 		natality_women : 367754
 	},
-	{//2015
+	{
 		country : "spain",
 		year: 2015,
 		natality_totals : 420290,
@@ -463,7 +463,7 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
 		natality_men : 398760,
 		natality_women : 377986
 	},
-	{//2010
+	{
 		country : "spain",
 		year: 2010,
 		natality_totals : 486575,
