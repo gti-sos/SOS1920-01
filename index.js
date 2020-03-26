@@ -1,20 +1,145 @@
 const express = require ("express");
+
 const bodyParser = require("body-parser");
+
 
 var app = express();
 
 app.use("/",express.static("./public")); 
 app.use(bodyParser.json());
 
-app.use("/",express.static("./public")); 
-
-
 var port = process.env.PORT || 80;
 const BASE_API_USE = "/api/v1";
+
 
 app.get("/public",(request,response) => {
 	response.send("index.html");
 });
+	
+////////////////////////////
+///////////DATOS////////////
+////////////////////////////
+	
+var emigrants_stats = [
+	
+	{country:"italy",year:2017,em_man:1588733,em_woman:1440435,em_totals:3029168},
+	{country:"spain",year:2017,em_man:609615,em_woman:736247,em_totals:1345862},
+	{country:"germany",year:2017,em_man:1934294,em_woman:2273789,em_totals:4208083},
+	{country:"united kingdom",year:2017,em_man:2449446,em_woman:2471863,em_totals:4921309},
+	{country:"france",year:2017,em_man:1068275,em_woman:1138938,em_totals:2207213},
+	
+	{country:"italy",year:2015,em_man:1416897,em_woman:1275167,em_totals:2692064},
+	{country:"spain",year:2015,em_man:579112,em_woman:691908,em_totals:1271020},
+	{country:"germany",year:2015,em_man:1749064,em_woman:2007072,em_totals:3756136},
+	{country:"united kingdom",year:2015,em_man:2048936,em_woman:1979345,em_totals:4028281},
+	{country:"france",year:2015,em_man:1033824,em_woman:1101224,em_totals:2135048},
+	
+	{country:"italy",year:2010,em_man:1332956,em_woman:1230383,em_totals:2563339},
+	{country:"spain",year:2010,em_man:489494,em_woman:597058,em_totals:1086552},
+	{country:"germany",year:2010,em_man:1734554,em_woman:1992779,em_totals:3727333},
+	{country:"united kingdom",year:2010,em_man:2237000,em_woman:2213254,em_totals:4450254},
+	{country:"france",year:2010,em_man:943996,em_woman:1013973,em_totals:1957969}
+	
+];
+
+/////////////////////////////////
+/////////LoadInitialData/////////
+/////////////////////////////////
+
+//GET /api/v1/emigrants-stats-/loadInitialData
+app.get(BASE_API_USE+"/emigrants-stats/loadInitialData", (req, res) => {		
+		var emigrants_stats = [
+		{country:"italy",year:2017,em_man:1588733,em_woman:1440435,em_totals:3029168},
+		{country:"spain",year:2017,em_man:609615,em_woman:736247,em_totals:1345862},
+		{country:"germany",year:2017,em_man:1934294,em_woman:2273789,em_totals:4208083},
+		{country:"united kingdom",year:2017,em_man:2449446,em_woman:2471863,em_totals:4921309},
+		{country:"france",year:2017,em_man:1068275,em_woman:1138938,em_totals:2207213},
+	
+		{country:"italy",year:2015,em_man:1416897,em_woman:1275167,em_totals:2692064},	
+		{country:"spain",year:2015,em_man:579112,em_woman:691908,em_totals:1271020},
+		{country:"germany",year:2015,em_man:1749064,em_woman:2007072,em_totals:3756136},
+		{country:"united kingdom",year:2015,em_man:2048936,em_woman:1979345,em_totals:4028281},
+		{country:"france",year:2015,em_man:1033824,em_woman:1101224,em_totals:2135048},
+	
+		{country:"italy",year:2010,em_man:1332956,em_woman:1230383,em_totals:2563339},
+		{country:"spain",year:2010,em_man:489494,em_woman:597058,em_totals:1086552},
+		{country:"germany",year:2010,em_man:1734554,em_woman:1992779,em_totals:3727333},
+		{country:"united kingdom",year:2010,em_man:2237000,em_woman:2213254,em_totals:4450254},
+		{country:"france",year:2010,em_man:943996,em_woman:1013973,em_totals:1957969}
+	
+		];
+		
+		res.sendStatus(201,"Created");
+	
+});
+///////////////////////////
+////////POSTMAN GET////////
+///////////////////////////
+
+//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats
+app.get(BASE_API_USE+"/emigrants-stats",(req,res) =>{
+	
+	res.send(JSON.stringify(emigrants_stats,null,2));
+});
+
+//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country
+app.get(BASE_API_USE+"/emigrants-stats/:country", (req,res) => {
+    var country = req.params.country;
+	
+	var emigrants = emigrants_stats.filter((e) => {return (e.country == country);});
+	
+	
+	if(emigrants.length >= 1){
+		res.send(emigrants);
+	}else{
+		res.sendStatus(404,"Not found");
+	}
+});
+//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
+app.get(BASE_API_USE+"/emigrants-stats/:country/:year", (req,res) => {
+    var country = req.params.country;
+	var year = req.params.year;
+	
+	var emigrantsC = emigrants_stats.filter((c) => {return (c.country == country);});
+	
+	var emigrantsY = emigrants_stats.filter((y) => {return(y.year == year);});
+	
+	
+	if(emigrantsC.length >= 1 && emigrantsY.length >=1){
+		var sol = emigrantsC.filter((s) => {return(s.year == year);});
+		res.send(sol);
+	}else{
+		res.sendStatus(404,"Not found");
+	}
+});
+
+///////////////////////////
+////////POSTMAN POST///////
+///////////////////////////
+
+//////////////////////////////////////////////////////// POST /api/v1/pollution-stats
+app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
+    var newStat = req.body;
+	
+	if ((newStat== "") || (newStat.country==null) || (newStat.year==null) || 
+        (newStat.em_man==null) || (newStat.em_woman==null) || (newStat.em_totals==null)){
+	   
+		res.sendStatus(400,"Bad request");
+		
+	}else{
+		emigrants_stats.push(newStat);
+		res.sendStatus(201,"Created");
+	}
+
+});
+
+///////////////////////////
+//////POSTMAN DELETE///////
+///////////////////////////
+
+//////////////////////////////////////////////////////// Delete /api/v1/pollution-stats/country/year
+
+
 
 //-------------- API Juanfran -----------
 var natality_stats = [
@@ -130,7 +255,46 @@ app.get(BASE_API_USE+"/natality-stats",(req,res) =>{
     res.send(JSON.stringify(natality_stats,null,2));
 });
 
-// --------------- get loadInitialData ----------------------
+// -------------- GET natality_stats country para un elemento concreto -------
+///api/v1/natality_stats/country
+app.get(BASE_API_USE+"/natality-stats/:country", (req,res) => {
+    var country = req.params.country;
+
+    var natality = natality_stats.filter((c) => {return (c.country == country);});
+
+
+    if(natality.length >= 1){
+        res.send(natality);
+    }else{
+        res.sendStatus(404,"NOT FOUND");
+    }
+});
+
+//----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
+app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
+    var country = req.params.country;
+    var year = req.params.year;
+
+    var natalityC = natality_stats.filter((c) => {
+		return (c.country == country);
+	});
+
+    var natalityY = natality_stats.filter((y) => {
+		return(y.year == year);
+	});
+
+
+    if(natalityC.length >= 1 && natalityY.length >=1){
+        var solucion = natalityC.filter((s) => {
+			return(s.year == year);
+		});
+        res.send(solucion);
+    }else{
+        res.sendStatus(404,"NOT FOUND");
+    }
+});
+
+// --------------- loadInitialDataInitialData ----------------------
  app.get(BASE_API_USE + "/natality-stats/loadInitialData", (req, res) => {
 	 var natality_stats = [
 	{//2017
@@ -242,59 +406,93 @@ app.get(BASE_API_USE+"/natality-stats",(req,res) =>{
 	 res.sendStatus(201,"CREATE");
  });
 
-// ---------------- POST natality_stats --------------------------------
+// ---------------- POST natality_stats crea un nuevo recurso-----------------------
 	app.post(BASE_API_USE + "/natality-stats", (req, res) => {
 		var newNat = req.body;
-		if((newNat == "") || (newNat.country == null) || (newNat.year == null)
-		  || (newNat.natality_totals == null) || (newNat.natality_men) || 				          (newNat.natality_women == null)){
-			res.sendStatus(400, "BAD REQUEST");
-		}else{
-			natality_stats.push(newNat);
-			res.sendStatus(201,"CREATE");
+		var countryNewNat = req.body.country;
+		var yearNewNat = req.body.year;
+		
+		var filteredStats = natality_stats.filter((c) => {
+            return (c.country == countryNewNat && c.year == yearNewNat);
+        });
+        if((newNat == "") || (newNat.country == null) || (newNat.year == null) || (newNat.natality_totals == null) || (newNat.natality_men == null) || newNat.natality_women == null){
+            res.sendStatus(400,"BAD REQUEST");
+        } else if(filteredStats.length >= 1){
+            res.sendStatus(409,"CONFLICT");
+        } else {
+            natality_stats.push(newNat);
+            res.sendStatus(201,"CREATED");
+        }
+	});
+
+// ------------- POST devuelve error de metodo no permitido -------------
+// POST recursos country
+    app.post(BASE_API_USE+"/natality-stats/:country",(req,res) =>{
+        res.sendStatus(405,"METHOD NOT ALLOWED");
+    });
+// POST recueros country/year
+    app.post(BASE_API_USE+"/natality-stats/:country/:year",(req,res) =>{
+        res.sendStatus(405,"METHOD NOT ALLOWED");
+    });
+
+// DALETE natality_stats/country borramos un recurso concreto.
+app.delete(BASE_API_USE + "/natality-stats/:country", (req, res) =>{
+	
+	var country = req.params.country;
+	
+	var filteredNatality = natality_stats.filter((c) => {
+		return (c.country != country);
+		
+	});
+
+	if(filteredNatality.length < natality_stats.length){
+		natality_stats = filteredNatality;
+		res.sendStatus(200);
+	}else{
+		res.sendStatus(404,"NATALITY NOT FOUND")
+	}
+});
+// DALETE natality_stats/country/year borramos a un pais de un determinado año
+app.delete(BASE_API_USE + "/natality-stats/:country/:year", (req,res) =>{
+	
+	var country = req.params.country;
+	var year = req.params.year;
+	
+	var natalityC = natality_stats.filter((c) => {
+		return (c.country != country || c.year != year)
+	});
+	
+	if(natalityC.length < natality_stats.length) {
+		
+	   natality_stats = natalityC;
+	   res.sendStatus(200, "OK");
+	   }else{
+		   res.endStatus(404,"NOT FOUND");
 		}
-	});
-
-// -------------- GET natality_stats country para un elemento concreto -------
-///api/v1/natality_stats/country
-app.get(BASE_API_USE+"/natality-stats/:country", (req,res) => {
-    var country = req.params.country;
-
-    var natality = natality_stats.filter((c) => {return (c.country == country);});
-
-
-    if(natality.length >= 1){
-        res.send(natality);
-    }else{
-        res.sendStatus(404,"NOT FOUND");
-    }
 });
 
-//---------- /api/v1/emigrants-stats/country/year en este caso también filtramos por año
-app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
-    var country = req.params.country;
-    var year = req.params.year;
 
-    var natalityC = natality_stats.filter((c) => {
-		return (c.country == country);
-	});
-
-    var natalityY = natality_stats.filter((y) => {
-		return(y.year == year);
-	});
-
-
-    if(natalityC.length >= 1 && natalityY.length >=1){
-        var solucion = natalityC.filter((s) => {
-			return(s.year == year);
-		});
-        res.send(solucion);
-    }else{
-        res.sendStatus(404,"NOT FOUND");
-    }
+/////////////////////////////////////////////////////////
+ // PUT /natality_stats
+app.put(BASE_API_USE + "/natality_stats",(req, res) => {
+	res.sendStatus(405,"METHOD NOT ALLOWED");
 });
 
-//
+ // PUT /natality_stats/country
+app.put(BASE_API_USE
 
+	   );
+
+
+
+
+
+
+
+
+
+
+ // ---------------- SERVIDOR ----------------
 console.log("Server already");
 app.listen(port,() => {
 		console.log("Server start");
