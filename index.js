@@ -194,7 +194,7 @@ app.delete(BASE_API_USE+"/emigrants-stats/:country/:year",(req,res)=>{
 //////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats
 app.delete(BASE_API_USE+"/emigrants-stats",(req,res)=>{
 	
-		emigrants_stats=[];
+		emigrants_stats=[{}];
 		res.sendStatus(200,"Ok");
 	
 });
