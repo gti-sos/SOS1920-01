@@ -526,7 +526,7 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
     app.post(BASE_API_USE+"/natality-stats/:country",(req,res) =>{
         res.sendStatus(405,"METHOD NOT ALLOWED");
     });
-// POST recueros country/year
+// ------------ POST recueros country/year ------------
     app.post(BASE_API_USE+"/natality-stats/:country/:year",(req,res) =>{
         res.sendStatus(405,"METHOD NOT ALLOWED");
     });
@@ -565,6 +565,14 @@ app.delete(BASE_API_USE + "/natality-stats/:country/:year", (req,res) =>{
 	   }else{
 		   res.endStatus(404,"NOT FOUND");
 		}
+});
+
+//  -------------DELETE borra too los recursos -----
+app.delete(BASE_API_USE+"/natality_stats",(req,res)=>{
+	
+		natality_stats=[];
+		res.sendStatus(200,"Ok");
+	
 });
 
 
