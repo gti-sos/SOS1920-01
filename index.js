@@ -1,11 +1,6 @@
 const express = require ("express");
-<<<<<<< HEAD
 
 const bodyParser = require("body-parser");
-
-=======
-const bodyParser = require("body-parser");
->>>>>>> 26c7bfa7989382c06991759b40c557b6dd62e025
 
 var app = express();
 
@@ -536,7 +531,7 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
         res.sendStatus(405,"METHOD NOT ALLOWED");
     });
 
-// DALETE natality_stats/country borramos un recurso concreto.
+// ------- DALETE natality_stats/country borramos un recurso concreto.
 app.delete(BASE_API_USE + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
@@ -553,7 +548,7 @@ app.delete(BASE_API_USE + "/natality-stats/:country", (req, res) =>{
 		res.sendStatus(404,"NATALITY NOT FOUND")
 	}
 });
-// DALETE natality_stats/country/year borramos a un pais de un determinado año
+// ------- DALETE natality_stats/country/year borramos a un pais de un determinado año
 app.delete(BASE_API_USE + "/natality-stats/:country/:year", (req,res) =>{
 	
 	var country = req.params.country;
@@ -573,25 +568,40 @@ app.delete(BASE_API_USE + "/natality-stats/:country/:year", (req,res) =>{
 });
 
 
-/////////////////////////////////////////////////////////
- // PUT /natality_stats
-app.put(BASE_API_USE + "/natality_stats",(req, res) => {
-	res.sendStatus(405,"METHOD NOT ALLOWED");
-});
+ // ------------- PUT /natality_stats ---------
+app.put(BASE_API_USE+"/natality_stats/:country/:year", (req, res) =>{
+	
+	var country=req.params.country;
+	var year=req.params.year;
+	var upd=req.body;
+	var filter = natality_stats.filter((f) => {
+		return (f.country == country && f.year == year);
+		});
+	
+		if(filter.length != 1){
+			res.sendStatus(404,"NOT FOUND");
+		}else if(filter[0].country != upd.country || filter[0].year != upd.year){
+			res.sendStatus(409,"CONFLICT, countries and years are diferent");
+		}else{
+			natality_stats.forEach(c => {
+				if(c.country == country && c.year == year){
+					c.nat_totals=upd.nat_totals;
+					c.nat_mem=upd.nat_mem;
+					c.nat_women=upd.nat_women;
+				}
+			});
+			res.sendStatus(200,"OK");
+		}
+	});
+// PUT EROR General /natality_stats
+	app.put(BASE_API_USE+"/emigrants-stats",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
- // PUT /natality_stats/country
-app.put(BASE_API_USE
-
-	   );
-
-
-
-
-
-
-
-
-
+///PUT ERROR General /natality_stats/country para un país determinado
+	app.put(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
  // ---------------- SERVIDOR ----------------
 console.log("Server already");
