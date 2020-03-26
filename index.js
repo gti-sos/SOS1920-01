@@ -115,25 +115,33 @@ app.get(BASE_API_USE+"/emigrants-stats/:country/:year", (req,res) => {
 ///////////////////////////
 
 //////////////////////////////////////////////////////// POST /api/v1/pollution-stats
-app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
+app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
     var newStat = req.body;
 	
-	if (Object.keys(req.body).length!=5 || req.body.country==undefined || req.body.year==undefined || 
-        req.body.em_man==undefined || req.body.em_woman==undefined || req.body.em_totals==undefined || 
-        typeof(req.body.country)!= "string" || typeof(req.body.year)!= "number" || typeof(req.body.em_man)!= "number" || 
-        typeof(req.body.em_woman)!= "number" || typeof(req.body.em_totals)!= "number"){
+	if ((newStat== "") || (newStat.country==null) || (newStat.year==null) || 
+        (newStat.em_man==null) || (newStat.em_woman==null) || (newStat.em_totals==null)){
 	   
 		res.sendStatus(400,"Bad request");
 		
 	}else{
-		emigrants_stats.insert(newStat);
+		emigrants_stats.push(newStat);
 		res.sendStatus(201,"Created");
 	}
 
 });
 
-/////////////////////////
-///////SERVIDOR////////
+///////////////////////////
+//////POSTMAN DELETE///////
+///////////////////////////
+
+//////////////////////////////////////////////////////// Delete /api/v1/pollution-stats/country/year
+
+
+
+
+///////////////////////
+///////PUERTO////////
+///////////////////////
 app.listen(port,() => {
 	
 		console.log("Server start");
