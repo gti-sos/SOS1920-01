@@ -1,7 +1,11 @@
 const express = require ("express");
+<<<<<<< HEAD
 
 const bodyParser = require("body-parser");
 
+=======
+const bodyParser = require("body-parser");
+>>>>>>> 26c7bfa7989382c06991759b40c557b6dd62e025
 
 var app = express();
 
@@ -15,7 +19,12 @@ const BASE_API_USE = "/api/v1";
 app.get("/public",(request,response) => {
 	response.send("index.html");
 });
-	
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////// Antonio Escobar Núñez /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 ////////////////////////////
 ///////////DATOS////////////
 ////////////////////////////
@@ -117,29 +126,121 @@ app.get(BASE_API_USE+"/emigrants-stats/:country/:year", (req,res) => {
 ////////POSTMAN POST///////
 ///////////////////////////
 
-//////////////////////////////////////////////////////// POST /api/v1/pollution-stats
+//////////////////////////////////////////////////////// POST /api/v1/emigrants-stats
 app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
-    var newStat = req.body;
 	
-	if ((newStat== "") || (newStat.country==null) || (newStat.year==null) || 
-        (newStat.em_man==null) || (newStat.em_woman==null) || (newStat.em_totals==null)){
-	   
-		res.sendStatus(400,"Bad request");
-		
-	}else{
-		emigrants_stats.push(newStat);
-		res.sendStatus(201,"Created");
-	}
+	var newStat = req.body;
+	var countryUpd = req.body.country;
+	var yearUpd = req.body.year;
+		var filtrado = emigrants_stats.filter((c) => {
+			return (c.country == countryUpd && c.year == yearUpd);
+		});
+		if((newStat == "") || (newStat.country == null) || (newStat.year == null) || (newStat.em_man == null) || (newStat.em_woman == null) || 					(newStat.em_totals == null)){
+			
+			res.sendStatus(400,"Bad request");
+			
+		} else if(filtrado.length >= 1){
+			res.sendStatus(409,"Confict");
+		} else {
+			emigrants_stats.push(newStat);
+			res.sendStatus(201,"Created");
+		}
+	});
 
-});
+//////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country
+	app.post(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
+//////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country/year
+	app.post(BASE_API_USE+"/emigrants-stats/:country/:year",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
 ///////////////////////////
 //////POSTMAN DELETE///////
 ///////////////////////////
 
-//////////////////////////////////////////////////////// Delete /api/v1/pollution-stats/country/year
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country
+app.delete(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+ 	var country = req.params.country;
+	
+	var emigrants = emigrants_stats.filter((e) => {return (e.country != country);});
+	
+	
+	if(emigrants.length < emigrants_stats.length){
+		emigrants_stats = emigrants;
+		res.sendStatus(200);
+		
+	}else{
+		res.sendStatus(404,"Not found");
+	}	
+});
 
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country/year
 
+app.delete(BASE_API_USE+"/emigrants-stats/:country/:year",(req,res)=>{
+	
+	var country = req.params.country;
+	var year = req.params.year;
+	
+	
+	var emigrantsC = emigrants_stats.filter((c) => {return (c.country != country || c.year != year);});
+	
+	
+	
+	if(emigrantsC.length < emigrants_stats.length){
+		emigrants_stats = emigrantsC;
+		res.sendStatus(200,"Ok");
+	}else{
+		res.sendStatus(404,"Not found");
+	}
+});
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats
+app.delete(BASE_API_USE+"/emigrants-stats",(req,res)=>{
+	
+		emigrants_stats=[];
+		res.sendStatus(200,"Ok");
+	
+});
+
+////////////////////////
+//////POSTMAN PUT///////
+////////////////////////
+
+/////////////////////////////////////////////////////// Put Recurso concreto
+app.put(BASE_API_USE+"/emigrants-stats/:country/:year", (req, res) =>{
+	
+	var country=req.params.country;
+	var year=req.params.year;
+	var upd=req.body;
+	var filtrado = emigrants_stats.filter((f) => {
+		return (f.country == country && f.year == year);
+		});
+	
+		if(filtrado.length != 1){
+			res.sendStatus(404,"Not found");
+		}else if(filtrado[0].country != upd.country || filtrado[0].year != upd.year){
+			res.sendStatus(409,"Confict, countries and years are diferent");
+		}else{
+			emigrants_stats.forEach(c => {
+				if(c.country == country && c.year == year){
+					c.em_man=upd.em_man;
+					c.em_woman=upd.em_woman;
+					c.em_totals=upd.em_totals;
+				}
+			});
+			res.sendStatus(200,"OK");
+		}
+	});
+///////////////////////////////////////////////////////////////// PUT General "error"
+	app.put(BASE_API_USE+"/emigrants-stats",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
+
+//////////////////////////////////////////////////////////////////PUT General "error"
+	app.put(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+		res.sendStatus(405,"Method not allowed");
+	});
 
 //-------------- API Juanfran -----------
 var natality_stats = [
