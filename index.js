@@ -593,7 +593,7 @@ app.put(BASE_API_USE+"/natality_stats/:country/:year", (req, res) =>{
 			res.sendStatus(200,"OK");
 		}
 	});
-// PUT EROR General /natality_stats
+// PUT ERROR General /natality_stats
 	app.put(BASE_API_USE+"/emigrants-stats",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");
 	});
