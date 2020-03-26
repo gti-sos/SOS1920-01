@@ -1,9 +1,5 @@
 const express = require ("express");
-<<<<<<< HEAD
 const bodyParser = require("body-parser");
-=======
-const bodyParser = require("bodyParser");
->>>>>>> e49e2c13cac1eefc46614f91002a30ca19546169
 
 var app = express();
 
@@ -118,7 +114,7 @@ app.get(BASE_API_USE+"/emigrants-stats/:country/:year", (req,res) => {
 ////////POSTMAN POST///////
 ///////////////////////////
 
-//////////////////////////////////////////////////////// POST /api/v1/pollution-stats
+//////////////////////////////////////////////////////// POST /api/v1/emigrants-stats
 app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
     var newStat = req.body;
 	
@@ -138,8 +134,78 @@ app.post(BASE_API_USE+"/emigrants-stats", (req,res) => {
 //////POSTMAN DELETE///////
 ///////////////////////////
 
-//////////////////////////////////////////////////////// Delete /api/v1/pollution-stats/country/year
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country
+app.delete(BASE_API_USE+"/emigrants-stats/:country",(req,res) =>{
+ 	var country = req.params.country;
+	
+	var emigrants = emigrants_stats.filter((e) => {return (e.country != country);});
+	
+	
+	if(emigrants.length < emigrants_stats.length){
+		emigrants_stats = emigrants;
+		res.sendStatus(200);
+		
+	}else{
+		res.sendStatus(404,"Not found");
+	}	
+});
 
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country/year
+
+app.delete(BASE_API_USE+"/emigrants-stats/:country/:year",(req,res)=>{
+	
+	var country = req.params.country;
+	var year = req.params.year;
+	
+	
+	var emigrantsC = emigrants_stats.filter((c) => {return (c.country != country || c.year != year);});
+	
+	
+	
+	if(emigrantsC.length < emigrants_stats.length){
+		emigrants_stats = emigrantsC;
+		res.sendStatus(200,"Ok");
+	}else{
+		res.sendStatus(404,"Not found");
+	}
+});
+//////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats
+app.delete(BASE_API_USE+"/emigrants-stats",(req,res)=>{
+	
+		emigrants_stats=[];
+		res.sendStatus(200,"Ok");
+	
+});
+
+////////////////////////
+//////////PUT///////////
+////////////////////////
+
+/////////////////////////////////////////////////////// Put Recurso concreto
+app.put(BASE_API_USE+"/emigrants-stats/:country/:year", (req, res) =>{
+	
+	var country=req.params.country;
+	var year=req.params.year;
+	var upd=req.body;
+	var filtrado = emigrants_stats.filter((f) => {
+		return (f.country == country && f.year == year);
+		});
+	
+		if(filtrado.length != 1){
+			res.sendStatus(404,"Not found");
+		}else if(filtrado[0].country != upd.country || filtrado[0].year != upd.year){
+			res.sendStatus(409,"Confict, countries and years are diferent");
+		}else{
+			emigrants_stats.forEach(c => {
+				if(c.country == country && c.year == year){
+					c.em_man=upd.em_man;
+					c.em_woman=upd.em_woman;
+					c.em_totals=upd.em_totals;
+				}
+			});
+			res.sendStatus(200,"OK");
+		}
+	});
 
 
 
