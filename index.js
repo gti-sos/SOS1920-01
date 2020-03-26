@@ -386,7 +386,7 @@ app.delete(BASE_API_USE+"/poverty-stats",(req,res)=>{
 //////////PUT///////////
 ////////////////////////
 
-/////////////////////////////////////////////////////// Put Recurso concreto
+/////////////////////////////////////////////////////// Put Recurso concreto /api/v1/poverty-stats/country/year
 app.put(BASE_API_USE+"/poverty-stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
