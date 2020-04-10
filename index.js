@@ -7,15 +7,14 @@ const dataStore = require("nedb");
 const path = require("path");
 const port = process.env.PORT || 80;
 
-
-const dbFileName = path.join(__dirname, "natality-stats.db");//el método join permite unir un directorio con un archivo.
+/*const dbFileName = path.join(__dirname, "natality-stats.db");//el método join permite unir un directorio con un archivo.
 const db = new dataStore({
 				filename: dbFileName,
 				autoload: true
-			});
+			});*/
 
 const emigrantsdb = path.join(__dirname, "emigrants-stats.db");
-const db = new dataStore({
+const edb = new dataStore({
 				filename: emigrantsdb,
 				autoload: true
 			});
