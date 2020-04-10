@@ -14,6 +14,11 @@ const db = new dataStore({
 				autoload: true
 			});
 
+const emigrantsdb = path.join(__dirname, "emigrants-stats.db");
+const db = new dataStore({
+				filename: emigrantsdb,
+				autoload: true
+			});
 
 app.use("/",express.static("./public")); 
 app.use(bodyParser.json());
