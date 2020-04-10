@@ -1,11 +1,9 @@
 const express = require ("express");
 const bodyParser = require("body-parser");
 const BASE_PATH = "/api";
-
-
-var path = require("path");
-var app = express();
-var port = process.env.PORT || 80;
+const path = require("path");
+const app = express();
+const port = process.env.PORT || 80;
 
 app.use("/",express.static("./public")); 
 app.use(bodyParser.json());
@@ -14,13 +12,13 @@ app.get("/public",(request,response) => {
 	response.send("index.html");
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Antonio Escobar Núñez /////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////// Antonio Escobar Núñez ////////////////////
 var apiEscobar = require("./api-escobar");
 apiEscobar(app,BASE_PATH);
 
- // ---------------- SERVIDOR ----------------
+//////////////////// Servidor ////////////////////
+
 console.log("Server already");
 app.listen(port,() => {
 		console.log("Server start");
