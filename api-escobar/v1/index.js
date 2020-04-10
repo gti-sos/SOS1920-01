@@ -1,5 +1,16 @@
 module.exports = function(app,BASE_PATH){
 
+////////////// BASE DE DATOS //////////////
+const emigrantsdb = path.join(__dirname, "emigrants-stats.db");
+	
+    const edb = new dataStore({
+        filename: emigrantsdb,
+        autoload: true,
+        autoload: true,
+        autoload: true,
+        autoload: true
+    });
+	
 ////////////////////////////
 ///////////DATOS////////////
 ////////////////////////////
@@ -32,7 +43,7 @@ var emigrants_stats = [
 
 //GET /api/v1/emigrants-stats-/loadInitialData
 app.get(BASE_PATH+"/emigrants-stats/loadInitialData", (req, res) => {		
-		db.insert(emigrants_stats);
+		edb.insert(emigrants_stats);
 		res.sendStatus(200,"ok");
 		console.log("Initial emigrants_stats loaded:" +JSON.stringify(emigrants_stats,null,2));
 });
@@ -48,7 +59,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 	
 app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
     console.log("New GET .../emigrants-stats");
-    db.find({}, (error, emigrants_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
+    edb.find({}, (error, emigrants_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
 
         emigrants_stats.forEach( (c) => {
              res.send(JSON.stringify(emigrants_stats,null,2));
