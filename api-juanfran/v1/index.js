@@ -1,4 +1,17 @@
 module.exports = function(app,BASE_PATH){
+	const dataStore = require("nedb");
+	const path = require("path");
+	
+	const dbnatality = path.join(__dirname, "natality-stats.db");
+	const dbn = new dataStore({
+		filename: dbnatality,
+		autoload: true,
+		autoload: true,
+		autoload: true,
+		autoload: true
+	});
+
+	
 //-------------- API Juanfran -----------
 var natality_stats = [
 	{
@@ -110,7 +123,7 @@ var natality_stats = [
 
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
-	 db.insert(natality_stats);
+	 dbnatality.insert(natality_stats);
 	 res.sendStatus(200);
 	 console.log("Initial natality_stats loaded:" +JSON.stringify(natality_stats,null,2));
  });
@@ -118,7 +131,7 @@ var natality_stats = [
 // ------------- GET natality_stats -------------------------
 app.get(BASE_PATH+"/natality-stats",(req,res) =>{
 	console.log("New GET .../natality_stats");
-	db.find({}, (error, natality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
+	dbnatality.find({}, (error, natality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
 		
 		natality_stats.forEach( (c) => {
 			delete c.country; //si queremos borrar alguna propiedad, como por ejemplo el pais.
