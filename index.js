@@ -5,6 +5,12 @@ const app = express();
 const BASE_PATH = "/api";
 const port = process.env.PORT || 80;
 
+
+//const natalitydb = require(path.join(__dirname, "api-juanfran"));
+//const emigrantsdb = require(path.join(__dirname, "api-escobar"));
+//const povertydb = require(path.join(__dirname, "api-angela"));
+
+
 app.use("/",express.static("./public")); 
 app.use(bodyParser.json());
 app.get("/public",(request,response) => {
