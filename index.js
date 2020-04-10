@@ -7,8 +7,8 @@ const dataStore = require("nedb");
 const path = require("path");
 const port = process.env.PORT || 80;
 
-const natalitydb = require(path.join(__dirname, "api-juanfran"));
-const emigrantsdb = require(path.join(__dirname, "api-escobar"));
+//onst natalitydb = require(path.join(__dirname, "api-juanfran"));
+//const emigrantsdb = require(path.join(__dirname, "api-escobar"));
 
 
 app.use("/",express.static("./public")); 

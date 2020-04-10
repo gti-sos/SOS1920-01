@@ -1,5 +1,7 @@
 module.exports = function(app,BASE_PATH){
 
+const path = require("path");
+	
 ////////////// BASE DE DATOS //////////////
 const emigrantsdb = path.join(__dirname, "emigrants-stats.db");
 	
