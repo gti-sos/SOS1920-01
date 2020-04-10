@@ -1,6 +1,6 @@
-
 const express = require ("express");
 const bodyParser = require("body-parser");
+<<<<<<< HEAD
 const dataStore = require("nedb");
 const path = require("path");
 
@@ -8,10 +8,19 @@ const port = process.env.PORT || 80;
 const dbFileName = path.join(__dirname, "natality-stats.db");//el método join permite unir un directorio con un archivo.
 
 //app.use("/",express.static("./public")); 
+=======
+const BASE_PATH = "/api";
+
+
+var path = require("path");
+var app = express();
+var port = process.env.PORT || 80;
+>>>>>>> bbedfc83f492475e680f8585eec0e8d5af6b36af
 
 const app = express();
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 const db = new dataStore({
 				filename: dbFileName,
 				autoload: true
@@ -20,6 +29,8 @@ const db = new dataStore({
 const BASE_API_USE = "/api/v1";
 const BASE_PATH = "/api";
 
+=======
+>>>>>>> bbedfc83f492475e680f8585eec0e8d5af6b36af
 app.get("/public",(request,response) => {
 	response.send("index.html");
 });
@@ -32,6 +43,7 @@ apijuanfran(app, BASE_PATH);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////// Antonio Escobar Núñez /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 
 
 ////////////////////////////
@@ -459,6 +471,10 @@ app.put(BASE_API_USE+"/poverty-stats/:country/:year", (req, res) =>{
 		res.sendStatus(405,"Method not allowed");
 	});
 
+=======
+var apiEscobar = require("./api-escobar");
+apiEscobar(app,BASE_PATH);
+>>>>>>> bbedfc83f492475e680f8585eec0e8d5af6b36af
 
  // ---------------- SERVIDOR ----------------
 console.log("Server already");
