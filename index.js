@@ -1,16 +1,23 @@
 
 const express = require ("express");
-
 const bodyParser = require("body-parser");
+const dataStore = require("nedb");
+const path = require("path");
 
-var app = express();
+const port = process.env.PORT || 80;
+const dbFileName = path.join(__dirname, "natality-stats.db");//el método join permite unir un directorio con un archivo.
 
 app.use("/",express.static("./public")); 
+
+const app = express();
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 80;
-const BASE_API_USE = "/api/v1";
+const db = new dataStore({
+				filename: dbFileName,
+				autoload: true
+			});
 
+const BASE_API_USE = "/api/v1";
 
 app.get("/public",(request,response) => {
 	response.send("index.html");
@@ -349,7 +356,10 @@ var natality_stats = [
 
 // ------------- GET natality_stats -------------------------
 app.get(BASE_API_USE+"/natality-stats",(req,res) =>{
-    res.send(JSON.stringify(natality_stats,null,2));
+	console.log("New GET .../natality_stats");
+	db.find({}, (error, natality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
+		res.send(JSON.stringify(natality_stats,null,2));
+	});  
 });
 
 // -------------- GET natality_stats country para un elemento concreto -------
@@ -393,114 +403,9 @@ app.get(BASE_API_USE+"/natality-stats/:country/:year", (req,res) => {
 
 // --------------- loadInitialDataInitialData ----------------------
  app.get(BASE_API_USE + "/natality-stats/loadInitialData", (req, res) => {
-	 var natality_stats = [
-	{
-		country : "spain",
-		year: 2017,
-		natality_totals : 393181,
-		natality_men : 202478,
-		natality_women : 190703
-	},
-	{
-		country : "germany",
-		year: 2017,
-		natality_totals : 784901,
-		natality_men : 402517,
-		natality_women : 382384
-	},
-	{
-		country : "italy",
-		year: 2017,
-		natality_totals : 458151,
-		natality_men : 235733,
-		natality_women : 222418
-	},
-	{
-		country : "france",
-		year: 2017,
-		natality_totals : 770045,
-		natality_men : 394058,
-		natality_women : 375987
-	},
-	{
-		country : "united kingdom",
-		year: 2017,
-		natality_totals : 754754,
-		natality_men : 387030,
-		natality_women : 367754
-	},
-	{
-		country : "spain",
-		year: 2015,
-		natality_totals : 420290,
-		natality_men : 216496,
-		natality_women : 203794
-	},
-	{
-		country : "germany",
-		year: 2015,
-		natality_totals : 737575,
-		natality_men : 378478,
-		natality_women : 359097
-	},
-	{
-		country : "italy",
-		year: 2015,
-		natality_totals : 485780,
-		natality_men : 249950,
-		natality_women : 235830
-	},
-	{
-		country : "france",
-		year: 2015,
-		natality_totals : 799671,
-		natality_men : 409145,
-		natality_women : 390526
-	},
-	{
-		country : "united kingdom",
-		year: 2015,
-		natality_totals : 776746,
-		natality_men : 398760,
-		natality_women : 377986
-	},
-	{
-		country : "spain",
-		year: 2010,
-		natality_totals : 486575,
-		natality_men : 250727,
-		natality_women : 235848
-	},
-	{
-		country : "germany",
-		year: 2010,
-		natality_totals : 677947,
-		natality_men : 347237,
-		natality_women : 330710
-	},
-	{
-		country : "italy",
-		year: 2010,
-		natality_totals : 561944,
-		natality_men : 289185,
-		natality_women : 272759
-	},
-	{
-		country : "france",
-		year: 2010,
-		natality_totals : 833654,
-		natality_men : 426270,
-		natality_women : 407384
-	},
-	{
-		country : "united kingdom",
-		year: 2010,
-		natality_totals : 807271,
-		natality_men : 413755,
-		natality_women : 393516
-	}
-];
-	 res.sendStatus(201,"CREATE");
+	 db.insert(natality_stats);
+	 res.sendStatus(200);
+	 console.log("Initial natality_stats loaded:" +JSON.stringify(initialNatality_stats,null,2));
  });
 
 // ---------------- POST natality_stats crea un nuevo recurso-----------------------
