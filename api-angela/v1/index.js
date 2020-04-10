@@ -1,11 +1,25 @@
-/////////////////////////////////////// 
+
 ///////////  API ANGELA  ////////////// 
-/////////////////////////////////////// 
+
 
 ///////////DATOS////////////
 
 module.exports = function(app,BASE_PATH){
+	
+const path = require("path");
+const dataStore = require("nedb");
 
+////////////// BASE DE DATOS //////////////
+
+	const povertydb = path.join(__dirname, "poverty-stats.db");
+    const pdb = new dataStore({
+        filename: povertydb,
+        autoload: true,
+        autoload: true,
+        autoload: true,
+        autoload: true
+    });
+	
 var poverty_stats = [
 	{country: "spain",year: 2010,poverty_prp:9551, poverty_pt:8763,poverty_ht:18402},
 	{country: "germany",year: 2010,poverty_prp:12648, poverty_pt:11278,poverty_ht:23684},
@@ -30,7 +44,7 @@ var poverty_stats = [
 
 	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
-	db.insert(poverty_stats);
+	pdb.insert(poverty_stats);
 	res.sendStatus(200);
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
@@ -40,10 +54,10 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 //-  /api/v1/poverty-stats
 app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	console.log("New GET .../poverty_stats");
-    db.find({}, (error, poverty_stats) => { 
-    res.send(JSON.stringify(poverty_stats,null,2));
-	})
-	poverty_stats.forEach( (c) => {delete c.country; 
+    pdb.find({}, (error, poverty_stats) => { 
+		poverty_stats.forEach( (c) => {
+			res.send(JSON.stringify(poverty_stats,null,2));
+		});
 	});
 });
 
