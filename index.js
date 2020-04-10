@@ -1,8 +1,12 @@
 
 const express = require ("express");
 const bodyParser = require("body-parser");
+const app = express();
+const BASE_PATH = "/api";
 const dataStore = require("nedb");
 const path = require("path");
+const port = process.env.PORT || 80;
+
 
 const dbFileName = path.join(__dirname, "natality-stats.db");//el método join permite unir un directorio con un archivo.
 const db = new dataStore({
@@ -10,10 +14,6 @@ const db = new dataStore({
 				autoload: true
 			});
 
-
-const BASE_PATH = "/api";
-const app = express();
-const port = process.env.PORT || 80;
 
 app.use("/",express.static("./public")); 
 app.use(bodyParser.json());
