@@ -1,4 +1,3 @@
-
 ///////////  API ANGELA  ////////////// 
 
 
@@ -55,9 +54,9 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	console.log("New GET .../poverty_stats");
     pdb.find({}, (error, poverty_stats) => { 
-		poverty_stats.forEach( (c) => {
-			res.send(JSON.stringify(poverty_stats,null,2));
-		});
+		//poverty_stats.forEach( (c) => {
+		res.send(JSON.stringify(poverty_stats,null,2));
+		//});
 	});
 });
 
@@ -159,9 +158,11 @@ app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
 
 ///- /api/v1/poverty-stats
 app.delete(BASE_PATH+"/poverty-stats",(req,res)=>{
-	
-		poverty_stats=[];
+		
+		pdb.remove({}, {multi:true});
+		//poverty_stats=[];
 		res.sendStatus(200,"Ok");
+		console.log("Todo borrado");
 	
 });
 
