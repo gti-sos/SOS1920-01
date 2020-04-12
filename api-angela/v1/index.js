@@ -53,10 +53,12 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 //-  /api/v1/poverty-stats
 app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	console.log("New GET .../poverty_stats");
-    pdb.find({}, (error, poverty_stats) => { 
-		//poverty_stats.forEach( (c) => {
-		res.send(JSON.stringify(poverty_stats,null,2));
-		//});
+    pdb.find({}, (error, pov) => { 
+		pov.forEach((i)=>{
+				delete i._id
+			});
+		res.send(JSON.stringify(pov,null,2));
+		
 	});
 });
 

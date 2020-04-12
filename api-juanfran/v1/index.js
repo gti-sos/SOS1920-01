@@ -127,6 +127,7 @@ var initialNatality_stats = [
 	 console.log("Initial natality_stats loaded:" +JSON.stringify(initialNatality_stats,null,2));
  });
 
+
 // ------------- GET natality_stats -------------------------
 app.get(BASE_PATH+"/natality-stats",(req,res) => {
 	
@@ -135,6 +136,7 @@ app.get(BASE_PATH+"/natality-stats",(req,res) => {
 			initialNatality_stats.forEach((n) =>{
 				delete n._id
 			});
+
 		res.send(JSON.stringify(initialNatality_stats,null,2));
 	});  
 });
@@ -155,7 +157,6 @@ app.get(BASE_PATH+"/natality-stats/:country", (req,res) => {
 		});
 	});
 });
-
 //----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
 app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     var country = req.params.country;
@@ -163,7 +164,7 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 
     var natalityC = initialNatality_stats.filter((c) => {
 		return (c.country == country);
-
+	});
     var natalityY = initialNatality_stats.filter((y) => {
 		return(y.year == year);
 	});
@@ -247,7 +248,6 @@ app.delete(BASE_PATH + "/natality-stats/:country/:year", (req,res) =>{
 app.delete(BASE_PATH + "/natality-stats", (req,res) => {
 		
 		dbn.remove({}, {multi:true});
-	
 		res.sendStatus(200,"Ok");
 		console.log("Todo los datos están borrados");
 	
@@ -288,5 +288,5 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	app.put(BASE_PATH+"/natality-stats/:country",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");
 	});
-});
+
 }
