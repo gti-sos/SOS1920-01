@@ -75,13 +75,14 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
     var country = req.params.country;
 	
 	var emigrants = emigrants_stats.filter((e) => {return (e.country == country);});
-	
-	
-	if(emigrants.length >= 1){
-		res.send(emigrants);
-	}else{
-		res.sendStatus(404,"Not found");
-	}
+	dbn.find({ "country" :country}, (error, natality) => {
+		 if(natality.length >= 1){
+        	res.send(natality);
+   		 }else{
+        res.sendStatus(404,"NOT FOUND");
+		}
+	})
+
 });
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
