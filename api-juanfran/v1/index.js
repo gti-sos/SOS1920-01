@@ -132,9 +132,9 @@ app.get(BASE_PATH+"/natality-stats",(req,res) => {
 	
 	console.log("New GET .../natality_stats");
 	dbn.find({}, (error, initialNatality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
-		//natality_stats.forEach( (c) =>{
-		//	delete c."la variable que queremos borrar"; 		
-	//})
+			initialNatality_stats.forEach((n) =>{
+				delete n._id
+			});
 		res.send(JSON.stringify(initialNatality_stats,null,2));
 	});  
 });
@@ -243,12 +243,13 @@ app.delete(BASE_PATH + "/natality-stats/:country/:year", (req,res) =>{
 		}
 });
 
-//  -------------DELETE borra todos los recursos -----
-app.delete(BASE_PATH+"/natality_stats",(req,res)=>{
+//  -------------DELETE /natality-stats -----
+app.delete(BASE_PATH + "/natality-stats", (req,res) => {
+		
+		dbn.remove({}, {multi:true});
 	
-		dbn.remove({},{multi:true});
 		res.sendStatus(200,"Ok");
-		console.log("Todos los recursos borrados.");
+		console.log("Todo los datos están borrados");
 	
 });
 
