@@ -13,6 +13,7 @@
 {"country":"france","year":2015,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"rwGYnHZWb27n2xUk"}
 {"country":"united kingdom","year":2017,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"ueRHnHjeDgFWdjBd"}
 {"country":"italy","year":2015,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"z2P4eSDs2S3xBq5T"}
+<<<<<<< HEAD
 {"country":"spain","year":2010,"poverty_prp":9551,"poverty_pt":8763,"poverty_ht":18402,"_id":"0wHb8JtewKNmRPB9"}
 {"country":"germany","year":2010,"poverty_prp":12648,"poverty_pt":11278,"poverty_ht":23684,"_id":"q7tjplwZtyHrm1M1"}
 {"country":"italy","year":2010,"poverty_prp":11124,"poverty_pt":9578,"poverty_ht":20115,"_id":"2qkbAL3ODxFbteT2"}
@@ -28,3 +29,5 @@
 {"country":"italy","year":2017,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"m0WCJqdRJOmXHZw0"}
 {"country":"france","year":2017,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"PIW208ziZVWqGY0M"}
 {"country":"united kingdom","year":2017,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"clQX9TwYwG7VDeLf"}
+=======
+>>>>>>> d98df37cd6a8b713291aac22a24d388dfc647600
