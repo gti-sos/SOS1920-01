@@ -94,7 +94,19 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	if(!req.query.poverty_htMin && req.query.poverty_htMax)
 		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_htMax)}
 	
-	
+	pdb.find(search).skip(offset).limit(limit).exec(function(err, pov){
+			pov.forEach((i)=>{
+				delete i._id
+			});
+		
+		if(pov == 0){
+			res.sendStatus(404, "Poverty Not Found");
+		}else{
+			console.log("Data sent: "+JSON.stringify(pov, null,2));
+			res.send(JSON.stringify(pov, null, 2));
+			
+		}	
+	});
 	/*	console.log("New GET .../poverty_stats");
     pdb.find({}, (error, pov) => { 
 		pov.forEach((i)=>{
@@ -109,21 +121,35 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
     var country = req.params.country;
 	
-	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
+	pdb.find({country: country}, (err, pov) => {
+		pov.forEach(i => {
+			delete i._id;
+		});
+		res.send(JSON.stringify(pov[0], null, 2)); 
+	});
+/*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
 	
 	
 	if(poverty.length >= 1){
 		res.send(poverty);
 	}else{
 		res.sendStatus(404,"Not found");
-	}
+	}*/
 });
 
 //- /api/v1/poverty-stats/country/year
 app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
     var country = req.params.country;
-	var year = req.params.year;
+	var year = parseInt(req.params.year);
 	
+	pdb.find({country: country, year: year}, (err, pov) => {
+		pov.forEach(i => {
+			delete i._id;
+		});
+		res.send(JSON.stringify(pov[0], null, 2)); 
+	});
+	
+	/*
 	var povertyC = poverty_stats.filter((c) => {return (c.country == country);});
 	
 	var povertyY = poverty_stats.filter((y) => {return(y.year == year);});
@@ -134,7 +160,7 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 		res.send(sol);
 	}else{
 		res.sendStatus(404,"Not found");
-	}
+	}*/
 });
 
 ////////POSTMAN POST
@@ -143,13 +169,22 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 app.post(BASE_PATH+"/poverty-stats", (req,res) => {
     var newStat = req.body;
 	
-	if ((newStat== "") || (newStat.country==null) || (newStat.year==null) || 
-        (newStat.poverty_prp==null) || (newStat.poverty_pt==null) || (newStat.poverty_ht==null)){
+	var filt = pdb.find({country: country, year: year});
+	
+	if (newStat== "" || 
+		(newStat.country==null || newStat.country=="") ||
+		(newStat.year==null || newStat.year=="") || 
+        (newStat.poverty_prp==null || newStat.poverty_prp=="") || 
+		(newStat.poverty_pt==null || newStat.poverty_pt=="") || 
+		(newStat.poverty_ht==null || newStat.poverty_ht=="")){
 	  
 		res.sendStatus(400,"Bad request");
 		
+	}else if(filt.length>=1){
+		res.sendStatus(409,"Conflicto");
 	}else{
-		poverty_stats.push(newStat);
+		pdb.insert(newStat);
+	//	poverty_stats.push(newStat);
 		res.sendStatus(201,"Created");
 	}
 
@@ -170,10 +205,11 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
 	pdb.remove({}, { multi: true });
     var country = req.params.country;
-    var year = req.params.year;
+    var year = parseInt(req.params.year);
 
-
-    var povertyC = poverty_stats.filter((c) => {return (c.country != country || c.year != year);});
+	pdb.remove({country: country, year: year}, {});
+	res.sendStatus(200, "POVERTY REMOVED");
+   /* var povertyC = poverty_stats.filter((c) => {return (c.country != country || c.year != year);});
 
 
 
@@ -182,15 +218,17 @@ app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
         res.sendStatus(200,"Ok");
     }else{
         res.sendStatus(404,"Not found");
-    }
+    }*/
 	});
 
 //- /api/v1/poverty-stats/country
 app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
-	pdb.remove({}, { multi: true });
- 	var country = req.params.country;
 	
-	var poverty = poverty_stats.filter((e) => {return (e.country != country);});
+ 	var country = req.params.country;
+	pdb.remove({country: country}, {});
+	res.sendStatus(200, "ACCSTAT REMOVED");
+	
+	/*var poverty = poverty_stats.filter((e) => {return (e.country != country);});
 	
 	
 	if(poverty.length < poverty_stats.length){
@@ -199,7 +237,7 @@ app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
 		
 	}else{
 		res.sendStatus(404,"Not found");
-	}	
+	}	*/
 });
 
 ///- /api/v1/poverty-stats
@@ -217,28 +255,19 @@ app.delete(BASE_PATH+"/poverty-stats",(req,res)=>{
 app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
-	var year=req.params.year;
+	var year=parseInt(req.params.year);
 	var upd=req.body;
-
-	var filtrado = poverty_stats.filter((f) => {
-		return (f.country == country && f.year == year);
-		});
 	
-		if(filtrado.length != 1){
-			res.sendStatus(404,"Not found");
-		}else if(filtrado[0].country != upd.country || filtrado[0].year != upd.year){
-			res.sendStatus(409,"Confict, countries and years are diferent");
-		}else{
-			poverty_stats.forEach(c => {
-				if(c.country == country && c.year == year){
-					c.poverty_prp=upd.poverty_prp;
-					c.poverty_pt=upd.poverty_pt;
-					c.poverty_ht=upd.poverty_ht;
-
-				}
-			});
-			res.sendStatus(200,"OK");
-		}
+	var nCont = upd.country;
+	var nYear = parseInt(upd.year);
+	
+	if(country != nCont || year != nYear){
+		res.sendStatus(400, "ACCSTAT NOT FOUND");
+	}else{
+		pdb.update({country: country, year: year}, 
+				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}}, {} );
+		res.sendStatus(200, "ACCSTAT MODIFIED");
+	}
 	});
 
 //- General "error"
