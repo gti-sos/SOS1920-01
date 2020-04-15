@@ -6,11 +6,8 @@ const dataStore = require("nedb");
 ////////////// BASE DE DATOS //////////////
 const emigrantsdb = path.join(__dirname, "emigrants-stats.db");
 	
-    const edb = new dataStore({
+const edb = new dataStore({
         filename: emigrantsdb,
-        autoload: true,
-        autoload: true,
-        autoload: true,
         autoload: true
     });
 	
@@ -45,7 +42,9 @@ var emigrants_stats = [
 /////////////////////////////////
 
 //GET /api/v1/emigrants-stats-/loadInitialData
-app.get(BASE_PATH+"/emigrants-stats/loadInitialData", (req, res) => {		
+app.get(BASE_PATH+"/emigrants-stats/loadInitialData", (req, res) => {	
+	
+		db.remove({}, { multi: true });
 		edb.insert(emigrants_stats);
 		res.sendStatus(200,"ok");
 		console.log("Initial emigrants_stats loaded:" +JSON.stringify(emigrants_stats,null,2));
@@ -56,49 +55,83 @@ app.get(BASE_PATH+"/emigrants-stats/loadInitialData", (req, res) => {
 
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats
 app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
-	
-	res.send(JSON.stringify(emigrants_stats,null,2));
-});
-	
-app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
     console.log("New GET .../emigrants-stats");
-    edb.find({}, (error, emigrants_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
+	
+	var limit = parseInt(req.query.limit);
+	var offset = parseInt(req.query.offset);
+	var search = {};
+	
+	if(req.query.province) search['province'] = req.query.province;
+	if(req.query.year) search['year'] = parseInt(req.query.year);
+	
+	//////// em_man ////////
+	if(req.query.em_manMin && req.query.em_manMax)
+		search['em_man'] = {
+			$gte: parseInt(req.query.em_manMin),
+			$lte: parseInt(req.query.em_manMax)}
+	if(req.query.em_manMin && !req.query.em_manMax)
+		search['em_man'] = {$gte: parseInt(req.query.em_manMin)};
+	if(!req.query.em_manMin && req.query.em_manMax)
+		search['em_man'] = {$lte: parseInt(req.query.em_manMax)}
+	
+	//////// em_woman ////////
+	if(req.query.em_womanMin && req.query.em_womanMax)
+		search['em_woman'] = {
+			$gte: parseInt(req.query.em_womanMin),
+			$lte: parseInt(req.query.em_womanMax)}
+	if(req.query.em_totalsMin && !req.query.em_womanMax)
+		search['em_woman'] = {$gte: parseInt(req.query.em_womanMin)};
+	if(!req.query.em_totalsMin && req.query.em_womanMax)
+		search['em_woman'] = {$lte: parseInt(req.query.em_womanMin)}
+	
+	//////// em_totals ////////
+	if(req.query.em_totalsMin && req.query.em_totalsMax)
+		search['em_totals'] = {
+			$gte: parseInt(req.query.em_totalsMin),
+			$lte: parseInt(req.query.em_totalsMax)}
+	if(req.query.em_totalsMin && !req.query.em_totalsMax)
+		search['em_totals'] = {$gte: parseInt(req.query.em_totalsMin)};
+	if(!req.query.em_totalsMin && req.query.em_totalsMax)
+		search['em_totals'] = {$lte: parseInt(req.query.em_totalsMax)}
 
-        emigrants_stats.forEach( (c) => {
-             res.send(JSON.stringify(emigrants_stats,null,2));
+		
+    edb.find(search).find(search).skip(offset).limit(limit).exec(function(error, emi) { 
+		emi.forEach((e)=>{
+            delete e._id
         });
+		
+		if(emi == 0){
+			res.sendStatus(404, "EMI NOT FOUND");
+		}else{
+			res.send(JSON.stringify(emi, null, 2));
+			console.log("Data send: "+JSON.stringify(emi, null,2));
+		}	    
     });
 });
 	
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country
 app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
     var country = req.params.country;
-	
-	var emigrants = emigrants_stats.filter((e) => {return (e.country == country);});
-	
-	
-	if(emigrants.length >= 1){
-		res.send(emigrants);
-	}else{
-		res.sendStatus(404,"Not found");
-	}
+		
+	edb.find({country: country}, (err, emi) => {
+		emi.forEach(e => {
+			delete e._id;
+		});
+		res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+	});
+
 });
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
     var country = req.params.country;
-	var year = req.params.year;
+	var year = parseInt(req.params.year);
 	
-	var emigrantsC = emigrants_stats.filter((c) => {return (c.country == country);});
-	
-	var emigrantsY = emigrants_stats.filter((y) => {return(y.year == year);});
-	
-	
-	if(emigrantsC.length >= 1 && emigrantsY.length >=1){
-		var sol = emigrantsC.filter((s) => {return(s.year == year);});
-		res.send(sol);
-	}else{
-		res.sendStatus(404,"Not found");
-	}
+	edb.find({country: country, year: year}, (err, emi) => {
+		emi.forEach(e => {
+			delete e._id;
+		});
+		res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+	});		
 });
 
 ///////////////////////////
@@ -109,22 +142,24 @@ app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
 app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
-	var countryUpd = req.body.country;
-	var yearUpd = req.body.year;
-		var filtrado = emigrants_stats.filter((c) => {
-			return (c.country == countryUpd && c.year == yearUpd);
-		});
-		if((newStat == "") || (newStat.country == null) || (newStat.year == null) || (newStat.em_man == null) || (newStat.em_woman == null) || 					(newStat.em_totals == null)){
+	var filtrado = edb.find({country: country, year: year});
+	
+		if((newStat == "") || 
+		   (newStat.country == null) || (newStat.country == "") ||
+		   (newStat.year == null) || (newStat.year == "") ||
+		   (newStat.em_man == null) || (newStat.em_man == "") ||
+		   (newStat.em_woman == null) || (newStat.em_woman == "") ||					
+		   (newStat.em_totals == null) || (newStat.em_totals == "")) {
 			
 			res.sendStatus(400,"Bad request");
 			
 		} else if(filtrado.length >= 1){
 			res.sendStatus(409,"Confict");
 		} else {
-			emigrants_stats.push(newStat);
+			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
-		}
-	});
+		}	
+});
 
 //////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country
 	app.post(BASE_PATH+"/emigrants-stats/:country",(req,res) =>{
@@ -141,43 +176,29 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 
 //////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country
 app.delete(BASE_PATH+"/emigrants-stats/:country",(req,res) =>{
- 	var country = req.params.country;
+ 	
+	var country = req.params.country;
 	
-	var emigrants = emigrants_stats.filter((e) => {return (e.country != country);});
-	
-	
-	if(emigrants.length < emigrants_stats.length){
-		emigrants_stats = emigrants;
-		res.sendStatus(200);
-		
-	}else{
-		res.sendStatus(404,"Not found");
-	}	
+	edb.remove({country: country}, {});
+	res.sendStatus(200, "EMI REMOVED");
 });
+
 
 //////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats/country/year
 
 app.delete(BASE_PATH+"/emigrants-stats/:country/:year",(req,res)=>{
 	
 	var country = req.params.country;
-	var year = req.params.year;
-	
-	
-	var emigrantsC = emigrants_stats.filter((c) => {return (c.country != country || c.year != year);});
-	
-	
-	
-	if(emigrantsC.length < emigrants_stats.length){
-		emigrants_stats = emigrantsC;
-		res.sendStatus(200,"Ok");
-	}else{
-		res.sendStatus(404,"Not found");
-	}
+	var year = parseInt(req.params.year);
+
+	edb.remove({country: country, year: year}, {});
+	res.sendStatus(200, "EMI REMOVED");
+		
 });
 //////////////////////////////////////////////////////// Delete /api/v1/emigrants-stats
 app.delete(BASE_PATH+"/emigrants-stats",(req,res)=>{
 	
-		emigrants_stats=[{}];
+		edb.remove({},{multi:true});
 		res.sendStatus(200,"Ok");
 	
 });
@@ -190,27 +211,23 @@ app.delete(BASE_PATH+"/emigrants-stats",(req,res)=>{
 app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
-	var year=req.params.year;
+	var year=parseInt(req.params.year);
 	var upd=req.body;
-	var filtrado = emigrants_stats.filter((f) => {
-		return (f.country == country && f.year == year);
-		});
-	
-		if(filtrado.length != 1){
-			res.sendStatus(404,"Not found");
-		}else if(filtrado[0].country != upd.country || filtrado[0].year != upd.year){
-			res.sendStatus(409,"Confict, countries and years are diferent");
-		}else{
-			emigrants_stats.forEach(c => {
-				if(c.country == country && c.year == year){
-					c.em_man=upd.em_man;
-					c.em_woman=upd.em_woman;
-					c.em_totals=upd.em_totals;
-				}
-			});
-			res.sendStatus(200,"OK");
-		}
-	});
+	var newCountry = upd.country;
+	var newYear = parseInt(upd.year);
+
+	if(country != newCountry || year != newYear){
+		res.sendStatus(400, "EMI NOT FOUND");
+	}else{
+		edb.update({province: province, year: year}, 
+				  	{$set: {em_man: body.em_man,  em_woman: body.em_woman,  em_totals: body.em_totals}}//, //Lo que dejo que modifique
+					//{}, //multi
+				  	//function(err, numReplaced) {}
+		);
+		res.sendStatus(200, "EMI MODIFIED");
+	}
+		
+});
 ///////////////////////////////////////////////////////////////// PUT General "error"
 	app.put(BASE_PATH+"/emigrants-stats",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");
