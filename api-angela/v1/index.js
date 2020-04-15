@@ -13,9 +13,6 @@ const dataStore = require("nedb");
 	const povertydb = path.join(__dirname, "poverty-stats.db");
     const pdb = new dataStore({
         filename: povertydb,
-        autoload: true,
-        autoload: true,
-        autoload: true,
         autoload: true
     });
 	
@@ -44,6 +41,8 @@ var poverty_stats = [
 	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 	pdb.insert(poverty_stats);
+	pdb.remove({}, { multi: true });
+	
 	res.sendStatus(200);
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
@@ -52,14 +51,58 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 
 //-  /api/v1/poverty-stats
 app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
-	console.log("New GET .../poverty_stats");
+	var limit = parseInt(req.query.limit);
+	var offset = parseInt(req.query.offset);
+	var search = {};
+	
+	if(req.query.country) search['country'] = req.query.contry;
+	if(req.query.year) search['year'] = parseInt(req.query.year);
+	
+	/////primer atributo --- poverty_prp
+	
+	if(req.query.poverty_prpMin && req.query.poverty_prpMax)
+		search['poverty_prp'] = {
+			$gte: parseInt(req.query.poverty_prpMin),
+			$lte: parseInt(req.query.poverty_prpMax)
+		}
+	if(req.query.poverty_prpMin && !req.query.poverty_prpMax)
+		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_prpMin)};
+	if(!req.query.poverty_prpMin && req.query.poverty_prpMax)
+		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_prpMax)}
+	
+	/////segundo atributo --- poverty_pt
+	
+	if(req.query.poverty_ptMin && req.query.poverty_ptMax)
+		search['poverty_pt'] = {
+			$gte: parseInt(req.query.poverty_ptMin),
+			$lte: parseInt(req.query.poverty_ptMax)
+		}
+	if(req.query.poverty_ptMin && !req.query.poverty_ptMax)
+		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_ptMin)};
+	if(!req.query.poverty_ptMin && req.query.poverty_ptMax)
+		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_ptMax)}
+	
+	/////tercer atrbuto --- poverty_ht
+	
+	if(req.query.poverty_htMin && req.query.poverty_htMax)
+		search['poverty_pt'] = {
+			$gte: parseInt(req.query.poverty_htMin),
+			$lte: parseInt(req.query.poverty_htMax)
+		}
+	if(req.query.poverty_htMin && !req.query.poverty_htMax)
+		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_htMin)};
+	if(!req.query.poverty_htMin && req.query.poverty_htMax)
+		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_htMax)}
+	
+	
+	/*	console.log("New GET .../poverty_stats");
     pdb.find({}, (error, pov) => { 
 		pov.forEach((i)=>{
 				delete i._id
 			});
 		res.send(JSON.stringify(pov,null,2));
 		
-	});
+	});*/
 });
 
 //- /api/v1/poverty-stats/country
@@ -125,7 +168,7 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 //- /api/v1/poverty-stats/country/year
 
 app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
-
+	pdb.remove({}, { multi: true });
     var country = req.params.country;
     var year = req.params.year;
 
@@ -144,6 +187,7 @@ app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
 
 //- /api/v1/poverty-stats/country
 app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
+	pdb.remove({}, { multi: true });
  	var country = req.params.country;
 	
 	var poverty = poverty_stats.filter((e) => {return (e.country != country);});
@@ -161,7 +205,7 @@ app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
 ///- /api/v1/poverty-stats
 app.delete(BASE_PATH+"/poverty-stats",(req,res)=>{
 		
-		pdb.remove({}, {multi:true});
+		pdb.remove({}, { multi: true });
 		//poverty_stats=[];
 		res.sendStatus(200,"Ok");
 		console.log("Todo borrado");
