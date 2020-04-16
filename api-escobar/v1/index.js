@@ -118,6 +118,7 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 		emi.forEach(e => {
 			delete e._id;
 		});
+		  res.send(JSON.stringify(emi,null,2)); 
 	});
 
 });
