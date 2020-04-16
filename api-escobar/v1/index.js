@@ -113,14 +113,21 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
     var country = req.params.country;
 
-		
 	edb.find({country: country}, (err, emi) => {
-		emi.forEach(e => {
-			delete e._id;
-		});
-		  res.send(JSON.stringify(emi,null,2)); 
-	});
-
+		
+		if(emi.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			emi.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});		
 });
 ////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
