@@ -252,7 +252,7 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 	app.post(BASE_PATH + "/natality-stats", (req, res) => {
 		var newNat = req.body;
 		
-		dbn.find({country: newStat.country, year: newStat.year},(error, natality)=>{
+		dbn.find({country: newNat.country, year: newNat.year},(error, natality)=>{
 			if(natality.length != 0){	
 				console.log("409. conflict, el objeto ya existe");
 				res.sendStatus(409);
