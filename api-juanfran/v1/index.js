@@ -254,16 +254,16 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 		
 		dbn.find({country: newNat.country, year: newNat.year},(error, natality)=>{
 			if(natality.length != 0){	
-				console.log("409. conflict, el objeto ya existe");
+				console.log("409,conflict");
 				res.sendStatus(409);
 			}
 		
-        	if((newNat == "") || 
-		   		(newNat.country == null) || (newNat.country == '') ||
-		   		(newNat.year == null) || (newNat.year == '') || 
-		   		(newNat.natality_totals == null) || (newNat.natality_totals == '') || 
-		   		(newNat.natality_men == null) || (newNat.natality_men == '') || 
-		   		(newNat.natality_women == null) || (newNat.natality_women == '')){
+        	else if((newNat == "") || 
+		   		(newNat.country == null) || (newNat.country == "") ||
+		   		(newNat.year == null) || (newNat.year == "") || 
+		   		(newNat.natality_totals == null) || (newNat.natality_totals == "") || 
+		   		(newNat.natality_men == null) || (newNat.natality_men == "") || 
+		   		(newNat.natality_women == null) || (newNat.natality_women == "")){
 			
             	res.sendStatus(400,"BAD REQUEST");
 			}else{
