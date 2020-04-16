@@ -252,19 +252,25 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 	app.post(BASE_PATH + "/natality-stats", (req, res) => {
 		var newNat = req.body;
 		
+		dbn.find({country: newStat.country, year: newStat.year},(error, natality)=>{
+			if(natality.length != 0){	
+				console.log("409. conflict, el objeto ya existe");
+				res.sendStatus(409);
+			}
 		
-        if(newNat == "" || 
-		   (newNat.country == null || newNat.country == '') ||
-		   (newNat.year == null || newNat.year == '') || 
-		   (newNat.natality_totals == null || newNat.natality_totals == '') || 
-		   (newNat.natality_men == null || newNat.natality_men == '') || 
-		   (newNat.natality_women == null || newNat.natality_women == '')){
+        	if(newNat == "" || 
+		   		(newNat.country == null || newNat.country == '') ||
+		   		(newNat.year == null || newNat.year == '') || 
+		   		(newNat.natality_totals == null || newNat.natality_totals == '') || 
+		   		(newNat.natality_men == null || newNat.natality_men == '') || 
+		   		(newNat.natality_women == null || newNat.natality_women == '')){
 			
-            res.sendStatus(400,"BAD REQUEST");
-		}else{
-			dbn.insert(newNat);
-            res.sendStatus(201,"CREATED");
-        }
+            	res.sendStatus(400,"BAD REQUEST");
+			}else{
+				dbn.insert(newNat);
+            	res.sendStatus(201,"CREATED");
+        	}
+		});
 	});
 
 // ------------- POST devuelve error de metodo no permitido -------------
