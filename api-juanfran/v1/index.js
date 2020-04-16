@@ -146,8 +146,8 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 	var search = {};
 	
 	if(req.query.country) search['country'] = req.query.country;
-	if(req.query.year) search['year'] = parteInt(req.query.year);
-	
+	if(req.query.year) search['year'] = parseInt(req.query.year);
+
 	///////natality_totals///////////////////////////////////////////////////////
 	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
 		search['natality_totals'] = {
@@ -173,23 +173,20 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 		search['natality_men'] = {
 			$gte: parseInt(req.query.natality_menMin)
 		};
-	if(!req.query.natality_menMin && req.query.natality_totalsMax)
-		search['natality_men'] = {
-			$lte: parseInt(req.query.natality_totalsMax)
-		};
+
 	////////////////////natality_women///////////////////////////////////////////77
-	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(req.query.natality_womenMin && req.query.natality_womenMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_totalsMin),
-			$lte: parseInt(req.query.natality_totalsMax)
+			$gte: parseInt(req.query.natality_womenMin),
+			$lte: parseInt(req.query.natality_womenMax)
 		}
-	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+	if(req.query.natality_womenMin && !req.query.natality_womenMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_totalsMin)
+			$gte: parseInt(req.query.natality_womenMin)
 		};
-	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(!req.query.natality_womenMin && req.query.natality_womenMax)
 		search['natality_women'] = {
-			$lte: parseInt(req.query.natality_totalsMax)
+			$lte: parseInt(req.query.natality_womenMax)
 		};
 	
 	dbn.find(search).skip(offset).limit(limit).exec(function(error, natality){
@@ -210,23 +207,41 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 app.get(BASE_PATH+"/natality-stats/:country", (req,res) => {
     var country = req.params.country;
 	
-		dbn.find({country: country}, (error, natality) => {
-		 natality.forEach(n =>{
-			 delete n._id;
-		 });
-		res.send(JSON.stringify(natality,null,2)); // Con esto sacamos un elemento.
-	});
+	dbn.find({country: country}, (err, nataly) => {
+		
+		if(nataly.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			nataly.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(nataly, null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});	
 });
 //----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
 app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     var country = req.params.country;
     var year = parseInt(req.params.year);
 
-	dbn.find({country: country, year: year}, (error, natality) =>{
-			 natality.forEach(n => {
-			 	delete n._id;
-			 });
-			res.send(JSON.stringify(natality[0],null,2));
+		dbn.find({country: country, year: year}, (err, natality) => {
+		
+		if(natality.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			natality.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(natality[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
 	});		
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////7
@@ -234,19 +249,25 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 	app.post(BASE_PATH + "/natality-stats", (req, res) => {
 		var newNat = req.body;
 		
+		dbn.find({country: newNat.country, year: newNat.year},(error, natality)=>{
+			if(natality.length != 0){	
+				console.log("409,conflict");
+				res.sendStatus(409);
+			}
 		
-        if(newNat == "" || 
-		   (newNat.country == null || newNat.country == '') ||
-		   (newNat.year == null || newNat.year == '') || 
-		   (newNat.natality_totals == null || newNat.natality_totals == '') || 
-		   (newNat.natality_men == null || newNat.natality_men == '') || 
-		   (newNat.natality_women == null || newNat.natality_women == '')){
+        	else if((newNat == "") || 
+		   		(newNat.country == null) || (newNat.country == "") ||
+		   		(newNat.year == null) || (newNat.year == "") || 
+		   		(newNat.natality_totals == null) || (newNat.natality_totals == "") || 
+		   		(newNat.natality_men == null) || (newNat.natality_men == "") || 
+		   		(newNat.natality_women == null) || (newNat.natality_women == "")){
 			
-            res.sendStatus(400,"BAD REQUEST");
-		}else{
-			dbn.insert(newNat);
-            res.sendStatus(201,"CREATED");
-        }
+            	res.sendStatus(400,"BAD REQUEST");
+			}else{
+				dbn.insert(newNat);
+            	res.sendStatus(201,"CREATED");
+        	}
+		});
 	});
 
 // ------------- POST devuelve error de metodo no permitido -------------
@@ -264,7 +285,12 @@ app.delete(BASE_PATH + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
 	
-	dbn.remove({country: country},{});
+	dbn.find({country: country}, (err, nat) => {
+		nat.forEach(e => {
+			dbn.remove({country : e.country},{});
+		});
+		});
+	
 	res.sendStatus(200, "REMOVED");
 });
 // ------- DALETE natality_stats/country/year borramos a un pais de un determinado año
@@ -288,7 +314,7 @@ app.delete(BASE_PATH + "/natality-stats", (req,res) => {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
  // ------------- PUT /natality_stats ---------
-app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
+app.put(BASE_PATH+"/natality-stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
 	var year=parseInt(req.params.year);
@@ -297,7 +323,7 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	var newYear = upd.year;
 	
 		if(country != newCountry || year != newYear){
-			res.sendStatus(400, "NOT FOUND");
+			res.sendStatus(409, "conflict");
 		}else{
 			dbn.update({country: country, year: year},
 					  {$set: {natality_totals: upd.natality_totals, natality_men: upd.natality_men,
