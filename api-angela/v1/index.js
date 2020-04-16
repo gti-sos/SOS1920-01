@@ -170,6 +170,14 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 app.post(BASE_PATH+"/poverty-stats", (req,res) => {
     var newStat = req.body;
 	
+	pdb.find({country: newStat.country, year: newStat.year},(error, pov)=>{
+		if(pov.length != 0){	
+			console.log("409. conflict, el objeto ya existe");
+			res.sendStatus(409);
+		}
+	
+	
+	
 	if (newStat== "" || 
 		(newStat.country==null || newStat.country=="") ||
 		(newStat.year==null || newStat.year=="") || 
@@ -184,7 +192,7 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 	//	poverty_stats.push(newStat);
 		res.sendStatus(201,"Created");
 	}
-
+	});
 });
 
 //-  /api/v1/poverty_stats/country
