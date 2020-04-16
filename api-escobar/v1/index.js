@@ -217,7 +217,7 @@ app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 	if(country != newCountry || year != newYear){
 		res.sendStatus(400, "EMI NOT FOUND");
 	}else{
-		edb.update({province: province, year: year}, 
+		edb.update({country: country, year: year}, 
 				  	{$set: {em_man: body.em_man,  em_woman: body.em_woman,  em_totals: body.em_totals}}//, //Lo que dejo que modifique
 					//{}, //multi
 				  	//function(err, numReplaced) {}
