@@ -164,32 +164,32 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 		};
 	
 	/////////////natality_men///////////////////////////////////////7
-	if(req.query.natality_natality_mensMin && req.query.natality_natality_mensMax)
+	if(req.query.natality_menMin && req.query.natality_menMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_natality_mensMin),
-			$lte: parseInt(req.query.natality_natality_mensMax)
+			$gte: parseInt(req.query.natality_menMin),
+			$lte: parseInt(req.query.natality_menMax)
 		}
-	if(req.query.natality_natality_mensMin && !req.query.natality_natality_mensMax)
+	if(req.query.natality_menMin && !req.query.natality_menMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_natality_mensMin)
+			$gte: parseInt(req.query.natality_menMin)
 		};
-	if(!req.query.natality_natality_mensMin && req.query.natality_natality_mensMax)
+	if(!req.query.natality_menMin && req.query.natality_menMax)
 		search['natality_men'] = {
-			$lte: parseInt(req.query.natality_natality_mensMax)
+			$lte: parseInt(req.query.natality_menMax)
 		};
 	////////////////////natality_women///////////////////////////////////////////77
-	if(req.query.natality_natality_womensMin && req.query.natality_natality_womensMax)
+	if(req.query.natality_womenMin && req.query.natality_womenMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_natality_womensMin),
-			$lte: parseInt(req.query.natality_natality_womensMax)
+			$gte: parseInt(req.query.natality_womenMin),
+			$lte: parseInt(req.query.natality_womenMax)
 		}
-	if(req.query.natality_natality_womensMin && !req.query.natality_natality_womensMax)
+	if(req.query.natality_womenMin && !req.query.natality_womenMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_natality_womensMin)
+			$gte: parseInt(req.query.natality_womenMin)
 		};
-	if(!req.query.natality_natality_womensMin && req.query.natality_natality_womensMax)
+	if(!req.query.natality_womenMin && req.query.natality_womenMax)
 		search['natality_women'] = {
-			$lte: parseInt(req.query.natality_natality_womensMax)
+			$lte: parseInt(req.query.natality_womenMax)
 		};
 	
 	dbn.find(search).skip(offset).limit(limit).exec(function(error, natality){
