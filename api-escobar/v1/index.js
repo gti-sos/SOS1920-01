@@ -61,7 +61,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 	var offset = parseInt(req.query.offset);
 	var search = {};
 	
-	if(req.query.province) search['province'] = req.query.province;
+	if(req.query.country) search['country'] = req.query.country;
 	if(req.query.year) search['year'] = parseInt(req.query.year);
 	
 	//////// em_man ////////
