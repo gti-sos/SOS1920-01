@@ -265,7 +265,7 @@ app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
 		res.sendStatus(400, "POVERTY NOT FOUND");
 	}else{
 		pdb.update({country: country, year: year}, 
-				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}}, {} );
+				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}});
 		res.sendStatus(200, "POVERTY MODIFIED");
 	}
 	});
