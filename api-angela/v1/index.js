@@ -55,7 +55,7 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	var offset = parseInt(req.query.offset);
 	var search = {};
 	
-	if(req.query.country) search['country'] = req.query.contry;
+	if(req.query.country) search['country'] = req.query.country;
 	if(req.query.year) search['year'] = parseInt(req.query.year);
 	
 	/////primer atributo --- poverty_prp

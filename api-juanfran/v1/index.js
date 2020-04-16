@@ -6,9 +6,6 @@ module.exports = function(app,BASE_PATH){
 	const dbnatality = path.join(__dirname, "natality-stats.db");
 	const dbn = new dataStore({
 		filename: dbnatality,
-		autoload: true,
-		autoload: true,
-		autoload: true,
 		autoload: true
 	});
 //-------------- API Juanfran -----------
@@ -122,14 +119,16 @@ var initialNatality_stats = [
 
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
+	 dbn.remove({}, {multi:true});
 	 dbn.insert(initialNatality_stats);
 	 res.sendStatus(200);
 	 console.log("Initial natality_stats loaded:" +JSON.stringify(initialNatality_stats,null,2));
  });
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ------------- GET natality_stats -------------------------
-app.get(BASE_PATH+"/natality-stats",(req,res) => {
+	
+/* app.get(BASE_PATH+"/natality-stats",(req,res) => { //req vienen los datos de la petición realizada.
 	
 	console.log("New GET .../natality_stats");
 	dbn.find({}, (error, initialNatality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
@@ -139,61 +138,118 @@ app.get(BASE_PATH+"/natality-stats",(req,res) => {
 
 		res.send(JSON.stringify(initialNatality_stats,null,2));
 	});  
+}); */
+app.get(BASE_PATH +"/natality-stats",(req,res) =>{
+	
+	var limit = parseInt(req.query.limit);
+	var offset = parseInt(req.query.offset);
+	var search = {};
+	
+	if(req.query.country) search['country'] = req.query.country;
+	if(req.query.year) search['year'] = req.query.year;
+	
+	///////natality_totals///////////////////////////////////////////////////////
+	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_totals'] = {
+			$gte: parseInt(req.query.natality_totalsMin),
+			$lte: parseInt(req.query.natality_totalsMax)
+		}
+	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+		search['natality_totals'] = {
+			$gte: parseInt(req.query.natality_totalsMin)
+		};
+	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_totals'] = {
+			$lte: parseInt(req.query.natality_totalsMax)
+		};
+	
+	/////////////natality_men///////////////////////////////////////7
+	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_men'] = {
+			$gte: parseInt(req.query.natality_totalsMin),
+			$lte: parseInt(req.query.natality_totalsMax)
+		}
+	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+		search['natality_men'] = {
+			$gte: parseInt(req.query.natality_totalsMin)
+		};
+	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_men'] = {
+			$lte: parseInt(req.query.natality_totalsMax)
+		};
+	////////////////////natality_women///////////////////////////////////////////77
+	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_women'] = {
+			$gte: parseInt(req.query.natality_totalsMin),
+			$lte: parseInt(req.query.natality_totalsMax)
+		}
+	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+		search['natality_women'] = {
+			$gte: parseInt(req.query.natality_totalsMin)
+		};
+	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+		search['natality_women'] = {
+			$lte: parseInt(req.query.natality_totalsMax)
+		};
+	
+	dbn.find(search)
+		.skip(offset)
+		.limit(limit)
+		.exec(function(error, natality){
+			natality.forEach(n => {
+				delete n._id;
+			});
+		if(natality == 0){
+			res.sendStatus(404, "NOT FOUND");
+		}else{
+			res.send(JSON.stringify(natality,null,2));
+			console.log("Datos enviados: " + JSON.stringify(natality,null,2));
+		}
+	});
 });
 
-// -------------- GET natality_stats country para un elemento concreto -------
+// -------------- GET natality_stats country -------
 ///api/v1/natality_stats/country
 app.get(BASE_PATH+"/natality-stats/:country", (req,res) => {
     var country = req.params.country;
-    var natality = initialNatality_stats.filter((c) => {
-		return (c.country == country);
-		
-		dbn.find({ "country" :country}, (error, natality) => {
-		 if(natality.length >= 1){
-        	res.send(natality);
-   		 }else{
-        res.sendStatus(404,"NOT FOUND");
-		 }
-		});
+	
+		dbn.find({country: country}, (error, natality) => {
+		 natality.forEach(n =>{
+			 delete n._id;
+		 });
+		res.send(JSON.stringify(natality,null,2)); // Con esto sacamos un elemento.
 	});
 });
 //----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
 app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     var country = req.params.country;
-    var year = req.params.year;
+    var year = parseInt(req.params.year);
 
-    var natalityC = initialNatality_stats.filter((c) => {
-		return (c.country == country);
-	});
-    var natalityY = initialNatality_stats.filter((y) => {
-		return(y.year == year);
-	});
-
-
-    if(natalityC.length >= 1 && natalityY.length >=1){
-        var solucion = natalityC.filter((s) => {
-			return(s.year == year);
-		});
-        res.send(solucion);
-    }else{
-        res.sendStatus(404,"NOT FOUND");
-    }
+	dbn.find({country: country, year: year}, (error, natality) =>{
+			 natality.forEach(n => {
+			 	delete n._id;
+			 });
+			res.send(JSON.stringify(natality[0],null,2));
+	});		
 });
-// ---------------- POST natality_stats crea un nuevo recurso-----------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////7
+// ---------------- POST /natality_stats (crear un nuevo recurso) -----------------------
 	app.post(BASE_PATH + "/natality-stats", (req, res) => {
 		var newNat = req.body;
-		var countryNewNat = req.body.country;
-		var yearNewNat = req.body.year;
+		var filtradoN = dbn.find({country: country, year: year});
 		
-		var filteredStats = initialNatality_stats.filter((c) => {
-            return (c.country == countryNewNat && c.year == yearNewNat);
-        });
-        if((newNat == "") || (newNat.country == null) || (newNat.year == null) || (newNat.natality_totals == null) || (newNat.natality_men == null) || newNat.natality_women == null){
+        if(newNat == "" || 
+		   (newNat.country == null || newNat.country == '') ||
+		   (newNat.year == null || newNat.year == '') || 
+		   (newNat.natality_totals == null || newNat.natality_totals == '') || 
+		   (newNat.natality_men == null || newNat.natality_men == '') || 
+		   (newNat.natality_women == null || newNat.natality_women == '')){
+			
             res.sendStatus(400,"BAD REQUEST");
-        } else if(filteredStats.length >= 1){
-            res.sendStatus(409,"CONFLICT");
-        } else {
-            initialNatality_stats.push(newNat);
+        } else if(filtradoN.length >= 1){
+			res.sendStatus(409,"CONFLICT");
+		}else{
+			dbn.insert(newNat);
             res.sendStatus(201,"CREATED");
         }
 	});
@@ -207,41 +263,23 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     app.post(BASE_PATH+"/natality-stats/:country/:year",(req,res) =>{
         res.sendStatus(405,"METHOD NOT ALLOWED");
     });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ------- DALETE natality_stats/country borramos un recurso concreto.
 app.delete(BASE_PATH + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
 	
-	var filteredNatality = initialNatality_stats.filter((c) => {
-		return (c.country != country);
-		
-	});
-
-	if(filteredNatality.length < initialNatality_stats.length){
-		initialNatality_stats = filteredNatality;
-		res.sendStatus(200);
-	}else{
-		res.sendStatus(404,"NATALITY NOT FOUND")
-	}
+	dbn.remove({country: country},{});
+	res.sendStatus(200, "REMOVED");
 });
 // ------- DALETE natality_stats/country/year borramos a un pais de un determinado año
 app.delete(BASE_PATH + "/natality-stats/:country/:year", (req,res) =>{
 	
 	var country = req.params.country;
-	var year = req.params.year;
+	var year = parseInt(req.params.year);
 	
-	var natalityC = initialNatality_stats.filter((c) => {
-		return (c.country != country || c.year != year)
-	});
-	
-	if(natalityC.length < initialNatality_stats.length) {
-		
-	   initialNatality_stats = natalityC;
-	   res.sendStatus(200, "OK");
-	   }else{
-		   res.endStatus(404,"NOT FOUND");
-		}
+	dbn.remove({country: country, year: year},{});
+	res.sendStatus(200, "REMOVED");
 });
 
 //  -------------DELETE /natality-stats -----
@@ -253,32 +291,25 @@ app.delete(BASE_PATH + "/natality-stats", (req,res) => {
 	
 });
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////
  // ------------- PUT /natality_stats ---------
 app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
-	var year=req.params.year;
+	var year=parseInt(req.params.year);
 	var upd=req.body;
-	var filter = initialNatality_stats.filter((f) => {
-		return (f.country == country && f.year == year);
-		});
+	var newCountry = upd.country;
+	var newYear = upd.year;
 	
-		if(filter.length != 1){
-			res.sendStatus(404,"NOT FOUND");
-		}else if(filter[0].country != upd.country || filter[0].year != upd.year){
-			res.sendStatus(409,"CONFLICT, countries and years are diferent");
+		if(country != newCountry || year != newYear){
+			res.sendStatus(400, "NOT FOUND");
 		}else{
-			initialNatality_stats.forEach(c => {
-				if(c.country == country && c.year == year){
-					c.nat_totals=upd.nat_totals;
-					c.nat_mem=upd.nat_mem;
-					c.nat_women=upd.nat_women;
-				}
-			});
-			res.sendStatus(200,"OK");
+			dbn.update({country: country, year: year},
+					  {$set: {natality_totals: upd.natality_totals, natality_men: upd.natality_men,
+							 natality_women: upd.natality_women}},{});
+					res.sendStatus(200,"MODIFIED");
 		}
-	});
+});
 // PUT ERROR General /natality_stats
 	app.put(BASE_PATH+"/natality-stats",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");
