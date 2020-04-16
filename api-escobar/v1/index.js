@@ -127,8 +127,7 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 app.get(BASE_PATH+"/emigrants-stats/:year", (req,res) => {
     var year = parseInt(req.params.year);
 
-		
-	edb.find({year: year}, (err, emi) => {
+	edb.find({year: parseInt(year)}, (err, emi) => {
 		emi.forEach(e => {
 			delete e._id;
 		});
