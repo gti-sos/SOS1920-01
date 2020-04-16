@@ -123,6 +123,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
     var country = req.params.country;
 	
 	pdb.find({country: country}, (err, pov) => {
+
 		
 		if(pov.length==0){
 		   	console.log("ERROR 404. NOT FOUND");
@@ -137,6 +138,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 			res.send(JSON.stringify(pov, null, 2)); //En este get me saca un objeto no el array de los objetos
 		}
 	});		
+
 /*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
 	
 	

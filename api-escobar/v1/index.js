@@ -94,7 +94,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 	if(!req.query.em_totalsMin && req.query.em_totalsMax)
 		search['em_totals'] = {$lte: parseInt(req.query.em_totalsMax)}
 
-		
+	
     edb.find(search).skip(offset).limit(limit).exec(function(error, emi) { 
 		emi.forEach((e)=>{
             delete e._id
@@ -247,7 +247,9 @@ app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 		res.sendStatus(409, "conflict");
 	}else{
 		edb.update({country: country, year: year}, 
+
 				  	{$set: {em_man: upd.em_man,  em_woman: upd.em_woman,  em_totals: upd.em_totals}}//, //Lo que dejo que modifique
+
 					//{}, //multi
 				  	//function(err, numReplaced) {}
 		);
