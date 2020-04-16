@@ -210,23 +210,41 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 app.get(BASE_PATH+"/natality-stats/:country", (req,res) => {
     var country = req.params.country;
 	
-		dbn.find({country: country}, (error, natality) => {
-		 natality.forEach(n =>{
-			 delete n._id;
-		 });
-		res.send(JSON.stringify(natality,null,2)); // Con esto sacamos un elemento.
-	});
+	dbn.find({country: country}, (err, nataly) => {
+		
+		if(nataly.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			nataly.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(nataly, null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});	
 });
 //----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
 app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     var country = req.params.country;
     var year = parseInt(req.params.year);
 
-	dbn.find({country: country, year: year}, (error, natality) =>{
-			 natality.forEach(n => {
-			 	delete n._id;
-			 });
-			res.send(JSON.stringify(natality[0],null,2));
+		dbn.find({country: country, year: year}, (err, natality) => {
+		
+		if(natality.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			natality.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(natality[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
 	});		
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////7
