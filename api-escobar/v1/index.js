@@ -177,7 +177,7 @@ app.delete(BASE_PATH+"/emigrants-stats/:country",(req,res) =>{
  	
 	var country = req.params.country;
 	
-	edb.remove({country: country}, {});
+	edb.remove({country: country}, {}, function(err, numRemoved) {});
 	res.sendStatus(200, "EMI REMOVED");
 });
 

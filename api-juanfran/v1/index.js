@@ -164,32 +164,32 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 		};
 	
 	/////////////natality_men///////////////////////////////////////7
-	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(req.query.natality_natality_mensMin && req.query.natality_natality_mensMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_totalsMin),
-			$lte: parseInt(req.query.natality_totalsMax)
+			$gte: parseInt(req.query.natality_natality_mensMin),
+			$lte: parseInt(req.query.natality_natality_mensMax)
 		}
-	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+	if(req.query.natality_natality_mensMin && !req.query.natality_natality_mensMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_totalsMin)
+			$gte: parseInt(req.query.natality_natality_mensMin)
 		};
-	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(!req.query.natality_natality_mensMin && req.query.natality_natality_mensMax)
 		search['natality_men'] = {
-			$lte: parseInt(req.query.natality_totalsMax)
+			$lte: parseInt(req.query.natality_natality_mensMax)
 		};
 	////////////////////natality_women///////////////////////////////////////////77
-	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(req.query.natality_natality_womensMin && req.query.natality_natality_womensMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_totalsMin),
-			$lte: parseInt(req.query.natality_totalsMax)
+			$gte: parseInt(req.query.natality_natality_womensMin),
+			$lte: parseInt(req.query.natality_natality_womensMax)
 		}
-	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+	if(req.query.natality_natality_womensMin && !req.query.natality_natality_womensMax)
 		search['natality_women'] = {
-			$gte: parseInt(req.query.natality_totalsMin)
+			$gte: parseInt(req.query.natality_natality_womensMin)
 		};
-	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(!req.query.natality_natality_womensMin && req.query.natality_natality_womensMax)
 		search['natality_women'] = {
-			$lte: parseInt(req.query.natality_totalsMax)
+			$lte: parseInt(req.query.natality_natality_womensMax)
 		};
 	
 	dbn.find(search).skip(offset).limit(limit).exec(function(error, natality){
@@ -264,7 +264,7 @@ app.delete(BASE_PATH + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
 	
-	dbn.remove({country: country},{});
+	dbn.remove({country: country},{}, function(err, numRemoved) {});
 	res.sendStatus(200, "REMOVED");
 });
 // ------- DALETE natality_stats/country/year borramos a un pais de un determinado año
