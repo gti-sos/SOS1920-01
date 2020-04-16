@@ -134,7 +134,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 			pov.forEach(e => {
 			delete e._id;	
 			});
-			res.send(JSON.stringify(pov[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+			res.send(JSON.stringify(pov, null, 2)); //En este get me saca un objeto no el array de los objetos
 		}
 	});		
 /*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});

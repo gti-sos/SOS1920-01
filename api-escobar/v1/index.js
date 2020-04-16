@@ -125,7 +125,7 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 			emi.forEach(e => {
 			delete e._id;	
 			});
-			res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+			res.send(JSON.stringify(emi, null, 2)); //En este get me saca un objeto no el array de los objetos
 		}
 	});		
 });
