@@ -44,7 +44,7 @@ var emigrants_stats = [
 //GET /api/v1/emigrants-stats-/loadInitialData
 app.get(BASE_PATH+"/emigrants-stats/loadInitialData", (req, res) => {	
 	
-		db.remove({}, { multi: true });
+		edb.remove({}, { multi: true });
 		edb.insert(emigrants_stats);
 		res.sendStatus(200,"ok");
 		console.log("Initial emigrants_stats loaded:" +JSON.stringify(emigrants_stats,null,2));
@@ -95,7 +95,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 		search['em_totals'] = {$lte: parseInt(req.query.em_totalsMax)}
 
 		
-    edb.find(search).find(search).skip(offset).limit(limit).exec(function(error, emi) { 
+    edb.find(search).skip(offset).limit(limit).exec(function(error, emi) { 
 		emi.forEach((e)=>{
             delete e._id
         });
@@ -117,7 +117,6 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 		emi.forEach(e => {
 			delete e._id;
 		});
-		res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
 	});
 
 });
