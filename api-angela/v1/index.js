@@ -222,7 +222,11 @@ app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
 app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
 	
  	var country = req.params.country;
-	pdb.remove({country: country}, {}, function(err, numRemoved) {});
+	pdb.find({country: country}, (err, pov) => {
+		pov.forEach(e => {
+			pdb.remove({country : e.country},{});
+		});
+		});
 	res.sendStatus(200, "POVERTY REMOVED");
 	
 	/*var poverty = poverty_stats.filter((e) => {return (e.country != country);});

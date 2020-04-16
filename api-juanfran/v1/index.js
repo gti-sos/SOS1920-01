@@ -264,7 +264,12 @@ app.delete(BASE_PATH + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
 	
-	dbn.remove({country: country},{}, function(err, numRemoved) {});
+	dbn.find({country: country}, (err, nat) => {
+		nat.forEach(e => {
+			dbn.remove({country : e.country},{});
+		});
+		});
+	
 	res.sendStatus(200, "REMOVED");
 });
 // ------- DALETE natality_stats/country/year borramos a un pais de un determinado año
