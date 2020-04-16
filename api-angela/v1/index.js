@@ -40,8 +40,9 @@ var poverty_stats = [
 
 	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
-	pdb.insert(poverty_stats);
 	pdb.remove({}, { multi: true });
+	pdb.insert(poverty_stats);
+	
 	
 	res.sendStatus(200);
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
@@ -55,7 +56,7 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	var offset = parseInt(req.query.offset);
 	var search = {};
 	
-	if(req.query.country) search['country'] = req.query.contry;
+	if(req.query.country) search['country'] = req.query.country;
 	if(req.query.year) search['year'] = parseInt(req.query.year);
 	
 	/////primer atributo --- poverty_prp
