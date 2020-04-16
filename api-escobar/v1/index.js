@@ -128,10 +128,19 @@ app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
 	var year = parseInt(req.params.year);
 	
 	edb.find({country: country, year: year}, (err, emi) => {
-		emi.forEach(e => {
-			delete e._id;
-		});
-		res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		
+		if(emi.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			emi.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
 	});		
 });
 
