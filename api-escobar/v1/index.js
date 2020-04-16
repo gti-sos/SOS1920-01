@@ -142,7 +142,6 @@ app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
 app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
-	var filtrado = edb.find({country: country, year: year});
 	
 		if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
@@ -152,9 +151,7 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 		   (newStat.em_totals == null) || (newStat.em_totals == "")) {
 			
 			res.sendStatus(400,"Bad request");
-			
-		} else if(filtrado.length >= 1){
-			res.sendStatus(409,"Confict");
+		
 		} else {
 			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
