@@ -164,7 +164,7 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 		else {
 			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
-		}
+		}	
 	});
 });
 

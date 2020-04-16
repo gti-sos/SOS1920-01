@@ -171,14 +171,14 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
     var newStat = req.body;
 	
 	pdb.find({country: newStat.country, year: newStat.year},(error, pov)=>{
-		if(pov.length != 0){	
+	if(pov.length != 0){	
 			console.log("409. conflict, el objeto ya existe");
 			res.sendStatus(409);
-		}
+	}
 	
 	
 	
-	if (newStat== "" || 
+	else if (newStat== "" || 
 		(newStat.country==null || newStat.country=="") ||
 		(newStat.year==null || newStat.year=="") || 
         (newStat.poverty_prp==null || newStat.poverty_prp=="") || 
