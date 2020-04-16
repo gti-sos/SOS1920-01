@@ -3,12 +3,12 @@ const express = require ("express");
 const bodyParser = require("body-parser");
 const app = express();
 const BASE_PATH = "/api";
-const dataStore = require("nedb");
-const path = require("path");
+
+
 const port = process.env.PORT || 80;
 
-//onst natalitydb = require(path.join(__dirname, "api-juanfran"));
-//const emigrantsdb = require(path.join(__dirname, "api-escobar"));
+
+//const natalitydb = require(path.join(__dirname, "api-juanfran"));//el método join permite unir un directorio con un archivo.
 
 
 app.use("/",express.static("./public")); 

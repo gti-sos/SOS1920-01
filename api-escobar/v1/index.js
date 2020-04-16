@@ -112,6 +112,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country
 app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
     var country = req.params.country;
+
 		
 	edb.find({country: country}, (err, emi) => {
 		emi.forEach(e => {

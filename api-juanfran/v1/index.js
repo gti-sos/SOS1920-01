@@ -1,6 +1,18 @@
 module.exports = function(app,BASE_PATH){
+	
+	const dataStore = require("nedb");
+	const path = require("path");
+	
+	const dbnatality = path.join(__dirname, "natality-stats.db");
+	const dbn = new dataStore({
+		filename: dbnatality,
+		autoload: true,
+		autoload: true,
+		autoload: true,
+		autoload: true
+	});
 //-------------- API Juanfran -----------
-var natality_stats = [
+var initialNatality_stats = [
 	{
 		country : "spain",
 		year: 2017,
@@ -110,21 +122,22 @@ var natality_stats = [
 
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
-	 db.insert(natality_stats);
+	 dbn.insert(initialNatality_stats);
 	 res.sendStatus(200);
-	 console.log("Initial natality_stats loaded:" +JSON.stringify(natality_stats,null,2));
+	 console.log("Initial natality_stats loaded:" +JSON.stringify(initialNatality_stats,null,2));
  });
 
+
 // ------------- GET natality_stats -------------------------
-app.get(BASE_PATH+"/natality-stats",(req,res) =>{
+app.get(BASE_PATH+"/natality-stats",(req,res) => {
+	
 	console.log("New GET .../natality_stats");
-	db.find({}, (error, natality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
-		
-		natality_stats.forEach( (c) => {
-			delete c.country; //si queremos borrar alguna propiedad, como por ejemplo el pais.
-		});
-		
-		res.send(JSON.stringify(natality_stats,null,2));
+	dbn.find({}, (error, initialNatality_stats) => { //dejamos la QUERY vacía para que devuelva todos los objetos.
+			initialNatality_stats.forEach((n) =>{
+				delete n._id
+			});
+
+		res.send(JSON.stringify(initialNatality_stats,null,2));
 	});  
 });
 
@@ -132,27 +145,27 @@ app.get(BASE_PATH+"/natality-stats",(req,res) =>{
 ///api/v1/natality_stats/country
 app.get(BASE_PATH+"/natality-stats/:country", (req,res) => {
     var country = req.params.country;
-
-    var natality = natality_stats.filter((c) => {return (c.country == country);});
-
-
-    if(natality.length >= 1){
-        res.send(natality);
-    }else{
+    var natality = initialNatality_stats.filter((c) => {
+		return (c.country == country);
+		
+		dbn.find({ "country" :country}, (error, natality) => {
+		 if(natality.length >= 1){
+        	res.send(natality);
+   		 }else{
         res.sendStatus(404,"NOT FOUND");
-    }
+		 }
+		});
+	});
 });
-
 //----------  GET /api/v1/emigrants-stats/country/year en este caso también filtramos por año
 app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
     var country = req.params.country;
     var year = req.params.year;
 
-    var natalityC = natality_stats.filter((c) => {
+    var natalityC = initialNatality_stats.filter((c) => {
 		return (c.country == country);
 	});
-
-    var natalityY = natality_stats.filter((y) => {
+    var natalityY = initialNatality_stats.filter((y) => {
 		return(y.year == year);
 	});
 
@@ -172,7 +185,7 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 		var countryNewNat = req.body.country;
 		var yearNewNat = req.body.year;
 		
-		var filteredStats = natality_stats.filter((c) => {
+		var filteredStats = initialNatality_stats.filter((c) => {
             return (c.country == countryNewNat && c.year == yearNewNat);
         });
         if((newNat == "") || (newNat.country == null) || (newNat.year == null) || (newNat.natality_totals == null) || (newNat.natality_men == null) || newNat.natality_women == null){
@@ -180,7 +193,7 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
         } else if(filteredStats.length >= 1){
             res.sendStatus(409,"CONFLICT");
         } else {
-            natality_stats.push(newNat);
+            initialNatality_stats.push(newNat);
             res.sendStatus(201,"CREATED");
         }
 	});
@@ -200,13 +213,13 @@ app.delete(BASE_PATH + "/natality-stats/:country", (req, res) =>{
 	
 	var country = req.params.country;
 	
-	var filteredNatality = natality_stats.filter((c) => {
+	var filteredNatality = initialNatality_stats.filter((c) => {
 		return (c.country != country);
 		
 	});
 
-	if(filteredNatality.length < natality_stats.length){
-		natality_stats = filteredNatality;
+	if(filteredNatality.length < initialNatality_stats.length){
+		initialNatality_stats = filteredNatality;
 		res.sendStatus(200);
 	}else{
 		res.sendStatus(404,"NATALITY NOT FOUND")
@@ -218,24 +231,25 @@ app.delete(BASE_PATH + "/natality-stats/:country/:year", (req,res) =>{
 	var country = req.params.country;
 	var year = req.params.year;
 	
-	var natalityC = natality_stats.filter((c) => {
+	var natalityC = initialNatality_stats.filter((c) => {
 		return (c.country != country || c.year != year)
 	});
 	
-	if(natalityC.length < natality_stats.length) {
+	if(natalityC.length < initialNatality_stats.length) {
 		
-	   natality_stats = natalityC;
+	   initialNatality_stats = natalityC;
 	   res.sendStatus(200, "OK");
 	   }else{
 		   res.endStatus(404,"NOT FOUND");
 		}
 });
 
-//  -------------DELETE borra too los recursos -----
-app.delete(BASE_PATH+"/natality_stats",(req,res)=>{
-	
-		natality_stats=[];
+//  -------------DELETE /natality-stats -----
+app.delete(BASE_PATH + "/natality-stats", (req,res) => {
+		
+		dbn.remove({}, {multi:true});
 		res.sendStatus(200,"Ok");
+		console.log("Todo los datos están borrados");
 	
 });
 
@@ -246,7 +260,7 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	var country=req.params.country;
 	var year=req.params.year;
 	var upd=req.body;
-	var filter = natality_stats.filter((f) => {
+	var filter = initialNatality_stats.filter((f) => {
 		return (f.country == country && f.year == year);
 		});
 	
@@ -255,7 +269,7 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 		}else if(filter[0].country != upd.country || filter[0].year != upd.year){
 			res.sendStatus(409,"CONFLICT, countries and years are diferent");
 		}else{
-			natality_stats.forEach(c => {
+			initialNatality_stats.forEach(c => {
 				if(c.country == country && c.year == year){
 					c.nat_totals=upd.nat_totals;
 					c.nat_mem=upd.nat_mem;
@@ -274,4 +288,5 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	app.put(BASE_PATH+"/natality-stats/:country",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");
 	});
+
 }
