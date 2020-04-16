@@ -126,7 +126,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 		pov.forEach(i => {
 			delete i._id;
 		});
-		res.send(JSON.stringify(pov, null, 2)); 
+		res.send(JSON.stringify(pov, null, 2));
 	});
 /*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
 	
@@ -170,8 +170,6 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 app.post(BASE_PATH+"/poverty-stats", (req,res) => {
     var newStat = req.body;
 	
-	var filt = pdb.find({country: country, year: year});
-	
 	if (newStat== "" || 
 		(newStat.country==null || newStat.country=="") ||
 		(newStat.year==null || newStat.year=="") || 
@@ -181,8 +179,6 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 	  
 		res.sendStatus(400,"Bad request");
 		
-	}else if(filt.length>=1){
-		res.sendStatus(409,"Conflicto");
 	}else{
 		pdb.insert(newStat);
 	//	poverty_stats.push(newStat);
