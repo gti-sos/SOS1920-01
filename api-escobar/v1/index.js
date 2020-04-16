@@ -122,21 +122,7 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 	});
 
 });
-	
-//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/year
-app.get(BASE_PATH+"/emigrants-stats/:year", (req,res) => {
-    var year = parseInt(req.params.year);
-
-	edb.find({},{year: parseInt(year)}, (err, emi) => {
-		emi.forEach(e => {
-			delete e._id;
-		});
-		  res.send(JSON.stringify(emi,null,2)); 
-	});
-	//
-
-});
-//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
+////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
     var country = req.params.country;
 	var year = parseInt(req.params.year);
@@ -158,6 +144,13 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
 	
+	edb.find({"country": country, "year": year},(error, emi)=>{
+		
+		if(emi.length != 0){	
+				console.log("409. El objeto ya existe");
+				res.sendStatus(409);
+		}
+		
 		if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
 		   (newStat.year == null) || (newStat.year == "") ||
@@ -166,11 +159,13 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 		   (newStat.em_totals == null) || (newStat.em_totals == "")) {
 			
 			res.sendStatus(400,"Bad request");
+		}	
 		
-		} else {
+		else {
 			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
 		}	
+	});
 });
 
 //////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country
