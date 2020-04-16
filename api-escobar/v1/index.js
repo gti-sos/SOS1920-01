@@ -122,6 +122,20 @@ app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
 	});
 
 });
+	
+//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/year
+app.get(BASE_PATH+"/emigrants-stats/:year", (req,res) => {
+    var year = parseInt(req.params.year);
+
+		
+	edb.find({year: year}, (err, emi) => {
+		emi.forEach(e => {
+			delete e._id;
+		});
+		  res.send(JSON.stringify(emi,null,2)); 
+	});
+
+});
 //////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
     var country = req.params.country;
