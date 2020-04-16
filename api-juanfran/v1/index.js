@@ -146,7 +146,7 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 	var search = {};
 	
 	if(req.query.country) search['country'] = req.query.country;
-	if(req.query.year) search['year'] = req.query.year;
+	if(req.query.year) search['year'] = parseInt(req.query.year);
 	
 	///////natality_totals///////////////////////////////////////////////////////
 	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
