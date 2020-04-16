@@ -192,9 +192,7 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 			console.log("409. conflict, el objeto ya existe");
 			res.sendStatus(409);
 	}
-	
-	
-	
+
 	else if ((newStat== "") || 
 		(newStat.country==null) || (newStat.country=="") ||
 		(newStat.year==null) || (newStat.year=="") || 
