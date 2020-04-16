@@ -79,10 +79,10 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 		search['em_woman'] = {
 			$gte: parseInt(req.query.em_womanMin),
 			$lte: parseInt(req.query.em_womanMax)}
-	if(req.query.em_totalsMin && !req.query.em_womanMax)
+	if(req.query.em_womanMin && !req.query.em_womanMax)
 		search['em_woman'] = {$gte: parseInt(req.query.em_womanMin)};
-	if(!req.query.em_totalsMin && req.query.em_womanMax)
-		search['em_woman'] = {$lte: parseInt(req.query.em_womanMin)}
+	if(!req.query.em_womanMin && req.query.em_womanMax)
+		search['em_woman'] = {$lte: parseInt(req.query.em_womanMax)}
 	
 	//////// em_totals ////////
 	if(req.query.em_totalsMin && req.query.em_totalsMax)
@@ -113,25 +113,41 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 app.get(BASE_PATH+"/emigrants-stats/:country", (req,res) => {
     var country = req.params.country;
 
-		
 	edb.find({country: country}, (err, emi) => {
-		emi.forEach(e => {
-			delete e._id;
-		});
-		  res.send(JSON.stringify(emi,null,2)); 
-	});
-
+		
+		if(emi.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			emi.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(emi, null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});		
 });
-//////////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
+////////////////////////////////////////////////////////// GET /api/v1/emigrants-stats/country/year
 app.get(BASE_PATH+"/emigrants-stats/:country/:year", (req,res) => {
     var country = req.params.country;
 	var year = parseInt(req.params.year);
 	
 	edb.find({country: country, year: year}, (err, emi) => {
-		emi.forEach(e => {
-			delete e._id;
-		});
-		res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		
+		if(emi.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			emi.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(emi[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
 	});		
 });
 
@@ -144,7 +160,14 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
 	
-		if((newStat == "") || 
+	edb.find({country: newStat.country, year: newStat.year},(error, emi)=>{
+		if(emi.length != 0){	
+			console.log("409. conflict, el objeto ya existe");
+			res.sendStatus(409);
+		}
+	
+	
+		else if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
 		   (newStat.year == null) || (newStat.year == "") ||
 		   (newStat.em_man == null) || (newStat.em_man == "") ||
@@ -152,11 +175,13 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 		   (newStat.em_totals == null) || (newStat.em_totals == "")) {
 			
 			res.sendStatus(400,"Bad request");
-		
-		} else {
+		}	
+
+		else {
 			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
 		}	
+	});
 });
 
 //////////////////////////////////////////////////////// POST /api/v1/emigrants_stats/country
@@ -176,14 +201,12 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 app.delete(BASE_PATH+"/emigrants-stats/:country",(req,res) =>{
  	
 	var country = req.params.country;
-	
-	
+
 	edb.find({country: country}, (err, emi) => {
 		emi.forEach(e => {
 			edb.remove({country : e.country},{});
 		});
 	});	
-	//edb.remove({country: country}, {});
 	res.sendStatus(200, "EMI REMOVED");
 });
 
@@ -221,10 +244,12 @@ app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 	var newYear = parseInt(upd.year);
 
 	if(country != newCountry || year != newYear){
-		res.sendStatus(400, "EMI NOT FOUND");
+		res.sendStatus(409, "conflict");
 	}else{
 		edb.update({country: country, year: year}, 
-				  	{$set: {em_man: body.em_man,  em_woman: body.em_woman,  em_totals: body.em_totals}}//, //Lo que dejo que modifique
+
+				  	{$set: {em_man: upd.em_man,  em_woman: upd.em_woman,  em_totals: upd.em_totals}}//, //Lo que dejo que modifique
+
 					//{}, //multi
 				  	//function(err, numReplaced) {}
 		);
