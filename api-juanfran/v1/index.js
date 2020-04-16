@@ -163,17 +163,17 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 			$lte: parseInt(req.query.natality_totalsMax)
 		};
 	
-	/////////////natality_men///////////////////////////////////////7
-	if(req.query.natality_totalsMin && req.query.natality_totalsMax)
+	/////////////natality_men///////////////////////////////////////
+	if(req.query.natality_menMin && req.query.natality_menMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_totalsMin),
-			$lte: parseInt(req.query.natality_totalsMax)
+			$gte: parseInt(req.query.natality_menMin),
+			$lte: parseInt(req.query.natality_menMax)
 		}
-	if(req.query.natality_totalsMin && !req.query.natality_totalsMax)
+	if(req.query.natality_menMin && !req.query.natality_menMax)
 		search['natality_men'] = {
-			$gte: parseInt(req.query.natality_totalsMin)
+			$gte: parseInt(req.query.natality_menMin)
 		};
-	if(!req.query.natality_totalsMin && req.query.natality_totalsMax)
+	if(!req.query.natality_menMin && req.query.natality_totalsMax)
 		search['natality_men'] = {
 			$lte: parseInt(req.query.natality_totalsMax)
 		};
