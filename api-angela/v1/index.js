@@ -270,7 +270,7 @@ app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
 	var nYear = parseInt(upd.year);
 	
 	if(country != nCont || year != nYear){
-		res.sendStatus(400, "POVERTY NOT FOUND");
+		res.sendStatus(409, "POVERTY CONFLICT");
 	}else{
 		pdb.update({country: country, year: year}, 
 				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}});
