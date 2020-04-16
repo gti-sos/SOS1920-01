@@ -144,12 +144,6 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
 	
-		edb.find({"country": country, "year": year},(error, emi)=>{
-			if(emi.length != 0){	
-				console.log("409. El objeto ya existe");
-				res.sendStatus(409,"Conflict");}
-		});
-	
 	
 		if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
@@ -160,7 +154,7 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 			
 			res.sendStatus(400,"Bad request");
 		}	
-	
+
 		else {
 			edb.insert(newStat);	
 			res.sendStatus(201,"Created");
