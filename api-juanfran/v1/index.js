@@ -192,10 +192,7 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 			$lte: parseInt(req.query.natality_totalsMax)
 		};
 	
-	dbn.find(search)
-		.skip(offset)
-		.limit(limit)
-		.exec(function(error, natality){
+	dbn.find(search).skip(offset).limit(limit).exec(function(error, natality){
 			natality.forEach(n => {
 				delete n._id;
 			});
@@ -236,7 +233,7 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 // ---------------- POST /natality_stats (crear un nuevo recurso) -----------------------
 	app.post(BASE_PATH + "/natality-stats", (req, res) => {
 		var newNat = req.body;
-		var filtradoN = dbn.find({country: country, year: year});
+		
 		
         if(newNat == "" || 
 		   (newNat.country == null || newNat.country == '') ||
@@ -246,8 +243,6 @@ app.get(BASE_PATH+"/natality-stats/:country/:year", (req,res) => {
 		   (newNat.natality_women == null || newNat.natality_women == '')){
 			
             res.sendStatus(400,"BAD REQUEST");
-        } else if(filtradoN.length >= 1){
-			res.sendStatus(409,"CONFLICT");
 		}else{
 			dbn.insert(newNat);
             res.sendStatus(201,"CREATED");
