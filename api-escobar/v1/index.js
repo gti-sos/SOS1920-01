@@ -144,8 +144,14 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 	
 	var newStat = req.body;
 	
+	edb.find({country: newStat.country, year: newStat.year},(error, emi)=>{
+		if(emi.length != 0){	
+			console.log("409. conflict, el objeto ya existe");
+			res.sendStatus(409);
+		}
 	
-		if((newStat == "") || 
+	
+		else if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
 		   (newStat.year == null) || (newStat.year == "") ||
 		   (newStat.em_man == null) || (newStat.em_man == "") ||
