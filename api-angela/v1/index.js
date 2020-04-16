@@ -200,10 +200,10 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 //- /api/v1/poverty-stats/country/year
 
 app.delete(BASE_PATH+"/poverty-stats/:country/:year",(req,res)=>{
-	pdb.remove({}, { multi: true });
+	
     var country = req.params.country;
     var year = parseInt(req.params.year);
-
+	
 	pdb.remove({country: country, year: year}, {});
 	res.sendStatus(200, "POVERTY REMOVED");
    /* var povertyC = poverty_stats.filter((c) => {return (c.country != country || c.year != year);});
@@ -254,7 +254,6 @@ app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
 	var country=req.params.country;
 	var year=parseInt(req.params.year);
 	var upd=req.body;
-	
 	var nCont = upd.country;
 	var nYear = parseInt(upd.year);
 	
