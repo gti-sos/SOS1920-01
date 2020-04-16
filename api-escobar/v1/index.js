@@ -151,7 +151,7 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 				res.sendStatus(409);
 		}
 		
-		if((newStat == "") || 
+		else if((newStat == "") || 
 		   (newStat.country == null) || (newStat.country == "") ||
 		   (newStat.year == null) || (newStat.year == "") ||
 		   (newStat.em_man == null) || (newStat.em_man == "") ||
