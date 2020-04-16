@@ -195,12 +195,12 @@ app.post(BASE_PATH+"/poverty-stats", (req,res) => {
 	
 	
 	
-	else if (newStat== "" || 
-		(newStat.country==null || newStat.country=="") ||
-		(newStat.year==null || newStat.year=="") || 
-        (newStat.poverty_prp==null || newStat.poverty_prp=="") || 
-		(newStat.poverty_pt==null || newStat.poverty_pt=="") || 
-		(newStat.poverty_ht==null || newStat.poverty_ht=="")){
+	else if ((newStat== "") || 
+		(newStat.country==null) || (newStat.country=="") ||
+		(newStat.year==null) || (newStat.year=="") || 
+        (newStat.poverty_prp==null) || (newStat.poverty_prp=="") || 
+		(newStat.poverty_pt==null) || (newStat.poverty_pt=="") || 
+		(newStat.poverty_ht==null) || (newStat.poverty_ht=="")){
 	  
 		res.sendStatus(400,"Bad request");
 		
