@@ -86,14 +86,14 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 	/////tercer atrbuto --- poverty_ht
 	
 	if(req.query.poverty_htMin && req.query.poverty_htMax)
-		search['poverty_pt'] = {
+		search['poverty_ht'] = {
 			$gte: parseInt(req.query.poverty_htMin),
 			$lte: parseInt(req.query.poverty_htMax)
 		}
 	if(req.query.poverty_htMin && !req.query.poverty_htMax)
-		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_htMin)};
+		search['poverty_ht'] = {$gte: parseInt(req.query.poverty_htMin)};
 	if(!req.query.poverty_htMin && req.query.poverty_htMax)
-		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_htMax)}
+		search['poverty_ht'] = {$lte: parseInt(req.query.poverty_htMax)}
 	
 	pdb.find(search).skip(offset).limit(limit).exec(function(err, pov){
 			pov.forEach((i)=>{
