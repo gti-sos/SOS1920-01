@@ -201,12 +201,12 @@ app.post(BASE_PATH+"/emigrants-stats", (req,res) => {
 app.delete(BASE_PATH+"/emigrants-stats/:country",(req,res) =>{
  	
 	var country = req.params.country;
+
 	edb.find({country: country}, (err, emi) => {
 		emi.forEach(e => {
 			edb.remove({country : e.country},{});
 		});
-		});
-	//edb.remove({country: country}, {}, function(err, numRemoved) {});
+	});	
 	res.sendStatus(200, "EMI REMOVED");
 });
 
