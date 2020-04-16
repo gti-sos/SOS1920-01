@@ -94,7 +94,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 	if(!req.query.em_totalsMin && req.query.em_totalsMax)
 		search['em_totals'] = {$lte: parseInt(req.query.em_totalsMax)}
 
-		///
+	
     edb.find(search).skip(offset).limit(limit).exec(function(error, emi) { 
 		emi.forEach((e)=>{
             delete e._id
