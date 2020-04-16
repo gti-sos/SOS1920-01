@@ -61,7 +61,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 	var offset = parseInt(req.query.offset);
 	var search = {};
 	
-	if(req.query.province) search['province'] = req.query.province;
+	if(req.query.country) search['country'] = req.query.country;
 	if(req.query.year) search['year'] = parseInt(req.query.year);
 	
 	//////// em_man ////////
@@ -217,7 +217,7 @@ app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 	if(country != newCountry || year != newYear){
 		res.sendStatus(400, "EMI NOT FOUND");
 	}else{
-		edb.update({province: province, year: year}, 
+		edb.update({country: country, year: year}, 
 				  	{$set: {em_man: body.em_man,  em_woman: body.em_woman,  em_totals: body.em_totals}}//, //Lo que dejo que modifique
 					//{}, //multi
 				  	//function(err, numReplaced) {}

@@ -223,7 +223,7 @@ app.delete(BASE_PATH+"/poverty-stats/:country",(req,res) =>{
 	
  	var country = req.params.country;
 	pdb.remove({country: country}, {});
-	res.sendStatus(200, "ACCSTAT REMOVED");
+	res.sendStatus(200, "POVERTY REMOVED");
 	
 	/*var poverty = poverty_stats.filter((e) => {return (e.country != country);});
 	
@@ -259,11 +259,11 @@ app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
 	var nYear = parseInt(upd.year);
 	
 	if(country != nCont || year != nYear){
-		res.sendStatus(400, "ACCSTAT NOT FOUND");
+		res.sendStatus(400, "POVERTY NOT FOUND");
 	}else{
 		pdb.update({country: country, year: year}, 
 				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}}, {} );
-		res.sendStatus(200, "ACCSTAT MODIFIED");
+		res.sendStatus(200, "POVERTY MODIFIED");
 	}
 	});
 
