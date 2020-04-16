@@ -317,7 +317,7 @@ app.delete(BASE_PATH + "/natality-stats", (req,res) => {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
  // ------------- PUT /natality_stats ---------
-app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
+app.put(BASE_PATH+"/natality-stats/:country/:year", (req, res) =>{
 	
 	var country=req.params.country;
 	var year=parseInt(req.params.year);
@@ -326,7 +326,7 @@ app.put(BASE_PATH+"/natality_stats/:country/:year", (req, res) =>{
 	var newYear = upd.year;
 	
 		if(country != newCountry || year != newYear){
-			res.sendStatus(400, "NOT FOUND");
+			res.sendStatus(409, "conflict");
 		}else{
 			dbn.update({country: country, year: year},
 					  {$set: {natality_totals: upd.natality_totals, natality_men: upd.natality_men,
