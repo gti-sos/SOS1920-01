@@ -79,10 +79,10 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
 		search['em_woman'] = {
 			$gte: parseInt(req.query.em_womanMin),
 			$lte: parseInt(req.query.em_womanMax)}
-	if(req.query.em_totalsMin && !req.query.em_womanMax)
+	if(req.query.em_womanMin && !req.query.em_womanMax)
 		search['em_woman'] = {$gte: parseInt(req.query.em_womanMin)};
-	if(!req.query.em_totalsMin && req.query.em_womanMax)
-		search['em_woman'] = {$lte: parseInt(req.query.em_womanMin)}
+	if(!req.query.em_womanMin && req.query.em_womanMax)
+		search['em_woman'] = {$lte: parseInt(req.query.em_womanMax)}
 	
 	//////// em_totals ////////
 	if(req.query.em_totalsMin && req.query.em_totalsMax)
