@@ -123,11 +123,20 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
     var country = req.params.country;
 	
 	pdb.find({country: country}, (err, pov) => {
-		pov.forEach(i => {
-			delete i._id;
-		});
-		res.send(JSON.stringify(pov, null, 2));    
-	});
+		
+		if(pov.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			pov.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(pov[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});		
 /*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
 	
 	
@@ -144,12 +153,20 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 	var year = parseInt(req.params.year);  
 	
 	pdb.find({country: country, year: year}, (err, pov) => {
-		pov.forEach(i => {
-			delete i._id;
-		});
-		res.send(JSON.stringify(pov[0], null, 2)); 
-	});
-	
+		
+		if(pov.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			pov.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(pov[0], null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});		
 	/*
 	var povertyC = poverty_stats.filter((c) => {return (c.country == country);});
 	
