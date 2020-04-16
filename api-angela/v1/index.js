@@ -126,7 +126,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 		pov.forEach(i => {
 			delete i._id;
 		});
-		res.send(JSON.stringify(pov, null, 2));
+		res.send(JSON.stringify(pov, null, 2));    
 	});
 /*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
 	
@@ -141,7 +141,7 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 //- /api/v1/poverty-stats/country/year
 app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
     var country = req.params.country;
-	var year = parseInt(req.params.year);
+	var year = parseInt(req.params.year);  
 	
 	pdb.find({country: country, year: year}, (err, pov) => {
 		pov.forEach(i => {
