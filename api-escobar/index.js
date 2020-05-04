@@ -1,5 +1,11 @@
-var api = require("./v1");
+var apiV1 = require("./v1");
+
+var apiV2 = require("./v2");
 
 module.exports = function(app,BASE_PATH){
-	api(app,BASE_PATH+"/v1");
+	apiV1(app,BASE_PATH+"/v1");
+}
+
+module.exports = function(app,BASE_PATH){
+	apiV2(app,BASE_PATH+"/v2");
 }
