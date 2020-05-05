@@ -5,7 +5,7 @@ const app = express();
 const BASE_PATH = "/api";
 
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 12345;
 
 
 //const natalitydb = require(path.join(__dirname, "api-juanfran"));//el método join permite unir un directorio con un archivo.
