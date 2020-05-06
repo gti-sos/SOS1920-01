@@ -6,7 +6,7 @@
 
 // API ANGELA
     import PovertyTable from './povertyApi/PovertyTable.svelte';
-    import EditNPoverty from './povertyApi/EditNPoverty.svelte';
+    import EditNPoverty from './povertyApi/EditPoverty.svelte';
 
 // API ESCOBAR
 
