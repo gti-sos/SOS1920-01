@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "start": "node index"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
