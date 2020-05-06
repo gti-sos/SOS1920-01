@@ -43,6 +43,10 @@ var app = (function () {
     function space() {
         return text(' ');
     }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -51,6 +55,11 @@ var app = (function () {
     }
     function children(element) {
         return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        if (value != null || input.value) {
+            input.value = value;
+        }
     }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
@@ -261,6 +270,19 @@ var app = (function () {
         dispatch_dev("SvelteDOMRemove", { node });
         detach(node);
     }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
         if (value == null)
@@ -310,10 +332,8 @@ var app = (function () {
     	let t1;
     	let t2;
     	let t3;
-    	let p;
-    	let t4;
-    	let a;
-    	let t6;
+    	let input;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -323,41 +343,40 @@ var app = (function () {
     			t1 = text(/*name*/ ctx[0]);
     			t2 = text("!");
     			t3 = space();
-    			p = element("p");
-    			t4 = text("Visit the ");
-    			a = element("a");
-    			a.textContent = "Svelte tutorial";
-    			t6 = text(" to learn how to build Svelte apps.");
+    			input = element("input");
     			attr_dev(h1, "class", "svelte-1tky8bj");
     			add_location(h1, file, 5, 1, 46);
-    			attr_dev(a, "href", "https://svelte.dev/tutorial");
-    			add_location(a, file, 6, 14, 83);
-    			add_location(p, file, 6, 1, 70);
+    			add_location(input, file, 6, 1, 70);
     			attr_dev(main, "class", "svelte-1tky8bj");
     			add_location(main, file, 4, 0, 38);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
-    		m: function mount(target, anchor) {
+    		m: function mount(target, anchor, remount) {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(h1, t0);
     			append_dev(h1, t1);
     			append_dev(h1, t2);
     			append_dev(main, t3);
-    			append_dev(main, p);
-    			append_dev(p, t4);
-    			append_dev(p, a);
-    			append_dev(p, t6);
+    			append_dev(main, input);
+    			set_input_value(input, /*name*/ ctx[0]);
+    			if (remount) dispose();
+    			dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[1]);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);
+
+    			if (dirty & /*name*/ 1 && input.value !== /*name*/ ctx[0]) {
+    				set_input_value(input, /*name*/ ctx[0]);
+    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			dispose();
     		}
     	};
 
@@ -383,6 +402,11 @@ var app = (function () {
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("App", $$slots, []);
 
+    	function input_input_handler() {
+    		name = this.value;
+    		$$invalidate(0, name);
+    	}
+
     	$$self.$set = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     	};
@@ -397,7 +421,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name];
+    	return [name, input_input_handler];
     }
 
     class App extends SvelteComponentDev {
