@@ -8,9 +8,9 @@
 	let newEmiStat = {
 		country : "",
 		year : "",
-		 em_man: "",
-		 em_woman: "",
-		 em_totals: ""
+		em_man: "",
+		em_woman: "",
+		em_totals: ""
     };
     
     let numeroDePagina = 0;
@@ -117,7 +117,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			}
 		}else{
 			numeroDePagina = numeroDePagina+limit;
-            const res = await fetch("/api/v2/poverty-stats?country="+searchCountry+
+            const res = await fetch("/api/v2/emigrants-stats?country="+searchCountry+
             "&year="+searchYear+
             "&em_manMin="+em_manMin+
             "&em_manMax="+em_manMax+
@@ -177,13 +177,13 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 				if(res.ok){
 					console.log("Ok:");
 					getStats();
-					window.alert("Dato insertado correctamente.");
+					//window.alert("Dato insertado correctamente.");
 					exitoMsg = res.status + ": " +res.statusText + "Dato insertado correctamente";
 				}else if(res.status==400){
-					window.alert("Campo mal escrito.No puede insertarlo.");
+					//window.alert("Campo mal escrito.No puede insertarlo.");
 					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}else{
-					window.alert("Dato ya creado. No puede insertarlo.");
+					//window.alert("Dato ya creado. No puede insertarlo.");
 					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}
 				
@@ -198,7 +198,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			window.alert("Dato eliminado correctamente.");
 			getStats();
 		});
-    }
+    }/*
     async function deleteEmi1Stat(country){
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/emigrants-stats/"+country,{
@@ -207,7 +207,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			window.alert("Dato eliminado correctamente.");
 			getStats();
 		});
-	}
+	}*/
 	async function deleteEmiStats(){
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/emigrants-stats",{
@@ -247,9 +247,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 				</tr>
 				{#each emistats as emistat}
 					<tr>
-						<td>
-							<a href="#/emigrants-stats/{emistat.country}/{emistat.year}">{emistat.country}</a>
-						</td>
+						<td><a href="#/emigrants-stats/{emistat.country}/{emistat.year}">{emistat.country}</a></td>
 						<td>{emistat.year}</td>
 						<td>{emistat.em_man}</td>
 						<td>{emistat.em_woman}</td>
@@ -265,7 +263,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 	<Button outline color="danger" on:click="{deleteEmiStats}">Borrar todo</Button>
 	{#if numeroDePagina==0}
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">&gt</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">Pagina siguiente</Button>
 	{/if}
 	{#if numeroDePagina>0}
 		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">Pagina anterior</Button>
