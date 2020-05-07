@@ -40,7 +40,7 @@
                 year : parseInt(params.year),
                 "em_man" : updatedEm_man,
                 "em_woman" : updatedEm_woman,
-                "em_woman" : updatedEm_totals
+                "em_totals" : updatedEm_totals
             }),
 			headers:{
 				"Content-Type": "application/json"

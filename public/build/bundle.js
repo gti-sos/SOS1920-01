@@ -10939,28 +10939,28 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$9, 69, 5, 2294);
-    			add_location(th1, file$9, 70, 5, 2314);
-    			add_location(th2, file$9, 71, 5, 2333);
-    			add_location(th3, file$9, 72, 5, 2369);
-    			add_location(th4, file$9, 73, 5, 2405);
-    			add_location(th5, file$9, 74, 5, 2441);
-    			add_location(tr0, file$9, 68, 4, 2283);
-    			add_location(thead, file$9, 67, 3, 2270);
-    			add_location(td0, file$9, 79, 5, 2511);
-    			add_location(td1, file$9, 80, 5, 2543);
+    			add_location(th0, file$9, 69, 5, 2295);
+    			add_location(th1, file$9, 70, 5, 2315);
+    			add_location(th2, file$9, 71, 5, 2334);
+    			add_location(th3, file$9, 72, 5, 2370);
+    			add_location(th4, file$9, 73, 5, 2406);
+    			add_location(th5, file$9, 74, 5, 2442);
+    			add_location(tr0, file$9, 68, 4, 2284);
+    			add_location(thead, file$9, 67, 3, 2271);
+    			add_location(td0, file$9, 79, 5, 2512);
+    			add_location(td1, file$9, 80, 5, 2544);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$9, 81, 9, 2576);
-    			add_location(td2, file$9, 81, 5, 2572);
+    			add_location(input0, file$9, 81, 9, 2577);
+    			add_location(td2, file$9, 81, 5, 2573);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 82, 9, 2646);
-    			add_location(td3, file$9, 82, 5, 2642);
+    			add_location(input1, file$9, 82, 9, 2647);
+    			add_location(td3, file$9, 82, 5, 2643);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$9, 83, 9, 2718);
-    			add_location(td4, file$9, 83, 5, 2714);
-    			add_location(td5, file$9, 84, 5, 2787);
-    			add_location(tr1, file$9, 78, 4, 2500);
-    			add_location(tbody, file$9, 77, 3, 2487);
+    			add_location(input2, file$9, 83, 9, 2719);
+    			add_location(td4, file$9, 83, 5, 2715);
+    			add_location(td5, file$9, 84, 5, 2788);
+    			add_location(tr1, file$9, 78, 4, 2501);
+    			add_location(tbody, file$9, 77, 3, 2488);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -11103,7 +11103,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$9, 89, 18, 2939);
+    			add_location(p, file$9, 89, 18, 2940);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11139,7 +11139,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[7]);
     			set_style(p, "color", "green");
-    			add_location(p, file$9, 90, 16, 3005);
+    			add_location(p, file$9, 90, 16, 3006);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11252,9 +11252,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$9, 62, 26, 2136);
-    			add_location(h3, file$9, 62, 4, 2114);
-    			add_location(main, file$9, 61, 0, 2102);
+    			add_location(strong, file$9, 62, 26, 2137);
+    			add_location(h3, file$9, 62, 4, 2115);
+    			add_location(main, file$9, 61, 0, 2103);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11403,7 +11403,7 @@ var app = (function () {
     				year: parseInt(params.year),
     				"em_man": updatedEm_man,
     				"em_woman": updatedEm_woman,
-    				"em_woman": updatedEm_totals
+    				"em_totals": updatedEm_totals
     			}),
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
