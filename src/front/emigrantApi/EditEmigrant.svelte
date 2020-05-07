@@ -54,7 +54,7 @@
 			}else if(res.status==400){
 				window.alert("Campo mal escrito. No puede editarlo.");
 			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+				errorMsg = " El tipo de error es: " + res.status + res.statusText + ", rellene todos los campos correctamente" ;
 			};			
 		});
 	};
