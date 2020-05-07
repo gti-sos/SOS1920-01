@@ -9,26 +9,27 @@
     import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
     export let params = {};
-    let stat  = {};
+    let stats  = {};
     let updatedCountry = "";
-    let updatedYear = "";
-    let updatedPoverty_prp = "";
-    let updatedPoverty_pt = "";
-    let updatedPoverty_ht = "";
-    let errorMsg = "";
-    onMount(getStat);
-	async function getStat(){
-		console.log("Fetching stat...");
+    let updatedYear = 0;
+    	let updatedPoverty_prp = 0.0;
+    	let updatedPoverty_pt = 0.0;
+    	let updatedPoverty_ht = 0.0;
+	let errorMsg = "";
+	let exitoMsg = "";
+    onMount(getstats);
+	async function getstats(){
+		console.log("Fetching stats...");
 		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year);
 		if(res.ok){
 			console.log("Ok:");
 			const json = await res.json();
-            stat = json;
-            updatedCountry = stat.country;
-            updatedYear = stat.year;
-            updatedPoverty_prp = stat.poverty_prp;
-            updatedPoverty_pt = stat.poverty_pt;
-            updatedPoverty_ht = stat.poverty_ht;
+            stats = json;
+            updatedCountry = stats.country;
+            updatedYear = stats.year;
+            updatedPoverty_prp = stats.poverty_prp;
+            updatedPoverty_pt = stats.poverty_pt;
+            updatedPoverty_ht = stats.poverty_ht;
             
 			console.log("Received stats.");
 		}else{
@@ -37,23 +38,27 @@
 		}
 	}
     async function updateStat(){
+		exitoMsg = "";
         console.log("Updating stat..."+JSON.stringify(params.country));
 		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year,{
 			method: "PUT",
 			body: JSON.stringify({
                 country : params.country,
-                year : Number(params.year),
-                poverty_prp : Number(updatedPoverty_prp),
-                poverty_pt : Number(updatedPoverty_pt),
-                poverty_ht : Number(updatedPoverty_ht)
+                year : parseInt(params.year),
+                "poverty_prp": updatedPoverty_prp,
+                "poverty_pt" : updatedPoverty_pt,
+                "poverty_ht" : updatedPoverty_ht
             }),
 			headers:{
 				"Content-Type": "application/json"
 			}
 		}).then(function (res){
+			
 			if(res.ok){
-				getStat();
-				window.alert("Dato modificado correctamente.");
+				exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito";
+				console.log("OK!" + exitoMsg);
+				getStats();
+				window.alert("Dato insertado correctamente.");
 			}else if(res.status==400){
 				window.alert("Campo mal escrito.No puede editarlo.");
 			}else{
@@ -65,9 +70,9 @@
 </script>
 <main>
     <h3>Editando elemento <strong>{params.country}{params.year}</strong> </h3>
-    {#await stat}
+    {#await stats}
 		Loading stat...
-	{:then stat}
+	{:then stats}
 		<Table bordered>
 			<thead>
 				<tr>
@@ -92,7 +97,10 @@
 		</Table>
     {/await}
     {#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
+		<p style="color: red">ERROR: {errorMsg}</p>
+	{/if}
+	{#if exitoMsg}
+        <p style="color: green">{exitoMsg}</p>
     {/if}
     <Button outline color="secondary" on:click="{pop}">Volver</Button>
 </main>

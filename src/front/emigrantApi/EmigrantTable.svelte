@@ -177,13 +177,13 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 				if(res.ok){
 					console.log("Ok:");
 					getStats();
-					
-					exitoMsg = res.status + ": " +res.statusText + " Dato insertado correctamente";
+					window.alert("Dato insertado correctamente.");
+					exitoMsg = res.status + ": " +res.statusText + "Dato insertado correctamente";
 				}else if(res.status==400){
-					//window.alert("Campo mal escrito.No puede insertarlo.");
+					window.alert("Campo mal escrito.No puede insertarlo.");
 					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}else{
-					//window.alert("Dato ya creado. No puede insertarlo.");
+					window.alert("Dato ya creado. No puede insertarlo.");
 					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}
 				
