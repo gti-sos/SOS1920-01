@@ -28,7 +28,7 @@
             
 			console.log("Received stats.");
 		}else{
-            errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+            errorMsg = " El tipo de error es: " + res.status + res.statusText + " , rellene los campos correctamente " ;
 		}
 	}
     async function updateStat(){
