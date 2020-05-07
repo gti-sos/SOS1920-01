@@ -8679,7 +8679,7 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[37] = list[i];
+    	child_ctx[36] = list[i];
     	return child_ctx;
     }
 
@@ -8729,7 +8729,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const table_changes = {};
 
-    			if (dirty[0] & /*emistats, newEmiStat*/ 4097 | dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[0] & /*emistats, newEmiStat*/ 4097 | dirty[1] & /*$$scope*/ 256) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8807,7 +8807,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(257:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStat(emistat.country,emistat.year)}\\\">",
+    		source: "(255:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStat(emistat.country,emistat.year)}\\\">",
     		ctx
     	});
 
@@ -8819,24 +8819,24 @@ var app = (function () {
     	let tr;
     	let td0;
     	let a;
-    	let t0_value = /*emistat*/ ctx[37].country + "";
+    	let t0_value = /*emistat*/ ctx[36].country + "";
     	let t0;
     	let a_href_value;
     	let t1;
     	let td1;
-    	let t2_value = /*emistat*/ ctx[37].year + "";
+    	let t2_value = /*emistat*/ ctx[36].year + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*emistat*/ ctx[37].em_man + "";
+    	let t4_value = /*emistat*/ ctx[36].em_man + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*emistat*/ ctx[37].em_woman + "";
+    	let t6_value = /*emistat*/ ctx[36].em_woman + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*emistat*/ ctx[37].em_totals + "";
+    	let t8_value = /*emistat*/ ctx[36].em_totals + "";
     	let t8;
     	let t9;
     	let td5;
@@ -8854,7 +8854,7 @@ var app = (function () {
     		});
 
     	button.$on("click", function () {
-    		if (is_function(/*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[37].country, /*emistat*/ ctx[37].year))) /*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[37].country, /*emistat*/ ctx[37].year).apply(this, arguments);
+    		if (is_function(/*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[36].country, /*emistat*/ ctx[36].year))) /*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[36].country, /*emistat*/ ctx[36].year).apply(this, arguments);
     	});
 
     	const block = {
@@ -8914,19 +8914,19 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty[0] & /*emistats*/ 4096) && t0_value !== (t0_value = /*emistat*/ ctx[37].country + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t0_value !== (t0_value = /*emistat*/ ctx[36].country + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty[0] & /*emistats*/ 4096 && a_href_value !== (a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[37].country + "/" + /*emistat*/ ctx[37].year)) {
+    			if (!current || dirty[0] & /*emistats*/ 4096 && a_href_value !== (a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[36].country + "/" + /*emistat*/ ctx[36].year)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if ((!current || dirty[0] & /*emistats*/ 4096) && t2_value !== (t2_value = /*emistat*/ ctx[37].year + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty[0] & /*emistats*/ 4096) && t4_value !== (t4_value = /*emistat*/ ctx[37].em_man + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty[0] & /*emistats*/ 4096) && t6_value !== (t6_value = /*emistat*/ ctx[37].em_woman + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty[0] & /*emistats*/ 4096) && t8_value !== (t8_value = /*emistat*/ ctx[37].em_totals + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t2_value !== (t2_value = /*emistat*/ ctx[36].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t4_value !== (t4_value = /*emistat*/ ctx[36].em_man + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t6_value !== (t6_value = /*emistat*/ ctx[36].em_woman + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t8_value !== (t8_value = /*emistat*/ ctx[36].em_totals + "")) set_data_dev(t8, t8_value);
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9142,11 +9142,11 @@ var app = (function () {
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[24]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[25]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[26]),
-    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[27]),
-    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[28])
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[23]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[24]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[25]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[26]),
+    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[27])
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -9172,7 +9172,7 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9308,14 +9308,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(263:1) {#if errorMsg}",
+    		source: "(261:1) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (264:1) {#if exitoMsg}
+    // (262:1) {#if exitoMsg}
     function create_if_block_2$3(ctx) {
     	let p;
     	let t;
@@ -9343,7 +9343,7 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(264:1) {#if exitoMsg}",
+    		source: "(262:1) {#if exitoMsg}",
     		ctx
     	});
 
@@ -9370,7 +9370,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(265:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(263:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
@@ -9397,7 +9397,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(266:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStats}\\\">",
+    		source: "(264:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStats}\\\">",
     		ctx
     	});
 
@@ -9434,7 +9434,7 @@ var app = (function () {
     			ctx = new_ctx;
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9458,7 +9458,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(267:1) {#if numeroDePagina==0}",
+    		source: "(265:1) {#if numeroDePagina==0}",
     		ctx
     	});
 
@@ -9471,7 +9471,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text(">");
+    			t = text("Pagina siguiente");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -9485,7 +9485,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(268:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		source: "(266:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
     		ctx
     	});
 
@@ -9541,14 +9541,14 @@ var app = (function () {
     			ctx = new_ctx;
     			const button0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9576,14 +9576,14 @@ var app = (function () {
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(270:1) {#if numeroDePagina>0}",
+    		source: "(268:1) {#if numeroDePagina>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (271:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">
+    // (269:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">
     function create_default_slot_2$4(ctx) {
     	let t;
 
@@ -9603,14 +9603,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$4.name,
     		type: "slot",
-    		source: "(271:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}\\\">",
+    		source: "(269:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (272:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
+    // (270:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
     function create_default_slot_1$4(ctx) {
     	let t;
 
@@ -9630,14 +9630,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(272:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		source: "(270:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (288:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">
+    // (286:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">
     function create_default_slot$4(ctx) {
     	let t;
 
@@ -9657,7 +9657,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(288:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}\\\">",
+    		source: "(286:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}\\\">",
     		ctx
     	});
 
@@ -9962,14 +9962,14 @@ var app = (function () {
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[29]),
-    				listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[30]),
-    				listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[31]),
-    				listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[32]),
-    				listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[33]),
-    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[34]),
-    				listen_dev(input6, "input", /*input6_input_handler*/ ctx[35]),
-    				listen_dev(input7, "input", /*input7_input_handler*/ ctx[36])
+    				listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[28]),
+    				listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[29]),
+    				listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[30]),
+    				listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[31]),
+    				listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[32]),
+    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[33]),
+    				listen_dev(input6, "input", /*input6_input_handler*/ ctx[34]),
+    				listen_dev(input7, "input", /*input7_input_handler*/ ctx[35])
     			];
     		},
     		p: function update(new_ctx, dirty) {
@@ -10010,14 +10010,14 @@ var app = (function () {
 
     			const button0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10103,7 +10103,7 @@ var app = (function () {
 
     			const button2_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 512) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10331,7 +10331,7 @@ var app = (function () {
     			}
     		} else {
     			$$invalidate(1, numeroDePagina = numeroDePagina + limit);
-    			const res = await fetch("/api/v2/poverty-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
+    			const res = await fetch("/api/v2/emigrants-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
 
     			if (res.ok) {
     				const json = await res.json();
@@ -10405,16 +10405,16 @@ var app = (function () {
     			window.alert("Dato eliminado correctamente.");
     			getStats();
     		});
-    	}
-
-    	async function deleteEmi1Stat(country) {
+    	} /*
+    async function deleteEmi1Stat(country){
     		console.log("Deleting stat...");
-
-    		const res = await fetch("/api/v2/emigrants-stats/" + country, { method: "DELETE" }).then(function (res) {
+    		const res = await fetch("/api/v2/emigrants-stats/"+country,{
+    			method: "DELETE"
+    		}).then(function (res){
     			window.alert("Dato eliminado correctamente.");
     			getStats();
     		});
-    	}
+    	}*/
 
     	async function deleteEmiStats() {
     		console.log("Deleting stat...");
@@ -10526,7 +10526,6 @@ var app = (function () {
     		loadInitialData,
     		insertEmiStat,
     		deleteEmiStat,
-    		deleteEmi1Stat,
     		deleteEmiStats
     	});
 
@@ -10576,7 +10575,6 @@ var app = (function () {
     		limit,
     		getEmiStats,
     		getStats,
-    		deleteEmi1Stat,
     		input0_input_handler,
     		input1_input_handler,
     		input2_input_handler,
