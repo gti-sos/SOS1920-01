@@ -24,7 +24,8 @@
 	let em_womanMax = "";
 	let em_totalsMin = "";
 	let em_totalsMax = "";
-    let errorMsg = "";
+	let errorMsg = "";
+	let exitoMsg = "";
     
     onMount(getEmiStats);
 	async function getEmiStats(){
@@ -143,8 +144,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			console.log("Received "+emistats.length+" stats.");
 		}else{
 			window.alert("No se encuentra ningún dato.");
-			errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-			console.log("ERROR!");
+			errorMsg =" Código de mensaje:"  + res.status + ", y quiere decir: " + res.statusText;
 		}
 	}
 	async function loadInitialData(){
@@ -158,8 +158,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			}else if(res.status==401){
 				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
 			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
+				errorMsg = " Código de ensaje:" + res.status + ", y quiere decir: " + res.statusText;
 			}	
 		});
 	}
@@ -179,13 +178,15 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 					console.log("Ok:");
 					getStats();
 					window.alert("Dato insertado correctamente.");
+					exitoMsg = res.status + ": " +res.statusText + "Dato insertado correctamente";
 				}else if(res.status==400){
 					window.alert("Campo mal escrito.No puede insertarlo.");
+					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}else{
 					window.alert("Dato ya creado. No puede insertarlo.");
+					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
+				
 			});
 		}
     }
@@ -218,8 +219,6 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 		});
 	}
 </script>
-
-<main>Funciona</main>
 
 <main>
 	<h3>Vista completa de elementos. </h3>
@@ -261,9 +260,8 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			</tbody>
 		</Table>
 	{/await}
-	{#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
-    {/if}
+	{#if errorMsg}<p style="color: red">ERROR: {errorMsg}</p>{/if}
+	{#if exitoMsg} <p style="color: green">{exitoMsg}</p> {/if}
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 	<Button outline color="danger" on:click="{deleteEmiStats}">Borrar todo</Button>
 	{#if numeroDePagina==0}

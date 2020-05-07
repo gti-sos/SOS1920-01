@@ -1,45 +1,204 @@
-{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"3l8rg6CCyrC5UdMX"}
-{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"9PLQtDFJh1lfAg74"}
-{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"L3Z9aoCn6tbj6p2L"}
-{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"OXp3VLSBteBmD8sR"}
-{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"TGo4LHS1SWXgVyps"}
-{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"bGZdHixKBy3uXlZ2"}
-{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"m5RVXPUnnIJ030Ig"}
-{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"mi4RXQ889Lnzzgx9"}
-{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"svGLuZMYusTt0gFO"}
-{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"v7p68UvzZd5PIkTV"}
-{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"vOvvSsguHhPiuMUq"}
-{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"vpyiKh01Jwyyz66b"}
-{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"yA0OaHMcPcdORZLp"}
-{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"z7RHWwNYNpW3h6bV"}
-{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"zQBMZBeww5ptftdL"}
-{"$$deleted":true,"_id":"3l8rg6CCyrC5UdMX"}
-{"$$deleted":true,"_id":"9PLQtDFJh1lfAg74"}
-{"$$deleted":true,"_id":"L3Z9aoCn6tbj6p2L"}
-{"$$deleted":true,"_id":"OXp3VLSBteBmD8sR"}
-{"$$deleted":true,"_id":"TGo4LHS1SWXgVyps"}
-{"$$deleted":true,"_id":"bGZdHixKBy3uXlZ2"}
-{"$$deleted":true,"_id":"m5RVXPUnnIJ030Ig"}
-{"$$deleted":true,"_id":"mi4RXQ889Lnzzgx9"}
-{"$$deleted":true,"_id":"svGLuZMYusTt0gFO"}
-{"$$deleted":true,"_id":"v7p68UvzZd5PIkTV"}
-{"$$deleted":true,"_id":"vOvvSsguHhPiuMUq"}
-{"$$deleted":true,"_id":"vpyiKh01Jwyyz66b"}
-{"$$deleted":true,"_id":"yA0OaHMcPcdORZLp"}
-{"$$deleted":true,"_id":"z7RHWwNYNpW3h6bV"}
-{"$$deleted":true,"_id":"zQBMZBeww5ptftdL"}
-{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"bsuJoC0zdhg2tkHE"}
-{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"COKSmypZhIuQ2YRY"}
-{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"rHUgseLznrT6TpLv"}
-{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"mhfBo1sZSNOwgJig"}
-{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"4uxLyzSf9r3s76Vq"}
 {"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"1cnlBXsUwyiLn7AM"}
-{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"o1KYEHveae3jQo2m"}
-{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"LaNC6Z5cYJPC7pOw"}
-{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"pkoXfz69LRQ4Tgr9"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"4uxLyzSf9r3s76Vq"}
 {"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"6vvQUvA0cquxPcVa"}
 {"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"9E5kzxwPm49Y780g"}
-{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"pUSX5nwKtu0hxnCP"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"COKSmypZhIuQ2YRY"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"LaNC6Z5cYJPC7pOw"}
 {"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"RSfi2fBJ2o6etToE"}
-{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"pAfBS1FwzSB4j24N"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"bsuJoC0zdhg2tkHE"}
 {"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"hGqPZv0k8f3QkhPH"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"mhfBo1sZSNOwgJig"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"o1KYEHveae3jQo2m"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"pAfBS1FwzSB4j24N"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"pUSX5nwKtu0hxnCP"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"pkoXfz69LRQ4Tgr9"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"rHUgseLznrT6TpLv"}
+{"country":"pitoria","year":1212,"em_man":12121212,"em_woman":12121212,"em_totals":121212,"_id":"0styxMBm1yKExEPU"}
+{"$$deleted":true,"_id":"0styxMBm1yKExEPU"}
+{"$$deleted":true,"_id":"1cnlBXsUwyiLn7AM"}
+{"$$deleted":true,"_id":"4uxLyzSf9r3s76Vq"}
+{"$$deleted":true,"_id":"6vvQUvA0cquxPcVa"}
+{"$$deleted":true,"_id":"9E5kzxwPm49Y780g"}
+{"$$deleted":true,"_id":"COKSmypZhIuQ2YRY"}
+{"$$deleted":true,"_id":"LaNC6Z5cYJPC7pOw"}
+{"$$deleted":true,"_id":"RSfi2fBJ2o6etToE"}
+{"$$deleted":true,"_id":"bsuJoC0zdhg2tkHE"}
+{"$$deleted":true,"_id":"hGqPZv0k8f3QkhPH"}
+{"$$deleted":true,"_id":"mhfBo1sZSNOwgJig"}
+{"$$deleted":true,"_id":"o1KYEHveae3jQo2m"}
+{"$$deleted":true,"_id":"pAfBS1FwzSB4j24N"}
+{"$$deleted":true,"_id":"pUSX5nwKtu0hxnCP"}
+{"$$deleted":true,"_id":"pkoXfz69LRQ4Tgr9"}
+{"$$deleted":true,"_id":"rHUgseLznrT6TpLv"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"KbIsRfylCWrNzbfE"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"nCb0ja7jX2PjZbup"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"IKOin3DA3nrtNwaU"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"7DS26Ox4Vy4DdmYd"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"Nv0aX6wxfOO4CIYZ"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"oGLYRPkSHeTUqXv7"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"NAKFz5pNgv1gEcxD"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"ltzt6ObYYM9jieMa"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"LbdEf7T0L1Np3daZ"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"6VE26IJuVuxFO6wf"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"8uGlYkQEMzg9z6rR"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"ZUs7OpU2P10jc63E"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"n1KhTmHKpxMBTQOA"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"uJn23swRdJvLHUd8"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"FebYZs0ulk59GMk4"}
+{"$$deleted":true,"_id":"6VE26IJuVuxFO6wf"}
+{"$$deleted":true,"_id":"7DS26Ox4Vy4DdmYd"}
+{"$$deleted":true,"_id":"8uGlYkQEMzg9z6rR"}
+{"$$deleted":true,"_id":"FebYZs0ulk59GMk4"}
+{"$$deleted":true,"_id":"IKOin3DA3nrtNwaU"}
+{"$$deleted":true,"_id":"KbIsRfylCWrNzbfE"}
+{"$$deleted":true,"_id":"LbdEf7T0L1Np3daZ"}
+{"$$deleted":true,"_id":"NAKFz5pNgv1gEcxD"}
+{"$$deleted":true,"_id":"Nv0aX6wxfOO4CIYZ"}
+{"$$deleted":true,"_id":"ZUs7OpU2P10jc63E"}
+{"$$deleted":true,"_id":"ltzt6ObYYM9jieMa"}
+{"$$deleted":true,"_id":"n1KhTmHKpxMBTQOA"}
+{"$$deleted":true,"_id":"nCb0ja7jX2PjZbup"}
+{"$$deleted":true,"_id":"oGLYRPkSHeTUqXv7"}
+{"$$deleted":true,"_id":"uJn23swRdJvLHUd8"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"qJyQ19aZt1Qhmd9l"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"NhtKf3IcqnIr1xMP"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"ppmHEn8YczmLkgdG"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"1qXinEDOykCIzvLj"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"C6fX4w2ny8b3Gzco"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"mPCKmV9cnx5bDZ0l"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"7VsKwkHfgbBOSqzL"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"5MxTzkxxl3abzc1B"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"TaIbMLGevAiF011C"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"11lgV6oLEOPRxDNF"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"Pehtr298PuqePURt"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"wy96oYLUmStn6YhW"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"8UTIJ0eJ472CLtlr"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"g5tSKT1BXz0UiHTo"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"84vPowfjQCBYR7oP"}
+{"$$deleted":true,"_id":"11lgV6oLEOPRxDNF"}
+{"$$deleted":true,"_id":"1qXinEDOykCIzvLj"}
+{"$$deleted":true,"_id":"5MxTzkxxl3abzc1B"}
+{"$$deleted":true,"_id":"7VsKwkHfgbBOSqzL"}
+{"$$deleted":true,"_id":"84vPowfjQCBYR7oP"}
+{"$$deleted":true,"_id":"8UTIJ0eJ472CLtlr"}
+{"$$deleted":true,"_id":"C6fX4w2ny8b3Gzco"}
+{"$$deleted":true,"_id":"NhtKf3IcqnIr1xMP"}
+{"$$deleted":true,"_id":"Pehtr298PuqePURt"}
+{"$$deleted":true,"_id":"TaIbMLGevAiF011C"}
+{"$$deleted":true,"_id":"g5tSKT1BXz0UiHTo"}
+{"$$deleted":true,"_id":"mPCKmV9cnx5bDZ0l"}
+{"$$deleted":true,"_id":"ppmHEn8YczmLkgdG"}
+{"$$deleted":true,"_id":"qJyQ19aZt1Qhmd9l"}
+{"$$deleted":true,"_id":"wy96oYLUmStn6YhW"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"aOBoIcVzBbaq54ox"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"JMNQsrmSDzMoy4Xg"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"xShGElHZ9f7CMzoU"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"Nzmo6P41Fot9IA0T"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"UIehBBHDPIL0tuKS"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"pE9kt3OZuzDYescG"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"ONYlrI2Fg3KAFGMj"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"fmL46NUpPkSViiWf"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"fj7PwRzZoQi6Ku59"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"LCGriHGEzOOHznSR"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"6d6FU5KzxaTrkEsr"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"weiBOsFUH9zeIeEg"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"fSDbJSIi9dk6iUzR"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"aMw01DGoCS535e59"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"urRMMA5mbOZi8tWq"}
+{"$$deleted":true,"_id":"6d6FU5KzxaTrkEsr"}
+{"$$deleted":true,"_id":"JMNQsrmSDzMoy4Xg"}
+{"$$deleted":true,"_id":"LCGriHGEzOOHznSR"}
+{"$$deleted":true,"_id":"Nzmo6P41Fot9IA0T"}
+{"$$deleted":true,"_id":"ONYlrI2Fg3KAFGMj"}
+{"$$deleted":true,"_id":"UIehBBHDPIL0tuKS"}
+{"$$deleted":true,"_id":"aMw01DGoCS535e59"}
+{"$$deleted":true,"_id":"aOBoIcVzBbaq54ox"}
+{"$$deleted":true,"_id":"fSDbJSIi9dk6iUzR"}
+{"$$deleted":true,"_id":"fj7PwRzZoQi6Ku59"}
+{"$$deleted":true,"_id":"fmL46NUpPkSViiWf"}
+{"$$deleted":true,"_id":"pE9kt3OZuzDYescG"}
+{"$$deleted":true,"_id":"urRMMA5mbOZi8tWq"}
+{"$$deleted":true,"_id":"weiBOsFUH9zeIeEg"}
+{"$$deleted":true,"_id":"xShGElHZ9f7CMzoU"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"cdTiPFWar8ybbDlw"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"TiZQCgNmbA1BZmyS"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"LMN1CpYHeodJ0ZoI"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"pqIrqEmUedjJ3wcw"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"wfEvrLUWSxYPyOgr"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"QUWJ514TVt0lwZbl"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"QlFIKE392BR4VWSN"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"I1QoxSqV210wTx0x"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"Nj8RQpBOPdVNKUWy"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"DgMLoGZGCb2jPpML"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"d0ctHngxukiqeZhF"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"O7PB6opPWCYa7FyP"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"rk6Ld8l9hxJM1Jir"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"8a00YqDtoL708X0r"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"8xr1aqtsInQdUasf"}
+{"country":"121212","year":121212,"em_man":121212,"em_woman":121212,"em_totals":12121,"_id":"k5uiHwoRUczVhhn7"}
+{"country":"123","year":123,"em_man":123,"em_woman":123,"em_totals":123,"_id":"IepWhfbCELgFxrQZ"}
+{"$$deleted":true,"_id":"8a00YqDtoL708X0r"}
+{"$$deleted":true,"_id":"8xr1aqtsInQdUasf"}
+{"$$deleted":true,"_id":"DgMLoGZGCb2jPpML"}
+{"$$deleted":true,"_id":"I1QoxSqV210wTx0x"}
+{"$$deleted":true,"_id":"IepWhfbCELgFxrQZ"}
+{"$$deleted":true,"_id":"LMN1CpYHeodJ0ZoI"}
+{"$$deleted":true,"_id":"Nj8RQpBOPdVNKUWy"}
+{"$$deleted":true,"_id":"O7PB6opPWCYa7FyP"}
+{"$$deleted":true,"_id":"QUWJ514TVt0lwZbl"}
+{"$$deleted":true,"_id":"QlFIKE392BR4VWSN"}
+{"$$deleted":true,"_id":"TiZQCgNmbA1BZmyS"}
+{"$$deleted":true,"_id":"cdTiPFWar8ybbDlw"}
+{"$$deleted":true,"_id":"d0ctHngxukiqeZhF"}
+{"$$deleted":true,"_id":"k5uiHwoRUczVhhn7"}
+{"$$deleted":true,"_id":"pqIrqEmUedjJ3wcw"}
+{"$$deleted":true,"_id":"rk6Ld8l9hxJM1Jir"}
+{"$$deleted":true,"_id":"wfEvrLUWSxYPyOgr"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"EacTfb09tIGwJxA7"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"n8RSFvHzXH76w2jb"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"woFdE43XPvrdhDSs"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"jAfhmuim9TwuxYjm"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"exlSkoINgIPOAr5l"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"pCECKmcDzkzvkdwC"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"TCwZZEIzBuFC9G2F"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"kRxcIEPwfjxHAi8K"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"HwjSi8DcQyjnYYek"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"zlaPdJpsjes4MuOE"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"ON6KR4pplkjdVQJe"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"KjfL6zPgSEtQ1IGA"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"Ri6xOuo8tIjvGlye"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"iZdLHMapg2HMUbro"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"qrfRP8o1CTdeAQgp"}
+{"country":"123","year":123,"em_man":123,"em_woman":123,"em_totals":123,"_id":"60e8aUXAy1dYrP7F"}
+{"$$deleted":true,"_id":"60e8aUXAy1dYrP7F"}
+{"$$deleted":true,"_id":"EacTfb09tIGwJxA7"}
+{"$$deleted":true,"_id":"HwjSi8DcQyjnYYek"}
+{"$$deleted":true,"_id":"KjfL6zPgSEtQ1IGA"}
+{"$$deleted":true,"_id":"ON6KR4pplkjdVQJe"}
+{"$$deleted":true,"_id":"Ri6xOuo8tIjvGlye"}
+{"$$deleted":true,"_id":"TCwZZEIzBuFC9G2F"}
+{"$$deleted":true,"_id":"exlSkoINgIPOAr5l"}
+{"$$deleted":true,"_id":"iZdLHMapg2HMUbro"}
+{"$$deleted":true,"_id":"jAfhmuim9TwuxYjm"}
+{"$$deleted":true,"_id":"kRxcIEPwfjxHAi8K"}
+{"$$deleted":true,"_id":"n8RSFvHzXH76w2jb"}
+{"$$deleted":true,"_id":"pCECKmcDzkzvkdwC"}
+{"$$deleted":true,"_id":"qrfRP8o1CTdeAQgp"}
+{"$$deleted":true,"_id":"woFdE43XPvrdhDSs"}
+{"$$deleted":true,"_id":"zlaPdJpsjes4MuOE"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"AohrNF4V5yoLKBX9"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"OzwV5akmCiivUmO4"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"FRs2nVl0T9UEbFeP"}
+{"country":"united kingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"yGHI4EurXrhLE4RC"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"ZceMcEAk7GwpHda8"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"Jeu3Vx35PjWa36dU"}
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"zu9BLeat1e8lL2yM"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"IloNBIjrElRrM996"}
+{"country":"united kingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"xqF1tR5OzDLKg3yk"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"i5iRGJ4KceiyGyvv"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"UetJbYKqsvSRSeCC"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"lmDVR38BN7I4iWlw"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"jCzXCbloteHA3B5E"}
+{"country":"united kingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"w0be3tCy4nUX5YIu"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"30KvfjOPpFbmtl5Z"}
+{"country":"123","year":123,"em_man":123,"em_woman":123,"em_totals":123,"_id":"pBAQy9WWkCEzdK9D"}
