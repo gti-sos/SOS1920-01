@@ -3,7 +3,6 @@
 {"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"LCh9Aoi6wepD8Rlz"}
 {"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"MPafQDXJBT3zsGQd"}
 {"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"NBYUHygTnHMTlprO"}
-{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"TgM3byJzYJNB1zTp"}
 {"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"Yex81FiV6fVZR7IO"}
 {"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"bHQvpGSNvqK1LsSe"}
 {"country":"unitedKingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"bJwtgTiVKoI0jjww"}
@@ -13,5 +12,3 @@
 {"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"u1Cw2iMVXHeLnwzz"}
 {"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"z5FtbyiYYdNHwBZl"}
 {"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"ztDFbq5DKZAu1czh"}
-{"country":"spain","year":2015,"em_man":12,"em_woman":12,"em_totals":12,"_id":"TgM3byJzYJNB1zTp"}
-{"$$deleted":true,"_id":"TgM3byJzYJNB1zTp"}

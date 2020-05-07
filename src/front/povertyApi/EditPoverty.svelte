@@ -50,26 +50,26 @@
                 "poverty_pt" : updatedPoverty_pt,
                 "poverty_ht" : updatedPoverty_ht
             }),
-			headers:{
-				"Content-Type": "application/json"
-			}
-		}).then(function (res){
-			getStats();
-			if(res.ok){
-				exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito";
-				console.log("OK!" + exitoMsg);
+			headers: {
+					"Content-Type": "application/json"
+				}
+			}).then(function (res) {
 				getStats();
-				//window.alert("Dato insertado correctamente.");
-				}else if(res.status==400){
-				window.alert("Campo mal escrito.No puede editarlo.");
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Asegurese de tener los campos completos.";
-					
-			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Este dato ya esta creado";	
+				if(res.ok){
+					exitoMsg = res.status + ": " + res.statusText + ". El Dato ha sido actualizado con éxito";
+					console.log("OK!" + exitoMsg);
+					getStats();
+					window.alert("Dato ha sido modificado correctamente.");
+				}else if(res.status == 400){
+                    window.alert("Los datos que se insertan no son válidos");
+				}else{
+
+				window.alert("Los datos que se insertan no son válidos");
+				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
 				console.log("ERROR!");
-			};			
-		});
-	};
+				};			
+			});
+		};
 </script>
 <main>
     <h3>Editando elemento <strong>{params.country} {params.year}</strong> </h3>
