@@ -221,7 +221,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 </script>
 
 <main>
-	<h3>Vista completa de elementos. </h3>
+	<h3>Datos sobre emigrantes. 🛫 </h3>
 	{#await emistats}
 		Loading emistats...
 	{:then emistats}
