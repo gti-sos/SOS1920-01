@@ -43,8 +43,10 @@
 	};
 
 	//BUSQUEDAS
-    async function busqueda(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax,
+	async function busqueda(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax,
                 natality_womenMin, natality_womenMax){
+			exitoMsg = "";
+			errorMsg = "";
 		if(typeof searchCountry=='undefined'){
 			searchCountry="";
 		}
@@ -70,18 +72,18 @@
 			natality_womenMax="";
 		}
         const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+"&natality_totalsMax="+
-        natality_totalsMax+"&natality_totalsMin="+natality_totalsMin+"&natality_menMin="+natality_menMin+"&natality_menMax="+
-        natality_menMax+ +"&natality_womenMin="+natality_womenMin + "&natality_womenMax="+natality_womenMax)
+		natality_totalsMax+"&natality_totalsMin="+natality_totalsMin+"&natality_menMin="+natality_menMin+"&natality_menMax="+
+		natality_menMax+"&natality_womenMin="+natality_womenMin+"&natality_womenMax="+natality_womenMax)
 		if (res.ok){
 			const json = await res.json();
 			natalitystats = json;
 			console.log("Found "+ natalitystats.length + " stats");
-			window.alert("Datos encontrados.");
+			//window.alert("Dato encontrado con éxito");
+			exitoMsg = res.status + ": " + res.statusText + ".Dato encontrado."
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
-		}else{
-			console.log("ERROR:"+" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
-		};
+				errorMsg = res.status + "quiere decir: " + res.statusText + ".Dato no encontrado";
+		}
 	}
 	//PAGINACION
 	async function paginacion(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, 
@@ -158,20 +160,21 @@
 			natalitystats = json;
 			console.log("Received "+natalitystats.length+" stats.");
 		}else{
-			errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+			errorMsg ="ERROR: " + res.status + ", y quiere decir: " + res.statusText + ".Dato no encontado";
 			console.log("ERROR!");
 		}
 	}
 	async function loadInitialData(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Loading stats...");
 		const res = await fetch("/api/v2/natality-stats/loadInitialData",{
 			method: "GET"
 		}).then(function(res){
 			if(res.ok){
 				getStatsNat();
-				window.alert("Datos iniciales cargados.");
-			}else if(res.status==401){
-				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
+				//window.alert("Datos iniciales cargados.");
+				exitoMsg = res.status + ": " + res.statusText + ".Dato iniciales cargados!";
 			}else{
 				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
 				console.log("ERROR!");
@@ -182,9 +185,10 @@
 	}
 	async function insertStat(){
 		exitoMsg = "";
+		errorMsg = "";
 		console.log("Inserting stat...");
 		if (newStat.country == "" || newStat.country == null || newStat.year == "" || newStat.year == null) {
-			window.alert("Pon un país y un año");
+			window.alert("Rellana el campo país y año");
 		}else{
 			const res = await fetch("/api/v2/natality-stats",{
 				method: "POST",
@@ -196,30 +200,36 @@
 				if(res.ok){
 					console.log("Ok:");
 					getStats();
-					window.alert("Dato insertado correctamente.");
+					//window.alert("Dato insertado correctamente.");
 					exitoMsg = res.status + ": " + res.statusText + ". Dato insertado con éxito";
 				}else if(res.status==400){
-					window.alert("Campo mal escrito.No puede insertarlo.");
-					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					window.alert("Campo mal escrito.No se puede insertar el dato.");
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + 
+					".Rellene todos los campos";
 				console.log("ERROR!");
 				}else{
-					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + ".Dato ya creado";
 				console.log("ERROR!");
-					window.alert("Dato ya creado. No puede insertarlo.");
+					window.alert("Dato ya creado. No se puede insertar el dato.");
 				}
 			});
 		}
 	}
 	async function deleteStat(country,year){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/natality-stats/"+country+"/"+year,{
 			method: "DELETE"
 		}).then(function (res){
 			window.alert("Dato eliminado correctamente.");
 			getStats();
+			exitoMsg = "Exito: " + res.status + ": " + res.statusText + " Dato eliminado.";
 		});
 	}
 	async function deleteStats(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/natality-stats",{
 			method: "DELETE"
@@ -227,6 +237,7 @@
 			window.alert("Base de datos eliminada correctamente.");			
 			getStatsNat();
 			location.reload();
+			exitoMsg("Mensaje: " + res.status + ": " + res.statusText + ".Datos eliminados correctamente");
 		});
 	}
 </script>
@@ -305,5 +316,5 @@
 
     <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax, 
         natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}">Buscar</Button>
-	<h6>¡¡NOTA!! Si quieres volver a ver todos los datos antes de la búsqueda, borre los datos de los filtros y pulse busca.. </h6>
+	<h6>¡¡NOTA!! Si quieres volver a ver todos los datos antes de la búsqueda, borre los datos de los filtros y pulse Buscar</h6>
 </main>

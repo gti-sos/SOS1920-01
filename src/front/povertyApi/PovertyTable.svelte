@@ -241,7 +241,7 @@
 </script>
 
 <main>
-	<h3>Vista completa de elementos. </h3>
+	<h3>Datos de pobreza. 💶 </h3>
 	{#await stats}
 		Loading stats...
 	{:then stats}

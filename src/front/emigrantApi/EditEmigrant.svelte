@@ -1,19 +1,15 @@
 <script>
-    import {
-		onMount
-    } from "svelte";
-    import {
-         pop
-     } from "svelte-spa-router";
+    import {onMount} from "svelte";
+    import {pop} from "svelte-spa-router";
     import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
     export let params = {};
     let eStat  = {};
     let updatedCountry = "";
     let updatedYear = "";
-    let updatedEm_man = "";
-    let updatedEm_woman = "";
-    let updatedEm_totals = "";
+    let updatedEm_man = 0.0;
+    let updatedEm_woman = 0.0;
+    let updatedEm_totals = 0.0;
 	let errorMsg = "";
 	let exitoMsg = "";
     onMount(getStat);
@@ -26,13 +22,13 @@
             eStat = json;
             updatedCountry = eStat.country;
             updatedYear = eStat.year;
-            updatedEm_man = eStat.em.man;
+            updatedEm_man = eStat.em_man;
             updatedEm_woman = eStat.em_woman;
             updatedEm_totals = eStat.em_totals;
             
 			console.log("Received stats.");
 		}else{
-            errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+            errorMsg = " El tipo de error es: " + res.status + res.statusText + " , rellene los campos correctamente " ;
 		}
 	}
     async function updateStat(){
@@ -41,24 +37,24 @@
 			method: "PUT",
 			body: JSON.stringify({
                 country : params.country,
-                year : Number(params.year),
-                em_man : Number(updatedEm_man),
-                em_woman : Number(updatedEm_woman),
-                em_woman : Number(updatedEm_totals)
+                year : parseInt(params.year),
+                "em_man" : updatedEm_man,
+                "em_woman" : updatedEm_woman,
+                "em_totals" : updatedEm_totals
             }),
 			headers:{
 				"Content-Type": "application/json"
 			}
 		}).then(function (res){
+			getStat();
 			if(res.ok){
-				exitoMsg = res.status + ": " + res.statusText +
-				 ". Dato actualizado con éxito"; console.log("OK!" + exitoMsg);
+				exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito"; 
 				getStat();
 				window.alert("Dato modificado correctamente.");
 			}else if(res.status==400){
-				window.alert("Campo mal escrito.No puede editarlo.");
+				window.alert("Campo mal escrito. No puede editarlo.");
 			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+				errorMsg = " El tipo de error es: " + res.status + res.statusText + ", rellene todos los campos correctamente" ;
 			};			
 		});
 	};
