@@ -315,22 +315,29 @@ app.delete(BASE_PATH + "/natality-stats", (req,res) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
  // ------------- PUT /natality_stats ---------
 app.put(BASE_PATH+"/natality-stats/:country/:year", (req, res) =>{
-	
-	var country=req.params.country;
-	var year=parseInt(req.params.year);
-	var upd=req.body;
-	var newCountry = upd.country;
-	var newYear = upd.year;
-	
-		if(country != newCountry || year != newYear){
-			res.sendStatus(409, "conflict");
-		}else{
-			dbn.update({country: country, year: year},
-					  {$set: {natality_totals: upd.natality_totals, natality_men: upd.natality_men,
-							 natality_women: upd.natality_women}},{});
-					res.sendStatus(200,"MODIFIED");
-		}
-});
+
+		var country=req.params.country;
+		var year=parseInt(req.params.year);
+		var upd=req.body;
+		var nCont = upd.country;
+		var nYear = parseInt(upd.year);
+		
+		dbn.find({"country":country, "year": year},(error,nat)=>{
+			console.log(nat);
+			if(nat.length == 0){
+				console.log("Error 404, recurso no encontrado.");
+				res.sendStatus(404);
+			}else if(!nCont || !nYear || !upd.natality_totals||!upd.natality_men||!upd.natality_women ||country != nCont || year != nYear){
+				res.sendStatus(409, "POVERTY CONFLICT");
+			}else{
+				dbn.update({country: country, year: year}, 
+							  {$set: upd});
+				res.sendStatus(200, "POVERTY MODIFIED");
+			}
+		
+		});
+	});
+
 // PUT ERROR General /natality_stats
 	app.put(BASE_PATH+"/natality-stats",(req,res) =>{
 		res.sendStatus(405,"Method not allowed");

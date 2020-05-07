@@ -39,7 +39,10 @@
 			console.log("ERROR");
 		};
 	};
+	////////////////////////BUSQUEDA
 	async function busqueda(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht){
+		exitoMsg ="";
+		errorMsg ="";
 		if(typeof searchCountry=='undefined'){
 			searchCountry="";
 		}
@@ -69,13 +72,18 @@
 			const json = await res.json();
 			stats = json;
 			console.log("Found "+ stats.length + " stats");
-			window.alert("Se han encontrado datos.");
+			//window.alert("Se han encontrado datos.");
+			exitoMsg = res.status + ": " + res.statusText + ". Dato encontrado con éxito.";
+		
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
+				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+". No se encuentran datos.";
+					
 		}else{
 			console.log("ERROR:"+" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
 		};
 	}
+	//////////////////////PAGINACION
 	async function paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht,num){
 		numeroAux=num;
 		if(typeof searchCountry=='undefined'){
@@ -132,6 +140,8 @@
 		}
 	}
 	async function getStatsPov(){
+		exitoMsg ="";
+		errorMsg ="";
 		console.log("Fetching stats...");
 		const res = await fetch("/api/v2/poverty-stats");
 		if(res.ok){
@@ -140,23 +150,30 @@
 			stats = json;
 			console.log("Received "+stats.length+" stats.");
 		}else{
-			window.alert("No se encuentra ningún dato.");
-			errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+			//window.alert("No se encuentra ningún dato.");
+			//errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
 			console.log("ERROR!");
 		}
 	}
 	async function loadInitialData(){
+		exitoMsg ="";
+		errorMsg ="";
 		console.log("Loading stats...");
 		const res = await fetch("/api/v2/poverty-stats/loadInitialData",{
 			method: "GET"
 		}).then(function(res){
+			exitoMsg ="";
 			if(res.ok){
 				getStatsPov();
-				window.alert("Datos iniciales cargados.");
+				//window.alert("Datos iniciales cargados.");
+				exitoMsg = res.status + ": " + res.statusText + ". Datos iniciales cargados.";
 			}else if(res.status==401){
 				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
+				errorMsg = res.status + ": " + res.statusText + ". Vacia la base de datos antes de cargar.";
+				
 			}else{
 				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+
 				console.log("ERROR!");
 			}
             
@@ -165,6 +182,7 @@
 	}
 	async function insertStat(){
 		exitoMsg ="";
+		errorMsg ="";
 		console.log("Inserting stat...");
 		if (newStat.country == "" || newStat.country == null || newStat.year == "" || newStat.year == null) {
 			window.alert("Pon un país y un año");
@@ -177,24 +195,29 @@
 				}
 			}).then(function (res){
 				if(res.ok){
+					
 					console.log("Ok:");
 					getStats();
-					window.alert("Dato insertado correctamente.");
+					//window.alert("Dato insertado correctamente.");
 					exitoMsg = res.status + ": " + res.statusText + ". Dato insertado con éxito";
 				}else if(res.status==400){
 					window.alert("Campo mal escrito.No puede insertarlo.");
-					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Asegurese de tener los campos completos.";
 					console.log("ERROR!");
+					
 				}else{
 					window.alert("Dato ya creado. No puede insertarlo.");
-					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Este dato ya esta creado";
 					console.log("ERROR!");
+					
 				}
 				
 			});
 		}
 	}
 	async function deleteStat(country,year){
+		exitoMsg ="";
+		errorMsg ="";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/poverty-stats/"+country+"/"+year,{
 			method: "DELETE"
@@ -204,6 +227,8 @@
 		});
 	}
 	async function deleteStats(){
+		exitoMsg ="";
+		errorMsg ="";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/poverty-stats",{
 			method: "DELETE"

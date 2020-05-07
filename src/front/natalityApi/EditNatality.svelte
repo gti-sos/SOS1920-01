@@ -41,12 +41,14 @@
 		}
 	
 		async function updateStats(){
+			exitoMsg ="";
+			errorMsg ="";
 			console.log("Updating natality ...");
 			const res = await fetch("/api/v2/natality-stats/" + params.country + "/" + params.year, {
 				method: "PUT",
 				body: JSON.stringify({
 					country: params.country,
-					year: params.year,
+					year: parseInt(params.year),
 					"natality_totals": updatedNatalityTotals,
 					"natality_men": updatedNatalityMen,
 					"natality_women": updatedNatalityWomen
