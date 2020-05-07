@@ -40,11 +40,11 @@
 
 			</ul>
 		<br>
-		<!--
-        <button type="button" class="btn btn-primary" onclick="window.location.href='#/evolution-of-cycling-routes'" style="margin-left: 6.75%; width: 25%;"> API Natalidad</button>
-		<button type="button" class="btn btn-warning" onclick="window.location.href='#/rural-tourism-stats'"style="width: 25%;"> Riesgo de pobreza</button>
-		<button type="button" class="btn btn-danger" onclick="window.location.href='#/traffic-accidents'"style="width: 25%;"> Emigracion </button>
-        -->
+		
+        <button type="button" class="btn btn-primary" onclick="window.location.href='#/natality-stats'" style="margin-left: 6.75%; width: 25%;"> Natalidad </button>
+		<button type="button" class="btn btn-warning" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button>
+		<button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats'"style="width: 25%;"> Emigracion </button>
+
         <br>
 		</div>
 		

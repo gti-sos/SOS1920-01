@@ -1529,6 +1529,12 @@ var app = (function () {
     	let t57;
     	let br1;
     	let t58;
+    	let button0;
+    	let t60;
+    	let button1;
+    	let t62;
+    	let button2;
+    	let t64;
     	let br2;
 
     	const block = {
@@ -1645,6 +1651,15 @@ var app = (function () {
     			t57 = space();
     			br1 = element("br");
     			t58 = space();
+    			button0 = element("button");
+    			button0.textContent = "Natalidad";
+    			t60 = space();
+    			button1 = element("button");
+    			button1.textContent = "Riesgo de pobreza";
+    			t62 = space();
+    			button2 = element("button");
+    			button2.textContent = "Emigracion";
+    			t64 = space();
     			br2 = element("br");
     			add_location(br0, file, 4, 3, 75);
     			add_location(strong0, file, 6, 8, 98);
@@ -1716,7 +1731,23 @@ var app = (function () {
     			add_location(ul2, file, 29, 4, 2152);
     			add_location(ul3, file, 5, 3, 84);
     			add_location(br1, file, 41, 2, 2897);
-    			add_location(br2, file, 47, 8, 3407);
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "class", "btn btn-primary");
+    			attr_dev(button0, "onclick", "window.location.href='#/natality-stats'");
+    			set_style(button0, "margin-left", "6.75%");
+    			set_style(button0, "width", "25%");
+    			add_location(button0, file, 43, 8, 2915);
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "class", "btn btn-warning");
+    			attr_dev(button1, "onclick", "window.location.href='#/poverty-stats'");
+    			set_style(button1, "width", "25%");
+    			add_location(button1, file, 44, 2, 3075);
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "class", "btn btn-danger");
+    			attr_dev(button2, "onclick", "window.location.href='#/emigrants-stats'");
+    			set_style(button2, "width", "25%");
+    			add_location(button2, file, 45, 2, 3220);
+    			add_location(br2, file, 47, 8, 3368);
     			set_style(div0, "margin-left", "12.5%");
     			add_location(div0, file, 3, 2, 37);
     			attr_dev(div1, "class", "div-home");
@@ -1813,6 +1844,12 @@ var app = (function () {
     			append_dev(div0, t57);
     			append_dev(div0, br1);
     			append_dev(div0, t58);
+    			append_dev(div0, button0);
+    			append_dev(div0, t60);
+    			append_dev(div0, button1);
+    			append_dev(div0, t62);
+    			append_dev(div0, button2);
+    			append_dev(div0, t64);
     			append_dev(div0, br2);
     		},
     		p: noop,
