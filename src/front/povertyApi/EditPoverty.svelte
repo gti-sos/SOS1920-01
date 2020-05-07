@@ -17,8 +17,8 @@
     	let updatedPoverty_ht = 0.0;
 	let errorMsg = "";
 	let exitoMsg = "";
-    onMount(getstats);
-	async function getstats(){
+    onMount(getStats);
+	async function getStats(){
 		console.log("Fetching stats...");
 		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year);
 		if(res.ok){
