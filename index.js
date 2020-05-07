@@ -18,12 +18,9 @@ app.get("/public",(request,response) => {
 var apiEscobar = require("./src/back/api-escobar");
 apiEscobar(app,BASE_PATH);
 
-
-
 /////////////////// API JUANFRAN //////////////
 var apijuanfran = require("./src/back/api-juanfran");
 apijuanfran(app, BASE_PATH);
-
 
 /////////////////// API ANGELA //////////////
 var api_angela = require("./src/back/api-angela");

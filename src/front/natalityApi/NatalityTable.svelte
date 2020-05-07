@@ -4,12 +4,10 @@
     } from "svelte";
     import Table from "sveltestrap/src/Table.svelte";
     import Button from "sveltestrap/src/Button.svelte";
-    /**PAGINACION**/
+ 
     import {Pagination, PaginationItem, PaginationLink} from "sveltestrap";
     import FormGroup from "sveltestrap/src/FormGroup.svelte";
-    /**BUSQUEDAS**/
     import Input from "sveltestrap/src/Input.svelte";
-    import Label from "sveltestrap/src/Label.svelte";
     
     let natalitystats = [];
     let newNatalitystats = {
@@ -20,25 +18,23 @@
         natalityWomen: ""
     };
 
-    fdfsdfsdfsdffsd
-
-    /**PAGINACION**/
+    //PAGINACION
     let numberElementsPages = 10;
 	let offset = 0;
 	let currentPage = 1;
     let moreData = true;
     
-    /**VARIABLES PARA LA BUSQUEDA**/
+    //VARIABLES PARA LA BUSQUEDA
     let campo = "";
     let value = "";
 
-    /**ALERTA**/
+    //ALERTA
     let exitoMensaje; //o con window.alert
 
     onMount(getNatalitystats);
 
-    /**FUNCIONES**/
-    async function uploadAccstats(){
+    //FUNCIONES
+    async function loadInitialData(){
 		console.log("Uploading natality-stats . . .");
 		const res = await fetch("/api/v2/natality-stats/loadInitialData",{
 			method: "GET"
@@ -98,8 +94,8 @@
                 }
             });
     }
-    /**ELIMINAR TODO**/
-    async function deleteNatalitystat(){
+    //ELIMINAR TODO
+    async function deleteNatalitystats(){
 		console.log("Deleting all natalitystats . . .");
 		const res = await fetch("/api/v2/natalitystats/",{
 			method: "DELETE"
@@ -115,14 +111,14 @@
 		}
 		});
 	}
-    /**ELIMINAR STATS EN CONCRETO**/
-    async function deleteNatalitystats(country,year){
+    //ELIMINAR STATS EN CONCRETO
+    async function deleteNatalitystat(country,year){
         console.log("Deleting natality-stats ...");
-		const res = await fetch("/api/v2/natalitu-stats/"+ country + "/" + year, {
+		const res = await fetch("/api/v2/natality-stats/" + country + "/" + year, {
 			method: "DELETE"
 		}).then(function(res){
 			if (res.ok) {
-			getAccstats();
+			getNatalitystats();
 			window.alert("El Dato ha sido eliminado con éxito");
 		}else if(res.status == 404){
 			window.alert("Se ha intentado borrar algo no existente");
@@ -132,14 +128,14 @@
 		});
     }
 
-    /**OFFSET**/
+    //OFFSET
     async function incrementOffset(value){
 		offset += value;
 		currentPage += value;
 		getNatalitystats();
 	}
 
-    /**BUSQUEDAS**/
+    //BUSQUEDAS
     async function search(campo, value){
 		console.log("Searching natality-stats: " + campo + "/" + value);
 		var url = "/api/v2/natality-stats";
@@ -159,13 +155,13 @@
 		}else{
 			console.log("ERROR");
 		}
-	}
+    }
 </script>
 
 <main>
     <h1 style="text-align: center"> NATALIDAD </h1>
 
-      <table>
+      <Table>
           <thead>
               <tr>
                   <th>País</th>
@@ -189,13 +185,13 @@
 				<td>
 					<a href="#/natalitystat/{natalitystat.country}/{natalitystat.year}">{natalitystat.country}</a>
 				</td>
-				<td>{accstat.year}</td>
-				<td>{accstat.natalityTotals}</td>
-				<td>{accstat.natalityMen}</td>
-				<td>{accstat.natalityWomen}</td>
+				<td>{natalitystat.year}</td>
+				<td>{natalitystat.natalityTotals}</td>
+				<td>{natalitystat.natalityMen}</td>
+				<td>{natalitystat.natalityWomen}</td>
 				<td><Button color="danger" on:click={deleteNatalitystats(natalitystat.country, natalitystat.year)}><i class="fas fa-minus-circle"></i> Eliminar dato</Button></td>
 			</tr>
 			{/each}
           </tbody>
-      </table>
+      </Table>
 </main>
