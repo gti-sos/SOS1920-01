@@ -23,7 +23,7 @@
 	let em_womanMin = "";
 	let em_womanMax = "";
 	let em_totalsMin = "";
-	let em_totalsMin = "";
+	let em_totalsMax = "";
     let errorMsg = "";
     
     onMount(getEmiStats);
@@ -198,7 +198,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			getStats();
 		});
     }
-    async function deleteEmiStat(country){
+    async function deleteEmi1Stat(country){
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/emigrants-stats/"+country,{
 			method: "DELETE"
