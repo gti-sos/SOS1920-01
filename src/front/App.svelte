@@ -11,6 +11,9 @@
     import EditPoverty from './povertyApi/EditPoverty.svelte';
 
 // API ESCOBAR
+    import EmigrantTable from './emigrantApi/EmigrantTable.svelte';
+    import EditEmigrant from './emigrantApi/EditEmigrant.svelte';
+
 
     const routes = {
 		"/": Home,
@@ -21,7 +24,10 @@
 		"/poverty-stats": PovertyTable,
 		"/poverty-stats/:country/:year": EditPoverty,
 	// ESCOBAR	
-		
+        "/emigrants-stats": EmigrantTable,
+		"/emigrants-stats/:country/:year": EditEmigrant,
+    
+
 		"*": NotFound
 	};
 </script>
