@@ -18,13 +18,13 @@
                 <li><strong>APIs: </strong></li>
 				<ul>
 					<li><a href="https://sos1920-01.herokuapp.com/api/v1/natality-stats">https://sos1920-01.herokuapp.com/api/v1/natality-stats</a> (developed by <a href="https://github.com/juanfran94">Juan Francisco Laínez</a>)</li>
-                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/natality-stats">https://sos1920-01.herokuapp.com/api/v2/natality-stats</a></li>
+                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/natality-stats">https://sos1920-01.herokuapp.com/api/v2/natality-stats</a> (developed by <a href="https://github.com/juanfran94">Juan Francisco Laínez</a>)</li>
                     
                     <li><a href="https://sos1920-01.herokuapp.com/api/v1/poverty-stats">https://sos1920-01.herokuapp.com/api/v1/poverty-stats</a> (developed by <a href="https://github.com/angtorcal">Ángela Torreño</a>)</li>
-                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/poverty-stats">https://sos1920-01.herokuapp.com/api/v2/poverty-stats</a></li>
+                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/poverty-stats">https://sos1920-01.herokuapp.com/api/v2/poverty-stats</a> (developed by <a href="https://github.com/angtorcal">Ángela Torreño</a>)</li>
                     
                     <li><a href="https://sos1920-01.herokuapp.com/api/v1/emigrants-stats">https://sos1920-01.herokuapp.com/api/v1/emigrants-stats</a> (developed by <a href="https://github.com/Escobar1993">Antonio Escobar</a>)</li>
-                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/emigrants-stats">https://sos1920-01.herokuapp.com/api/v2/emigrants-stats</a></li>
+                    <li><a href="https://sos1920-01.herokuapp.com/api/v2/emigrants-stats">https://sos1920-01.herokuapp.com/api/v2/emigrants-stats</a> (developed by <a href="https://github.com/Escobar1993">Antonio Escobar</a>)</li>
                 </ul>
                 
                 <li><strong>POSTMAN: </strong></li>
