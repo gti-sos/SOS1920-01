@@ -38,7 +38,8 @@
 		}
 	}
     async function updateStat(){
-		exitoMsg = "";
+		exitoMsg ="";
+		errorMsg ="";
         console.log("Updating stat..."+JSON.stringify(params.country));
 		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year,{
 			method: "PUT",
@@ -53,16 +54,18 @@
 				"Content-Type": "application/json"
 			}
 		}).then(function (res){
-			
+			getStats();
 			if(res.ok){
 				exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito";
 				console.log("OK!" + exitoMsg);
 				getStats();
-				window.alert("Dato insertado correctamente.");
-			}else if(res.status==400){
+				//window.alert("Dato insertado correctamente.");
+				}else if(res.status==400){
 				window.alert("Campo mal escrito.No puede editarlo.");
+				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Asegurese de tener los campos completos.";
+					
 			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+"Este dato ya esta creado";	
 				console.log("ERROR!");
 			};			
 		});

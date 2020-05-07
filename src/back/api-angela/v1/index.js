@@ -279,21 +279,27 @@ app.delete(BASE_PATH+"/poverty-stats",(req,res)=>{
 
 ////////PUT
 app.put(BASE_PATH+"/poverty-stats/:country/:year", (req, res) =>{
-	
 	var country=req.params.country;
 	var year=parseInt(req.params.year);
 	var upd=req.body;
 	var nCont = upd.country;
 	var nYear = parseInt(upd.year);
 	
-	if(country != nCont || year != nYear){
-		res.sendStatus(409, "POVERTY CONFLICT");
-	}else{
-		pdb.update({country: country, year: year}, 
-				  	{$set: {poverty_prp: upd.poverty_prp,  poverty_pt: upd.poverty_pt,  poverty_ht: upd.poverty_ht}});
-		res.sendStatus(200, "POVERTY MODIFIED");
-	}
+	pdb.find({"country":country, "year": year},(error,pov)=>{
+		console.log(pov);
+		if(pov.length == 0){
+			console.log("Error 404, recurso no encontrado.");
+			res.sendStatus(404);
+		}else if(!nCont || !nYear || !upd.poverty_prp||!upd.poverty_pt||!upd.poverty_ht ||country != nCont || year != nYear){
+			res.sendStatus(409, "POVERTY CONFLICT");
+		}else{
+			pdb.update({country: country, year: year}, 
+						  {$set: upd});
+			res.sendStatus(200, "POVERTY MODIFIED");
+		}
+	
 	});
+});
 
 //- General "error"
 	app.put(BASE_PATH+"/poverty-stats",(req,res) =>{

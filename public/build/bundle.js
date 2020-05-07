@@ -6116,7 +6116,7 @@ var app = (function () {
     	return block;
     }
 
-    // (222:1) {:then stats}
+    // (247:1) {:then stats}
     function create_then_block$2(ctx) {
     	let current;
 
@@ -6164,14 +6164,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(222:1) {:then stats}",
+    		source: "(247:1) {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (241:9) <Button outline color="primary" on:click={insertStat}>
+    // (266:9) <Button outline color="primary" on:click={insertStat}>
     function create_default_slot_8$1(ctx) {
     	let t;
 
@@ -6191,14 +6191,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(241:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
+    		source: "(266:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (252:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
+    // (277:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
     function create_default_slot_7$1(ctx) {
     	let t;
 
@@ -6218,14 +6218,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(252:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
+    		source: "(277:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (243:4) {#each stats as stat}
+    // (268:4) {#each stats as stat}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -6362,14 +6362,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(243:4) {#each stats as stat}",
+    		source: "(268:4) {#each stats as stat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (223:2) <Table bordered>
+    // (248:2) <Table bordered>
     function create_default_slot_6$1(ctx) {
     	let thead;
     	let tr0;
@@ -6651,14 +6651,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(223:2) <Table bordered>",
+    		source: "(248:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (220:15)     Loading stats...   {:then stats}
+    // (245:15)     Loading stats...   {:then stats}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -6681,14 +6681,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(220:15)     Loading stats...   {:then stats}",
+    		source: "(245:15)     Loading stats...   {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (258:1) {#if errorMsg}
+    // (283:1) {#if errorMsg}
     function create_if_block_3$2(ctx) {
     	let p;
     	let t0;
@@ -6719,14 +6719,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(258:1) {#if errorMsg}",
+    		source: "(283:1) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (261:4) {#if exitoMsg}
+    // (286:4) {#if exitoMsg}
     function create_if_block_2$2(ctx) {
     	let p;
     	let t;
@@ -6754,14 +6754,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(261:4) {#if exitoMsg}",
+    		source: "(286:4) {#if exitoMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (264:1) <Button outline color="secondary" on:click="{loadInitialData}">
+    // (289:1) <Button outline color="secondary" on:click="{loadInitialData}">
     function create_default_slot_5$1(ctx) {
     	let t;
 
@@ -6781,14 +6781,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(264:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(289:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (265:1) <Button outline color="danger" on:click="{deleteStats}">
+    // (290:1) <Button outline color="danger" on:click="{deleteStats}">
     function create_default_slot_4$1(ctx) {
     	let t;
 
@@ -6808,14 +6808,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(265:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
+    		source: "(290:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (266:1) {#if numeroDePagina==0}
+    // (291:1) {#if numeroDePagina==0}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -6869,14 +6869,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(266:1) {#if numeroDePagina==0}",
+    		source: "(291:1) {#if numeroDePagina==0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (267:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
+    // (292:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -6896,14 +6896,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(267:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
+    		source: "(292:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (269:1) {#if numeroDePagina>0}
+    // (294:1) {#if numeroDePagina>0}
     function create_if_block$5(ctx) {
     	let t;
     	let current;
@@ -6987,14 +6987,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(269:1) {#if numeroDePagina>0}",
+    		source: "(294:1) {#if numeroDePagina>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}">
+    // (295:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}">
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -7014,14 +7014,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(270:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}\\\">",
+    		source: "(295:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (271:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
+    // (296:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
     function create_default_slot_1$2(ctx) {
     	let t;
 
@@ -7041,14 +7041,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(271:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
+    		source: "(296:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">
+    // (312:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">
     function create_default_slot$2(ctx) {
     	let t;
 
@@ -7068,7 +7068,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(287:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}\\\">",
+    		source: "(312:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}\\\">",
     		ctx
     	});
 
@@ -7614,6 +7614,7 @@ var app = (function () {
 
     	
 
+    	////////////////////////BUSQUEDA
     	async function busqueda(
     		searchCountry,
     	searchYear,
@@ -7624,6 +7625,9 @@ var app = (function () {
     	minPoverty_ht,
     	maxPoverty_ht
     	) {
+    		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
+
     		if (typeof searchCountry == "undefined") {
     			searchCountry = "";
     		}
@@ -7662,9 +7666,12 @@ var app = (function () {
     			const json = await res.json();
     			$$invalidate(12, stats = json);
     			console.log("Found " + stats.length + " stats");
-    			window.alert("Se han encontrado datos.");
+
+    			//window.alert("Se han encontrado datos.");
+    			$$invalidate(11, exitoMsg = res.status + ": " + res.statusText + ". Dato encontrado con éxito.");
     		} else if (res.status == 404) {
     			window.alert("No se encuentran datos.");
+    			$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + ". No se encuentran datos.");
     		} else {
     			console.log("ERROR:" + " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     		}
@@ -7672,6 +7679,7 @@ var app = (function () {
     		
     	}
 
+    	//////////////////////PAGINACION
     	async function paginacion(
     		searchCountry,
     	searchYear,
@@ -7751,6 +7759,8 @@ var app = (function () {
     	}
 
     	async function getStatsPov() {
+    		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
     		console.log("Fetching stats...");
     		const res = await fetch("/api/v2/poverty-stats");
 
@@ -7760,21 +7770,28 @@ var app = (function () {
     			$$invalidate(12, stats = json);
     			console.log("Received " + stats.length + " stats.");
     		} else {
-    			window.alert("No se encuentra ningún dato.");
-    			$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
+    			//window.alert("No se encuentra ningún dato.");
+    			//errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
     			console.log("ERROR!");
     		}
     	}
 
     	async function loadInitialData() {
+    		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
     		console.log("Loading stats...");
 
     		const res = await fetch("/api/v2/poverty-stats/loadInitialData", { method: "GET" }).then(function (res) {
+    			$$invalidate(11, exitoMsg = "");
+
     			if (res.ok) {
     				getStatsPov();
-    				window.alert("Datos iniciales cargados.");
+
+    				//window.alert("Datos iniciales cargados.");
+    				$$invalidate(11, exitoMsg = res.status + ": " + res.statusText + ". Datos iniciales cargados.");
     			} else if (res.status == 401) {
     				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
+    				$$invalidate(10, errorMsg = res.status + ": " + res.statusText + ". Vacia la base de datos antes de cargar.");
     			} else {
     				$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     				console.log("ERROR!");
@@ -7784,6 +7801,7 @@ var app = (function () {
 
     	async function insertStat() {
     		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
     		console.log("Inserting stat...");
 
     		if (newStat.country == "" || newStat.country == null || newStat.year == "" || newStat.year == null) {
@@ -7797,15 +7815,16 @@ var app = (function () {
     				if (res.ok) {
     					console.log("Ok:");
     					getStats();
-    					window.alert("Dato insertado correctamente.");
+
+    					//window.alert("Dato insertado correctamente.");
     					$$invalidate(11, exitoMsg = res.status + ": " + res.statusText + ". Dato insertado con éxito");
     				} else if (res.status == 400) {
     					window.alert("Campo mal escrito.No puede insertarlo.");
-    					$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
+    					$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + "Asegurese de tener los campos completos.");
     					console.log("ERROR!");
     				} else {
     					window.alert("Dato ya creado. No puede insertarlo.");
-    					$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
+    					$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + "Este dato ya esta creado");
     					console.log("ERROR!");
     				}
     			});
@@ -7813,6 +7832,8 @@ var app = (function () {
     	}
 
     	async function deleteStat(country, year) {
+    		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
     		console.log("Deleting stat...");
 
     		const res = await fetch("/api/v2/poverty-stats/" + country + "/" + year, { method: "DELETE" }).then(function (res) {
@@ -7822,6 +7843,8 @@ var app = (function () {
     	}
 
     	async function deleteStats() {
+    		$$invalidate(11, exitoMsg = "");
+    		$$invalidate(10, errorMsg = "");
     		console.log("Deleting stat...");
 
     		const res = await fetch("/api/v2/poverty-stats", { method: "DELETE" }).then(function (res) {
@@ -8037,7 +8060,7 @@ var app = (function () {
     	return block;
     }
 
-    // (75:1) {:then stats}
+    // (78:1) {:then stats}
     function create_then_block$3(ctx) {
     	let current;
 
@@ -8085,14 +8108,14 @@ var app = (function () {
     		block,
     		id: create_then_block$3.name,
     		type: "then",
-    		source: "(75:1) {:then stats}",
+    		source: "(78:1) {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:9) <Button outline color="primary" on:click={updateStat}>
+    // (97:9) <Button outline color="primary" on:click={updateStat}>
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -8112,14 +8135,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(94:9) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
+    		source: "(97:9) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:2) <Table bordered>
+    // (79:2) <Table bordered>
     function create_default_slot_1$3(ctx) {
     	let thead;
     	let tr0;
@@ -8209,28 +8232,28 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$7, 78, 5, 2450);
-    			add_location(th1, file$7, 79, 5, 2470);
-    			add_location(th2, file$7, 80, 5, 2489);
-    			add_location(th3, file$7, 81, 5, 2534);
-    			add_location(th4, file$7, 82, 5, 2564);
-    			add_location(th5, file$7, 83, 5, 2592);
-    			add_location(tr0, file$7, 77, 4, 2439);
-    			add_location(thead, file$7, 76, 3, 2426);
-    			add_location(td0, file$7, 88, 5, 2662);
-    			add_location(td1, file$7, 89, 5, 2694);
+    			add_location(th0, file$7, 81, 5, 2653);
+    			add_location(th1, file$7, 82, 5, 2673);
+    			add_location(th2, file$7, 83, 5, 2692);
+    			add_location(th3, file$7, 84, 5, 2737);
+    			add_location(th4, file$7, 85, 5, 2767);
+    			add_location(th5, file$7, 86, 5, 2795);
+    			add_location(tr0, file$7, 80, 4, 2642);
+    			add_location(thead, file$7, 79, 3, 2629);
+    			add_location(td0, file$7, 91, 5, 2865);
+    			add_location(td1, file$7, 92, 5, 2897);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$7, 90, 9, 2727);
-    			add_location(td2, file$7, 90, 5, 2723);
+    			add_location(input0, file$7, 93, 9, 2930);
+    			add_location(td2, file$7, 93, 5, 2926);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$7, 91, 9, 2802);
-    			add_location(td3, file$7, 91, 5, 2798);
+    			add_location(input1, file$7, 94, 9, 3005);
+    			add_location(td3, file$7, 94, 5, 3001);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$7, 92, 9, 2876);
-    			add_location(td4, file$7, 92, 5, 2872);
-    			add_location(td5, file$7, 93, 5, 2946);
-    			add_location(tr1, file$7, 87, 4, 2651);
-    			add_location(tbody, file$7, 86, 3, 2638);
+    			add_location(input2, file$7, 95, 9, 3079);
+    			add_location(td4, file$7, 95, 5, 3075);
+    			add_location(td5, file$7, 96, 5, 3149);
+    			add_location(tr1, file$7, 90, 4, 2854);
+    			add_location(tbody, file$7, 89, 3, 2841);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8324,14 +8347,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(76:2) <Table bordered>",
+    		source: "(79:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:18)     Loading stat...   {:then stats}
+    // (76:18)     Loading stat...   {:then stats}
     function create_pending_block$3(ctx) {
     	let t;
 
@@ -8354,14 +8377,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$3.name,
     		type: "pending",
-    		source: "(73:18)     Loading stat...   {:then stats}",
+    		source: "(76:18)     Loading stat...   {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:4) {#if errorMsg}
+    // (102:4) {#if errorMsg}
     function create_if_block_1$4(ctx) {
     	let p;
     	let t0;
@@ -8373,7 +8396,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$7, 99, 2, 3102);
+    			add_location(p, file$7, 102, 2, 3305);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8392,14 +8415,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(99:4) {#if errorMsg}",
+    		source: "(102:4) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (102:1) {#if exitoMsg}
+    // (105:1) {#if exitoMsg}
     function create_if_block$6(ctx) {
     	let p;
     	let t;
@@ -8409,7 +8432,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[7]);
     			set_style(p, "color", "green");
-    			add_location(p, file$7, 102, 8, 3180);
+    			add_location(p, file$7, 105, 8, 3383);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8427,14 +8450,14 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(102:1) {#if exitoMsg}",
+    		source: "(105:1) {#if exitoMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (105:4) <Button outline color="secondary" on:click="{pop}">
+    // (108:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -8454,7 +8477,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(105:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(108:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -8522,9 +8545,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$7, 71, 26, 2293);
-    			add_location(h3, file$7, 71, 4, 2271);
-    			add_location(main, file$7, 70, 0, 2259);
+    			add_location(strong, file$7, 74, 26, 2496);
+    			add_location(h3, file$7, 74, 4, 2474);
+    			add_location(main, file$7, 73, 0, 2462);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8666,6 +8689,7 @@ var app = (function () {
 
     	async function updateStat() {
     		$$invalidate(7, exitoMsg = "");
+    		$$invalidate(6, errorMsg = "");
     		console.log("Updating stat..." + JSON.stringify(params.country));
 
     		const res = await fetch("/api/v2/poverty-stats/" + params.country + "/" + params.year, {
@@ -8679,15 +8703,17 @@ var app = (function () {
     			}),
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
+    			getstats();
+
     			if (res.ok) {
     				$$invalidate(7, exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito");
     				console.log("OK!" + exitoMsg);
     				getStats();
-    				window.alert("Dato insertado correctamente.");
     			} else if (res.status == 400) {
-    				window.alert("Campo mal escrito.No puede editarlo.");
+    				window.alert("Campo mal escrito.No puede editarlo."); //window.alert("Dato insertado correctamente.");
+    				$$invalidate(6, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + "Asegurese de tener los campos completos.");
     			} else {
-    				$$invalidate(6, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
+    				$$invalidate(6, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + "Este dato ya esta creado");
     				console.log("ERROR!");
     			}
 
