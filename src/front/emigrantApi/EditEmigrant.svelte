@@ -8,26 +8,26 @@
     import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
     export let params = {};
-    let stat  = {};
+    let eStat  = {};
     let updatedCountry = "";
     let updatedYear = "";
-    let updatedPoverty_prp = "";
-    let updatedPoverty_pt = "";
-    let updatedPoverty_ht = "";
+    let updatedEm_man = "";
+    let updatedEm_woman = "";
+    let updatedEm_totals = "";
     let errorMsg = "";
     onMount(getStat);
 	async function getStat(){
 		console.log("Fetching stat...");
-		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year);
+		const res = await fetch("/api/v2/emigrants-stats/"+params.country+"/"+params.year);
 		if(res.ok){
 			console.log("Ok:");
 			const json = await res.json();
-            stat = json;
-            updatedCountry = stat.country;
-            updatedYear = stat.year;
-            updatedPoverty_prp = stat.poverty_prp;
-            updatedPoverty_pt = stat.poverty_pt;
-            updatedPoverty_ht = stat.poverty_ht;
+            eStat = json;
+            updatedCountry = eStat.country;
+            updatedYear = eStat.year;
+            updatedEm_man = eStat.em.man;
+            updatedEm_woman = eStat.em_woman;
+            updatedEm_totals = eStat.em_totals;
             
 			console.log("Received stats.");
 		}else{
@@ -37,14 +37,14 @@
 	}
     async function updateStat(){
         console.log("Updating stat..."+JSON.stringify(params.country));
-		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year,{
+		const res = await fetch("/api/v2/emigrants-stats/"+params.country+"/"+params.year,{
 			method: "PUT",
 			body: JSON.stringify({
                 country : params.country,
                 year : Number(params.year),
-                poverty_prp : Number(updatedPoverty_prp),
-                poverty_pt : Number(updatedPoverty_pt),
-                poverty_ht : Number(updatedPoverty_ht)
+                em_man : Number(updatedEm_man),
+                em_woman : Number(updatedEm_woman),
+                em_woman : Number(updatedEm_totals)
             }),
 			headers:{
 				"Content-Type": "application/json"
@@ -62,6 +62,9 @@
 		});
 	};
 </script>
+<main>FuncionaEdit
+</main>
+<!--
 <main>
     <h3>Editando elemento <strong>{params.country}{params.year}</strong> </h3>
     {#await stat}
@@ -95,3 +98,4 @@
     {/if}
     <Button outline color="secondary" on:click="{pop}">Volver</Button>
 </main>
+-->

@@ -31,6 +31,9 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "heroku": "^7.40.0",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "svelte-router-spa": "^5.6.0",
+    "svelte-spa-router": "^2.1.0",
+    "sveltestrap": "^3.3.3"
   }
 }
