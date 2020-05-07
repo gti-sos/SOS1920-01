@@ -245,6 +245,11 @@ app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
 
 	if(country != newCountry || year != newYear){
 		res.sendStatus(409, "conflict");
+
+	}else if(!newCountry || !newYear ||!udp.em_man || !udp.em_woman
+			|| !udp.em_totals || Object.keys(updateTourism).length != 5){
+		 console.log("PUT recurso encontrado. Se intenta actualizar con campos no validos 400");
+		 res.sendStatus(400);
 	}else{
 		edb.update({country: country, year: year}, 
 

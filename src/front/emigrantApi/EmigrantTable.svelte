@@ -42,6 +42,8 @@
     };
 ///////////////////////////////////// BUSQUEDA ////////////////////////////////////////////
     async function busqueda(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax){
+		exitoMsg = "";
+		errorMsg = "";
 		if(typeof searchCountry=='undefined'){searchCountry="";}
 		if(typeof searchYear=='undefined'){searchYear="";}
 		if(typeof em_manMin=='undefined'){em_manMin="";}
@@ -64,7 +66,10 @@
 			emistats = json;
 			console.log("Found "+ emistats.length + " emistats");
 			window.alert("Se han encontrado datos.");
-		}else if(res.status==404){window.alert("No se encuentran datos.");
+			exitoMsg = "Código de mensaje: "+ res.status + ": " +res.statusText + ", Datos encontrados";
+		}else if(res.status==404){
+			//window.alert("No se encuentran datos.");
+			errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", dato no encontrado";	
 		}else{console.log("ERROR:"+" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);};
     }
     
@@ -135,6 +140,8 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 		}
     }
     async function getStats(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Fetching stats...");
 		const res = await fetch("/api/v2/emigrants-stats");
 		if(res.ok){
@@ -144,10 +151,12 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			console.log("Received "+emistats.length+" stats.");
 		}else{
 			window.alert("No se encuentra ningún dato.");
-			errorMsg =" Código de mensaje:"  + res.status + ", y quiere decir: " + res.statusText;
+			//errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", no se ha encontrado el dato";
 		}
 	}
 	async function loadInitialData(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Loading stats...");
 		const res = await fetch("/api/v2/emigrants-stats/loadInitialData",{
 			method: "GET"
@@ -155,14 +164,18 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			if(res.ok){
 				getStats();
 				window.alert("Datos iniciales cargados.");
-			}else if(res.status==401){
+				exitoMsg = "Código de mensaje: "+ res.status + ": " +res.statusText + ", Datos generados correctamente";
+			}else if(res.status==400){
 				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
+				errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", La base de datos debe estar vacía";
 			}else{
-				errorMsg = " Código de ensaje:" + res.status + ", y quiere decir: " + res.statusText;
+				errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", no se puede generar datos correctamente";
 			}	
 		});
 	}
 	async function insertEmiStat(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Inserting stat...");
 		if (newEmiStat.country == "" || newEmiStat.country == null || newEmiStat.year == "" || newEmiStat.year == null) {
 			window.alert("Falta país y un año");
@@ -177,26 +190,28 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 				if(res.ok){
 					console.log("Ok:");
 					getStats();
-					window.alert("Dato insertado correctamente.");
-					exitoMsg = res.status + ": " +res.statusText + "Dato insertado correctamente";
+					//window.alert("Dato insertado correctamente.");
+					exitoMsg = "Código de mensaje: " + res.status + ": " +res.statusText + ", Dato insertado correctamente";
 				}else if(res.status==400){
-					window.alert("Campo mal escrito.No puede insertarlo.");
-					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
+					window.alert("Campo mal escrito. No puede insertarlo.");
+					errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", rellene todos los campos correctamente";	
 				}else{
 					window.alert("Dato ya creado. No puede insertarlo.");
-					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
+					errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", el dato ya existe";	
 				}
 				
 			});
 		}
     }
     async function deleteEmiStat(country,year){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/emigrants-stats/"+country+"/"+year,{
 			method: "DELETE"
 		}).then(function (res){
-			
 			getStats();
+			errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", Borrado correctamente";
 		});
     }/*
     async function deleteEmi1Stat(country){
@@ -209,13 +224,16 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 		});
 	}*/
 	async function deleteEmiStats(){
+		exitoMsg = "";
+		errorMsg = "";
 		console.log("Deleting stat...");
 		const res = await fetch("/api/v2/emigrants-stats",{
 			method: "DELETE"
 		}).then(function (res){
-			window.alert("Base de datos eliminada correctamente.");			
+			window.alert("Base de datos eliminada correctamente.");	
 			getStats();
 			location.reload();
+			exitoMsg = "Código de mensaje: " + res.status + "-"+ res.statusText+ ", Borrados correctamente";
 		});
 	}
 </script>
@@ -259,7 +277,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 		</Table>
 	{/await}
 	{#if errorMsg}<p style="color: red">ERROR: {errorMsg}</p>{/if}
-	{#if exitoMsg} <p style="color: green">{exitoMsg}</p> {/if}
+	{#if exitoMsg} <p style="color: green">ÉXITO: {exitoMsg}</p> {/if}
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 	<Button outline color="danger" on:click="{deleteEmiStats}">Borrar todo</Button>
 	{#if numeroDePagina==0}

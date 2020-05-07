@@ -56,7 +56,7 @@
 				getStat();
 				window.alert("Dato modificado correctamente.");
 			}else if(res.status==400){
-				window.alert("Campo mal escrito.No puede editarlo.");
+				window.alert("Campo mal escrito. No puede editarlo.");
 			}else{
 				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
 			};			
