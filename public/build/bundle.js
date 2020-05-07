@@ -1652,11 +1652,7 @@ var app = (function () {
     			br1 = element("br");
     			t58 = space();
     			button0 = element("button");
-<<<<<<< HEAD
-    			button0.textContent = "API Natalidad";
-=======
     			button0.textContent = "Natalidad";
->>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			t60 = space();
     			button1 = element("button");
     			button1.textContent = "Riesgo de pobreza";
@@ -1737,27 +1733,12 @@ var app = (function () {
     			add_location(br1, file, 41, 2, 2897);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary");
-<<<<<<< HEAD
-    			attr_dev(button0, "onclick", "window.location.href='#/evolution-of-cycling-routes'");
-=======
     			attr_dev(button0, "onclick", "window.location.href='#/natality-stats'");
->>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			set_style(button0, "margin-left", "6.75%");
     			set_style(button0, "width", "25%");
     			add_location(button0, file, 43, 8, 2915);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-warning");
-<<<<<<< HEAD
-    			attr_dev(button1, "onclick", "window.location.href='#/rural-tourism-stats'");
-    			set_style(button1, "width", "25%");
-    			add_location(button1, file, 44, 2, 3091);
-    			attr_dev(button2, "type", "button");
-    			attr_dev(button2, "class", "btn btn-danger");
-    			attr_dev(button2, "onclick", "window.location.href='#/traffic-accidents'");
-    			set_style(button2, "width", "25%");
-    			add_location(button2, file, 45, 2, 3242);
-    			add_location(br2, file, 47, 8, 3400);
-=======
     			attr_dev(button1, "onclick", "window.location.href='#/poverty-stats'");
     			set_style(button1, "width", "25%");
     			add_location(button1, file, 44, 2, 3075);
@@ -1767,7 +1748,6 @@ var app = (function () {
     			set_style(button2, "width", "25%");
     			add_location(button2, file, 45, 2, 3220);
     			add_location(br2, file, 47, 8, 3368);
->>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			set_style(div0, "margin-left", "12.5%");
     			add_location(div0, file, 3, 2, 37);
     			attr_dev(div1, "class", "div-home");
@@ -11306,30 +11286,1429 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$d = "src\\front\\emigrantApi\\EmigrantTable.svelte";
 
-    function create_fragment$e(ctx) {
-    	let t0;
-    	let main;
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[36] = list[i];
+    	return child_ctx;
+    }
+
+    // (1:0) <script>   import {    onMount   }
+    function create_catch_block$3(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$3.name,
+    		type: "catch",
+    		source: "(1:0) <script>   import {    onMount   }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (228:1) {:then emistats}
+    function create_then_block$3(ctx) {
+    	let current;
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_6$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			t0 = text("/////////////// HTML ///////////////////////////\r\n");
-    			main = element("main");
-    			main.textContent = "Funciona";
-    			add_location(main, file$d, 222, 0, 7738);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    			create_component(table.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, main, anchor);
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const table_changes = {};
+
+    			if (dirty[0] & /*emistats, newEmiStat*/ 2049 | dirty[1] & /*$$scope*/ 256) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$3.name,
+    		type: "then",
+    		source: "(228:1) {:then emistats}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (247:9) <Button outline color="primary" on:click={insertEmiStat}>
+    function create_default_slot_8$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Insertar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8$1.name,
+    		type: "slot",
+    		source: "(247:9) <Button outline color=\\\"primary\\\" on:click={insertEmiStat}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (258:10) <Button outline color="danger" on:click="{deleteEmiStat(emistat.country,emistat.year)}">
+    function create_default_slot_7$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Eliminar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$1.name,
+    		type: "slot",
+    		source: "(258:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStat(emistat.country,emistat.year)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (249:4) {#each emistats as emistat}
+    function create_each_block$2(ctx) {
+    	let tr;
+    	let td0;
+    	let a;
+    	let t0_value = /*emistat*/ ctx[36].country + "";
+    	let t0;
+    	let a_href_value;
+    	let t1;
+    	let td1;
+    	let t2_value = /*emistat*/ ctx[36].year + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = /*emistat*/ ctx[36].em_man + "";
+    	let t4;
+    	let t5;
+    	let td3;
+    	let t6_value = /*emistat*/ ctx[36].em_woman + "";
+    	let t6;
+    	let t7;
+    	let td4;
+    	let t8_value = /*emistat*/ ctx[36].em_totals + "";
+    	let t8;
+    	let t9;
+    	let td5;
+    	let t10;
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_7$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*deleteEmiStat*/ ctx[16](/*emistat*/ ctx[36].country, /*emistat*/ ctx[36].year))) /*deleteEmiStat*/ ctx[16](/*emistat*/ ctx[36].country, /*emistat*/ ctx[36].year).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			td3 = element("td");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			td4 = element("td");
+    			t8 = text(t8_value);
+    			t9 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t10 = space();
+    			attr_dev(a, "href", a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[36].country + "/" + /*emistat*/ ctx[36].year);
+    			add_location(a, file$d, 251, 7, 8619);
+    			add_location(td0, file$d, 250, 6, 8606);
+    			add_location(td1, file$d, 253, 6, 8722);
+    			add_location(td2, file$d, 254, 6, 8753);
+    			add_location(td3, file$d, 255, 6, 8786);
+    			add_location(td4, file$d, 256, 6, 8821);
+    			add_location(td5, file$d, 257, 6, 8857);
+    			add_location(tr, file$d, 249, 5, 8594);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, a);
+    			append_dev(a, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    			append_dev(tr, td3);
+    			append_dev(td3, t6);
+    			append_dev(tr, t7);
+    			append_dev(tr, td4);
+    			append_dev(td4, t8);
+    			append_dev(tr, t9);
+    			append_dev(tr, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tr, t10);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty[0] & /*emistats*/ 2048) && t0_value !== (t0_value = /*emistat*/ ctx[36].country + "")) set_data_dev(t0, t0_value);
+
+    			if (!current || dirty[0] & /*emistats*/ 2048 && a_href_value !== (a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[36].country + "/" + /*emistat*/ ctx[36].year)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if ((!current || dirty[0] & /*emistats*/ 2048) && t2_value !== (t2_value = /*emistat*/ ctx[36].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*emistats*/ 2048) && t4_value !== (t4_value = /*emistat*/ ctx[36].em_man + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*emistats*/ 2048) && t6_value !== (t6_value = /*emistat*/ ctx[36].em_woman + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*emistats*/ 2048) && t8_value !== (t8_value = /*emistat*/ ctx[36].em_totals + "")) set_data_dev(t8, t8_value);
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(249:4) {#each emistats as emistat}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (229:2) <Table bordered>
+    function create_default_slot_6$1(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let input0;
+    	let t12;
+    	let td1;
+    	let input1;
+    	let t13;
+    	let td2;
+    	let input2;
+    	let t14;
+    	let td3;
+    	let input3;
+    	let t15;
+    	let td4;
+    	let input4;
+    	let t16;
+    	let td5;
+    	let t17;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_8$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*insertEmiStat*/ ctx[15]);
+    	let each_value = /*emistats*/ ctx[11];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "País";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Año";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Emigrantes (Hombres)";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Emigrantes (Mujeres)";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Emigrantes (Totales)";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Acciones";
+    			t11 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t12 = space();
+    			td1 = element("td");
+    			input1 = element("input");
+    			t13 = space();
+    			td2 = element("td");
+    			input2 = element("input");
+    			t14 = space();
+    			td3 = element("td");
+    			input3 = element("input");
+    			t15 = space();
+    			td4 = element("td");
+    			input4 = element("input");
+    			t16 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t17 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(th0, file$d, 231, 5, 7871);
+    			add_location(th1, file$d, 232, 5, 7891);
+    			add_location(th2, file$d, 233, 5, 7910);
+    			add_location(th3, file$d, 234, 5, 7946);
+    			add_location(th4, file$d, 235, 5, 7982);
+    			add_location(th5, file$d, 236, 5, 8018);
+    			add_location(tr0, file$d, 230, 4, 7860);
+    			add_location(thead, file$d, 229, 3, 7847);
+    			attr_dev(input0, "type", "text");
+    			add_location(input0, file$d, 241, 9, 8092);
+    			add_location(td0, file$d, 241, 5, 8088);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$d, 242, 9, 8165);
+    			add_location(td1, file$d, 242, 5, 8161);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$d, 243, 9, 8237);
+    			add_location(td2, file$d, 243, 5, 8233);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$d, 244, 9, 8311);
+    			add_location(td3, file$d, 244, 5, 8307);
+    			attr_dev(input4, "type", "number");
+    			add_location(input4, file$d, 245, 9, 8387);
+    			add_location(td4, file$d, 245, 5, 8383);
+    			add_location(td5, file$d, 246, 5, 8460);
+    			add_location(tr1, file$d, 240, 4, 8077);
+    			add_location(tbody, file$d, 239, 3, 8064);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*newEmiStat*/ ctx[0].country);
+    			append_dev(tr1, t12);
+    			append_dev(tr1, td1);
+    			append_dev(td1, input1);
+    			set_input_value(input1, /*newEmiStat*/ ctx[0].year);
+    			append_dev(tr1, t13);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input2);
+    			set_input_value(input2, /*newEmiStat*/ ctx[0].em_man);
+    			append_dev(tr1, t14);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input3);
+    			set_input_value(input3, /*newEmiStat*/ ctx[0].em_woman);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input4);
+    			set_input_value(input4, /*newEmiStat*/ ctx[0].em_totals);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tbody, t17);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(tbody, null);
+    			}
+
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[23]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[24]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[25]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[26]),
+    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[27])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*newEmiStat*/ 1 && input0.value !== /*newEmiStat*/ ctx[0].country) {
+    				set_input_value(input0, /*newEmiStat*/ ctx[0].country);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input1.value) !== /*newEmiStat*/ ctx[0].year) {
+    				set_input_value(input1, /*newEmiStat*/ ctx[0].year);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input2.value) !== /*newEmiStat*/ ctx[0].em_man) {
+    				set_input_value(input2, /*newEmiStat*/ ctx[0].em_man);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input3.value) !== /*newEmiStat*/ ctx[0].em_woman) {
+    				set_input_value(input3, /*newEmiStat*/ ctx[0].em_woman);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input4.value) !== /*newEmiStat*/ ctx[0].em_totals) {
+    				set_input_value(input4, /*newEmiStat*/ ctx[0].em_totals);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+
+    			if (dirty[0] & /*deleteEmiStat, emistats*/ 67584) {
+    				each_value = /*emistats*/ ctx[11];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(tbody, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			destroy_each(each_blocks, detaching);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6$1.name,
+    		type: "slot",
+    		source: "(229:2) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (226:18)     Loading emistats...   {:then emistats}
+    function create_pending_block$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading emistats...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(main);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$3.name,
+    		type: "pending",
+    		source: "(226:18)     Loading emistats...   {:then emistats}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (264:1) {#if errorMsg}
+    function create_if_block_2$3(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*errorMsg*/ ctx[10]);
+    			set_style(p, "color", "red");
+    			add_location(p, file$d, 264, 8, 9059);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*errorMsg*/ 1024) set_data_dev(t1, /*errorMsg*/ ctx[10]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$3.name,
+    		type: "if",
+    		source: "(264:1) {#if errorMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (267:1) <Button outline color="secondary" on:click="{loadInitialData}">
+    function create_default_slot_5$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Cargar datos iniciales");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$1.name,
+    		type: "slot",
+    		source: "(267:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (268:1) <Button outline color="danger" on:click="{deleteEmiStats}">
+    function create_default_slot_4$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Borrar todo");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$1.name,
+    		type: "slot",
+    		source: "(268:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStats}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (269:1) {#if numeroDePagina==0}
+    function create_if_block_1$3(ctx) {
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_3$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2))) /*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$3.name,
+    		type: "if",
+    		source: "(269:1) {#if numeroDePagina==0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (270:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
+    function create_default_slot_3$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(">");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3$1.name,
+    		type: "slot",
+    		source: "(270:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (272:1) {#if numeroDePagina>0}
+    function create_if_block$9(ctx) {
+    	let t;
+    	let current;
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 1))) /*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 1).apply(this, arguments);
+    	});
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_1$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2))) /*paginacion*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			create_component(button0.$$.fragment);
+    			t = space();
+    			create_component(button1.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(button1, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(button1, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$9.name,
+    		type: "if",
+    		source: "(272:1) {#if numeroDePagina>0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (273:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">
+    function create_default_slot_2$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Pagina anterior");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$4.name,
+    		type: "slot",
+    		source: "(273:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (274:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
+    function create_default_slot_1$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Pagina siguiente");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$4.name,
+    		type: "slot",
+    		source: "(274:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (290:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">
+    function create_default_slot$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Buscar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$4.name,
+    		type: "slot",
+    		source: "(290:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$e(ctx) {
+    	let main0;
+    	let t1;
+    	let main1;
+    	let h3;
+    	let t3;
+    	let promise;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let t7;
+    	let t8;
+    	let t9;
+    	let h60;
+    	let t11;
+    	let tr0;
+    	let td0;
+    	let label0;
+    	let t12;
+    	let input0;
+    	let t13;
+    	let td1;
+    	let label1;
+    	let t14;
+    	let input1;
+    	let t15;
+    	let td2;
+    	let label2;
+    	let t16;
+    	let input2;
+    	let t17;
+    	let td3;
+    	let label3;
+    	let t18;
+    	let input3;
+    	let t19;
+    	let tr1;
+    	let td4;
+    	let label4;
+    	let t20;
+    	let input4;
+    	let t21;
+    	let td5;
+    	let label5;
+    	let t22;
+    	let input5;
+    	let t23;
+    	let td6;
+    	let label6;
+    	let t24;
+    	let input6;
+    	let t25;
+    	let td7;
+    	let label7;
+    	let t26;
+    	let input7;
+    	let t27;
+    	let t28;
+    	let h61;
+    	let current;
+    	let dispose;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$3,
+    		then: create_then_block$3,
+    		catch: create_catch_block$3,
+    		value: 11,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*emistats*/ ctx[11], info);
+    	let if_block0 = /*errorMsg*/ ctx[10] && create_if_block_2$3(ctx);
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot_5$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*loadInitialData*/ ctx[14]);
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_4$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*deleteEmiStats*/ ctx[17]);
+    	let if_block1 = /*numeroDePagina*/ ctx[1] == 0 && create_if_block_1$3(ctx);
+    	let if_block2 = /*numeroDePagina*/ ctx[1] > 0 && create_if_block$9(ctx);
+
+    	const button2 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button2.$on("click", function () {
+    		if (is_function(/*busqueda*/ ctx[12](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9]))) /*busqueda*/ ctx[12](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9]).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			main0 = element("main");
+    			main0.textContent = "Funciona";
+    			t1 = space();
+    			main1 = element("main");
+    			h3 = element("h3");
+    			h3.textContent = "Vista completa de elementos.";
+    			t3 = space();
+    			info.block.c();
+    			t4 = space();
+    			if (if_block0) if_block0.c();
+    			t5 = space();
+    			create_component(button0.$$.fragment);
+    			t6 = space();
+    			create_component(button1.$$.fragment);
+    			t7 = space();
+    			if (if_block1) if_block1.c();
+    			t8 = space();
+    			if (if_block2) if_block2.c();
+    			t9 = space();
+    			h60 = element("h6");
+    			h60.textContent = "Para verlo mediante páginas pulse el botón de avanzar página.";
+    			t11 = space();
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			label0 = element("label");
+    			t12 = text("País: ");
+    			input0 = element("input");
+    			t13 = space();
+    			td1 = element("td");
+    			label1 = element("label");
+    			t14 = text("Mínimo de emigrantes (Hombres): ");
+    			input1 = element("input");
+    			t15 = space();
+    			td2 = element("td");
+    			label2 = element("label");
+    			t16 = text("Mínimo de emigrantes (Mujeres): ");
+    			input2 = element("input");
+    			t17 = space();
+    			td3 = element("td");
+    			label3 = element("label");
+    			t18 = text("Mínimo de emigrantes (Totales): ");
+    			input3 = element("input");
+    			t19 = space();
+    			tr1 = element("tr");
+    			td4 = element("td");
+    			label4 = element("label");
+    			t20 = text("Año: ");
+    			input4 = element("input");
+    			t21 = space();
+    			td5 = element("td");
+    			label5 = element("label");
+    			t22 = text("Máximo de emigrantes (Hombres): ");
+    			input5 = element("input");
+    			t23 = space();
+    			td6 = element("td");
+    			label6 = element("label");
+    			t24 = text("Máximo de emigrantes (Mujeres): ");
+    			input6 = element("input");
+    			t25 = space();
+    			td7 = element("td");
+    			label7 = element("label");
+    			t26 = text("Máximo de emigrantes (Totales): ");
+    			input7 = element("input");
+    			t27 = space();
+    			create_component(button2.$$.fragment);
+    			t28 = space();
+    			h61 = element("h6");
+    			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
+    			add_location(main0, file$d, 221, 0, 7688);
+    			add_location(h3, file$d, 224, 1, 7722);
+    			add_location(h60, file$d, 275, 1, 9921);
+    			add_location(input0, file$d, 277, 19, 10020);
+    			add_location(label0, file$d, 277, 6, 10007);
+    			add_location(td0, file$d, 277, 2, 10003);
+    			add_location(input1, file$d, 278, 45, 10116);
+    			add_location(label1, file$d, 278, 6, 10077);
+    			add_location(td1, file$d, 278, 2, 10073);
+    			add_location(input2, file$d, 279, 45, 10208);
+    			add_location(label2, file$d, 279, 6, 10169);
+    			add_location(td2, file$d, 279, 2, 10165);
+    			add_location(input3, file$d, 280, 45, 10302);
+    			add_location(label3, file$d, 280, 6, 10263);
+    			add_location(td3, file$d, 280, 2, 10259);
+    			add_location(tr0, file$d, 276, 1, 9995);
+    			add_location(input4, file$d, 283, 18, 10385);
+    			add_location(label4, file$d, 283, 6, 10373);
+    			add_location(td4, file$d, 283, 2, 10369);
+    			add_location(input5, file$d, 284, 45, 10478);
+    			add_location(label5, file$d, 284, 6, 10439);
+    			add_location(td5, file$d, 284, 2, 10435);
+    			add_location(input6, file$d, 285, 45, 10570);
+    			add_location(label6, file$d, 285, 6, 10531);
+    			add_location(td6, file$d, 285, 2, 10527);
+    			add_location(input7, file$d, 286, 45, 10664);
+    			add_location(label7, file$d, 286, 6, 10625);
+    			add_location(td7, file$d, 286, 2, 10621);
+    			add_location(tr1, file$d, 282, 1, 10361);
+    			add_location(h61, file$d, 290, 1, 10901);
+    			add_location(main1, file$d, 223, 0, 7713);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, main0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, main1, anchor);
+    			append_dev(main1, h3);
+    			append_dev(main1, t3);
+    			info.block.m(main1, info.anchor = null);
+    			info.mount = () => main1;
+    			info.anchor = t4;
+    			append_dev(main1, t4);
+    			if (if_block0) if_block0.m(main1, null);
+    			append_dev(main1, t5);
+    			mount_component(button0, main1, null);
+    			append_dev(main1, t6);
+    			mount_component(button1, main1, null);
+    			append_dev(main1, t7);
+    			if (if_block1) if_block1.m(main1, null);
+    			append_dev(main1, t8);
+    			if (if_block2) if_block2.m(main1, null);
+    			append_dev(main1, t9);
+    			append_dev(main1, h60);
+    			append_dev(main1, t11);
+    			append_dev(main1, tr0);
+    			append_dev(tr0, td0);
+    			append_dev(td0, label0);
+    			append_dev(label0, t12);
+    			append_dev(label0, input0);
+    			set_input_value(input0, /*searchCountry*/ ctx[2]);
+    			append_dev(tr0, t13);
+    			append_dev(tr0, td1);
+    			append_dev(td1, label1);
+    			append_dev(label1, t14);
+    			append_dev(label1, input1);
+    			set_input_value(input1, /*em_manMin*/ ctx[4]);
+    			append_dev(tr0, t15);
+    			append_dev(tr0, td2);
+    			append_dev(td2, label2);
+    			append_dev(label2, t16);
+    			append_dev(label2, input2);
+    			set_input_value(input2, /*em_womanMin*/ ctx[6]);
+    			append_dev(tr0, t17);
+    			append_dev(tr0, td3);
+    			append_dev(td3, label3);
+    			append_dev(label3, t18);
+    			append_dev(label3, input3);
+    			set_input_value(input3, /*em_totalsMin*/ ctx[8]);
+    			append_dev(main1, t19);
+    			append_dev(main1, tr1);
+    			append_dev(tr1, td4);
+    			append_dev(td4, label4);
+    			append_dev(label4, t20);
+    			append_dev(label4, input4);
+    			set_input_value(input4, /*searchYear*/ ctx[3]);
+    			append_dev(tr1, t21);
+    			append_dev(tr1, td5);
+    			append_dev(td5, label5);
+    			append_dev(label5, t22);
+    			append_dev(label5, input5);
+    			set_input_value(input5, /*em_manMax*/ ctx[5]);
+    			append_dev(tr1, t23);
+    			append_dev(tr1, td6);
+    			append_dev(td6, label6);
+    			append_dev(label6, t24);
+    			append_dev(label6, input6);
+    			set_input_value(input6, /*em_womanMax*/ ctx[7]);
+    			append_dev(tr1, t25);
+    			append_dev(tr1, td7);
+    			append_dev(td7, label7);
+    			append_dev(label7, t26);
+    			append_dev(label7, input7);
+    			set_input_value(input7, /*em_totalsMax*/ ctx[9]);
+    			append_dev(main1, t27);
+    			mount_component(button2, main1, null);
+    			append_dev(main1, t28);
+    			append_dev(main1, h61);
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[28]),
+    				listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[29]),
+    				listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[30]),
+    				listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[31]),
+    				listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[32]),
+    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[33]),
+    				listen_dev(input6, "input", /*input6_input_handler*/ ctx[34]),
+    				listen_dev(input7, "input", /*input7_input_handler*/ ctx[35])
+    			];
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			info.ctx = ctx;
+
+    			if (dirty[0] & /*emistats*/ 2048 && promise !== (promise = /*emistats*/ ctx[11]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[11] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			if (/*errorMsg*/ ctx[10]) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_2$3(ctx);
+    					if_block0.c();
+    					if_block0.m(main1, t5);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+
+    			if (/*numeroDePagina*/ ctx[1] == 0) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+
+    					if (dirty[0] & /*numeroDePagina*/ 2) {
+    						transition_in(if_block1, 1);
+    					}
+    				} else {
+    					if_block1 = create_if_block_1$3(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(main1, t8);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*numeroDePagina*/ ctx[1] > 0) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+
+    					if (dirty[0] & /*numeroDePagina*/ 2) {
+    						transition_in(if_block2, 1);
+    					}
+    				} else {
+    					if_block2 = create_if_block$9(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(main1, t9);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (dirty[0] & /*searchCountry*/ 4 && input0.value !== /*searchCountry*/ ctx[2]) {
+    				set_input_value(input0, /*searchCountry*/ ctx[2]);
+    			}
+
+    			if (dirty[0] & /*em_manMin*/ 16 && input1.value !== /*em_manMin*/ ctx[4]) {
+    				set_input_value(input1, /*em_manMin*/ ctx[4]);
+    			}
+
+    			if (dirty[0] & /*em_womanMin*/ 64 && input2.value !== /*em_womanMin*/ ctx[6]) {
+    				set_input_value(input2, /*em_womanMin*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*em_totalsMin*/ 256 && input3.value !== /*em_totalsMin*/ ctx[8]) {
+    				set_input_value(input3, /*em_totalsMin*/ ctx[8]);
+    			}
+
+    			if (dirty[0] & /*searchYear*/ 8 && input4.value !== /*searchYear*/ ctx[3]) {
+    				set_input_value(input4, /*searchYear*/ ctx[3]);
+    			}
+
+    			if (dirty[0] & /*em_manMax*/ 32 && input5.value !== /*em_manMax*/ ctx[5]) {
+    				set_input_value(input5, /*em_manMax*/ ctx[5]);
+    			}
+
+    			if (dirty[0] & /*em_womanMax*/ 128 && input6.value !== /*em_womanMax*/ ctx[7]) {
+    				set_input_value(input6, /*em_womanMax*/ ctx[7]);
+    			}
+
+    			if (dirty[0] & /*em_totalsMax*/ 512 && input7.value !== /*em_totalsMax*/ ctx[9]) {
+    				set_input_value(input7, /*em_totalsMax*/ ctx[9]);
+    			}
+
+    			const button2_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button2.$set(button2_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			transition_in(if_block1);
+    			transition_in(if_block2);
+    			transition_in(button2.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			transition_out(if_block1);
+    			transition_out(if_block2);
+    			transition_out(button2.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main0);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(main1);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			if (if_block0) if_block0.d();
+    			destroy_component(button0);
+    			destroy_component(button1);
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			destroy_component(button2);
+    			run_all(dispose);
     		}
     	};
 
@@ -11376,7 +12755,7 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			emistats = json;
+    			$$invalidate(11, emistats = json);
     			console.log("Received " + emistats.length + " stats.");
     		} else {
     			console.log("ERROR");
@@ -11434,7 +12813,7 @@ var app = (function () {
 
     		if (res.ok) {
     			const json = await res.json();
-    			emistats = json;
+    			$$invalidate(11, emistats = json);
     			console.log("Found " + emistats.length + " emistats");
     			window.alert("Se han encontrado datos.");
     		} else if (res.status == 404) {
@@ -11493,15 +12872,15 @@ var app = (function () {
     		}
 
     		if (num == 1) {
-    			numeroDePagina = numeroDePagina - limit;
+    			$$invalidate(1, numeroDePagina = numeroDePagina - limit);
 
     			if (numeroDePagina < 0) {
-    				numeroDePagina = 0;
+    				$$invalidate(1, numeroDePagina = 0);
     				const res = await fetch("/api/v2/emigrants-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
 
     				if (res.ok) {
     					const json = await res.json();
-    					emistats = json;
+    					$$invalidate(11, emistats = json);
     					numeroAux = num;
     				}
     			} else {
@@ -11509,17 +12888,17 @@ var app = (function () {
 
     				if (res.ok) {
     					const json = await res.json();
-    					emistats = json;
+    					$$invalidate(11, emistats = json);
     					numeroAux = num;
     				}
     			}
     		} else {
-    			numeroDePagina = numeroDePagina + limit;
+    			$$invalidate(1, numeroDePagina = numeroDePagina + limit);
     			const res = await fetch("/api/v2/poverty-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
 
     			if (res.ok) {
     				const json = await res.json();
-    				emistats = json;
+    				$$invalidate(11, emistats = json);
     				numeroAux = num;
     			}
     		}
@@ -11532,11 +12911,11 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			emistats = json;
+    			$$invalidate(11, emistats = json);
     			console.log("Received " + emistats.length + " stats.");
     		} else {
     			window.alert("No se encuentra ningún dato.");
-    			errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+    			$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     			console.log("ERROR!");
     		}
     	}
@@ -11551,7 +12930,7 @@ var app = (function () {
     			} else if (res.status == 401) {
     				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
     			} else {
-    				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+    				$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     				console.log("ERROR!");
     			}
     		});
@@ -11578,7 +12957,7 @@ var app = (function () {
     					window.alert("Dato ya creado. No puede insertarlo.");
     				}
 
-    				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+    				$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     				console.log("ERROR!");
     			});
     		}
@@ -11621,6 +13000,71 @@ var app = (function () {
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("EmigrantTable", $$slots, []);
 
+    	function input0_input_handler() {
+    		newEmiStat.country = this.value;
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input1_input_handler() {
+    		newEmiStat.year = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input2_input_handler() {
+    		newEmiStat.em_man = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input3_input_handler() {
+    		newEmiStat.em_woman = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input4_input_handler() {
+    		newEmiStat.em_totals = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input0_input_handler_1() {
+    		searchCountry = this.value;
+    		$$invalidate(2, searchCountry);
+    	}
+
+    	function input1_input_handler_1() {
+    		em_manMin = this.value;
+    		$$invalidate(4, em_manMin);
+    	}
+
+    	function input2_input_handler_1() {
+    		em_womanMin = this.value;
+    		$$invalidate(6, em_womanMin);
+    	}
+
+    	function input3_input_handler_1() {
+    		em_totalsMin = this.value;
+    		$$invalidate(8, em_totalsMin);
+    	}
+
+    	function input4_input_handler_1() {
+    		searchYear = this.value;
+    		$$invalidate(3, searchYear);
+    	}
+
+    	function input5_input_handler() {
+    		em_manMax = this.value;
+    		$$invalidate(5, em_manMax);
+    	}
+
+    	function input6_input_handler() {
+    		em_womanMax = this.value;
+    		$$invalidate(7, em_womanMax);
+    	}
+
+    	function input7_input_handler() {
+    		em_totalsMax = this.value;
+    		$$invalidate(9, em_totalsMax);
+    	}
+
     	$$self.$capture_state = () => ({
     		onMount,
     		Table,
@@ -11651,33 +13095,70 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("emistats" in $$props) emistats = $$props.emistats;
-    		if ("newEmiStat" in $$props) newEmiStat = $$props.newEmiStat;
-    		if ("numeroDePagina" in $$props) numeroDePagina = $$props.numeroDePagina;
+    		if ("emistats" in $$props) $$invalidate(11, emistats = $$props.emistats);
+    		if ("newEmiStat" in $$props) $$invalidate(0, newEmiStat = $$props.newEmiStat);
+    		if ("numeroDePagina" in $$props) $$invalidate(1, numeroDePagina = $$props.numeroDePagina);
     		if ("numeroAux" in $$props) numeroAux = $$props.numeroAux;
     		if ("limit" in $$props) limit = $$props.limit;
-    		if ("searchCountry" in $$props) searchCountry = $$props.searchCountry;
-    		if ("searchYear" in $$props) searchYear = $$props.searchYear;
-    		if ("em_manMin" in $$props) em_manMin = $$props.em_manMin;
-    		if ("em_manMax" in $$props) em_manMax = $$props.em_manMax;
-    		if ("em_womanMin" in $$props) em_womanMin = $$props.em_womanMin;
-    		if ("em_womanMax" in $$props) em_womanMax = $$props.em_womanMax;
-    		if ("em_totalsMin" in $$props) em_totalsMin = $$props.em_totalsMin;
-    		if ("em_totalsMax" in $$props) em_totalsMax = $$props.em_totalsMax;
-    		if ("errorMsg" in $$props) errorMsg = $$props.errorMsg;
+    		if ("searchCountry" in $$props) $$invalidate(2, searchCountry = $$props.searchCountry);
+    		if ("searchYear" in $$props) $$invalidate(3, searchYear = $$props.searchYear);
+    		if ("em_manMin" in $$props) $$invalidate(4, em_manMin = $$props.em_manMin);
+    		if ("em_manMax" in $$props) $$invalidate(5, em_manMax = $$props.em_manMax);
+    		if ("em_womanMin" in $$props) $$invalidate(6, em_womanMin = $$props.em_womanMin);
+    		if ("em_womanMax" in $$props) $$invalidate(7, em_womanMax = $$props.em_womanMax);
+    		if ("em_totalsMin" in $$props) $$invalidate(8, em_totalsMin = $$props.em_totalsMin);
+    		if ("em_totalsMax" in $$props) $$invalidate(9, em_totalsMax = $$props.em_totalsMax);
+    		if ("errorMsg" in $$props) $$invalidate(10, errorMsg = $$props.errorMsg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [
+    		newEmiStat,
+    		numeroDePagina,
+    		searchCountry,
+    		searchYear,
+    		em_manMin,
+    		em_manMax,
+    		em_womanMin,
+    		em_womanMax,
+    		em_totalsMin,
+    		em_totalsMax,
+    		errorMsg,
+    		emistats,
+    		busqueda,
+    		paginacion,
+    		loadInitialData,
+    		insertEmiStat,
+    		deleteEmiStat,
+    		deleteEmiStats,
+    		numeroAux,
+    		limit,
+    		getEmiStats,
+    		getStats,
+    		deleteEmi1Stat,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input0_input_handler_1,
+    		input1_input_handler_1,
+    		input2_input_handler_1,
+    		input3_input_handler_1,
+    		input4_input_handler_1,
+    		input5_input_handler,
+    		input6_input_handler,
+    		input7_input_handler
+    	];
     }
 
     class EmigrantTable extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

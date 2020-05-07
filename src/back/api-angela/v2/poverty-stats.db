@@ -1,75 +1,15 @@
-{"country":"france","year":2017,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"0cmcvfLX0Mq2zz68"}
-{"country":"germany","year":2017,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"1y1xztWJvqor2MB7"}
-{"country":"france","year":2015,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"3oXom9IkSa0awVM8"}
-{"country":"united kingdom","year":2010,"poverty_prp":10519,"poverty_pt":10263,"poverty_ht":21553,"_id":"4WNIuJuUmh1zrMtL"}
-{"country":"germany","year":2010,"poverty_prp":12648,"poverty_pt":11278,"poverty_ht":23684,"_id":"5kseIRIhOZOEQXUo"}
-{"country":"united kingdom","year":2015,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"6BxA8NK1gRum6rgS"}
-{"country":"spain","year":2010,"poverty_prp":9551,"poverty_pt":8763,"poverty_ht":18402,"_id":"73gdqhiYaWbLVm8y"}
-{"country":"germany","year":2015,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"7NWtYPlVnE2hkxGn"}
-{"country":"rumania","year":2020,"poverty_prp":1615151,"poverty_pt":561515,"poverty_ht":15151,"_id":"EmXlCgP0yfshFWX9"}
-{"country":"italy","year":2017,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"KeWp5yd6ts0N8dTv"}
-{"country":"italy","year":2017,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"MeanQMbJUwfAcVR9"}
-{"country":"france","year":2017,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"MlVoIGz707HfR4vF"}
-{"country":"spain","year":2010,"poverty_prp":9551,"poverty_pt":8763,"poverty_ht":18402,"_id":"Ogv5Gotbu11WkL2P"}
-{"country":"germany","year":2017,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"QizUnQlLehfdhwvz"}
-{"country":"france","year":2015,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"Qptr1OwJZ7LCTT1o"}
-{"country":"united kingdom","year":2017,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"RXwBj1NQ1wabXOet"}
-{"country":"united kingdom","year":2015,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"YCUpGst7utEsnhkS"}
-{"country":"germany","year":2015,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"ZMbv0wd8BAkxO0LP"}
-{"country":"united kingdom","year":2010,"poverty_prp":10519,"poverty_pt":10263,"poverty_ht":21553,"_id":"a1OFJOttCFoESAOe"}
-{"country":"spain","year":2015,"poverty_prp":10178,"poverty_pt":8011,"poverty_ht":16823,"_id":"cO5KA1kLvwlcUAQZ"}
-{"country":"spain","year":2017,"poverty_prp":9950,"poverty_pt":8522,"poverty_ht":17896,"_id":"eF4n8XtPMFdUbkDl"}
-{"country":"italy","year":2015,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"hqrHclkjyzjfeiCR"}
-{"country":"spain","year":2017,"poverty_prp":9950,"poverty_pt":8522,"poverty_ht":17896,"_id":"kqS4LJgcgNJIPgiJ"}
-{"country":"italy","year":2010,"poverty_prp":11124,"poverty_pt":9578,"poverty_ht":20115,"_id":"lwgefyzbZ4oWUhhq"}
-{"country":"italy","year":2015,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"o5erwZ3fepo6zFVq"}
-{"country":"germany","year":2010,"poverty_prp":12648,"poverty_pt":11278,"poverty_ht":23684,"_id":"qxmd5lyi88mYehco"}
-{"country":"spain","year":2015,"poverty_prp":10178,"poverty_pt":8011,"poverty_ht":16823,"_id":"rE7qQP5SD5CdFPHr"}
-{"country":"france","year":2010,"poverty_prp":8112,"poverty_pt":11976,"poverty_ht":25150,"_id":"taJdASVFqLrsN00M"}
-{"country":"france","year":2010,"poverty_prp":8112,"poverty_pt":11976,"poverty_ht":25150,"_id":"zWh1ZyYJDbR6m9X6"}
-{"country":"italy","year":2010,"poverty_prp":11124,"poverty_pt":9578,"poverty_ht":20115,"_id":"zn6MCGhLfDmmtuYS"}
-{"$$deleted":true,"_id":"0cmcvfLX0Mq2zz68"}
-{"$$deleted":true,"_id":"1y1xztWJvqor2MB7"}
-{"$$deleted":true,"_id":"3oXom9IkSa0awVM8"}
-{"$$deleted":true,"_id":"4WNIuJuUmh1zrMtL"}
-{"$$deleted":true,"_id":"5kseIRIhOZOEQXUo"}
-{"$$deleted":true,"_id":"6BxA8NK1gRum6rgS"}
-{"$$deleted":true,"_id":"73gdqhiYaWbLVm8y"}
-{"$$deleted":true,"_id":"7NWtYPlVnE2hkxGn"}
-{"$$deleted":true,"_id":"EmXlCgP0yfshFWX9"}
-{"$$deleted":true,"_id":"KeWp5yd6ts0N8dTv"}
-{"$$deleted":true,"_id":"MeanQMbJUwfAcVR9"}
-{"$$deleted":true,"_id":"MlVoIGz707HfR4vF"}
-{"$$deleted":true,"_id":"Ogv5Gotbu11WkL2P"}
-{"$$deleted":true,"_id":"QizUnQlLehfdhwvz"}
-{"$$deleted":true,"_id":"Qptr1OwJZ7LCTT1o"}
-{"$$deleted":true,"_id":"RXwBj1NQ1wabXOet"}
-{"$$deleted":true,"_id":"YCUpGst7utEsnhkS"}
-{"$$deleted":true,"_id":"ZMbv0wd8BAkxO0LP"}
-{"$$deleted":true,"_id":"a1OFJOttCFoESAOe"}
-{"$$deleted":true,"_id":"cO5KA1kLvwlcUAQZ"}
-{"$$deleted":true,"_id":"eF4n8XtPMFdUbkDl"}
-{"$$deleted":true,"_id":"hqrHclkjyzjfeiCR"}
-{"$$deleted":true,"_id":"kqS4LJgcgNJIPgiJ"}
-{"$$deleted":true,"_id":"lwgefyzbZ4oWUhhq"}
-{"$$deleted":true,"_id":"o5erwZ3fepo6zFVq"}
-{"$$deleted":true,"_id":"qxmd5lyi88mYehco"}
-{"$$deleted":true,"_id":"rE7qQP5SD5CdFPHr"}
-{"$$deleted":true,"_id":"taJdASVFqLrsN00M"}
-{"$$deleted":true,"_id":"zWh1ZyYJDbR6m9X6"}
-{"$$deleted":true,"_id":"zn6MCGhLfDmmtuYS"}
-{"country":"spain","year":2010,"poverty_prp":9551,"poverty_pt":8763,"poverty_ht":18402,"_id":"S4Gme0Qpaeu89JNH"}
-{"country":"germany","year":2010,"poverty_prp":12648,"poverty_pt":11278,"poverty_ht":23684,"_id":"pFr1gNDdKl2vy4Y8"}
-{"country":"italy","year":2010,"poverty_prp":11124,"poverty_pt":9578,"poverty_ht":20115,"_id":"xI9ssHNQ4EzOMAAn"}
-{"country":"france","year":2010,"poverty_prp":8112,"poverty_pt":11976,"poverty_ht":25150,"_id":"hEuakqW75K1MyNx6"}
-{"country":"united kingdom","year":2010,"poverty_prp":10519,"poverty_pt":10263,"poverty_ht":21553,"_id":"Ft3XeVEU2LQNWMzs"}
-{"country":"spain","year":2015,"poverty_prp":10178,"poverty_pt":8011,"poverty_ht":16823,"_id":"gRJRDareXfXGWogx"}
-{"country":"germany","year":2015,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"13DuoJL3ObftMlEV"}
-{"country":"italy","year":2015,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"EnY8UbaOxyF1zE1e"}
-{"country":"france","year":2015,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"8gVLxGRejsaELerF"}
 {"country":"united kingdom","year":2015,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"0q1xordhXVqWd0us"}
-{"country":"spain","year":2017,"poverty_prp":9950,"poverty_pt":8522,"poverty_ht":17896,"_id":"83dnxZwkyRymH7Ah"}
-{"country":"germany","year":2017,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"dv6NmXONeieeukZs"}
-{"country":"italy","year":2017,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"ZXcOh90Ug5u0UWEl"}
+{"country":"germany","year":2015,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"13DuoJL3ObftMlEV"}
 {"country":"france","year":2017,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"5R6HWvZifEWn7uQh"}
+{"country":"spain","year":2017,"poverty_prp":9950,"poverty_pt":8522,"poverty_ht":17896,"_id":"83dnxZwkyRymH7Ah"}
+{"country":"france","year":2015,"poverty_prp":8474,"poverty_pt":12849,"poverty_ht":26983,"_id":"8gVLxGRejsaELerF"}
+{"country":"italy","year":2015,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"EnY8UbaOxyF1zE1e"}
+{"country":"united kingdom","year":2010,"poverty_prp":10519,"poverty_pt":10263,"poverty_ht":21553,"_id":"Ft3XeVEU2LQNWMzs"}
+{"country":"spain","year":2010,"poverty_prp":9551,"poverty_pt":8763,"poverty_ht":18402,"_id":"S4Gme0Qpaeu89JNH"}
+{"country":"italy","year":2017,"poverty_prp":12130,"poverty_pt":9508,"poverty_ht":19966,"_id":"ZXcOh90Ug5u0UWEl"}
+{"country":"germany","year":2017,"poverty_prp":13428,"poverty_pt":12401,"poverty_ht":26041,"_id":"dv6NmXONeieeukZs"}
+{"country":"spain","year":2015,"poverty_prp":10178,"poverty_pt":8011,"poverty_ht":16823,"_id":"gRJRDareXfXGWogx"}
+{"country":"france","year":2010,"poverty_prp":8112,"poverty_pt":11976,"poverty_ht":25150,"_id":"hEuakqW75K1MyNx6"}
+{"country":"germany","year":2010,"poverty_prp":12648,"poverty_pt":11278,"poverty_ht":23684,"_id":"pFr1gNDdKl2vy4Y8"}
 {"country":"united kingdom","year":2017,"poverty_prp":10648,"poverty_pt":12617,"poverty_ht":26495,"_id":"pwmn7epNEiEfcS3H"}
+{"country":"italy","year":2010,"poverty_prp":11124,"poverty_pt":9578,"poverty_ht":20115,"_id":"xI9ssHNQ4EzOMAAn"}
