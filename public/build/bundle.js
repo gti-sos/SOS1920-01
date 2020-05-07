@@ -10745,7 +10745,7 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$9 = "src\\front\\emigrantApi\\EditEmigrant.svelte";
 
-    // (1:0) <script>      import {    onMount      }
+    // (1:0) <script>      import {onMount}
     function create_catch_block$5(ctx) {
     	const block = {
     		c: noop,
@@ -10760,14 +10760,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$5.name,
     		type: "catch",
-    		source: "(1:0) <script>      import {    onMount      }",
+    		source: "(1:0) <script>      import {onMount}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:1) {:then eStat}
+    // (66:1) {:then eStat}
     function create_then_block$5(ctx) {
     	let current;
 
@@ -10815,14 +10815,14 @@ var app = (function () {
     		block,
     		id: create_then_block$5.name,
     		type: "then",
-    		source: "(70:1) {:then eStat}",
+    		source: "(66:1) {:then eStat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:9) <Button outline color="primary" on:click={updateStat}>
+    // (85:9) <Button outline color="primary" on:click={updateStat}>
     function create_default_slot_2$5(ctx) {
     	let t;
 
@@ -10842,14 +10842,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$5.name,
     		type: "slot",
-    		source: "(89:9) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
+    		source: "(85:9) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:2) <Table bordered>
+    // (67:2) <Table bordered>
     function create_default_slot_1$5(ctx) {
     	let thead;
     	let tr0;
@@ -10939,28 +10939,28 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$9, 73, 5, 2356);
-    			add_location(th1, file$9, 74, 5, 2376);
-    			add_location(th2, file$9, 75, 5, 2395);
-    			add_location(th3, file$9, 76, 5, 2431);
-    			add_location(th4, file$9, 77, 5, 2467);
-    			add_location(th5, file$9, 78, 5, 2503);
-    			add_location(tr0, file$9, 72, 4, 2345);
-    			add_location(thead, file$9, 71, 3, 2332);
-    			add_location(td0, file$9, 83, 5, 2573);
-    			add_location(td1, file$9, 84, 5, 2605);
+    			add_location(th0, file$9, 69, 5, 2294);
+    			add_location(th1, file$9, 70, 5, 2314);
+    			add_location(th2, file$9, 71, 5, 2333);
+    			add_location(th3, file$9, 72, 5, 2369);
+    			add_location(th4, file$9, 73, 5, 2405);
+    			add_location(th5, file$9, 74, 5, 2441);
+    			add_location(tr0, file$9, 68, 4, 2283);
+    			add_location(thead, file$9, 67, 3, 2270);
+    			add_location(td0, file$9, 79, 5, 2511);
+    			add_location(td1, file$9, 80, 5, 2543);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$9, 85, 9, 2638);
-    			add_location(td2, file$9, 85, 5, 2634);
+    			add_location(input0, file$9, 81, 9, 2576);
+    			add_location(td2, file$9, 81, 5, 2572);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 86, 9, 2708);
-    			add_location(td3, file$9, 86, 5, 2704);
+    			add_location(input1, file$9, 82, 9, 2646);
+    			add_location(td3, file$9, 82, 5, 2642);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$9, 87, 9, 2780);
-    			add_location(td4, file$9, 87, 5, 2776);
-    			add_location(td5, file$9, 88, 5, 2849);
-    			add_location(tr1, file$9, 82, 4, 2562);
-    			add_location(tbody, file$9, 81, 3, 2549);
+    			add_location(input2, file$9, 83, 9, 2718);
+    			add_location(td4, file$9, 83, 5, 2714);
+    			add_location(td5, file$9, 84, 5, 2787);
+    			add_location(tr1, file$9, 78, 4, 2500);
+    			add_location(tbody, file$9, 77, 3, 2487);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -11054,14 +11054,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$5.name,
     		type: "slot",
-    		source: "(71:2) <Table bordered>",
+    		source: "(67:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:18)     Loading eStat...   {:then eStat}
+    // (64:18)     Loading eStat...   {:then eStat}
     function create_pending_block$5(ctx) {
     	let t;
 
@@ -11084,14 +11084,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$5.name,
     		type: "pending",
-    		source: "(68:18)     Loading eStat...   {:then eStat}",
+    		source: "(64:18)     Loading eStat...   {:then eStat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:4) {#if errorMsg}
+    // (90:4) {#if errorMsg}
     function create_if_block_1$6(ctx) {
     	let p;
     	let t0;
@@ -11103,7 +11103,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$9, 93, 18, 3001);
+    			add_location(p, file$9, 89, 18, 2939);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11122,14 +11122,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(94:4) {#if errorMsg}",
+    		source: "(90:4) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:1) {#if exitoMsg}
+    // (91:1) {#if exitoMsg}
     function create_if_block$8(ctx) {
     	let p;
     	let t;
@@ -11139,7 +11139,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[7]);
     			set_style(p, "color", "green");
-    			add_location(p, file$9, 94, 16, 3067);
+    			add_location(p, file$9, 90, 16, 3005);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11157,14 +11157,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(95:1) {#if exitoMsg}",
+    		source: "(91:1) {#if exitoMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:4) <Button outline color="secondary" on:click="{pop}">
+    // (92:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -11184,7 +11184,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(96:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(92:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -11252,9 +11252,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$9, 66, 26, 2198);
-    			add_location(h3, file$9, 66, 4, 2176);
-    			add_location(main, file$9, 65, 0, 2164);
+    			add_location(strong, file$9, 62, 26, 2136);
+    			add_location(h3, file$9, 62, 4, 2114);
+    			add_location(main, file$9, 61, 0, 2102);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11367,9 +11367,9 @@ var app = (function () {
     	let eStat = {};
     	let updatedCountry = "";
     	let updatedYear = "";
-    	let updatedEm_man = "";
-    	let updatedEm_woman = "";
-    	let updatedEm_totals = "";
+    	let updatedEm_man = 0;
+    	let updatedEm_woman = 0;
+    	let updatedEm_totals = 0;
     	let errorMsg = "";
     	let exitoMsg = "";
     	onMount(getStat);
@@ -11384,7 +11384,7 @@ var app = (function () {
     			$$invalidate(8, eStat = json);
     			$$invalidate(1, updatedCountry = eStat.country);
     			$$invalidate(2, updatedYear = eStat.year);
-    			$$invalidate(3, updatedEm_man = eStat.em.man);
+    			$$invalidate(3, updatedEm_man = eStat.em_man);
     			$$invalidate(4, updatedEm_woman = eStat.em_woman);
     			$$invalidate(5, updatedEm_totals = eStat.em_totals);
     			console.log("Received stats.");
@@ -11400,16 +11400,17 @@ var app = (function () {
     			method: "PUT",
     			body: JSON.stringify({
     				country: params.country,
-    				year: Number(params.year),
-    				em_man: Number(updatedEm_man),
-    				em_woman: Number(updatedEm_woman),
-    				em_woman: Number(updatedEm_totals)
+    				year: parseInt(params.year),
+    				"em_man": updatedEm_man,
+    				"em_woman": updatedEm_woman,
+    				"em_woman": updatedEm_totals
     			}),
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
+    			getStat();
+
     			if (res.ok) {
     				$$invalidate(7, exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito");
-    				console.log("OK!" + exitoMsg);
     				getStat();
     				window.alert("Dato modificado correctamente.");
     			} else if (res.status == 400) {

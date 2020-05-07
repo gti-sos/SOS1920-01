@@ -236,26 +236,26 @@ app.delete(BASE_PATH+"/emigrants-stats",(req,res)=>{
 
 /////////////////////////////////////////////////////// Put Recurso concreto
 app.put(BASE_PATH+"/emigrants-stats/:country/:year", (req, res) =>{
-	
 	var country=req.params.country;
 	var year=parseInt(req.params.year);
 	var upd=req.body;
-	var newCountry = upd.country;
-	var newYear = parseInt(upd.year);
-
-	if(country != newCountry || year != newYear){
-		res.sendStatus(409, "conflict");
-	}else{
-		edb.update({country: country, year: year}, 
-
-				  	{$set: {em_man: upd.em_man,  em_woman: upd.em_woman,  em_totals: upd.em_totals}}//, //Lo que dejo que modifique
-
-					//{}, //multi
-				  	//function(err, numReplaced) {}
-		);
-		res.sendStatus(200, "EMI MODIFIED");
-	}
-		
+	var nCont = upd.country;
+	var nYear = parseInt(upd.year);
+	
+	edb.find({"country":country, "year": year},(error,emi)=>{
+		console.log(emi);
+		if(emi.length == 0){
+			console.log("Error 404, recurso no encontrado.");
+			res.sendStatus(404);
+		}else if(!nCont || !nYear || !upd.em_man||!upd.em_woman||!upd.em_totals||country != nCont || year != nYear){
+			res.sendStatus(409, "EMIGRANT CONFLICT");
+		}else{
+			edb.update({country: country, year: year}, 
+						  {$set: upd});
+			res.sendStatus(200, "EMIGRANT MODIFIED");
+		}
+	
+	});
 });
 ///////////////////////////////////////////////////////////////// PUT General "error"
 	app.put(BASE_PATH+"/emigrants-stats",(req,res) =>{
