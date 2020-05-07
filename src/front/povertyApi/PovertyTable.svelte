@@ -24,6 +24,7 @@
 	let minPoverty_ht = "";
 	let maxPoverty_ht = "";
 	let errorMsg = "";
+	let exitoMsg ="";
 	
 	onMount(getStats);
 	async function getStats(){
@@ -130,7 +131,7 @@
 			}
 		}
 	}
-	async function getStatsPov(){/*getStatsAntiguo*/
+	async function getStatsPov(){
 		console.log("Fetching stats...");
 		const res = await fetch("/api/v2/poverty-stats");
 		if(res.ok){
@@ -163,6 +164,7 @@
 		});
 	}
 	async function insertStat(){
+		exitoMsg ="";
 		console.log("Inserting stat...");
 		if (newStat.country == "" || newStat.country == null || newStat.year == "" || newStat.year == null) {
 			window.alert("Pon un país y un año");
@@ -178,13 +180,17 @@
 					console.log("Ok:");
 					getStats();
 					window.alert("Dato insertado correctamente.");
+					exitoMsg = res.status + ": " + res.statusText + ". Dato insertado con éxito";
 				}else if(res.status==400){
 					window.alert("Campo mal escrito.No puede insertarlo.");
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					console.log("ERROR!");
 				}else{
 					window.alert("Dato ya creado. No puede insertarlo.");
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+					console.log("ERROR!");
 				}
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
+				
 			});
 		}
 	}
@@ -250,7 +256,10 @@
 		</Table>
 	{/await}
 	{#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
+		<p style="color: red">ERROR: {errorMsg}</p>
+	{/if}
+    {#if exitoMsg}
+        <p style="color: green">{exitoMsg}</p>
     {/if}
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 	<Button outline color="danger" on:click="{deleteStats}">Borrar todo</Button>

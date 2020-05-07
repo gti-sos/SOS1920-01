@@ -17,7 +17,7 @@
 
     const routes = {
 		"/": Home,
-	// JUANFRAN
+    // JUANFRA
         "/natality-stats": NatalityTable,
 		"/natality-stats/:country/:year": EditNatality,
     // ANGELA

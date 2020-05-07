@@ -1,111 +1,15 @@
-{"country":"spain","year":2017,"natality_totals":393181,"natality_men":202478,"natality_women":190703,"_id":"RLOK8M7f88BWD5yP"}
-{"country":"germany","year":2017,"natality_totals":784901,"natality_men":402517,"natality_women":382384,"_id":"HXcdHMqDUDIlBMXI"}
-{"country":"italy","year":2017,"natality_totals":458151,"natality_men":235733,"natality_women":222418,"_id":"WKnGQKbaJ4lRzsxf"}
-{"country":"france","year":2017,"natality_totals":770045,"natality_men":394058,"natality_women":375987,"_id":"IZD3N0dQk9Hep0So"}
-{"country":"united kingdom","year":2017,"natality_totals":754754,"natality_men":387030,"natality_women":367754,"_id":"R2nNaIKbwZJynmJd"}
-{"country":"spain","year":2015,"natality_totals":420290,"natality_men":216496,"natality_women":203794,"_id":"HqnBqj8Izdl0GB66"}
-{"country":"germany","year":2015,"natality_totals":737575,"natality_men":378478,"natality_women":359097,"_id":"0V1gcMkfVqvzbKuD"}
-{"country":"italy","year":2015,"natality_totals":485780,"natality_men":249950,"natality_women":235830,"_id":"zugLb1LnBAvfzhwv"}
-{"country":"france","year":2015,"natality_totals":799671,"natality_men":409145,"natality_women":390526,"_id":"SQRHgCsm0wW2OciS"}
-{"country":"united kingdom","year":2015,"natality_totals":776746,"natality_men":398760,"natality_women":377986,"_id":"gzt98PZmnETJ9qXA"}
-{"country":"spain","year":2010,"natality_totals":486575,"natality_men":250727,"natality_women":235848,"_id":"NyP0POZdBPYuJ3tA"}
-{"country":"germany","year":2010,"natality_totals":677947,"natality_men":347237,"natality_women":330710,"_id":"gZGJWSg3YLVMGzYh"}
-{"country":"italy","year":2010,"natality_totals":561944,"natality_men":289185,"natality_women":272759,"_id":"TNmOJTTMn3d7Rn6J"}
-{"country":"france","year":2010,"natality_totals":833654,"natality_men":426270,"natality_women":407384,"_id":"2naLajicw0zm5irC"}
-{"country":"united kingdom","year":2010,"natality_totals":807271,"natality_men":413755,"natality_women":393516,"_id":"oGE27RLvLANyzzte"}
-{"$$deleted":true,"_id":"0V1gcMkfVqvzbKuD"}
-{"$$deleted":true,"_id":"2naLajicw0zm5irC"}
-{"$$deleted":true,"_id":"HXcdHMqDUDIlBMXI"}
-{"$$deleted":true,"_id":"HqnBqj8Izdl0GB66"}
-{"$$deleted":true,"_id":"IZD3N0dQk9Hep0So"}
-{"$$deleted":true,"_id":"NyP0POZdBPYuJ3tA"}
-{"$$deleted":true,"_id":"R2nNaIKbwZJynmJd"}
-{"$$deleted":true,"_id":"RLOK8M7f88BWD5yP"}
-{"$$deleted":true,"_id":"SQRHgCsm0wW2OciS"}
-{"$$deleted":true,"_id":"TNmOJTTMn3d7Rn6J"}
-{"$$deleted":true,"_id":"WKnGQKbaJ4lRzsxf"}
-{"$$deleted":true,"_id":"gZGJWSg3YLVMGzYh"}
-{"$$deleted":true,"_id":"gzt98PZmnETJ9qXA"}
-{"$$deleted":true,"_id":"oGE27RLvLANyzzte"}
-{"$$deleted":true,"_id":"zugLb1LnBAvfzhwv"}
-{"country":"spain","year":2017,"natality_totals":393181,"natality_men":202478,"natality_women":190703,"_id":"Sy9h2UkcinWucY2G"}
-{"country":"germany","year":2017,"natality_totals":784901,"natality_men":402517,"natality_women":382384,"_id":"p9ppluZE7ZHovKXT"}
-{"country":"italy","year":2017,"natality_totals":458151,"natality_men":235733,"natality_women":222418,"_id":"ka0J9HziSwIAwJmX"}
-{"country":"france","year":2017,"natality_totals":770045,"natality_men":394058,"natality_women":375987,"_id":"YyQoqrcGUSEQ0Im3"}
-{"country":"united kingdom","year":2017,"natality_totals":754754,"natality_men":387030,"natality_women":367754,"_id":"8FcRLUvHfLhAzRRW"}
-{"country":"spain","year":2015,"natality_totals":420290,"natality_men":216496,"natality_women":203794,"_id":"TkmuhvdOoYBucXWB"}
-{"country":"germany","year":2015,"natality_totals":737575,"natality_men":378478,"natality_women":359097,"_id":"i1xqYqbhEJGZal6I"}
-{"country":"italy","year":2015,"natality_totals":485780,"natality_men":249950,"natality_women":235830,"_id":"BqdgmW8oD0cq5no0"}
-{"country":"france","year":2015,"natality_totals":799671,"natality_men":409145,"natality_women":390526,"_id":"loNDmIre5RmhZrj7"}
-{"country":"united kingdom","year":2015,"natality_totals":776746,"natality_men":398760,"natality_women":377986,"_id":"5XUdxysGRBM7Xjfa"}
-{"country":"spain","year":2010,"natality_totals":486575,"natality_men":250727,"natality_women":235848,"_id":"qoQeSW8TxbUAO2BI"}
-{"country":"germany","year":2010,"natality_totals":677947,"natality_men":347237,"natality_women":330710,"_id":"1TwopPGmBjDZ2KBk"}
-{"country":"italy","year":2010,"natality_totals":561944,"natality_men":289185,"natality_women":272759,"_id":"dnfSSVhUYjdfEo42"}
-{"country":"france","year":2010,"natality_totals":833654,"natality_men":426270,"natality_women":407384,"_id":"qmFUGb1pveTHy07O"}
-{"country":"united kingdom","year":2010,"natality_totals":807271,"natality_men":413755,"natality_women":393516,"_id":"OSYp5i12EH2BJKKP"}
-{"$$deleted":true,"_id":"1TwopPGmBjDZ2KBk"}
-{"country":"rumania","year":2020,"natality_totals":1815151,"natality_men":5151515,"natality_women":1515,"_id":"EOvCEy2Zfev2wmCD"}
-{"country":"spain","year":2015,"_id":"TkmuhvdOoYBucXWB"}
-{"country":"spain","year":2015,"_id":"TkmuhvdOoYBucXWB"}
-{"country":"pepe","year":2020,"natality_totals":15185,"natality_men":5151,"natality_women":5151,"_id":"9pGeL0YA8UJAZDl6"}
-{"$$deleted":true,"_id":"9pGeL0YA8UJAZDl6"}
-{"$$deleted":true,"_id":"5XUdxysGRBM7Xjfa"}
-{"$$deleted":true,"_id":"8FcRLUvHfLhAzRRW"}
-{"$$deleted":true,"_id":"BqdgmW8oD0cq5no0"}
-{"$$deleted":true,"_id":"EOvCEy2Zfev2wmCD"}
-{"$$deleted":true,"_id":"OSYp5i12EH2BJKKP"}
-{"$$deleted":true,"_id":"Sy9h2UkcinWucY2G"}
-{"$$deleted":true,"_id":"TkmuhvdOoYBucXWB"}
-{"$$deleted":true,"_id":"YyQoqrcGUSEQ0Im3"}
-{"$$deleted":true,"_id":"dnfSSVhUYjdfEo42"}
-{"$$deleted":true,"_id":"i1xqYqbhEJGZal6I"}
-{"$$deleted":true,"_id":"ka0J9HziSwIAwJmX"}
-{"$$deleted":true,"_id":"loNDmIre5RmhZrj7"}
-{"$$deleted":true,"_id":"p9ppluZE7ZHovKXT"}
-{"$$deleted":true,"_id":"qmFUGb1pveTHy07O"}
-{"$$deleted":true,"_id":"qoQeSW8TxbUAO2BI"}
-{"country":"spain","year":2017,"natality_totals":393181,"natality_men":202478,"natality_women":190703,"_id":"Ss41CDm5S6J3fqOg"}
-{"country":"germany","year":2017,"natality_totals":784901,"natality_men":402517,"natality_women":382384,"_id":"JLF0wcsv6LgRmPqD"}
-{"country":"italy","year":2017,"natality_totals":458151,"natality_men":235733,"natality_women":222418,"_id":"pktKrdFQSqLdz3VR"}
-{"country":"france","year":2017,"natality_totals":770045,"natality_men":394058,"natality_women":375987,"_id":"ilmC2I9EE0GLRVgH"}
-{"country":"united kingdom","year":2017,"natality_totals":754754,"natality_men":387030,"natality_women":367754,"_id":"RQJ5dY7BRe0DNTKW"}
-{"country":"spain","year":2015,"natality_totals":420290,"natality_men":216496,"natality_women":203794,"_id":"efOOg5uIqV81U2n0"}
-{"country":"germany","year":2015,"natality_totals":737575,"natality_men":378478,"natality_women":359097,"_id":"g8RH7BVNIf2w9cxm"}
-{"country":"italy","year":2015,"natality_totals":485780,"natality_men":249950,"natality_women":235830,"_id":"uE94LyT0iZqSiLee"}
-{"country":"france","year":2015,"natality_totals":799671,"natality_men":409145,"natality_women":390526,"_id":"4rgfoPZLoxg2juSx"}
-{"country":"united kingdom","year":2015,"natality_totals":776746,"natality_men":398760,"natality_women":377986,"_id":"BgRbOF1MDCJ0rmNl"}
-{"country":"spain","year":2010,"natality_totals":486575,"natality_men":250727,"natality_women":235848,"_id":"JgvQohYe1XY6EVpX"}
-{"country":"germany","year":2010,"natality_totals":677947,"natality_men":347237,"natality_women":330710,"_id":"dhmk4xsuViGZAOjg"}
-{"country":"italy","year":2010,"natality_totals":561944,"natality_men":289185,"natality_women":272759,"_id":"ZAoEv7pN7URvvNzn"}
-{"country":"france","year":2010,"natality_totals":833654,"natality_men":426270,"natality_women":407384,"_id":"bUr66AJUUkDABm7I"}
-{"country":"united kingdom","year":2010,"natality_totals":807271,"natality_men":413755,"natality_women":393516,"_id":"s8S9UhsyworNATaM"}
-{"$$deleted":true,"_id":"4rgfoPZLoxg2juSx"}
-{"$$deleted":true,"_id":"BgRbOF1MDCJ0rmNl"}
-{"$$deleted":true,"_id":"JLF0wcsv6LgRmPqD"}
-{"$$deleted":true,"_id":"JgvQohYe1XY6EVpX"}
-{"$$deleted":true,"_id":"RQJ5dY7BRe0DNTKW"}
-{"$$deleted":true,"_id":"Ss41CDm5S6J3fqOg"}
-{"$$deleted":true,"_id":"ZAoEv7pN7URvvNzn"}
-{"$$deleted":true,"_id":"bUr66AJUUkDABm7I"}
-{"$$deleted":true,"_id":"dhmk4xsuViGZAOjg"}
-{"$$deleted":true,"_id":"efOOg5uIqV81U2n0"}
-{"$$deleted":true,"_id":"g8RH7BVNIf2w9cxm"}
-{"$$deleted":true,"_id":"ilmC2I9EE0GLRVgH"}
-{"$$deleted":true,"_id":"pktKrdFQSqLdz3VR"}
-{"$$deleted":true,"_id":"s8S9UhsyworNATaM"}
-{"$$deleted":true,"_id":"uE94LyT0iZqSiLee"}
-{"country":"spain","year":2017,"natality_totals":393181,"natality_men":202478,"natality_women":190703,"_id":"txFCDjduWz4CiM1z"}
-{"country":"germany","year":2017,"natality_totals":784901,"natality_men":402517,"natality_women":382384,"_id":"FxVrB2jzSAenIHt3"}
-{"country":"italy","year":2017,"natality_totals":458151,"natality_men":235733,"natality_women":222418,"_id":"YTXBt6oHjp5vgQbf"}
-{"country":"france","year":2017,"natality_totals":770045,"natality_men":394058,"natality_women":375987,"_id":"nbLtrK6FvXKUGbHv"}
-{"country":"united kingdom","year":2017,"natality_totals":754754,"natality_men":387030,"natality_women":367754,"_id":"SRCdrZsNAyu5CDxf"}
-{"country":"spain","year":2015,"natality_totals":420290,"natality_men":216496,"natality_women":203794,"_id":"qFhRFaUcmsJ7Ue1Q"}
-{"country":"germany","year":2015,"natality_totals":737575,"natality_men":378478,"natality_women":359097,"_id":"wXxfAfoZ08MPnyim"}
-{"country":"italy","year":2015,"natality_totals":485780,"natality_men":249950,"natality_women":235830,"_id":"5BbKTVjQVPK0hevP"}
-{"country":"france","year":2015,"natality_totals":799671,"natality_men":409145,"natality_women":390526,"_id":"OrXuQ1XRYCQficYE"}
-{"country":"united kingdom","year":2015,"natality_totals":776746,"natality_men":398760,"natality_women":377986,"_id":"sxKh0CVO32hj9gaC"}
-{"country":"spain","year":2010,"natality_totals":486575,"natality_men":250727,"natality_women":235848,"_id":"zU0OHlgOghhSPkg2"}
-{"country":"germany","year":2010,"natality_totals":677947,"natality_men":347237,"natality_women":330710,"_id":"WE5maPbz4lEyjeRg"}
-{"country":"italy","year":2010,"natality_totals":561944,"natality_men":289185,"natality_women":272759,"_id":"xhEbUnKi1BsDPjw2"}
-{"country":"france","year":2010,"natality_totals":833654,"natality_men":426270,"natality_women":407384,"_id":"jFOeQFQHvZ0PBFwV"}
-{"country":"united kingdom","year":2010,"natality_totals":807271,"natality_men":413755,"natality_women":393516,"_id":"68boZBXVSLBNG21X"}
+{"country":"united kingdom","year":2015,"natality_totals":776746,"natality_men":398760,"natality_women":377986,"_id":"0VAn7WaearYPIH3v"}
+{"country":"spain","year":2010,"natality_totals":486575,"natality_men":250727,"natality_women":235848,"_id":"5qy9igoTuPMFBNXq"}
+{"country":"italy","year":2010,"natality_totals":561944,"natality_men":289185,"natality_women":272759,"_id":"90xd78FQ7G8csw0I"}
+{"country":"united kingdom","year":2010,"natality_totals":807271,"natality_men":413755,"natality_women":393516,"_id":"Yk1qYGIXuPbDSbI2"}
+{"country":"spain","year":2015,"natality_totals":420290,"natality_men":216496,"natality_women":203794,"_id":"e9DEwnAG4L31138r"}
+{"country":"germany","year":2015,"natality_totals":737575,"natality_men":378478,"natality_women":359097,"_id":"eG3ffF5enLaAAgjc"}
+{"country":"france","year":2017,"natality_totals":770045,"natality_men":394058,"natality_women":375987,"_id":"fCjsciIPVbTC8ZuL"}
+{"country":"france","year":2015,"natality_totals":799671,"natality_men":409145,"natality_women":390526,"_id":"hdPEi4AziSyXbaBA"}
+{"country":"spain","year":2017,"natality_totals":393181,"natality_men":202478,"natality_women":190703,"_id":"hvUd4Mqtr3jWhZvs"}
+{"country":"italy","year":2017,"natality_totals":458151,"natality_men":235733,"natality_women":222418,"_id":"jjytXmqtuRvnPUyw"}
+{"country":"italy","year":2015,"natality_totals":485780,"natality_men":249950,"natality_women":235830,"_id":"ovuDUn1u79WhMbsO"}
+{"country":"france","year":2010,"natality_totals":833654,"natality_men":426270,"natality_women":407384,"_id":"pcYWDFS6brJW6M3y"}
+{"country":"united kingdom","year":2017,"natality_totals":754754,"natality_men":387030,"natality_women":367754,"_id":"rqWLdGTtuGyejfn9"}
+{"country":"germany","year":2017,"natality_totals":784901,"natality_men":402517,"natality_women":382384,"_id":"wGvqkgvylivZBGCK"}
+{"country":"germany","year":2010,"natality_totals":677947,"natality_men":347237,"natality_women":330710,"_id":"wjALqL2Mq3e6GnBa"}

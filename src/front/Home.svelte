@@ -4,6 +4,7 @@
 		<div style="margin-left: 12.5%;">
 			<br>
 			<ul>
+				
 				<li><strong>Team: </strong></li>
 				<ul>
 					<li><a href="https://github.com/juanfran94">Juan Francisco Laínez Valle</a></li>
@@ -36,16 +37,19 @@
                 <!--herokuapp.com/api/v2-->
                 </ul>
 
+				<li><strong>FRONT END: </strong></li>
+				<ul>
+					<li><button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats'" style=" width: 25%;"> Natalidad </button></li>
+					 
+					<li><button type="button" class="btn btn-info" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button></li>
+				
+					<li><button type="button" class="btn btn-warning" onclick="window.location.href='#/emigrants-stats'"style="width: 25%;"> Emigración </button></li>
+				
+                </ul>
 
 
 			</ul>
-		<br>
 		
-        <button type="button" class="btn btn-primary" onclick="window.location.href='#/natality-stats'" style="margin-left: 6.75%; width: 25%;"> Natalidad </button>
-		<button type="button" class="btn btn-warning" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button>
-		<button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats'"style="width: 25%;"> Emigracion </button>
-
-        <br>
 		</div>
 		
 	</div>

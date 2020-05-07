@@ -25,6 +25,7 @@
 	let natality_womenMin = "";
 	let natality_womenMax = "";
 	let errorMsg = "";
+	let exitoMsg = "";
 	
     onMount(getStats);
     
@@ -40,6 +41,8 @@
 			console.log("ERROR");
 		};
 	};
+
+	//BUSQUEDAS
     async function busqueda(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax,
                 natality_womenMin, natality_womenMax){
 		if(typeof searchCountry=='undefined'){
@@ -73,16 +76,17 @@
 			const json = await res.json();
 			natalitystats = json;
 			console.log("Found "+ natalitystats.length + " stats");
-			window.alert("Se han encontrado datos.");
+			window.alert("Datos encontrados.");
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
 		}else{
 			console.log("ERROR:"+" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
 		};
 	}
-	async function paginacion(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax,
-                natality_womenMin, natality_womenMax,num){
-		Aux=num;
+	//PAGINACION
+	async function paginacion(searchCountry, searchYear, natality_totalsMin, natality_totalsMax, natality_menMin, 
+	natality_menMax, natality_womenMin, natality_womenMax,num){
+		numeroAux=num;
 		if(typeof searchCountry=='undefined'){
 			searchCountry="";
 		}
@@ -111,40 +115,37 @@
 			numeroDePagina=numeroDePagina-limit;
 			if(numeroDePagina<0){
 				numeroDePagina=0;
-                const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+"&natality_totalsMax="+
-                    natality_totalsMax+"&natality_totalsMin="+natality_totalsMin+"&natality_menMin="+natality_menMin+
-                    "&natality_menMax="+
-                    natality_menMax+ +"&natality_womenMin="+natality_womenMin + "&natality_womenMax="+
-                    natality_womenMax+"&limit="+limit+"&offset="+numeroDePagina)
+				const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+
+				"&natality_totalsMin="+natality_totalsMin+"&natality_totalsMax="+natality_totalsMax+"&natality_menMax="+natality_menMax+
+				"&natality_menMin="+natality_menMin+"&natality_womenMax="+natality_womenMax+"&natality_womenMin="+natality_womenMin+
+				"&limit="+limit+"&offset="+numeroDePagina)
 				if (res.ok){
 					const json = await res.json();
 					natalitystats = json;
-					Aux=num;
+					numeroAux=num;
 					
 				}
 			}else{
-				const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+"&natality_totalsMax="+
-                    natality_totalsMax+"&natality_totalsMin="+natality_totalsMin+"&natality_menMin="+natality_menMin+
-                    "&natality_menMax="+
-                    natality_menMax+ +"&natality_womenMin="+natality_womenMin + "&natality_womenMax="+
-                    natality_womenMax+"&limit="+limit+"&offset="+numeroDePagina)
+				const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+
+				"&natality_totalsMin="+natality_totalsMin+"&natality_totalsMax="+natality_totalsMax+"&natality_menMax="+natality_menMax+
+				"&natality_menMin="+natality_menMin+"&natality_womenMax="+natality_womenMax+"&natality_womenMin="+natality_womenMin+
+				"&limit="+limit+"&offset="+numeroDePagina)
 				if (res.ok){
 					const json = await res.json();
 					natalitystats = json;
-					Aux=num;
+					numeroAux=num;
 				}
 			}
 		}else{
 			numeroDePagina = numeroDePagina+limit;
-			const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+"&natality_totalsMax="+
-                    natality_totalsMax+"&natality_totalsMin="+natality_totalsMin+"&natality_menMin="+natality_menMin+
-                    "&natality_menMax="+
-                    natality_menMax+ +"&natality_womenMin="+natality_womenMin + "&natality_womenMax="+
-                    natality_womenMax+"&limit="+limit+"&offset="+numeroDePagina)
+			const res = await fetch("/api/v2/natality-stats?country="+searchCountry+"&year="+searchYear+
+				"&natality_totalsMin="+natality_totalsMin+"&natality_totalsMax="+natality_totalsMax+"&natality_menMax="+natality_menMax+
+				"&natality_menMin="+natality_menMin+"&natality_womenMax="+natality_womenMax+"&natality_womenMin="+natality_womenMin+
+				"&limit="+limit+"&offset="+numeroDePagina)
 			if (res.ok){
 					const json = await res.json();
 					natalitystats = json;
-					Aux=num;
+					numeroAux=num;
 			}
 		}
 	}
@@ -157,7 +158,6 @@
 			natalitystats = json;
 			console.log("Received "+natalitystats.length+" stats.");
 		}else{
-			window.alert("No se encuentra ningún dato.");
 			errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
 			console.log("ERROR!");
 		}
@@ -181,6 +181,7 @@
 		});
 	}
 	async function insertStat(){
+		exitoMsg = "";
 		console.log("Inserting stat...");
 		if (newStat.country == "" || newStat.country == null || newStat.year == "" || newStat.year == null) {
 			window.alert("Pon un país y un año");
@@ -196,13 +197,16 @@
 					console.log("Ok:");
 					getStats();
 					window.alert("Dato insertado correctamente.");
+					exitoMsg = res.status + ": " + res.statusText + ". Dato insertado con éxito";
 				}else if(res.status==400){
 					window.alert("Campo mal escrito.No puede insertarlo.");
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+				console.log("ERROR!");
 				}else{
+					errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
+				console.log("ERROR!");
 					window.alert("Dato ya creado. No puede insertarlo.");
 				}
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
 			});
 		}
 	}
@@ -228,7 +232,7 @@
 </script>
 
 <main>
-	<h3>Vista completa de elementos. </h3>
+	<h2>Datos de Natalidad 🤰 </h2>
 	{#await natalitystats}
 		Loading natalitystats...
 	{:then natalitystats}
@@ -269,37 +273,37 @@
 	{/await}
 	{#if errorMsg}
         <p style="color: red">ERROR: {errorMsg}</p>
+	{/if}
+	{#if exitoMsg}
+        <p style="color: green">{exitoMsg}</p>
     {/if}
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 	<Button outline color="danger" on:click="{deleteStats}">Borrar todo</Button>
 	{#if numeroDePagina==0}
-        <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, 
-            natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin,
-            natality_womenMax, 2)}">&gt</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin, 
+			natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">&gt</Button>
 	{/if}
 	{#if numeroDePagina>0}
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, 
-            natality_totalsMin, natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin,
-            natality_womenMax, 1)}">Pagina anterior</Button>
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, 
-            natality_totalsMin, natality_totalsMax, natality_menMax, natality_menMax, natality_womenMin, 
-            natality_womenMax, 2)}">Pagina siguiente</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin, 
+			natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 1)}">Pagina anterior</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin, 
+			natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">Pagina siguiente</Button>
 	{/if}
-	<h6>Para verlo mediante páginas pulse el botón de avanzar página. </h6>
+	<h6>Pulse el boton para pasar a la siguiente página. </h6>
 	<tr>
 		<td><label>País: <input bind:value="{searchCountry}"></label></td>
-		<td><label>Mínimo número de natalidad total: <input bind:value="{natality_totalsMin}"></label></td>
-		<td><label>Mínimo número de natalidad en hombres: <input bind:value="{natality_menMin}"></label></td>
-		<td><label>Mínimo número de natalidad en mujeres: <input bind:value="{natality_womenMin}"></label></td>
+		<td><label>Número mínimo de natalidad total: <input bind:value="{natality_totalsMin}"></label></td>
+		<td><label>Número mínimo de natalidad en hombres: <input bind:value="{natality_menMin}"></label></td>
+		<td><label>Número mínimo de natalidad en mujeres: <input bind:value="{natality_womenMin}"></label></td>
 	</tr>
 	<tr>
 		<td><label>Año: <input bind:value="{searchYear}"></label></td>
-		<td><label>Máximo número de natalidad total: <input bind:value="{natality_totalsMax}"></label></td>
-		<td><label>Máximo número de natalidad en hombres: <input bind:value="{natality_menMax}"></label></td>
-		<td><label>Máximo número de natalidad en mujeres: <input bind:value="{natality_womenMax}"></label></td>
+		<td><label>Número máximo de natalidad total: <input bind:value="{natality_totalsMax}"></label></td>
+		<td><label>Número máximo de natalidad en hombres: <input bind:value="{natality_menMax}"></label></td>
+		<td><label>Número máximo de natalidad en mujeres: <input bind:value="{natality_womenMax}"></label></td>
 	</tr>
 
     <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax, 
         natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}">Buscar</Button>
-	<h6>Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar. </h6>
+	<h6>¡¡NOTA!! Si quieres volver a ver todos los datos antes de la búsqueda, borre los datos de los filtros y pulse busca.. </h6>
 </main>
