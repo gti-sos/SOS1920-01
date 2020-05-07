@@ -328,11 +328,11 @@ app.put(BASE_PATH+"/natality-stats/:country/:year", (req, res) =>{
 				console.log("Error 404, recurso no encontrado.");
 				res.sendStatus(404);
 			}else if(!nCont || !nYear || !upd.natality_totals||!upd.natality_men||!upd.natality_women ||country != nCont || year != nYear){
-				res.sendStatus(409, "POVERTY CONFLICT");
+				res.sendStatus(409, "NATALITY CONFLICT");
 			}else{
 				dbn.update({country: country, year: year}, 
 							  {$set: upd});
-				res.sendStatus(200, "POVERTY MODIFIED");
+				res.sendStatus(200, "NATALITY MODIFIED");
 			}
 		
 		});

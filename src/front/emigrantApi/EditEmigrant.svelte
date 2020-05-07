@@ -32,6 +32,8 @@
 		}
 	}
     async function updateStat(){
+		errorMsg="";
+		exitoMsg="";
         console.log("Updating stat..."+JSON.stringify(params.country));
 		const res = await fetch("/api/v2/emigrants-stats/"+params.country+"/"+params.year,{
 			method: "PUT",
