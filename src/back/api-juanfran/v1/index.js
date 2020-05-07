@@ -39,7 +39,7 @@ var initialNatality_stats = [
 		natality_women : 375987
 	},
 	{
-		country : "united kingdom",
+		country : "unitedKingdom",
 		year: 2017,
 		natality_totals : 754754,
 		natality_men : 387030,
@@ -74,7 +74,7 @@ var initialNatality_stats = [
 		natality_women : 390526
 	},
 	{
-		country : "united kingdom",
+		country : "unitedKingdom",
 		year: 2015,
 		natality_totals : 776746,
 		natality_men : 398760,
@@ -109,7 +109,7 @@ var initialNatality_stats = [
 		natality_women : 407384
 	},
 	{
-		country : "united kingdom",
+		country : "unitedKingdom",
 		year: 2010,
 		natality_totals : 807271,
 		natality_men : 413755,

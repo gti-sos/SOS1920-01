@@ -20,19 +20,19 @@ var emigrants_stats = [
 	{country:"italy",year:2017,em_man:1588733,em_woman:1440435,em_totals:3029168},
 	{country:"spain",year:2017,em_man:609615,em_woman:736247,em_totals:1345862},
 	{country:"germany",year:2017,em_man:1934294,em_woman:2273789,em_totals:4208083},
-	{country:"united kingdom",year:2017,em_man:2449446,em_woman:2471863,em_totals:4921309},
+	{country:"unitedKingdom",year:2017,em_man:2449446,em_woman:2471863,em_totals:4921309},
 	{country:"france",year:2017,em_man:1068275,em_woman:1138938,em_totals:2207213},
 	
 	{country:"italy",year:2015,em_man:1416897,em_woman:1275167,em_totals:2692064},
 	{country:"spain",year:2015,em_man:579112,em_woman:691908,em_totals:1271020},
 	{country:"germany",year:2015,em_man:1749064,em_woman:2007072,em_totals:3756136},
-	{country:"united kingdom",year:2015,em_man:2048936,em_woman:1979345,em_totals:4028281},
+	{country:"unitedKingdom",year:2015,em_man:2048936,em_woman:1979345,em_totals:4028281},
 	{country:"france",year:2015,em_man:1033824,em_woman:1101224,em_totals:2135048},
 	
 	{country:"italy",year:2010,em_man:1332956,em_woman:1230383,em_totals:2563339},
 	{country:"spain",year:2010,em_man:489494,em_woman:597058,em_totals:1086552},
 	{country:"germany",year:2010,em_man:1734554,em_woman:1992779,em_totals:3727333},
-	{country:"united kingdom",year:2010,em_man:2237000,em_woman:2213254,em_totals:4450254},
+	{country:"unitedKingdom",year:2010,em_man:2237000,em_woman:2213254,em_totals:4450254},
 	{country:"france",year:2010,em_man:943996,em_woman:1013973,em_totals:1957969}
 	
 ];
