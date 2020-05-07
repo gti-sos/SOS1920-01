@@ -195,7 +195,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 		const res = await fetch("/api/v2/emigrants-stats/"+country+"/"+year,{
 			method: "DELETE"
 		}).then(function (res){
-			window.alert("Dato eliminado correctamente.");
+			
 			getStats();
 		});
     }/*
