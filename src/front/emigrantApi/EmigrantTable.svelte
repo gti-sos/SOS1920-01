@@ -24,7 +24,8 @@
 	let em_womanMax = "";
 	let em_totalsMin = "";
 	let em_totalsMax = "";
-    let errorMsg = "";
+	let errorMsg = "";
+	let exitoMsg = "";
     
     onMount(getEmiStats);
 	async function getEmiStats(){
@@ -143,8 +144,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			console.log("Received "+emistats.length+" stats.");
 		}else{
 			window.alert("No se encuentra ningún dato.");
-			errorMsg =" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-			console.log("ERROR!");
+			errorMsg =" Código de mensaje:"  + res.status + ", y quiere decir: " + res.statusText;
 		}
 	}
 	async function loadInitialData(){
@@ -158,8 +158,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			}else if(res.status==401){
 				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
 			}else{
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
+				errorMsg = " Código de ensaje:" + res.status + ", y quiere decir: " + res.statusText;
 			}	
 		});
 	}
@@ -179,13 +178,15 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 					console.log("Ok:");
 					getStats();
 					window.alert("Dato insertado correctamente.");
+					exitoMsg = res.status + ": " +res.statusText + "Dato insertado correctamente";
 				}else if(res.status==400){
 					window.alert("Campo mal escrito.No puede insertarlo.");
+					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}else{
 					window.alert("Dato ya creado. No puede insertarlo.");
+					errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText;
 				}
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
+				
 			});
 		}
     }
@@ -219,77 +220,71 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 	}
 </script>
 
-/////////////// HTML ///////////////////////////
-<main>Funciona</main>
-<!--
 <main>
 	<h3>Vista completa de elementos. </h3>
-	{#await stats}
-		Loading stats...
-	{:then stats}
+	{#await emistats}
+		Loading emistats...
+	{:then emistats}
 		<Table bordered>
 			<thead>
 				<tr>
 					<th>País</th>
 					<th>Año</th>
-					<th>Personas en riesgo de pobreza</th>
-					<th>Umbral persona</th>
-					<th>Umbral hogar</th>
+					<th>Emigrantes (Hombres)</th>
+					<th>Emigrantes (Mujeres)</th>
+					<th>Emigrantes (Totales)</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><input type = "text" bind:value = "{newStat.country}"></td>
-					<td><input type = "number" bind:value = "{newStat.year}"></td>
-					<td><input type = "number" bind:value = "{newStat.poverty_prp}"></td>
-					<td><input type = "number" bind:value = "{newStat.poverty_pt}"></td>
-					<td><input type = "number" bind:value = "{newStat.poverty_ht}"></td>
-					<td><Button outline color="primary" on:click={insertStat}>Insertar</Button></td>
+					<td><input type = "text" bind:value = "{newEmiStat.country}"></td>
+					<td><input type = "number" bind:value = "{newEmiStat.year}"></td>
+					<td><input type = "number" bind:value = "{newEmiStat.em_man}"></td>
+					<td><input type = "number" bind:value = "{newEmiStat.em_woman}"></td>
+					<td><input type = "number" bind:value = "{newEmiStat.em_totals}"></td>
+					<td><Button outline color="primary" on:click={insertEmiStat}>Insertar</Button></td>
 				</tr>
-				{#each stats as stat}
+				{#each emistats as emistat}
 					<tr>
 						<td>
-							<a href="#/poverty-stats/{stat.country}/{stat.year}">{stat.country}</a>
+							<a href="#/emigrants-stats/{emistat.country}/{emistat.year}">{emistat.country}</a>
 						</td>
-						<td>{stat.year}</td>
-						<td>{stat.poverty_prp}</td>
-						<td>{stat.poverty_pt}</td>
-						<td>{stat.poverty_ht}</td>
-						<td><Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">Eliminar</Button></td>
+						<td>{emistat.year}</td>
+						<td>{emistat.em_man}</td>
+						<td>{emistat.em_woman}</td>
+						<td>{emistat.em_totals}</td>
+						<td><Button outline color="danger" on:click="{deleteEmiStat(emistat.country,emistat.year)}">Eliminar</Button></td>
 					</tr>
 				{/each}
 			</tbody>
 		</Table>
 	{/await}
-	{#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
-    {/if}
+	{#if errorMsg}<p style="color: red">ERROR: {errorMsg}</p>{/if}
+	{#if exitoMsg} <p style="color: green">{exitoMsg}</p> {/if}
 	<Button outline color="secondary" on:click="{loadInitialData}">Cargar datos iniciales</Button>
-	<Button outline color="danger" on:click="{deleteStats}">Borrar todo</Button>
+	<Button outline color="danger" on:click="{deleteEmiStats}">Borrar todo</Button>
 	{#if numeroDePagina==0}
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">&gt</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">&gt</Button>
 	{/if}
 	{#if numeroDePagina>0}
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}">Pagina anterior</Button>
-		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">Pagina siguiente</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">Pagina anterior</Button>
+		<Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">Pagina siguiente</Button>
 	{/if}
 	<h6>Para verlo mediante páginas pulse el botón de avanzar página. </h6>
 	<tr>
 		<td><label>País: <input bind:value="{searchCountry}"></label></td>
-		<td><label>Mínimo de personas en riesgo de pobreza: <input bind:value="{minPoverty_prp}"></label></td>
-		<td><label>Mínimo umbral persona: <input bind:value="{minPoverty_pt}"></label></td>
-		<td><label>Mínimo umbral hogar: <input bind:value="{minPoverty_ht}"></label></td>
+		<td><label>Mínimo de emigrantes (Hombres): <input bind:value="{em_manMin}"></label></td>
+		<td><label>Mínimo de emigrantes (Mujeres): <input bind:value="{em_womanMin}"></label></td>
+		<td><label>Mínimo de emigrantes (Totales): <input bind:value="{em_totalsMin}"></label></td>
 	</tr>
 	<tr>
 		<td><label>Año: <input bind:value="{searchYear}"></label></td>
-		<td><label>Máximo de personas en riesgo de pobreza: <input bind:value="{maxPoverty_prp}"></label></td>
-		<td><label>Máximo umbral persona: <input bind:value="{maxPoverty_pt}"></label></td>
-		<td><label>Máximo umbral hogar: <input bind:value="{maxPoverty_ht}"></label></td>
+		<td><label>Máximo de emigrantes (Hombres): <input bind:value="{em_manMax}"></label></td>
+		<td><label>Máximo de emigrantes (Mujeres): <input bind:value="{em_womanMax}"></label></td>
+		<td><label>Máximo de emigrantes (Totales): <input bind:value="{em_totalsMax}"></label></td>
 	</tr>
 
-	<Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">Buscar</Button>
+	<Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">Buscar</Button>
 	<h6>Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar. </h6>
 </main>
-*/
--->

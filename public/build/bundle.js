@@ -8410,11 +8410,22 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$8 = "src\\front\\emigrantApi\\EmigrantTable.svelte";
 
+<<<<<<< HEAD
     function create_fragment$9(ctx) {
     	let t0;
     	let main;
+=======
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[37] = list[i];
+    	return child_ctx;
+    }
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
 
+    // (1:0) <script>   import {    onMount   }
+    function create_catch_block$3(ctx) {
     	const block = {
+<<<<<<< HEAD
     		c: function create() {
     			t0 = text("/////////////// HTML ///////////////////////////\r\n");
     			main = element("main");
@@ -8428,26 +8439,34 @@ var app = (function () {
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     		},
+=======
+    		c: noop,
+    		m: noop,
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
     		p: noop,
     		i: noop,
     		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(main);
-    		}
+    		d: noop
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+<<<<<<< HEAD
     		id: create_fragment$9.name,
     		type: "component",
     		source: "",
+=======
+    		id: create_catch_block$3.name,
+    		type: "catch",
+    		source: "(1:0) <script>   import {    onMount   }",
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
     		ctx
     	});
 
     	return block;
     }
 
+<<<<<<< HEAD
     function instance$9($$self, $$props, $$invalidate) {
     	let emistats = [];
 
@@ -8481,6 +8500,1505 @@ var app = (function () {
     			console.log("Ok:");
     			const json = await res.json();
     			emistats = json;
+    			console.log("Received " + emistats.length + " stats.");
+    		} else {
+    			console.log("ERROR");
+    		}
+
+    		
+    	}
+
+    	
+=======
+    // (227:1) {:then emistats}
+    function create_then_block$3(ctx) {
+    	let current;
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_6$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(table.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const table_changes = {};
+
+    			if (dirty[0] & /*emistats, newEmiStat*/ 4097 | dirty[1] & /*$$scope*/ 512) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$3.name,
+    		type: "then",
+    		source: "(227:1) {:then emistats}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (246:9) <Button outline color="primary" on:click={insertEmiStat}>
+    function create_default_slot_8$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Insertar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8$1.name,
+    		type: "slot",
+    		source: "(246:9) <Button outline color=\\\"primary\\\" on:click={insertEmiStat}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (257:10) <Button outline color="danger" on:click="{deleteEmiStat(emistat.country,emistat.year)}">
+    function create_default_slot_7$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Eliminar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$1.name,
+    		type: "slot",
+    		source: "(257:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStat(emistat.country,emistat.year)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (248:4) {#each emistats as emistat}
+    function create_each_block$2(ctx) {
+    	let tr;
+    	let td0;
+    	let a;
+    	let t0_value = /*emistat*/ ctx[37].country + "";
+    	let t0;
+    	let a_href_value;
+    	let t1;
+    	let td1;
+    	let t2_value = /*emistat*/ ctx[37].year + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = /*emistat*/ ctx[37].em_man + "";
+    	let t4;
+    	let t5;
+    	let td3;
+    	let t6_value = /*emistat*/ ctx[37].em_woman + "";
+    	let t6;
+    	let t7;
+    	let td4;
+    	let t8_value = /*emistat*/ ctx[37].em_totals + "";
+    	let t8;
+    	let t9;
+    	let td5;
+    	let t10;
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_7$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[37].country, /*emistat*/ ctx[37].year))) /*deleteEmiStat*/ ctx[17](/*emistat*/ ctx[37].country, /*emistat*/ ctx[37].year).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			td3 = element("td");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			td4 = element("td");
+    			t8 = text(t8_value);
+    			t9 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t10 = space();
+    			attr_dev(a, "href", a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[37].country + "/" + /*emistat*/ ctx[37].year);
+    			add_location(a, file$d, 250, 7, 8699);
+    			add_location(td0, file$d, 249, 6, 8686);
+    			add_location(td1, file$d, 252, 6, 8802);
+    			add_location(td2, file$d, 253, 6, 8833);
+    			add_location(td3, file$d, 254, 6, 8866);
+    			add_location(td4, file$d, 255, 6, 8901);
+    			add_location(td5, file$d, 256, 6, 8937);
+    			add_location(tr, file$d, 248, 5, 8674);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, a);
+    			append_dev(a, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    			append_dev(tr, td3);
+    			append_dev(td3, t6);
+    			append_dev(tr, t7);
+    			append_dev(tr, td4);
+    			append_dev(td4, t8);
+    			append_dev(tr, t9);
+    			append_dev(tr, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tr, t10);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t0_value !== (t0_value = /*emistat*/ ctx[37].country + "")) set_data_dev(t0, t0_value);
+
+    			if (!current || dirty[0] & /*emistats*/ 4096 && a_href_value !== (a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[37].country + "/" + /*emistat*/ ctx[37].year)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t2_value !== (t2_value = /*emistat*/ ctx[37].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t4_value !== (t4_value = /*emistat*/ ctx[37].em_man + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t6_value !== (t6_value = /*emistat*/ ctx[37].em_woman + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*emistats*/ 4096) && t8_value !== (t8_value = /*emistat*/ ctx[37].em_totals + "")) set_data_dev(t8, t8_value);
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(248:4) {#each emistats as emistat}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (228:2) <Table bordered>
+    function create_default_slot_6$1(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let input0;
+    	let t12;
+    	let td1;
+    	let input1;
+    	let t13;
+    	let td2;
+    	let input2;
+    	let t14;
+    	let td3;
+    	let input3;
+    	let t15;
+    	let td4;
+    	let input4;
+    	let t16;
+    	let td5;
+    	let t17;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_8$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*insertEmiStat*/ ctx[16]);
+    	let each_value = /*emistats*/ ctx[12];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "País";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Año";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Emigrantes (Hombres)";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Emigrantes (Mujeres)";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Emigrantes (Totales)";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Acciones";
+    			t11 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t12 = space();
+    			td1 = element("td");
+    			input1 = element("input");
+    			t13 = space();
+    			td2 = element("td");
+    			input2 = element("input");
+    			t14 = space();
+    			td3 = element("td");
+    			input3 = element("input");
+    			t15 = space();
+    			td4 = element("td");
+    			input4 = element("input");
+    			t16 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			t17 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(th0, file$d, 230, 5, 7951);
+    			add_location(th1, file$d, 231, 5, 7971);
+    			add_location(th2, file$d, 232, 5, 7990);
+    			add_location(th3, file$d, 233, 5, 8026);
+    			add_location(th4, file$d, 234, 5, 8062);
+    			add_location(th5, file$d, 235, 5, 8098);
+    			add_location(tr0, file$d, 229, 4, 7940);
+    			add_location(thead, file$d, 228, 3, 7927);
+    			attr_dev(input0, "type", "text");
+    			add_location(input0, file$d, 240, 9, 8172);
+    			add_location(td0, file$d, 240, 5, 8168);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$d, 241, 9, 8245);
+    			add_location(td1, file$d, 241, 5, 8241);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$d, 242, 9, 8317);
+    			add_location(td2, file$d, 242, 5, 8313);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$d, 243, 9, 8391);
+    			add_location(td3, file$d, 243, 5, 8387);
+    			attr_dev(input4, "type", "number");
+    			add_location(input4, file$d, 244, 9, 8467);
+    			add_location(td4, file$d, 244, 5, 8463);
+    			add_location(td5, file$d, 245, 5, 8540);
+    			add_location(tr1, file$d, 239, 4, 8157);
+    			add_location(tbody, file$d, 238, 3, 8144);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*newEmiStat*/ ctx[0].country);
+    			append_dev(tr1, t12);
+    			append_dev(tr1, td1);
+    			append_dev(td1, input1);
+    			set_input_value(input1, /*newEmiStat*/ ctx[0].year);
+    			append_dev(tr1, t13);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input2);
+    			set_input_value(input2, /*newEmiStat*/ ctx[0].em_man);
+    			append_dev(tr1, t14);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input3);
+    			set_input_value(input3, /*newEmiStat*/ ctx[0].em_woman);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input4);
+    			set_input_value(input4, /*newEmiStat*/ ctx[0].em_totals);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td5);
+    			mount_component(button, td5, null);
+    			append_dev(tbody, t17);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(tbody, null);
+    			}
+
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[24]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[25]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[26]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[27]),
+    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[28])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*newEmiStat*/ 1 && input0.value !== /*newEmiStat*/ ctx[0].country) {
+    				set_input_value(input0, /*newEmiStat*/ ctx[0].country);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input1.value) !== /*newEmiStat*/ ctx[0].year) {
+    				set_input_value(input1, /*newEmiStat*/ ctx[0].year);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input2.value) !== /*newEmiStat*/ ctx[0].em_man) {
+    				set_input_value(input2, /*newEmiStat*/ ctx[0].em_man);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input3.value) !== /*newEmiStat*/ ctx[0].em_woman) {
+    				set_input_value(input3, /*newEmiStat*/ ctx[0].em_woman);
+    			}
+
+    			if (dirty[0] & /*newEmiStat*/ 1 && to_number(input4.value) !== /*newEmiStat*/ ctx[0].em_totals) {
+    				set_input_value(input4, /*newEmiStat*/ ctx[0].em_totals);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+
+    			if (dirty[0] & /*deleteEmiStat, emistats*/ 135168) {
+    				each_value = /*emistats*/ ctx[12];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(tbody, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			destroy_each(each_blocks, detaching);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6$1.name,
+    		type: "slot",
+    		source: "(228:2) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (225:18)     Loading emistats...   {:then emistats}
+    function create_pending_block$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading emistats...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$3.name,
+    		type: "pending",
+    		source: "(225:18)     Loading emistats...   {:then emistats}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (263:1) {#if errorMsg}
+    function create_if_block_3$2(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*errorMsg*/ ctx[10]);
+    			set_style(p, "color", "red");
+    			add_location(p, file$d, 262, 15, 9129);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*errorMsg*/ 1024) set_data_dev(t1, /*errorMsg*/ ctx[10]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$2.name,
+    		type: "if",
+    		source: "(263:1) {#if errorMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (264:1) {#if exitoMsg}
+    function create_if_block_2$3(ctx) {
+    	let p;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text(/*exitoMsg*/ ctx[11]);
+    			set_style(p, "color", "green");
+    			add_location(p, file$d, 263, 16, 9195);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*exitoMsg*/ 2048) set_data_dev(t, /*exitoMsg*/ ctx[11]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$3.name,
+    		type: "if",
+    		source: "(264:1) {#if exitoMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (265:1) <Button outline color="secondary" on:click="{loadInitialData}">
+    function create_default_slot_5$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Cargar datos iniciales");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$1.name,
+    		type: "slot",
+    		source: "(265:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (266:1) <Button outline color="danger" on:click="{deleteEmiStats}">
+    function create_default_slot_4$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Borrar todo");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$1.name,
+    		type: "slot",
+    		source: "(266:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteEmiStats}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (267:1) {#if numeroDePagina==0}
+    function create_if_block_1$3(ctx) {
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_3$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2))) /*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$3.name,
+    		type: "if",
+    		source: "(267:1) {#if numeroDePagina==0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (268:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
+    function create_default_slot_3$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(">");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3$1.name,
+    		type: "slot",
+    		source: "(268:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (270:1) {#if numeroDePagina>0}
+    function create_if_block$9(ctx) {
+    	let t;
+    	let current;
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 1))) /*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 1).apply(this, arguments);
+    	});
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_1$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", function () {
+    		if (is_function(/*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2))) /*paginacion*/ ctx[14](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9], 2).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			create_component(button0.$$.fragment);
+    			t = space();
+    			create_component(button1.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(button1, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(button1, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$9.name,
+    		type: "if",
+    		source: "(270:1) {#if numeroDePagina>0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (271:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}">
+    function create_default_slot_2$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Pagina anterior");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$4.name,
+    		type: "slot",
+    		source: "(271:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 1)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (272:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}">
+    function create_default_slot_1$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Pagina siguiente");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$4.name,
+    		type: "slot",
+    		source: "(272:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax, 2)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (288:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">
+    function create_default_slot$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Buscar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$4.name,
+    		type: "slot",
+    		source: "(288:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$e(ctx) {
+    	let main;
+    	let h3;
+    	let t1;
+    	let promise;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let t7;
+    	let t8;
+    	let h60;
+    	let t10;
+    	let tr0;
+    	let td0;
+    	let label0;
+    	let t11;
+    	let input0;
+    	let t12;
+    	let td1;
+    	let label1;
+    	let t13;
+    	let input1;
+    	let t14;
+    	let td2;
+    	let label2;
+    	let t15;
+    	let input2;
+    	let t16;
+    	let td3;
+    	let label3;
+    	let t17;
+    	let input3;
+    	let t18;
+    	let tr1;
+    	let td4;
+    	let label4;
+    	let t19;
+    	let input4;
+    	let t20;
+    	let td5;
+    	let label5;
+    	let t21;
+    	let input5;
+    	let t22;
+    	let td6;
+    	let label6;
+    	let t23;
+    	let input6;
+    	let t24;
+    	let td7;
+    	let label7;
+    	let t25;
+    	let input7;
+    	let t26;
+    	let t27;
+    	let h61;
+    	let current;
+    	let dispose;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$3,
+    		then: create_then_block$3,
+    		catch: create_catch_block$3,
+    		value: 12,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*emistats*/ ctx[12], info);
+    	let if_block0 = /*errorMsg*/ ctx[10] && create_if_block_3$2(ctx);
+    	let if_block1 = /*exitoMsg*/ ctx[11] && create_if_block_2$3(ctx);
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot_5$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*loadInitialData*/ ctx[15]);
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_4$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*deleteEmiStats*/ ctx[18]);
+    	let if_block2 = /*numeroDePagina*/ ctx[1] == 0 && create_if_block_1$3(ctx);
+    	let if_block3 = /*numeroDePagina*/ ctx[1] > 0 && create_if_block$9(ctx);
+
+    	const button2 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button2.$on("click", function () {
+    		if (is_function(/*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9]))) /*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*em_manMin*/ ctx[4], /*em_manMax*/ ctx[5], /*em_womanMin*/ ctx[6], /*em_womanMax*/ ctx[7], /*em_totalsMin*/ ctx[8], /*em_totalsMax*/ ctx[9]).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			h3 = element("h3");
+    			h3.textContent = "Vista completa de elementos.";
+    			t1 = space();
+    			info.block.c();
+    			t2 = space();
+    			if (if_block0) if_block0.c();
+    			t3 = space();
+    			if (if_block1) if_block1.c();
+    			t4 = space();
+    			create_component(button0.$$.fragment);
+    			t5 = space();
+    			create_component(button1.$$.fragment);
+    			t6 = space();
+    			if (if_block2) if_block2.c();
+    			t7 = space();
+    			if (if_block3) if_block3.c();
+    			t8 = space();
+    			h60 = element("h6");
+    			h60.textContent = "Para verlo mediante páginas pulse el botón de avanzar página.";
+    			t10 = space();
+    			tr0 = element("tr");
+    			td0 = element("td");
+    			label0 = element("label");
+    			t11 = text("País: ");
+    			input0 = element("input");
+    			t12 = space();
+    			td1 = element("td");
+    			label1 = element("label");
+    			t13 = text("Mínimo de emigrantes (Hombres): ");
+    			input1 = element("input");
+    			t14 = space();
+    			td2 = element("td");
+    			label2 = element("label");
+    			t15 = text("Mínimo de emigrantes (Mujeres): ");
+    			input2 = element("input");
+    			t16 = space();
+    			td3 = element("td");
+    			label3 = element("label");
+    			t17 = text("Mínimo de emigrantes (Totales): ");
+    			input3 = element("input");
+    			t18 = space();
+    			tr1 = element("tr");
+    			td4 = element("td");
+    			label4 = element("label");
+    			t19 = text("Año: ");
+    			input4 = element("input");
+    			t20 = space();
+    			td5 = element("td");
+    			label5 = element("label");
+    			t21 = text("Máximo de emigrantes (Hombres): ");
+    			input5 = element("input");
+    			t22 = space();
+    			td6 = element("td");
+    			label6 = element("label");
+    			t23 = text("Máximo de emigrantes (Mujeres): ");
+    			input6 = element("input");
+    			t24 = space();
+    			td7 = element("td");
+    			label7 = element("label");
+    			t25 = text("Máximo de emigrantes (Totales): ");
+    			input7 = element("input");
+    			t26 = space();
+    			create_component(button2.$$.fragment);
+    			t27 = space();
+    			h61 = element("h6");
+    			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
+    			add_location(h3, file$d, 223, 1, 7802);
+    			add_location(h60, file$d, 273, 1, 10047);
+    			add_location(input0, file$d, 275, 19, 10146);
+    			add_location(label0, file$d, 275, 6, 10133);
+    			add_location(td0, file$d, 275, 2, 10129);
+    			add_location(input1, file$d, 276, 45, 10242);
+    			add_location(label1, file$d, 276, 6, 10203);
+    			add_location(td1, file$d, 276, 2, 10199);
+    			add_location(input2, file$d, 277, 45, 10334);
+    			add_location(label2, file$d, 277, 6, 10295);
+    			add_location(td2, file$d, 277, 2, 10291);
+    			add_location(input3, file$d, 278, 45, 10428);
+    			add_location(label3, file$d, 278, 6, 10389);
+    			add_location(td3, file$d, 278, 2, 10385);
+    			add_location(tr0, file$d, 274, 1, 10121);
+    			add_location(input4, file$d, 281, 18, 10511);
+    			add_location(label4, file$d, 281, 6, 10499);
+    			add_location(td4, file$d, 281, 2, 10495);
+    			add_location(input5, file$d, 282, 45, 10604);
+    			add_location(label5, file$d, 282, 6, 10565);
+    			add_location(td5, file$d, 282, 2, 10561);
+    			add_location(input6, file$d, 283, 45, 10696);
+    			add_location(label6, file$d, 283, 6, 10657);
+    			add_location(td6, file$d, 283, 2, 10653);
+    			add_location(input7, file$d, 284, 45, 10790);
+    			add_location(label7, file$d, 284, 6, 10751);
+    			add_location(td7, file$d, 284, 2, 10747);
+    			add_location(tr1, file$d, 280, 1, 10487);
+    			add_location(h61, file$d, 288, 1, 11027);
+    			add_location(main, file$d, 222, 0, 7793);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h3);
+    			append_dev(main, t1);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = t2;
+    			append_dev(main, t2);
+    			if (if_block0) if_block0.m(main, null);
+    			append_dev(main, t3);
+    			if (if_block1) if_block1.m(main, null);
+    			append_dev(main, t4);
+    			mount_component(button0, main, null);
+    			append_dev(main, t5);
+    			mount_component(button1, main, null);
+    			append_dev(main, t6);
+    			if (if_block2) if_block2.m(main, null);
+    			append_dev(main, t7);
+    			if (if_block3) if_block3.m(main, null);
+    			append_dev(main, t8);
+    			append_dev(main, h60);
+    			append_dev(main, t10);
+    			append_dev(main, tr0);
+    			append_dev(tr0, td0);
+    			append_dev(td0, label0);
+    			append_dev(label0, t11);
+    			append_dev(label0, input0);
+    			set_input_value(input0, /*searchCountry*/ ctx[2]);
+    			append_dev(tr0, t12);
+    			append_dev(tr0, td1);
+    			append_dev(td1, label1);
+    			append_dev(label1, t13);
+    			append_dev(label1, input1);
+    			set_input_value(input1, /*em_manMin*/ ctx[4]);
+    			append_dev(tr0, t14);
+    			append_dev(tr0, td2);
+    			append_dev(td2, label2);
+    			append_dev(label2, t15);
+    			append_dev(label2, input2);
+    			set_input_value(input2, /*em_womanMin*/ ctx[6]);
+    			append_dev(tr0, t16);
+    			append_dev(tr0, td3);
+    			append_dev(td3, label3);
+    			append_dev(label3, t17);
+    			append_dev(label3, input3);
+    			set_input_value(input3, /*em_totalsMin*/ ctx[8]);
+    			append_dev(main, t18);
+    			append_dev(main, tr1);
+    			append_dev(tr1, td4);
+    			append_dev(td4, label4);
+    			append_dev(label4, t19);
+    			append_dev(label4, input4);
+    			set_input_value(input4, /*searchYear*/ ctx[3]);
+    			append_dev(tr1, t20);
+    			append_dev(tr1, td5);
+    			append_dev(td5, label5);
+    			append_dev(label5, t21);
+    			append_dev(label5, input5);
+    			set_input_value(input5, /*em_manMax*/ ctx[5]);
+    			append_dev(tr1, t22);
+    			append_dev(tr1, td6);
+    			append_dev(td6, label6);
+    			append_dev(label6, t23);
+    			append_dev(label6, input6);
+    			set_input_value(input6, /*em_womanMax*/ ctx[7]);
+    			append_dev(tr1, t24);
+    			append_dev(tr1, td7);
+    			append_dev(td7, label7);
+    			append_dev(label7, t25);
+    			append_dev(label7, input7);
+    			set_input_value(input7, /*em_totalsMax*/ ctx[9]);
+    			append_dev(main, t26);
+    			mount_component(button2, main, null);
+    			append_dev(main, t27);
+    			append_dev(main, h61);
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[29]),
+    				listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[30]),
+    				listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[31]),
+    				listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[32]),
+    				listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[33]),
+    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[34]),
+    				listen_dev(input6, "input", /*input6_input_handler*/ ctx[35]),
+    				listen_dev(input7, "input", /*input7_input_handler*/ ctx[36])
+    			];
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			info.ctx = ctx;
+
+    			if (dirty[0] & /*emistats*/ 4096 && promise !== (promise = /*emistats*/ ctx[12]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[12] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			if (/*errorMsg*/ ctx[10]) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_3$2(ctx);
+    					if_block0.c();
+    					if_block0.m(main, t3);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*exitoMsg*/ ctx[11]) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_2$3(ctx);
+    					if_block1.c();
+    					if_block1.m(main, t4);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+
+    			if (/*numeroDePagina*/ ctx[1] == 0) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+
+    					if (dirty[0] & /*numeroDePagina*/ 2) {
+    						transition_in(if_block2, 1);
+    					}
+    				} else {
+    					if_block2 = create_if_block_1$3(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(main, t7);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*numeroDePagina*/ ctx[1] > 0) {
+    				if (if_block3) {
+    					if_block3.p(ctx, dirty);
+
+    					if (dirty[0] & /*numeroDePagina*/ 2) {
+    						transition_in(if_block3, 1);
+    					}
+    				} else {
+    					if_block3 = create_if_block$9(ctx);
+    					if_block3.c();
+    					transition_in(if_block3, 1);
+    					if_block3.m(main, t8);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (dirty[0] & /*searchCountry*/ 4 && input0.value !== /*searchCountry*/ ctx[2]) {
+    				set_input_value(input0, /*searchCountry*/ ctx[2]);
+    			}
+
+    			if (dirty[0] & /*em_manMin*/ 16 && input1.value !== /*em_manMin*/ ctx[4]) {
+    				set_input_value(input1, /*em_manMin*/ ctx[4]);
+    			}
+
+    			if (dirty[0] & /*em_womanMin*/ 64 && input2.value !== /*em_womanMin*/ ctx[6]) {
+    				set_input_value(input2, /*em_womanMin*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*em_totalsMin*/ 256 && input3.value !== /*em_totalsMin*/ ctx[8]) {
+    				set_input_value(input3, /*em_totalsMin*/ ctx[8]);
+    			}
+
+    			if (dirty[0] & /*searchYear*/ 8 && input4.value !== /*searchYear*/ ctx[3]) {
+    				set_input_value(input4, /*searchYear*/ ctx[3]);
+    			}
+
+    			if (dirty[0] & /*em_manMax*/ 32 && input5.value !== /*em_manMax*/ ctx[5]) {
+    				set_input_value(input5, /*em_manMax*/ ctx[5]);
+    			}
+
+    			if (dirty[0] & /*em_womanMax*/ 128 && input6.value !== /*em_womanMax*/ ctx[7]) {
+    				set_input_value(input6, /*em_womanMax*/ ctx[7]);
+    			}
+
+    			if (dirty[0] & /*em_totalsMax*/ 512 && input7.value !== /*em_totalsMax*/ ctx[9]) {
+    				set_input_value(input7, /*em_totalsMax*/ ctx[9]);
+    			}
+
+    			const button2_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button2.$set(button2_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			transition_in(if_block2);
+    			transition_in(if_block3);
+    			transition_in(button2.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			transition_out(if_block2);
+    			transition_out(if_block3);
+    			transition_out(button2.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			destroy_component(button0);
+    			destroy_component(button1);
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			destroy_component(button2);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$e.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$e($$self, $$props, $$invalidate) {
+    	let emistats = [];
+
+    	let newEmiStat = {
+    		country: "",
+    		year: "",
+    		em_man: "",
+    		em_woman: "",
+    		em_totals: ""
+    	};
+
+    	let numeroDePagina = 0;
+    	let numeroAux;
+    	let limit = 10;
+    	let searchCountry = "";
+    	let searchYear = "";
+    	let em_manMin = "";
+    	let em_manMax = "";
+    	let em_womanMin = "";
+    	let em_womanMax = "";
+    	let em_totalsMin = "";
+    	let em_totalsMax = "";
+    	let errorMsg = "";
+    	let exitoMsg = "";
+    	onMount(getEmiStats);
+
+    	async function getEmiStats() {
+    		console.log("Fetching stats....");
+    		const res = await fetch("/api/v2/emigrants-stats?offset=" + numeroDePagina + "&limit=" + limit);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(12, emistats = json);
     			console.log("Received " + emistats.length + " stats.");
     		} else {
     			console.log("ERROR");
@@ -8538,7 +10056,7 @@ var app = (function () {
 
     		if (res.ok) {
     			const json = await res.json();
-    			emistats = json;
+    			$$invalidate(12, emistats = json);
     			console.log("Found " + emistats.length + " emistats");
     			window.alert("Se han encontrado datos.");
     		} else if (res.status == 404) {
@@ -8597,15 +10115,15 @@ var app = (function () {
     		}
 
     		if (num == 1) {
-    			numeroDePagina = numeroDePagina - limit;
+    			$$invalidate(1, numeroDePagina = numeroDePagina - limit);
 
     			if (numeroDePagina < 0) {
-    				numeroDePagina = 0;
+    				$$invalidate(1, numeroDePagina = 0);
     				const res = await fetch("/api/v2/emigrants-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
 
     				if (res.ok) {
     					const json = await res.json();
-    					emistats = json;
+    					$$invalidate(12, emistats = json);
     					numeroAux = num;
     				}
     			} else {
@@ -8613,17 +10131,17 @@ var app = (function () {
 
     				if (res.ok) {
     					const json = await res.json();
-    					emistats = json;
+    					$$invalidate(12, emistats = json);
     					numeroAux = num;
     				}
     			}
     		} else {
-    			numeroDePagina = numeroDePagina + limit;
+    			$$invalidate(1, numeroDePagina = numeroDePagina + limit);
     			const res = await fetch("/api/v2/poverty-stats?country=" + searchCountry + "&year=" + searchYear + "&em_manMin=" + em_manMin + "&em_manMax=" + em_manMax + "&em_womanMin=" + em_womanMin + "&em_womanMax=" + em_womanMax + "&em_totalsMin=" + em_totalsMin + "&em_totalsMax=" + em_totalsMax + "&limit=" + limit + "&offset=" + numeroDePagina);
 
     			if (res.ok) {
     				const json = await res.json();
-    				emistats = json;
+    				$$invalidate(12, emistats = json);
     				numeroAux = num;
     			}
     		}
@@ -8636,12 +10154,11 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			emistats = json;
+    			$$invalidate(12, emistats = json);
     			console.log("Received " + emistats.length + " stats.");
     		} else {
     			window.alert("No se encuentra ningún dato.");
-    			errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-    			console.log("ERROR!");
+    			$$invalidate(10, errorMsg = " Código de mensaje:" + res.status + ", y quiere decir: " + res.statusText);
     		}
     	}
 
@@ -8655,8 +10172,7 @@ var app = (function () {
     			} else if (res.status == 401) {
     				window.alert("La base de datos no está vacía. Debe vaciarla para cargar los datos iniciales");
     			} else {
-    				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-    				console.log("ERROR!");
+    				$$invalidate(10, errorMsg = " Código de ensaje:" + res.status + ", y quiere decir: " + res.statusText);
     			}
     		});
     	}
@@ -8676,14 +10192,14 @@ var app = (function () {
     					console.log("Ok:");
     					getStats();
     					window.alert("Dato insertado correctamente.");
+    					$$invalidate(11, exitoMsg = res.status + ": " + res.statusText + "Dato insertado correctamente");
     				} else if (res.status == 400) {
     					window.alert("Campo mal escrito.No puede insertarlo.");
+    					$$invalidate(10, errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText);
     				} else {
     					window.alert("Dato ya creado. No puede insertarlo.");
+    					$$invalidate(10, errorMsg = "Código de error:" + res.status + ", y quiere decir: " + res.statusText);
     				}
-
-    				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-    				console.log("ERROR!");
     			});
     		}
     	}
@@ -8719,11 +10235,76 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<EmigrantTable> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<EmigrantTable> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("EmigrantTable", $$slots, []);
+
+    	function input0_input_handler() {
+    		newEmiStat.country = this.value;
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input1_input_handler() {
+    		newEmiStat.year = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input2_input_handler() {
+    		newEmiStat.em_man = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input3_input_handler() {
+    		newEmiStat.em_woman = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input4_input_handler() {
+    		newEmiStat.em_totals = to_number(this.value);
+    		$$invalidate(0, newEmiStat);
+    	}
+
+    	function input0_input_handler_1() {
+    		searchCountry = this.value;
+    		$$invalidate(2, searchCountry);
+    	}
+
+    	function input1_input_handler_1() {
+    		em_manMin = this.value;
+    		$$invalidate(4, em_manMin);
+    	}
+
+    	function input2_input_handler_1() {
+    		em_womanMin = this.value;
+    		$$invalidate(6, em_womanMin);
+    	}
+
+    	function input3_input_handler_1() {
+    		em_totalsMin = this.value;
+    		$$invalidate(8, em_totalsMin);
+    	}
+
+    	function input4_input_handler_1() {
+    		searchYear = this.value;
+    		$$invalidate(3, searchYear);
+    	}
+
+    	function input5_input_handler() {
+    		em_manMax = this.value;
+    		$$invalidate(5, em_manMax);
+    	}
+
+    	function input6_input_handler() {
+    		em_womanMax = this.value;
+    		$$invalidate(7, em_womanMax);
+    	}
+
+    	function input7_input_handler() {
+    		em_totalsMax = this.value;
+    		$$invalidate(9, em_totalsMax);
+    	}
 
     	$$self.$capture_state = () => ({
     		onMount,
@@ -8743,6 +10324,7 @@ var app = (function () {
     		em_totalsMin,
     		em_totalsMax,
     		errorMsg,
+    		exitoMsg,
     		getEmiStats,
     		busqueda,
     		paginacion,
@@ -8755,29 +10337,512 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("emistats" in $$props) emistats = $$props.emistats;
-    		if ("newEmiStat" in $$props) newEmiStat = $$props.newEmiStat;
-    		if ("numeroDePagina" in $$props) numeroDePagina = $$props.numeroDePagina;
+    		if ("emistats" in $$props) $$invalidate(12, emistats = $$props.emistats);
+    		if ("newEmiStat" in $$props) $$invalidate(0, newEmiStat = $$props.newEmiStat);
+    		if ("numeroDePagina" in $$props) $$invalidate(1, numeroDePagina = $$props.numeroDePagina);
     		if ("numeroAux" in $$props) numeroAux = $$props.numeroAux;
     		if ("limit" in $$props) limit = $$props.limit;
-    		if ("searchCountry" in $$props) searchCountry = $$props.searchCountry;
-    		if ("searchYear" in $$props) searchYear = $$props.searchYear;
-    		if ("em_manMin" in $$props) em_manMin = $$props.em_manMin;
-    		if ("em_manMax" in $$props) em_manMax = $$props.em_manMax;
-    		if ("em_womanMin" in $$props) em_womanMin = $$props.em_womanMin;
-    		if ("em_womanMax" in $$props) em_womanMax = $$props.em_womanMax;
-    		if ("em_totalsMin" in $$props) em_totalsMin = $$props.em_totalsMin;
-    		if ("em_totalsMax" in $$props) em_totalsMax = $$props.em_totalsMax;
-    		if ("errorMsg" in $$props) errorMsg = $$props.errorMsg;
+    		if ("searchCountry" in $$props) $$invalidate(2, searchCountry = $$props.searchCountry);
+    		if ("searchYear" in $$props) $$invalidate(3, searchYear = $$props.searchYear);
+    		if ("em_manMin" in $$props) $$invalidate(4, em_manMin = $$props.em_manMin);
+    		if ("em_manMax" in $$props) $$invalidate(5, em_manMax = $$props.em_manMax);
+    		if ("em_womanMin" in $$props) $$invalidate(6, em_womanMin = $$props.em_womanMin);
+    		if ("em_womanMax" in $$props) $$invalidate(7, em_womanMax = $$props.em_womanMax);
+    		if ("em_totalsMin" in $$props) $$invalidate(8, em_totalsMin = $$props.em_totalsMin);
+    		if ("em_totalsMax" in $$props) $$invalidate(9, em_totalsMax = $$props.em_totalsMax);
+    		if ("errorMsg" in $$props) $$invalidate(10, errorMsg = $$props.errorMsg);
+    		if ("exitoMsg" in $$props) $$invalidate(11, exitoMsg = $$props.exitoMsg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [
+    		newEmiStat,
+    		numeroDePagina,
+    		searchCountry,
+    		searchYear,
+    		em_manMin,
+    		em_manMax,
+    		em_womanMin,
+    		em_womanMax,
+    		em_totalsMin,
+    		em_totalsMax,
+    		errorMsg,
+    		exitoMsg,
+    		emistats,
+    		busqueda,
+    		paginacion,
+    		loadInitialData,
+    		insertEmiStat,
+    		deleteEmiStat,
+    		deleteEmiStats,
+    		numeroAux,
+    		limit,
+    		getEmiStats,
+    		getStats,
+    		deleteEmi1Stat,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input0_input_handler_1,
+    		input1_input_handler_1,
+    		input2_input_handler_1,
+    		input3_input_handler_1,
+    		input4_input_handler_1,
+    		input5_input_handler,
+    		input6_input_handler,
+    		input7_input_handler
+    	];
     }
 
+    class EmigrantTable extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {}, [-1, -1]);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "EmigrantTable",
+    			options,
+    			id: create_fragment$e.name
+    		});
+    	}
+    }
+
+    /* src\front\emigrantApi\EditEmigrant.svelte generated by Svelte v3.22.2 */
+
+    const { console: console_1$7 } = globals;
+    const file$e = "src\\front\\emigrantApi\\EditEmigrant.svelte";
+
+    // (1:0) <script>      import {    onMount      }
+    function create_catch_block$4(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$4.name,
+    		type: "catch",
+    		source: "(1:0) <script>      import {    onMount      }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (70:1) {:then eStat}
+    function create_then_block$4(ctx) {
+    	let current;
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_1$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(table.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const table_changes = {};
+
+    			if (dirty & /*$$scope, updatedEm_totals, updatedEm_woman, updatedEm_man, updatedYear, updatedCountry*/ 16446) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$4.name,
+    		type: "then",
+    		source: "(70:1) {:then eStat}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (89:9) <Button outline color="primary" on:click={updateStat}>
+    function create_default_slot_2$5(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Actualizar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$5.name,
+    		type: "slot",
+    		source: "(89:9) <Button outline color=\\\"primary\\\" on:click={updateStat}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (71:2) <Table bordered>
+    function create_default_slot_1$5(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let t12;
+    	let t13;
+    	let td1;
+    	let t14;
+    	let t15;
+    	let td2;
+    	let input0;
+    	let t16;
+    	let td3;
+    	let input1;
+    	let t17;
+    	let td4;
+    	let input2;
+    	let t18;
+    	let td5;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*updateStat*/ ctx[9]);
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "País";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Año";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Emigrantes (Hombres)";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Emigrantes (Mujeres)";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Emigrantes (Totales)";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Acciones";
+    			t11 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			t12 = text(/*updatedCountry*/ ctx[1]);
+    			t13 = space();
+    			td1 = element("td");
+    			t14 = text(/*updatedYear*/ ctx[2]);
+    			t15 = space();
+    			td2 = element("td");
+    			input0 = element("input");
+    			t16 = space();
+    			td3 = element("td");
+    			input1 = element("input");
+    			t17 = space();
+    			td4 = element("td");
+    			input2 = element("input");
+    			t18 = space();
+    			td5 = element("td");
+    			create_component(button.$$.fragment);
+    			add_location(th0, file$e, 73, 5, 2354);
+    			add_location(th1, file$e, 74, 5, 2374);
+    			add_location(th2, file$e, 75, 5, 2393);
+    			add_location(th3, file$e, 76, 5, 2429);
+    			add_location(th4, file$e, 77, 5, 2465);
+    			add_location(th5, file$e, 78, 5, 2501);
+    			add_location(tr0, file$e, 72, 4, 2343);
+    			add_location(thead, file$e, 71, 3, 2330);
+    			add_location(td0, file$e, 83, 5, 2571);
+    			add_location(td1, file$e, 84, 5, 2603);
+    			attr_dev(input0, "type", "number");
+    			add_location(input0, file$e, 85, 9, 2636);
+    			add_location(td2, file$e, 85, 5, 2632);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$e, 86, 9, 2706);
+    			add_location(td3, file$e, 86, 5, 2702);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$e, 87, 9, 2778);
+    			add_location(td4, file$e, 87, 5, 2774);
+    			add_location(td5, file$e, 88, 5, 2847);
+    			add_location(tr1, file$e, 82, 4, 2560);
+    			add_location(tbody, file$e, 81, 3, 2547);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, t12);
+    			append_dev(tr1, t13);
+    			append_dev(tr1, td1);
+    			append_dev(td1, t14);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input0);
+    			set_input_value(input0, /*updatedEm_man*/ ctx[3]);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input1);
+    			set_input_value(input1, /*updatedEm_woman*/ ctx[4]);
+    			append_dev(tr1, t17);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input2);
+    			set_input_value(input2, /*updatedEm_totals*/ ctx[5]);
+    			append_dev(tr1, t18);
+    			append_dev(tr1, td5);
+    			mount_component(button, td5, null);
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[13])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (!current || dirty & /*updatedCountry*/ 2) set_data_dev(t12, /*updatedCountry*/ ctx[1]);
+    			if (!current || dirty & /*updatedYear*/ 4) set_data_dev(t14, /*updatedYear*/ ctx[2]);
+
+    			if (dirty & /*updatedEm_man*/ 8 && to_number(input0.value) !== /*updatedEm_man*/ ctx[3]) {
+    				set_input_value(input0, /*updatedEm_man*/ ctx[3]);
+    			}
+
+    			if (dirty & /*updatedEm_woman*/ 16 && to_number(input1.value) !== /*updatedEm_woman*/ ctx[4]) {
+    				set_input_value(input1, /*updatedEm_woman*/ ctx[4]);
+    			}
+
+    			if (dirty & /*updatedEm_totals*/ 32 && to_number(input2.value) !== /*updatedEm_totals*/ ctx[5]) {
+    				set_input_value(input2, /*updatedEm_totals*/ ctx[5]);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 16384) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$5.name,
+    		type: "slot",
+    		source: "(71:2) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (68:18)     Loading eStat...   {:then eStat}
+    function create_pending_block$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading eStat...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$4.name,
+    		type: "pending",
+    		source: "(68:18)     Loading eStat...   {:then eStat}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (94:4) {#if errorMsg}
+    function create_if_block_1$4(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*errorMsg*/ ctx[6]);
+    			set_style(p, "color", "red");
+    			add_location(p, file$e, 93, 18, 2999);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*errorMsg*/ 64) set_data_dev(t1, /*errorMsg*/ ctx[6]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+<<<<<<< HEAD
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<EmigrantTable> was created with unknown prop '${key}'`);
+=======
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$4.name,
+    		type: "if",
+    		source: "(94:4) {#if errorMsg}",
+    		ctx
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
+    	});
+
+    	return block;
+    }
+
+    // (95:1) {#if exitoMsg}
+    function create_if_block$a(ctx) {
+    	let p;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text(/*exitoMsg*/ ctx[7]);
+    			set_style(p, "color", "green");
+    			add_location(p, file$e, 94, 16, 3065);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*exitoMsg*/ 128) set_data_dev(t, /*exitoMsg*/ ctx[7]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$a.name,
+    		type: "if",
+    		source: "(95:1) {#if exitoMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+<<<<<<< HEAD
     class EmigrantTable extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
@@ -8791,32 +10856,199 @@ var app = (function () {
     		});
     	}
     }
+=======
+    // (96:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$5(ctx) {
+    	let t;
 
-    /* src\front\emigrantApi\EditEmigrant.svelte generated by Svelte v3.22.2 */
+    	const block = {
+    		c: function create() {
+    			t = text("Volver");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
 
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$5.name,
+    		type: "slot",
+    		source: "(96:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+<<<<<<< HEAD
     const { console: console_1$6 } = globals;
     const file$9 = "src\\front\\emigrantApi\\EditEmigrant.svelte";
+=======
+    	return block;
+    }
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
 
     function create_fragment$a(ctx) {
     	let main;
+    	let h3;
+    	let t0;
+    	let strong;
+    	let t1_value = /*params*/ ctx[0].country + "";
+    	let t1;
+    	let t2_value = /*params*/ ctx[0].year + "";
+    	let t2;
+    	let t3;
+    	let promise;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let current;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$4,
+    		then: create_then_block$4,
+    		catch: create_catch_block$4,
+    		value: 8,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*eStat*/ ctx[8], info);
+    	let if_block0 = /*errorMsg*/ ctx[6] && create_if_block_1$4(ctx);
+    	let if_block1 = /*exitoMsg*/ ctx[7] && create_if_block$a(ctx);
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
 
     	const block = {
     		c: function create() {
     			main = element("main");
+<<<<<<< HEAD
     			main.textContent = "FuncionaEdit";
     			add_location(main, file$9, 64, 0, 2078);
+=======
+    			h3 = element("h3");
+    			t0 = text("Editando elemento ");
+    			strong = element("strong");
+    			t1 = text(t1_value);
+    			t2 = text(t2_value);
+    			t3 = space();
+    			info.block.c();
+    			t4 = space();
+    			if (if_block0) if_block0.c();
+    			t5 = space();
+    			if (if_block1) if_block1.c();
+    			t6 = space();
+    			create_component(button.$$.fragment);
+    			add_location(strong, file$e, 66, 26, 2197);
+    			add_location(h3, file$e, 66, 4, 2175);
+    			add_location(main, file$e, 65, 0, 2163);
+>>>>>>> 0a0a14531b8b6af8b8b75391bedad3966f4e6bce
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			append_dev(main, h3);
+    			append_dev(h3, t0);
+    			append_dev(h3, strong);
+    			append_dev(strong, t1);
+    			append_dev(strong, t2);
+    			append_dev(main, t3);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = t4;
+    			append_dev(main, t4);
+    			if (if_block0) if_block0.m(main, null);
+    			append_dev(main, t5);
+    			if (if_block1) if_block1.m(main, null);
+    			append_dev(main, t6);
+    			mount_component(button, main, null);
+    			current = true;
     		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    			if ((!current || dirty & /*params*/ 1) && t1_value !== (t1_value = /*params*/ ctx[0].country + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*params*/ 1) && t2_value !== (t2_value = /*params*/ ctx[0].year + "")) set_data_dev(t2, t2_value);
+    			info.ctx = ctx;
+
+    			if (dirty & /*eStat*/ 256 && promise !== (promise = /*eStat*/ ctx[8]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[8] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			if (/*errorMsg*/ ctx[6]) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_1$4(ctx);
+    					if_block0.c();
+    					if_block0.m(main, t5);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*exitoMsg*/ ctx[7]) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block$a(ctx);
+    					if_block1.c();
+    					if_block1.m(main, t6);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 16384) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			destroy_component(button);
     		}
     	};
 
@@ -8840,6 +11072,7 @@ var app = (function () {
     	let updatedEm_woman = "";
     	let updatedEm_totals = "";
     	let errorMsg = "";
+    	let exitoMsg = "";
     	onMount(getStat);
 
     	async function getStat() {
@@ -8849,16 +11082,15 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			eStat = json;
-    			updatedCountry = eStat.country;
-    			updatedYear = eStat.year;
-    			updatedEm_man = eStat.em.man;
-    			updatedEm_woman = eStat.em_woman;
-    			updatedEm_totals = eStat.em_totals;
+    			$$invalidate(8, eStat = json);
+    			$$invalidate(1, updatedCountry = eStat.country);
+    			$$invalidate(2, updatedYear = eStat.year);
+    			$$invalidate(3, updatedEm_man = eStat.em.man);
+    			$$invalidate(4, updatedEm_woman = eStat.em_woman);
+    			$$invalidate(5, updatedEm_totals = eStat.em_totals);
     			console.log("Received stats.");
     		} else {
-    			errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-    			console.log("ERROR!");
+    			$$invalidate(6, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     		}
     	}
 
@@ -8877,13 +11109,14 @@ var app = (function () {
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
     			if (res.ok) {
+    				$$invalidate(7, exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito");
+    				console.log("OK!" + exitoMsg);
     				getStat();
     				window.alert("Dato modificado correctamente.");
     			} else if (res.status == 400) {
     				window.alert("Campo mal escrito.No puede editarlo.");
     			} else {
-    				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-    				console.log("ERROR!");
+    				$$invalidate(6, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
     			}
 
     			
@@ -8899,6 +11132,21 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("EditEmigrant", $$slots, []);
+
+    	function input0_input_handler() {
+    		updatedEm_man = to_number(this.value);
+    		$$invalidate(3, updatedEm_man);
+    	}
+
+    	function input1_input_handler() {
+    		updatedEm_woman = to_number(this.value);
+    		$$invalidate(4, updatedEm_woman);
+    	}
+
+    	function input2_input_handler() {
+    		updatedEm_totals = to_number(this.value);
+    		$$invalidate(5, updatedEm_totals);
+    	}
 
     	$$self.$set = $$props => {
     		if ("params" in $$props) $$invalidate(0, params = $$props.params);
@@ -8917,26 +11165,43 @@ var app = (function () {
     		updatedEm_woman,
     		updatedEm_totals,
     		errorMsg,
+    		exitoMsg,
     		getStat,
     		updateStat
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("params" in $$props) $$invalidate(0, params = $$props.params);
-    		if ("eStat" in $$props) eStat = $$props.eStat;
-    		if ("updatedCountry" in $$props) updatedCountry = $$props.updatedCountry;
-    		if ("updatedYear" in $$props) updatedYear = $$props.updatedYear;
-    		if ("updatedEm_man" in $$props) updatedEm_man = $$props.updatedEm_man;
-    		if ("updatedEm_woman" in $$props) updatedEm_woman = $$props.updatedEm_woman;
-    		if ("updatedEm_totals" in $$props) updatedEm_totals = $$props.updatedEm_totals;
-    		if ("errorMsg" in $$props) errorMsg = $$props.errorMsg;
+    		if ("eStat" in $$props) $$invalidate(8, eStat = $$props.eStat);
+    		if ("updatedCountry" in $$props) $$invalidate(1, updatedCountry = $$props.updatedCountry);
+    		if ("updatedYear" in $$props) $$invalidate(2, updatedYear = $$props.updatedYear);
+    		if ("updatedEm_man" in $$props) $$invalidate(3, updatedEm_man = $$props.updatedEm_man);
+    		if ("updatedEm_woman" in $$props) $$invalidate(4, updatedEm_woman = $$props.updatedEm_woman);
+    		if ("updatedEm_totals" in $$props) $$invalidate(5, updatedEm_totals = $$props.updatedEm_totals);
+    		if ("errorMsg" in $$props) $$invalidate(6, errorMsg = $$props.errorMsg);
+    		if ("exitoMsg" in $$props) $$invalidate(7, exitoMsg = $$props.exitoMsg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [params];
+    	return [
+    		params,
+    		updatedCountry,
+    		updatedYear,
+    		updatedEm_man,
+    		updatedEm_woman,
+    		updatedEm_totals,
+    		errorMsg,
+    		exitoMsg,
+    		eStat,
+    		updateStat,
+    		getStat,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler
+    	];
     }
 
     class EditEmigrant extends SvelteComponentDev {
@@ -9074,5 +11339,5 @@ var app = (function () {
 
     return app;
 
-}());
+};
 //# sourceMappingURL=bundle.js.map
