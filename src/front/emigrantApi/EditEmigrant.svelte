@@ -64,7 +64,7 @@
 	};
 </script>
 <main>
-    <h3>Editando elemento <strong>{params.country}{params.year}</strong> </h3>
+    <h3>Editando elemento <strong>{params.country} {params.year}</strong> </h3>
     {#await eStat}
 		Loading eStat...
 	{:then eStat}
