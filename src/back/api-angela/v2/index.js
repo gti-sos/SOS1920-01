@@ -21,19 +21,19 @@ var poverty_stats = [
 	{country: "germany",year: 2010,poverty_prp:12648, poverty_pt:11278,poverty_ht:23684},
 	{country: "italy",year: 2010,poverty_prp:11124, poverty_pt:9578,poverty_ht:20115},
 	{country: "france",year: 2010,poverty_prp:8112, poverty_pt:11976,poverty_ht:25150},
-	{country: "united kingdom",year: 2010,poverty_prp:10519, poverty_pt:10263,poverty_ht:21553},
+	{country: "unitedKingdom",year: 2010,poverty_prp:10519, poverty_pt:10263,poverty_ht:21553},
 
 	{country: "spain",year: 2015,poverty_prp:10178, poverty_pt:8011,poverty_ht:16823},
 	{country: "germany",year: 2015,poverty_prp:13428, poverty_pt:12401,poverty_ht:26041},
 	{country: "italy",year: 2015,poverty_prp:12130, poverty_pt:9508,poverty_ht:19966},
 	{country: "france",year: 2015,poverty_prp:8474, poverty_pt:12849,poverty_ht:26983},
-	{country: "united kingdom",year: 2015,poverty_prp:10648, poverty_pt:12617,poverty_ht:26495},
+	{country: "unitedKingdom",year: 2015,poverty_prp:10648, poverty_pt:12617,poverty_ht:26495},
 
 	{country: "spain",year: 2017,poverty_prp:9950, poverty_pt:8522,poverty_ht:17896},
 	{country: "germany",year: 2017,poverty_prp:13428, poverty_pt:12401,poverty_ht:26041},
 	{country: "italy",year: 2017,poverty_prp:12130, poverty_pt:9508,poverty_ht:19966},
 	{country: "france",year: 2017,poverty_prp:8474, poverty_pt:12849,poverty_ht:26983},
-	{country: "united kingdom",year: 2017,poverty_prp:10648, poverty_pt:12617,poverty_ht:26495}
+	{country: "unitedKingdom",year: 2017,poverty_prp:10648, poverty_pt:12617,poverty_ht:26495}
 ];
 
 /////////LoadInitialData  
