@@ -1652,7 +1652,11 @@ var app = (function () {
     			br1 = element("br");
     			t58 = space();
     			button0 = element("button");
+<<<<<<< HEAD
     			button0.textContent = "API Natalidad";
+=======
+    			button0.textContent = "Natalidad";
+>>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			t60 = space();
     			button1 = element("button");
     			button1.textContent = "Riesgo de pobreza";
@@ -1733,12 +1737,17 @@ var app = (function () {
     			add_location(br1, file, 41, 2, 2897);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary");
+<<<<<<< HEAD
     			attr_dev(button0, "onclick", "window.location.href='#/evolution-of-cycling-routes'");
+=======
+    			attr_dev(button0, "onclick", "window.location.href='#/natality-stats'");
+>>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			set_style(button0, "margin-left", "6.75%");
     			set_style(button0, "width", "25%");
     			add_location(button0, file, 43, 8, 2915);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-warning");
+<<<<<<< HEAD
     			attr_dev(button1, "onclick", "window.location.href='#/rural-tourism-stats'");
     			set_style(button1, "width", "25%");
     			add_location(button1, file, 44, 2, 3091);
@@ -1748,6 +1757,17 @@ var app = (function () {
     			set_style(button2, "width", "25%");
     			add_location(button2, file, 45, 2, 3242);
     			add_location(br2, file, 47, 8, 3400);
+=======
+    			attr_dev(button1, "onclick", "window.location.href='#/poverty-stats'");
+    			set_style(button1, "width", "25%");
+    			add_location(button1, file, 44, 2, 3075);
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "class", "btn btn-danger");
+    			attr_dev(button2, "onclick", "window.location.href='#/emigrants-stats'");
+    			set_style(button2, "width", "25%");
+    			add_location(button2, file, 45, 2, 3220);
+    			add_location(br2, file, 47, 8, 3368);
+>>>>>>> 470c1cfe865b2eb2084af231596819b3482ef4d0
     			set_style(div0, "margin-left", "12.5%");
     			add_location(div0, file, 3, 2, 37);
     			attr_dev(div1, "class", "div-home");
