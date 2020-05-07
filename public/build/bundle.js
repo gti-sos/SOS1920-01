@@ -275,7 +275,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			add_location(main, file, 4, 0, 22);
+    			add_location(main, file, 4, 0, 26);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
