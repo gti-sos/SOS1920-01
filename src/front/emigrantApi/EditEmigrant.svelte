@@ -14,7 +14,8 @@
     let updatedEm_man = "";
     let updatedEm_woman = "";
     let updatedEm_totals = "";
-    let errorMsg = "";
+	let errorMsg = "";
+	let exitoMsg = "";
     onMount(getStat);
 	async function getStat(){
 		console.log("Fetching stat...");
@@ -32,7 +33,6 @@
 			console.log("Received stats.");
 		}else{
             errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-			console.log("ERROR!");
 		}
 	}
     async function updateStat(){
@@ -51,33 +51,31 @@
 			}
 		}).then(function (res){
 			if(res.ok){
+				exitoMsg = res.status + ": " + res.statusText +
+				 ". Dato actualizado con éxito"; console.log("OK!" + exitoMsg);
 				getStat();
 				window.alert("Dato modificado correctamente.");
 			}else if(res.status==400){
 				window.alert("Campo mal escrito.No puede editarlo.");
 			}else{
 				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText;
-				console.log("ERROR!");
 			};			
 		});
 	};
 </script>
-<main>FuncionaEdit
-</main>
-<!--
 <main>
     <h3>Editando elemento <strong>{params.country}{params.year}</strong> </h3>
-    {#await stat}
-		Loading stat...
-	{:then stat}
+    {#await eStat}
+		Loading eStat...
+	{:then eStat}
 		<Table bordered>
 			<thead>
 				<tr>
 					<th>País</th>
 					<th>Año</th>
-					<th>Personas en riesgo de pobreza</th>
-					<th>Umbral persona</th>
-					<th>Umbral hogar</th>
+					<th>Emigrantes (Hombres)</th>
+					<th>Emigrantes (Mujeres)</th>
+					<th>Emigrantes (Totales)</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -85,17 +83,15 @@
 				<tr>
 					<td>{updatedCountry}</td>
 					<td>{updatedYear}</td>
-					<td><input type = "number" bind:value = "{updatedPoverty_prp}"></td>
-					<td><input type = "number" bind:value = "{updatedPoverty_pt}"></td>
-					<td><input type = "number" bind:value = "{updatedPoverty_ht}"></td>
+					<td><input type = "number" bind:value = "{updatedEm_man}"></td>
+					<td><input type = "number" bind:value = "{updatedEm_woman}"></td>
+					<td><input type = "number" bind:value = "{updatedEm_totals}"></td>
 					<td><Button outline color="primary" on:click={updateStat}>Actualizar</Button></td>
 				</tr>
 			</tbody>
 		</Table>
     {/await}
-    {#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
-    {/if}
+    {#if errorMsg}<p style="color: red">ERROR: {errorMsg}</p>{/if}
+	{#if exitoMsg} <p style="color: green">{exitoMsg}</p> {/if}
     <Button outline color="secondary" on:click="{pop}">Volver</Button>
 </main>
--->
