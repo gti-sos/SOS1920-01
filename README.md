@@ -9,11 +9,11 @@
 - **URL**: [https://sos1920-01.herokuapp.com/](https://sos1920-01.herokuapp.com/)
 -  **APIs**:
     - [https://sos1920-01.herokuapp.com/api/v1/natality-stats](https://sos1920-01.herokuapp.com/api/v1/natality-stats) (developed by [Juan Francisco](https://github.com/juanfran94))
-     - [https://sos1920-01.herokuapp.com/api/v2/natality-stats](https://sos1920-01.herokuapp.com/api/v1/natality-stats) (developed by [Juan Francisco](https://github.com/juanfran94))
+     - [https://sos1920-01.herokuapp.com/api/v2/natality-stats](https://sos1920-01.herokuapp.com/api/v2/natality-stats) (developed by [Juan Francisco](https://github.com/juanfran94))
     - [https://sos1920-01.herokuapp.com/api/v1/poverty-stats](https://sos1920-01.herokuapp.com/api/v1/poverty-stats) (developed by [Ángela](https://github.com/angtorcal))
-     - [https://sos1920-01.herokuapp.com/api/v2/poverty-stats](https://sos1920-01.herokuapp.com/api/v1/poverty-stats) (developed by [Ángela](https://github.com/angtorcal))
+     - [https://sos1920-01.herokuapp.com/api/v2/poverty-stats](https://sos1920-01.herokuapp.com/api/v2/poverty-stats) (developed by [Ángela](https://github.com/angtorcal))
     - [https://sos1920-01.herokuapp.com/api/v1/emigrants-stats](https://sos1920-01.herokuapp.com/api/v1/emigrants-stats) (developed by [Antonio](https://github.com/Escobar1993))
-     - [https://sos1920-01.herokuapp.com/api/v2/emigrants-stats](https://sos1920-01.herokuapp.com/api/v1/emigrants-stats) (developed by [Antonio](https://github.com/Escobar1993))
+     - [https://sos1920-01.herokuapp.com/api/v2/emigrants-stats](https://sos1920-01.herokuapp.com/api/v2/emigrants-stats) (developed by [Antonio](https://github.com/Escobar1993))
 - **POSTMAN**:
      - [SOS1920-01-nataly-stats](https://documenter.getpostman.com/view/10867933/Szf3bW6K) (developed by [Juan Francisco](https://github.com/juanfran94))
      - [SOS1920-01-nataly-stats](https://documenter.getpostman.com/view/11334187/Szme4JDG) (developed by [Juan Francisco](https://github.com/juanfran94))
