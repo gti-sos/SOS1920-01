@@ -12022,7 +12022,7 @@ var app = (function () {
     }
 
     // (261:1) {#if errorMsg}
-    function create_if_block_3$2(ctx) {
+    function create_if_block_3$3(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -12050,7 +12050,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$2.name,
+    		id: create_if_block_3$3.name,
     		type: "if",
     		source: "(261:1) {#if errorMsg}",
     		ctx
@@ -12149,7 +12149,7 @@ var app = (function () {
     }
 
     // (265:1) {#if numeroDePagina==0}
-    function create_if_block_1$3(ctx) {
+    function create_if_block_1$4(ctx) {
     	let current;
 
     	const button = new Button({
@@ -12200,7 +12200,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$3.name,
+    		id: create_if_block_1$4.name,
     		type: "if",
     		source: "(265:1) {#if numeroDePagina==0}",
     		ctx
@@ -12481,7 +12481,7 @@ var app = (function () {
     	};
 
     	handle_promise(promise = /*emistats*/ ctx[12], info);
-    	let if_block0 = /*errorMsg*/ ctx[10] && create_if_block_3$2(ctx);
+    	let if_block0 = /*errorMsg*/ ctx[10] && create_if_block_3$3(ctx);
     	let if_block1 = /*exitoMsg*/ ctx[11] && create_if_block_2$3(ctx);
 
     	const button0 = new Button({
@@ -12507,7 +12507,7 @@ var app = (function () {
     		});
 
     	button1.$on("click", /*deleteEmiStats*/ ctx[18]);
-    	let if_block2 = /*numeroDePagina*/ ctx[1] == 0 && create_if_block_1$3(ctx);
+    	let if_block2 = /*numeroDePagina*/ ctx[1] == 0 && create_if_block_1$4(ctx);
     	let if_block3 = /*numeroDePagina*/ ctx[1] > 0 && create_if_block$9(ctx);
 
     	const button2 = new Button({
@@ -12730,7 +12730,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_3$2(ctx);
+    					if_block0 = create_if_block_3$3(ctx);
     					if_block0.c();
     					if_block0.m(main, t3);
     				}
@@ -12775,7 +12775,7 @@ var app = (function () {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_1$3(ctx);
+    					if_block2 = create_if_block_1$4(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(main, t7);
@@ -13701,7 +13701,7 @@ var app = (function () {
     }
 
     // (94:4) {#if errorMsg}
-    function create_if_block_1$4(ctx) {
+    function create_if_block_1$5(ctx) {
     	let p;
     	let t0;
     	let t1;
@@ -13729,7 +13729,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$4.name,
+    		id: create_if_block_1$5.name,
     		type: "if",
     		source: "(94:4) {#if errorMsg}",
     		ctx
@@ -13828,7 +13828,7 @@ var app = (function () {
     	};
 
     	handle_promise(promise = /*eStat*/ ctx[8], info);
-    	let if_block0 = /*errorMsg*/ ctx[6] && create_if_block_1$4(ctx);
+    	let if_block0 = /*errorMsg*/ ctx[6] && create_if_block_1$5(ctx);
     	let if_block1 = /*exitoMsg*/ ctx[7] && create_if_block$a(ctx);
 
     	const button = new Button({
@@ -13901,7 +13901,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_1$4(ctx);
+    					if_block0 = create_if_block_1$5(ctx);
     					if_block0.c();
     					if_block0.m(main, t5);
     				}
