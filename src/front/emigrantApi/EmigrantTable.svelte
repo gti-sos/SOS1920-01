@@ -211,7 +211,7 @@ async function paginacion(searchCountry, searchYear, em_manMin, em_manMax, em_wo
 			method: "DELETE"
 		}).then(function (res){
 			getStats();
-			errorMsg = "Código de error: " + res.status + "-"+ res.statusText+ ", Borrado correctamente";
+			exitoMsg = "Código de mensaje: " + res.status + "-"+ res.statusText+ ", Borrado correctamente";
 		});
     }/*
     async function deleteEmi1Stat(country){

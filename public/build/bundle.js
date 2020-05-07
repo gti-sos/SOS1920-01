@@ -8994,14 +8994,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[36].country + "/" + /*emistat*/ ctx[36].year);
-    			add_location(a, file$8, 267, 10, 9579);
-    			add_location(td0, file$8, 267, 6, 9575);
-    			add_location(td1, file$8, 268, 6, 9674);
-    			add_location(td2, file$8, 269, 6, 9705);
-    			add_location(td3, file$8, 270, 6, 9738);
-    			add_location(td4, file$8, 271, 6, 9773);
-    			add_location(td5, file$8, 272, 6, 9809);
-    			add_location(tr, file$8, 266, 5, 9563);
+    			add_location(a, file$8, 267, 10, 9581);
+    			add_location(td0, file$8, 267, 6, 9577);
+    			add_location(td1, file$8, 268, 6, 9676);
+    			add_location(td2, file$8, 269, 6, 9707);
+    			add_location(td3, file$8, 270, 6, 9740);
+    			add_location(td4, file$8, 271, 6, 9775);
+    			add_location(td5, file$8, 272, 6, 9811);
+    			add_location(tr, file$8, 266, 5, 9565);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -9180,32 +9180,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$8, 248, 5, 8840);
-    			add_location(th1, file$8, 249, 5, 8860);
-    			add_location(th2, file$8, 250, 5, 8879);
-    			add_location(th3, file$8, 251, 5, 8915);
-    			add_location(th4, file$8, 252, 5, 8951);
-    			add_location(th5, file$8, 253, 5, 8987);
-    			add_location(tr0, file$8, 247, 4, 8829);
-    			add_location(thead, file$8, 246, 3, 8816);
+    			add_location(th0, file$8, 248, 5, 8842);
+    			add_location(th1, file$8, 249, 5, 8862);
+    			add_location(th2, file$8, 250, 5, 8881);
+    			add_location(th3, file$8, 251, 5, 8917);
+    			add_location(th4, file$8, 252, 5, 8953);
+    			add_location(th5, file$8, 253, 5, 8989);
+    			add_location(tr0, file$8, 247, 4, 8831);
+    			add_location(thead, file$8, 246, 3, 8818);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$8, 258, 9, 9061);
-    			add_location(td0, file$8, 258, 5, 9057);
+    			add_location(input0, file$8, 258, 9, 9063);
+    			add_location(td0, file$8, 258, 5, 9059);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$8, 259, 9, 9134);
-    			add_location(td1, file$8, 259, 5, 9130);
+    			add_location(input1, file$8, 259, 9, 9136);
+    			add_location(td1, file$8, 259, 5, 9132);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$8, 260, 9, 9206);
-    			add_location(td2, file$8, 260, 5, 9202);
+    			add_location(input2, file$8, 260, 9, 9208);
+    			add_location(td2, file$8, 260, 5, 9204);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$8, 261, 9, 9280);
-    			add_location(td3, file$8, 261, 5, 9276);
+    			add_location(input3, file$8, 261, 9, 9282);
+    			add_location(td3, file$8, 261, 5, 9278);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$8, 262, 9, 9356);
-    			add_location(td4, file$8, 262, 5, 9352);
-    			add_location(td5, file$8, 263, 5, 9429);
-    			add_location(tr1, file$8, 257, 4, 9046);
-    			add_location(tbody, file$8, 256, 3, 9033);
+    			add_location(input4, file$8, 262, 9, 9358);
+    			add_location(td4, file$8, 262, 5, 9354);
+    			add_location(td5, file$8, 263, 5, 9431);
+    			add_location(tr1, file$8, 257, 4, 9048);
+    			add_location(tbody, file$8, 256, 3, 9035);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -9403,7 +9403,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$8, 278, 15, 10001);
+    			add_location(p, file$8, 278, 15, 10003);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -9441,7 +9441,7 @@ var app = (function () {
     			t0 = text("ÉXITO: ");
     			t1 = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$8, 279, 16, 10067);
+    			add_location(p, file$8, 279, 16, 10069);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -9966,36 +9966,36 @@ var app = (function () {
     			t27 = space();
     			h61 = element("h6");
     			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
-    			add_location(h3, file$8, 241, 1, 8693);
-    			add_location(h60, file$8, 289, 1, 10939);
-    			add_location(input0, file$8, 291, 19, 11038);
-    			add_location(label0, file$8, 291, 6, 11025);
-    			add_location(td0, file$8, 291, 2, 11021);
-    			add_location(input1, file$8, 292, 45, 11134);
-    			add_location(label1, file$8, 292, 6, 11095);
-    			add_location(td1, file$8, 292, 2, 11091);
-    			add_location(input2, file$8, 293, 45, 11226);
-    			add_location(label2, file$8, 293, 6, 11187);
-    			add_location(td2, file$8, 293, 2, 11183);
-    			add_location(input3, file$8, 294, 45, 11320);
-    			add_location(label3, file$8, 294, 6, 11281);
-    			add_location(td3, file$8, 294, 2, 11277);
-    			add_location(tr0, file$8, 290, 1, 11013);
-    			add_location(input4, file$8, 297, 18, 11403);
-    			add_location(label4, file$8, 297, 6, 11391);
-    			add_location(td4, file$8, 297, 2, 11387);
-    			add_location(input5, file$8, 298, 45, 11496);
-    			add_location(label5, file$8, 298, 6, 11457);
-    			add_location(td5, file$8, 298, 2, 11453);
-    			add_location(input6, file$8, 299, 45, 11588);
-    			add_location(label6, file$8, 299, 6, 11549);
-    			add_location(td6, file$8, 299, 2, 11545);
-    			add_location(input7, file$8, 300, 45, 11682);
-    			add_location(label7, file$8, 300, 6, 11643);
-    			add_location(td7, file$8, 300, 2, 11639);
-    			add_location(tr1, file$8, 296, 1, 11379);
-    			add_location(h61, file$8, 304, 1, 11919);
-    			add_location(main, file$8, 240, 0, 8684);
+    			add_location(h3, file$8, 241, 1, 8695);
+    			add_location(h60, file$8, 289, 1, 10941);
+    			add_location(input0, file$8, 291, 19, 11040);
+    			add_location(label0, file$8, 291, 6, 11027);
+    			add_location(td0, file$8, 291, 2, 11023);
+    			add_location(input1, file$8, 292, 45, 11136);
+    			add_location(label1, file$8, 292, 6, 11097);
+    			add_location(td1, file$8, 292, 2, 11093);
+    			add_location(input2, file$8, 293, 45, 11228);
+    			add_location(label2, file$8, 293, 6, 11189);
+    			add_location(td2, file$8, 293, 2, 11185);
+    			add_location(input3, file$8, 294, 45, 11322);
+    			add_location(label3, file$8, 294, 6, 11283);
+    			add_location(td3, file$8, 294, 2, 11279);
+    			add_location(tr0, file$8, 290, 1, 11015);
+    			add_location(input4, file$8, 297, 18, 11405);
+    			add_location(label4, file$8, 297, 6, 11393);
+    			add_location(td4, file$8, 297, 2, 11389);
+    			add_location(input5, file$8, 298, 45, 11498);
+    			add_location(label5, file$8, 298, 6, 11459);
+    			add_location(td5, file$8, 298, 2, 11455);
+    			add_location(input6, file$8, 299, 45, 11590);
+    			add_location(label6, file$8, 299, 6, 11551);
+    			add_location(td6, file$8, 299, 2, 11547);
+    			add_location(input7, file$8, 300, 45, 11684);
+    			add_location(label7, file$8, 300, 6, 11645);
+    			add_location(td7, file$8, 300, 2, 11641);
+    			add_location(tr1, file$8, 296, 1, 11381);
+    			add_location(h61, file$8, 304, 1, 11921);
+    			add_location(main, file$8, 240, 0, 8686);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10535,7 +10535,7 @@ var app = (function () {
 
     		const res = await fetch("/api/v2/emigrants-stats/" + country + "/" + year, { method: "DELETE" }).then(function (res) {
     			getStats();
-    			$$invalidate(10, errorMsg = "Código de error: " + res.status + "-" + res.statusText + ", Borrado correctamente");
+    			$$invalidate(11, exitoMsg = "Código de mensaje: " + res.status + "-" + res.statusText + ", Borrado correctamente");
     		});
     	} /*
     async function deleteEmi1Stat(country){
