@@ -13,9 +13,10 @@
     let updatedCountry = "";
     let updatedYear = 0;
     	let updatedPoverty_prp = 0.0;
-    	let updatedPoverty_pt = 0.;
+    	let updatedPoverty_pt = 0.0;
     	let updatedPoverty_ht = 0.0;
-    let errorMsg = "";
+	let errorMsg = "";
+	let exitoMsg = "";
     onMount(getstats);
 	async function getstats(){
 		console.log("Fetching stats...");
@@ -37,6 +38,7 @@
 		}
 	}
     async function updateStat(){
+		exitoMsg = "";
         console.log("Updating stat..."+JSON.stringify(params.country));
 		const res = await fetch("/api/v2/poverty-stats/"+params.country+"/"+params.year,{
 			method: "PUT",
@@ -53,9 +55,10 @@
 		}).then(function (res){
 			
 			if(res.ok){
-					console.log("Ok:");
-					getStats();
-					window.alert("Dato insertado correctamente.");
+				exitoMsg = res.status + ": " + res.statusText + ". Dato actualizado con éxito";
+				console.log("OK!" + exitoMsg);
+				getStats();
+				window.alert("Dato insertado correctamente.");
 			}else if(res.status==400){
 				window.alert("Campo mal escrito.No puede editarlo.");
 			}else{
@@ -94,7 +97,10 @@
 		</Table>
     {/await}
     {#if errorMsg}
-        <p style="color: red">ERROR: {errorMsg}</p>
+		<p style="color: red">ERROR: {errorMsg}</p>
+	{/if}
+	{#if exitoMsg}
+        <p style="color: green">{exitoMsg}</p>
     {/if}
     <Button outline color="secondary" on:click="{pop}">Volver</Button>
 </main>
