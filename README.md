@@ -21,3 +21,9 @@
     - [SOS1920-01-poverty-stats](https://documenter.getpostman.com/view/10867933/Szme4JDF) (developed by [Ángela](https://github.com/angtorcal))
     - [SOS1920-01-emigrants-stats](https://documenter.getpostman.com/view/6902825/Szf3bW6G) (developed by [Antonio](https://github.com/Escobar1993))
     - [SOS1920-01-emigrants-stats](https://documenter.getpostman.com/view/6902825/Szme4JDL) (developed by [Antonio](https://github.com/Escobar1993))
+- **FRONTEND**:
+ - [SOS1920-01-nataly-stats-frontEnd](https://sos1920-01.herokuapp.com/#/natality-stats) (developed by [Juan Francisco](https://github.com/juanfran94))
+
+- [SOS1920-01-poverty-stats-frontEnd](https://sos1920-01.herokuapp.com/#/poverty-stats) (developed by [Ángela](https://github.com/angtorcal))
+
+- [SOS1920-01-emigrants-stats-frontEnd](https://sos1920-01.herokuapp.com/#/emigrants-stats) (developed by [Antonio](https://github.com/Escobar1993))
