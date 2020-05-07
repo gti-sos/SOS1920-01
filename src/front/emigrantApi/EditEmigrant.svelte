@@ -11,9 +11,9 @@
     let eStat  = {};
     let updatedCountry = "";
     let updatedYear = "";
-    let updatedEm_man = "";
-    let updatedEm_woman = "";
-    let updatedEm_totals = "";
+    let updatedEm_man = 0;
+    let updatedEm_woman = 0;
+    let updatedEm_totals = 0;
 	let errorMsg = "";
 	let exitoMsg = "";
     onMount(getStat);
