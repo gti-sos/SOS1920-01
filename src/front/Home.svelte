@@ -40,10 +40,17 @@
 				
 				<li><strong>FRONT END: </strong></li>
 				<ul>
-					<li><button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats'" style=" width: 25%;"> Natalidad </button></li>
-					 
-					<li><button type="button" class="btn btn-info" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button></li>
-				
+				<br>
+					<li>
+					<button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats'" style=" width: 25%;"> Natalidad </button>
+					<button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats'" style=" width: 25%;"> Natalidad </button></li>
+				<br>	 
+					<li>
+					<button type="button" class="btn btn-info" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button>
+					<button type="button" class="btn btn-info" onclick="window.location.href='#/poverty-stats/graph'"style="width: 25%;"> Graph Riesgo de pobreza</button>
+					<button type="button" class="btn btn-info" onclick="window.location.href='#/poverty-stats/graph2'"style="width: 25%;"> Graph2 Riesgo de pobreza</button>
+					</li>
+				<br>
 					<li><button type="button" class="btn btn-warning" onclick="window.location.href='#/emigrants-stats'"style="width: 25%;"> Emigración </button></li>
 				
                 </ul>
