@@ -3,7 +3,10 @@
 		onMount
 	} from "svelte";
 	import Table from "sveltestrap/src/Table.svelte";
-    import Button from "sveltestrap/src/Button.svelte";
+	import Button from "sveltestrap/src/Button.svelte";
+    import {
+        pop
+    } from "svelte-spa-router";
     
 	let natalitystats = [];
 	let newStat = {
@@ -317,4 +320,7 @@
     <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax, 
         natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}">Buscar</Button>
 	<h6>¡¡NOTA!! Si quieres volver a ver todos los datos antes de la búsqueda, borre los datos de los filtros y pulse Buscar</h6>
+	<br>
+	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
+	<br>
 </main>
