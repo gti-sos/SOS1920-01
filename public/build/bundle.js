@@ -9111,23 +9111,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.";
     			if (script0.src !== (script0_src_value = "https://www.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 47, 8, 1622);
+    			add_location(script0, file$9, 46, 8, 1546);
     			if (script1.src !== (script1_src_value = "https://www.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 48, 8, 1694);
+    			add_location(script1, file$9, 47, 8, 1618);
     			if (script2.src !== (script2_src_value = "https://www.amcharts.com/lib/4/themes/kelly.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 49, 8, 1768);
+    			add_location(script2, file$9, 48, 8, 1692);
     			if (script3.src !== (script3_src_value = "https://www.amcharts.com/lib/4/themes/animated.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 50, 8, 1848);
+    			add_location(script3, file$9, 49, 8, 1772);
     			attr_dev(i, "class", "fas fa-bicycle");
-    			add_location(i, file$9, 55, 37, 2010);
+    			add_location(i, file$9, 54, 37, 1934);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$9, 55, 4, 1977);
+    			add_location(h3, file$9, 54, 4, 1901);
     			attr_dev(div, "id", "chartdiv");
     			attr_dev(div, "class", "svelte-16neavo");
-    			add_location(div, file$9, 57, 4, 2089);
+    			add_location(div, file$9, 56, 4, 2013);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 58, 4, 2120);
-    			add_location(main, file$9, 54, 0, 1965);
+    			add_location(p, file$9, 57, 4, 2044);
+    			add_location(main, file$9, 53, 0, 1889);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9193,9 +9193,6 @@ var app = (function () {
     		// Themes begin
     		am4core.useTheme(am4themes_kelly);
 
-    		am4core.useTheme(am4themes_animated);
-
-    		// Themes end
     		// Create chart instance
     		var chart = am4core.create("chartdiv", am4charts.PieChart);
 
@@ -9203,7 +9200,7 @@ var app = (function () {
     		chart.data = MyDataGraph;
 
     		// Set inner radius
-    		chart.innerRadius = am4core.percent(50);
+    		chart.innerRadius = am4core.percent(35);
 
     		// Add and configure Series
     		var pieSeries = chart.series.push(new am4charts.PieSeries());

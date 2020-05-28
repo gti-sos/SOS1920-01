@@ -17,15 +17,14 @@
         am4core.ready(function() {
             // Themes begin
             am4core.useTheme(am4themes_kelly);
-            am4core.useTheme(am4themes_animated);
-            // Themes end
+
             // Create chart instance
             var chart = am4core.create("chartdiv", am4charts.PieChart);
 
             // Add data
             chart.data = MyDataGraph;
             // Set inner radius
-            chart.innerRadius = am4core.percent(50);
+            chart.innerRadius = am4core.percent(35);
             // Add and configure Series
             var pieSeries = chart.series.push(new am4charts.PieSeries());
             pieSeries.dataFields.value = "poverty_prp";
@@ -57,6 +56,7 @@
 
     <div id="chartdiv"></div>
     <p class="highcharts-description">
+       
         La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.
 
     </p>
