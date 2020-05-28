@@ -23,7 +23,7 @@ async function loadGraph() {
     },
     
     xAxis: {
-        categories: ['','Personas en riesgo de pobreza', 'Umbral de personas', 'Umbral de pobreza',''],
+        categories: ['','Personas en riesgo de pobreza (millones)', 'Umbral de personas (Euros)', 'Umbral de pobreza (Euros)',''],
         title: {
             text: null
         }
@@ -31,7 +31,7 @@ async function loadGraph() {
     yAxis: {
         min: 0,
         title: {
-            text: 'Población (millions)',
+            text: 'miles',
             align: 'high'
         },
         labels: {
@@ -39,7 +39,7 @@ async function loadGraph() {
         }
     },
     tooltip: {
-        valueSuffix: ' millions'
+       // valueSuffix: ' miles'
     },
     plotOptions: {
         bar: {

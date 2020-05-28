@@ -1,10 +1,10 @@
 <script>
-import Button from "sveltestrap/src/Button.svelte"; import { pop } from "svelte-spa-router";
+
 	import {
 		onMount
 	} from "svelte";
 	import Table from "sveltestrap/src/Table.svelte";
-	import Button from "sveltestrap/src/Button.svelte";
+	import Button from "sveltestrap/src/Button.svelte";import { pop } from "svelte-spa-router";
 	let stats = [];
 	let newStat = {
 		country : "",

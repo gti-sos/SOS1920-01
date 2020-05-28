@@ -1546,28 +1546,6 @@ var app = (function () {
     	let t87;
     	let li22;
     	let button0;
-<<<<<<< HEAD
-    	let t86;
-    	let button1;
-    	let t88;
-    	let button2;
-    	let t90;
-    	let br2;
-    	let t91;
-    	let li23;
-    	let button3;
-    	let t93;
-    	let button4;
-    	let t95;
-    	let button5;
-    	let t97;
-    	let br3;
-    	let t98;
-    	let li24;
-    	let button6;
-    	let t100;
-    	let br4;
-=======
     	let t89;
     	let button1;
     	let t91;
@@ -1588,7 +1566,6 @@ var app = (function () {
     	let button6;
     	let t103;
     	let br7;
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
 
     	const block = {
     		c: function create() {
@@ -1754,34 +1731,6 @@ var app = (function () {
     			li22 = element("li");
     			button0 = element("button");
     			button0.textContent = "Tabla Natalidad";
-<<<<<<< HEAD
-    			t86 = space();
-    			button1 = element("button");
-    			button1.textContent = "Gráfica Natalidad";
-    			t88 = space();
-    			button2 = element("button");
-    			button2.textContent = "Gráfica Natalidad por Billboard.js";
-    			t90 = space();
-    			br2 = element("br");
-    			t91 = space();
-    			li23 = element("li");
-    			button3 = element("button");
-    			button3.textContent = "Riesgo de pobreza";
-    			t93 = space();
-    			button4 = element("button");
-    			button4.textContent = "Graph Riesgo de pobreza";
-    			t95 = space();
-    			button5 = element("button");
-    			button5.textContent = "Graph2 Riesgo de pobreza";
-    			t97 = space();
-    			br3 = element("br");
-    			t98 = space();
-    			li24 = element("li");
-    			button6 = element("button");
-    			button6.textContent = "Emigración";
-    			t100 = space();
-    			br4 = element("br");
-=======
     			t89 = space();
     			button1 = element("button");
     			button1.textContent = "Gráfica Natalidad";
@@ -1808,7 +1757,6 @@ var app = (function () {
     			button6.textContent = "Emigración";
     			t103 = space();
     			br7 = element("br");
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			add_location(br0, file, 4, 3, 75);
     			add_location(strong0, file, 7, 8, 104);
     			add_location(li0, file, 7, 4, 100);
@@ -1897,14 +1845,6 @@ var app = (function () {
     			attr_dev(a27, "href", "https://documenter.getpostman.com/view/6902825/Szme4JDL");
     			add_location(a27, file, 38, 9, 3359);
     			attr_dev(a28, "href", "https://github.com/Escobar1993");
-<<<<<<< HEAD
-    			add_location(a28, file, 36, 123, 3469);
-    			add_location(li20, file, 36, 5, 3351);
-    			add_location(ul2, file, 30, 4, 2388);
-    			add_location(strong6, file, 40, 8, 3576);
-    			add_location(li21, file, 40, 4, 3572);
-    			add_location(br1, file, 42, 5, 3626);
-=======
     			add_location(a28, file, 38, 123, 3473);
     			add_location(li20, file, 38, 5, 3355);
     			add_location(ul2, file, 32, 4, 2392);
@@ -1912,84 +1852,48 @@ var app = (function () {
     			add_location(strong6, file, 42, 8, 3572);
     			add_location(li21, file, 42, 4, 3568);
     			add_location(br4, file, 44, 5, 3622);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-success");
     			attr_dev(button0, "onclick", "window.location.href='#/natality-stats'");
     			set_style(button0, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button0, file, 44, 6, 3649);
-=======
     			add_location(button0, file, 46, 6, 3645);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-success");
     			attr_dev(button1, "onclick", "window.location.href='#/natality-stats/graph'");
     			set_style(button1, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button1, file, 45, 6, 3800);
-=======
     			add_location(button1, file, 47, 6, 3796);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-success");
     			attr_dev(button2, "onclick", "window.location.href='#/natality-stats/graphV2'");
     			set_style(button2, "width", "30%");
-<<<<<<< HEAD
-    			add_location(button2, file, 46, 6, 3958);
-    			add_location(li22, file, 43, 5, 3637);
-    			add_location(br2, file, 48, 5, 4146);
-=======
     			add_location(button2, file, 48, 6, 3954);
     			add_location(li22, file, 45, 5, 3633);
     			add_location(br5, file, 50, 5, 4142);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button3, "type", "button");
     			attr_dev(button3, "class", "btn btn-info");
     			attr_dev(button3, "onclick", "window.location.href='#/poverty-stats'");
     			set_style(button3, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button3, file, 50, 5, 4169);
-=======
     			add_location(button3, file, 52, 6, 4166);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button4, "type", "button");
     			attr_dev(button4, "class", "btn btn-info");
     			attr_dev(button4, "onclick", "window.location.href='#/poverty-stats/graph'");
     			set_style(button4, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button4, file, 51, 5, 4314);
-=======
     			add_location(button4, file, 53, 6, 4312);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button5, "type", "button");
     			attr_dev(button5, "class", "btn btn-info");
     			attr_dev(button5, "onclick", "window.location.href='#/poverty-stats/graph2'");
     			set_style(button5, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button5, file, 52, 5, 4471);
-    			add_location(li23, file, 49, 5, 4158);
-    			add_location(br3, file, 54, 4, 4641);
-=======
     			add_location(button5, file, 54, 6, 4470);
     			add_location(li23, file, 51, 5, 4154);
     			add_location(br6, file, 56, 4, 4640);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			attr_dev(button6, "type", "button");
     			attr_dev(button6, "class", "btn btn-warning");
     			attr_dev(button6, "onclick", "window.location.href='#/emigrants-stats'");
     			set_style(button6, "width", "25%");
-<<<<<<< HEAD
-    			add_location(button6, file, 55, 9, 4656);
-    			add_location(li24, file, 55, 5, 4652);
-    			add_location(br4, file, 56, 5, 4805);
-    			add_location(ul3, file, 41, 4, 3615);
-=======
     			add_location(button6, file, 57, 9, 4655);
     			add_location(li24, file, 57, 5, 4651);
     			add_location(br7, file, 58, 5, 4804);
     			add_location(ul3, file, 43, 4, 3611);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			add_location(ul4, file, 5, 3, 84);
     			set_style(div0, "margin-left", "12.5%");
     			add_location(div0, file, 3, 2, 37);
@@ -2128,34 +2032,15 @@ var app = (function () {
     			append_dev(li22, button0);
     			append_dev(li22, t89);
     			append_dev(li22, button1);
-<<<<<<< HEAD
-    			append_dev(li22, t88);
-    			append_dev(li22, button2);
-    			append_dev(ul3, t90);
-    			append_dev(ul3, br2);
-    			append_dev(ul3, t91);
-=======
     			append_dev(li22, t91);
     			append_dev(li22, button2);
     			append_dev(ul3, t93);
     			append_dev(ul3, br5);
     			append_dev(ul3, t94);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     			append_dev(ul3, li23);
     			append_dev(li23, button3);
     			append_dev(li23, t96);
     			append_dev(li23, button4);
-<<<<<<< HEAD
-    			append_dev(li23, t95);
-    			append_dev(li23, button5);
-    			append_dev(ul3, t97);
-    			append_dev(ul3, br3);
-    			append_dev(ul3, t98);
-    			append_dev(ul3, li24);
-    			append_dev(li24, button6);
-    			append_dev(ul3, t100);
-    			append_dev(ul3, br4);
-=======
     			append_dev(li23, t98);
     			append_dev(li23, button5);
     			append_dev(ul3, t100);
@@ -2165,7 +2050,6 @@ var app = (function () {
     			append_dev(li24, button6);
     			append_dev(ul3, t103);
     			append_dev(ul3, br7);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     		},
     		p: noop,
     		i: noop,
@@ -6827,7 +6711,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (1:0) <script>   import {    onMount   }
+    // (1:0) <script>     import {    onMount   }
     function create_catch_block$2(ctx) {
     	const block = {
     		c: noop,
@@ -6842,21 +6726,21 @@ var app = (function () {
     		block,
     		id: create_catch_block$2.name,
     		type: "catch",
-    		source: "(1:0) <script>   import {    onMount   }",
+    		source: "(1:0) <script>     import {    onMount   }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (247:1) {:then stats}
+    // (248:1) {:then stats}
     function create_then_block$2(ctx) {
     	let current;
 
     	const table = new Table({
     			props: {
     				bordered: true,
-    				$$slots: { default: [create_default_slot_6$1] },
+    				$$slots: { default: [create_default_slot_7$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6897,15 +6781,15 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(247:1) {:then stats}",
+    		source: "(248:1) {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (266:9) <Button outline color="primary" on:click={insertStat}>
-    function create_default_slot_8$1(ctx) {
+    // (267:9) <Button outline color="primary" on:click={insertStat}>
+    function create_default_slot_9$1(ctx) {
     	let t;
 
     	const block = {
@@ -6922,17 +6806,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$1.name,
+    		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(266:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
+    		source: "(267:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
-    function create_default_slot_7$1(ctx) {
+    // (278:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
+    function create_default_slot_8$1(ctx) {
     	let t;
 
     	const block = {
@@ -6949,16 +6833,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$1.name,
+    		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(277:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
+    		source: "(278:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (268:4) {#each stats as stat}
+    // (269:4) {#each stats as stat}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -6991,7 +6875,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_7$1] },
+    				$$slots: { default: [create_default_slot_8$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7024,14 +6908,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/poverty-stats/" + /*stat*/ ctx[36].country + "/" + /*stat*/ ctx[36].year);
-    			add_location(a, file$8, 270, 7, 8890);
-    			add_location(td0, file$8, 269, 6, 8877);
-    			add_location(td1, file$8, 272, 6, 8982);
-    			add_location(td2, file$8, 273, 6, 9010);
-    			add_location(td3, file$8, 274, 6, 9045);
-    			add_location(td4, file$8, 275, 6, 9079);
-    			add_location(td5, file$8, 276, 6, 9113);
-    			add_location(tr, file$8, 268, 5, 8865);
+    			add_location(a, file$8, 271, 7, 8932);
+    			add_location(td0, file$8, 270, 6, 8919);
+    			add_location(td1, file$8, 273, 6, 9024);
+    			add_location(td2, file$8, 274, 6, 9052);
+    			add_location(td3, file$8, 275, 6, 9087);
+    			add_location(td4, file$8, 276, 6, 9121);
+    			add_location(td5, file$8, 277, 6, 9155);
+    			add_location(tr, file$8, 269, 5, 8907);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -7095,15 +6979,15 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(268:4) {#each stats as stat}",
+    		source: "(269:4) {#each stats as stat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (248:2) <Table bordered>
-    function create_default_slot_6$1(ctx) {
+    // (249:2) <Table bordered>
+    function create_default_slot_7$1(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -7144,7 +7028,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_8$1] },
+    				$$slots: { default: [create_default_slot_9$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7210,32 +7094,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$8, 250, 5, 8163);
-    			add_location(th1, file$8, 251, 5, 8183);
-    			add_location(th2, file$8, 252, 5, 8202);
-    			add_location(th3, file$8, 253, 5, 8247);
-    			add_location(th4, file$8, 254, 5, 8277);
-    			add_location(th5, file$8, 255, 5, 8305);
-    			add_location(tr0, file$8, 249, 4, 8152);
-    			add_location(thead, file$8, 248, 3, 8139);
+    			add_location(th0, file$8, 251, 5, 8205);
+    			add_location(th1, file$8, 252, 5, 8225);
+    			add_location(th2, file$8, 253, 5, 8244);
+    			add_location(th3, file$8, 254, 5, 8289);
+    			add_location(th4, file$8, 255, 5, 8319);
+    			add_location(th5, file$8, 256, 5, 8347);
+    			add_location(tr0, file$8, 250, 4, 8194);
+    			add_location(thead, file$8, 249, 3, 8181);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$8, 260, 9, 8379);
-    			add_location(td0, file$8, 260, 5, 8375);
+    			add_location(input0, file$8, 261, 9, 8421);
+    			add_location(td0, file$8, 261, 5, 8417);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$8, 261, 9, 8449);
-    			add_location(td1, file$8, 261, 5, 8445);
+    			add_location(input1, file$8, 262, 9, 8491);
+    			add_location(td1, file$8, 262, 5, 8487);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$8, 262, 9, 8518);
-    			add_location(td2, file$8, 262, 5, 8514);
+    			add_location(input2, file$8, 263, 9, 8560);
+    			add_location(td2, file$8, 263, 5, 8556);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$8, 263, 9, 8594);
-    			add_location(td3, file$8, 263, 5, 8590);
+    			add_location(input3, file$8, 264, 9, 8636);
+    			add_location(td3, file$8, 264, 5, 8632);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$8, 264, 9, 8669);
-    			add_location(td4, file$8, 264, 5, 8665);
-    			add_location(td5, file$8, 265, 5, 8740);
-    			add_location(tr1, file$8, 259, 4, 8364);
-    			add_location(tbody, file$8, 258, 3, 8351);
+    			add_location(input4, file$8, 265, 9, 8711);
+    			add_location(td4, file$8, 265, 5, 8707);
+    			add_location(td5, file$8, 266, 5, 8782);
+    			add_location(tr1, file$8, 260, 4, 8406);
+    			add_location(tbody, file$8, 259, 3, 8393);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -7382,16 +7266,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$1.name,
+    		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(248:2) <Table bordered>",
+    		source: "(249:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (245:15)     Loading stats...   {:then stats}
+    // (246:15)     Loading stats...   {:then stats}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -7414,14 +7298,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(245:15)     Loading stats...   {:then stats}",
+    		source: "(246:15)     Loading stats...   {:then stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (283:1) {#if errorMsg}
+    // (284:1) {#if errorMsg}
     function create_if_block_3$2(ctx) {
     	let p;
     	let t0;
@@ -7433,7 +7317,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$8, 283, 2, 9300);
+    			add_location(p, file$8, 284, 2, 9342);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7452,14 +7336,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(283:1) {#if errorMsg}",
+    		source: "(284:1) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (286:4) {#if exitoMsg}
+    // (287:4) {#if exitoMsg}
     function create_if_block_2$2(ctx) {
     	let p;
     	let t;
@@ -7469,7 +7353,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$8, 286, 8, 9381);
+    			add_location(p, file$8, 287, 8, 9423);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7487,15 +7371,15 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(286:4) {#if exitoMsg}",
+    		source: "(287:4) {#if exitoMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (289:1) <Button outline color="secondary" on:click="{loadInitialData}">
-    function create_default_slot_5$1(ctx) {
+    // (290:1) <Button outline color="secondary" on:click="{loadInitialData}">
+    function create_default_slot_6$1(ctx) {
     	let t;
 
     	const block = {
@@ -7512,17 +7396,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$1.name,
+    		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(289:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(290:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (290:1) <Button outline color="danger" on:click="{deleteStats}">
-    function create_default_slot_4$1(ctx) {
+    // (291:1) <Button outline color="danger" on:click="{deleteStats}">
+    function create_default_slot_5$1(ctx) {
     	let t;
 
     	const block = {
@@ -7539,16 +7423,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$1.name,
+    		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(290:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
+    		source: "(291:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:1) {#if numeroDePagina==0}
+    // (292:1) {#if numeroDePagina==0}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -7556,7 +7440,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3$1] },
+    				$$slots: { default: [create_default_slot_4$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7602,15 +7486,15 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(291:1) {#if numeroDePagina==0}",
+    		source: "(292:1) {#if numeroDePagina==0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (292:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
-    function create_default_slot_3$1(ctx) {
+    // (293:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
+    function create_default_slot_4$1(ctx) {
     	let t;
 
     	const block = {
@@ -7627,16 +7511,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$1.name,
+    		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(292:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
+    		source: "(293:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:1) {#if numeroDePagina>0}
+    // (295:1) {#if numeroDePagina>0}
     function create_if_block$5(ctx) {
     	let t;
     	let current;
@@ -7645,7 +7529,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_2$2] },
+    				$$slots: { default: [create_default_slot_3$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7659,7 +7543,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_1$2] },
+    				$$slots: { default: [create_default_slot_2$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7720,15 +7604,15 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(294:1) {#if numeroDePagina>0}",
+    		source: "(295:1) {#if numeroDePagina>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (295:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}">
-    function create_default_slot_2$2(ctx) {
+    // (296:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}">
+    function create_default_slot_3$1(ctx) {
     	let t;
 
     	const block = {
@@ -7745,17 +7629,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$2.name,
+    		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(295:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}\\\">",
+    		source: "(296:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (296:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
-    function create_default_slot_1$2(ctx) {
+    // (297:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}">
+    function create_default_slot_2$2(ctx) {
     	let t;
 
     	const block = {
@@ -7772,17 +7656,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$2.name,
+    		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(296:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
+    		source: "(297:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (312:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">
-    function create_default_slot$4(ctx) {
+    // (313:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">
+    function create_default_slot_1$2(ctx) {
     	let t;
 
     	const block = {
@@ -7799,9 +7683,42 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_default_slot_1$2.name,
+    		type: "slot",
+    		source: "(313:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (315:2) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$4(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$8, 314, 54, 11486);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(312:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}\\\">",
+    		source: "(315:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -7866,6 +7783,7 @@ var app = (function () {
     	let t26;
     	let t27;
     	let h61;
+    	let t29;
     	let current;
     	let dispose;
 
@@ -7888,7 +7806,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot_5$1] },
+    				$$slots: { default: [create_default_slot_6$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7900,7 +7818,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_4$1] },
+    				$$slots: { default: [create_default_slot_5$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7914,7 +7832,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$4] },
+    				$$slots: { default: [create_default_slot_1$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7923,6 +7841,18 @@ var app = (function () {
     	button2.$on("click", function () {
     		if (is_function(/*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*minPoverty_prp*/ ctx[4], /*maxPoverty_prp*/ ctx[5], /*minPoverty_pt*/ ctx[6], /*maxPoverty_pt*/ ctx[7], /*minPoverty_ht*/ ctx[8], /*maxPoverty_ht*/ ctx[9]))) /*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*minPoverty_prp*/ ctx[4], /*maxPoverty_prp*/ ctx[5], /*minPoverty_pt*/ ctx[6], /*maxPoverty_pt*/ ctx[7], /*minPoverty_ht*/ ctx[8], /*maxPoverty_ht*/ ctx[9]).apply(this, arguments);
     	});
+
+    	const button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -7993,36 +7923,38 @@ var app = (function () {
     			t27 = space();
     			h61 = element("h6");
     			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
-    			add_location(h3, file$8, 243, 1, 8031);
-    			add_location(h60, file$8, 297, 1, 10283);
-    			add_location(input0, file$8, 299, 19, 10382);
-    			add_location(label0, file$8, 299, 6, 10369);
-    			add_location(td0, file$8, 299, 2, 10365);
-    			add_location(input1, file$8, 300, 54, 10487);
-    			add_location(label1, file$8, 300, 6, 10439);
-    			add_location(td1, file$8, 300, 2, 10435);
-    			add_location(input2, file$8, 301, 36, 10575);
-    			add_location(label2, file$8, 301, 6, 10545);
-    			add_location(td2, file$8, 301, 2, 10541);
-    			add_location(input3, file$8, 302, 34, 10660);
-    			add_location(label3, file$8, 302, 6, 10632);
-    			add_location(td3, file$8, 302, 2, 10628);
-    			add_location(tr0, file$8, 298, 1, 10357);
-    			add_location(input4, file$8, 305, 18, 10744);
-    			add_location(label4, file$8, 305, 6, 10732);
-    			add_location(td4, file$8, 305, 2, 10728);
-    			add_location(input5, file$8, 306, 54, 10846);
-    			add_location(label5, file$8, 306, 6, 10798);
-    			add_location(td5, file$8, 306, 2, 10794);
-    			add_location(input6, file$8, 307, 36, 10934);
-    			add_location(label6, file$8, 307, 6, 10904);
-    			add_location(td6, file$8, 307, 2, 10900);
-    			add_location(input7, file$8, 308, 34, 11019);
-    			add_location(label7, file$8, 308, 6, 10991);
-    			add_location(td7, file$8, 308, 2, 10987);
-    			add_location(tr1, file$8, 304, 1, 10720);
-    			add_location(h61, file$8, 312, 1, 11273);
-    			add_location(main, file$8, 242, 0, 8022);
+    			t29 = space();
+    			create_component(button3.$$.fragment);
+    			add_location(h3, file$8, 244, 1, 8073);
+    			add_location(h60, file$8, 298, 1, 10325);
+    			add_location(input0, file$8, 300, 19, 10424);
+    			add_location(label0, file$8, 300, 6, 10411);
+    			add_location(td0, file$8, 300, 2, 10407);
+    			add_location(input1, file$8, 301, 54, 10529);
+    			add_location(label1, file$8, 301, 6, 10481);
+    			add_location(td1, file$8, 301, 2, 10477);
+    			add_location(input2, file$8, 302, 36, 10617);
+    			add_location(label2, file$8, 302, 6, 10587);
+    			add_location(td2, file$8, 302, 2, 10583);
+    			add_location(input3, file$8, 303, 34, 10702);
+    			add_location(label3, file$8, 303, 6, 10674);
+    			add_location(td3, file$8, 303, 2, 10670);
+    			add_location(tr0, file$8, 299, 1, 10399);
+    			add_location(input4, file$8, 306, 18, 10786);
+    			add_location(label4, file$8, 306, 6, 10774);
+    			add_location(td4, file$8, 306, 2, 10770);
+    			add_location(input5, file$8, 307, 54, 10888);
+    			add_location(label5, file$8, 307, 6, 10840);
+    			add_location(td5, file$8, 307, 2, 10836);
+    			add_location(input6, file$8, 308, 36, 10976);
+    			add_location(label6, file$8, 308, 6, 10946);
+    			add_location(td6, file$8, 308, 2, 10942);
+    			add_location(input7, file$8, 309, 34, 11061);
+    			add_location(label7, file$8, 309, 6, 11033);
+    			add_location(td7, file$8, 309, 2, 11029);
+    			add_location(tr1, file$8, 305, 1, 10762);
+    			add_location(h61, file$8, 313, 1, 11315);
+    			add_location(main, file$8, 243, 0, 8064);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8102,6 +8034,8 @@ var app = (function () {
     			mount_component(button2, main, null);
     			append_dev(main, t27);
     			append_dev(main, h61);
+    			append_dev(main, t29);
+    			mount_component(button3, main, null);
     			current = true;
     			if (remount) run_all(dispose);
 
@@ -8252,6 +8186,13 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -8261,6 +8202,7 @@ var app = (function () {
     			transition_in(if_block2);
     			transition_in(if_block3);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -8274,6 +8216,7 @@ var app = (function () {
     			transition_out(if_block2);
     			transition_out(if_block3);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -8288,6 +8231,7 @@ var app = (function () {
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
     			destroy_component(button2);
+    			destroy_component(button3);
     			run_all(dispose);
     		}
     	};
@@ -8665,6 +8609,7 @@ var app = (function () {
     		onMount,
     		Table,
     		Button,
+    		pop,
     		stats,
     		newStat,
     		numeroDePagina,
@@ -9561,7 +9506,6 @@ var app = (function () {
     /* src\front\povertyApi\GraphPoverty.svelte generated by Svelte v3.22.2 */
     const file$a = "src\\front\\povertyApi\\GraphPoverty.svelte";
 
-<<<<<<< HEAD
     // (88:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$6(ctx) {
     	let i;
@@ -9572,7 +9516,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$a, 87, 56, 2388);
+    			add_location(i, file$a, 87, 56, 2406);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9595,10 +9539,6 @@ var app = (function () {
     	return block;
     }
 
-=======
-    const file$a = "src\\front\\povertyApi\\GraphPoverty.svelte";
-
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     function create_fragment$b(ctx) {
     	let script0;
     	let script0_src_value;
@@ -9616,6 +9556,7 @@ var app = (function () {
     	let div;
     	let t1;
     	let p;
+    	let i;
     	let t3;
     	let current;
     	let dispose;
@@ -9645,47 +9586,29 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "En la gráfica se puede observar como afecta el riesgo de pobreza en la poblacion mundial.";
+    			i = element("i");
+    			i.textContent = "En la gráfica se puede observar como afecta el riesgo de pobreza en la poblacion mundial.";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$a, 71, 0, 1678);
+    			add_location(script0, file$a, 71, 0, 1689);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$a, 72, 0, 1745);
+    			add_location(script1, file$a, 72, 0, 1756);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$a, 73, 0, 1819);
+    			add_location(script2, file$a, 73, 0, 1830);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$a, 74, 0, 1895);
+    			add_location(script3, file$a, 74, 0, 1906);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$a, 75, 0, 1995);
+    			add_location(script4, file$a, 75, 0, 2006);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1u5s9ap");
-    			add_location(div, file$a, 81, 4, 2142);
+    			add_location(div, file$a, 81, 4, 2153);
+    			add_location(i, file$a, 83, 7, 2228);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$a, 82, 4, 2174);
+    			add_location(p, file$a, 82, 4, 2185);
     			attr_dev(figure, "class", "highcharts-figure svelte-1u5s9ap");
-    			add_location(figure, file$a, 80, 0, 2102);
-    			add_location(main, file$a, 79, 0, 2094);
-=======
-    			add_location(script0, file$a, 70, 0, 1584);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$a, 71, 0, 1651);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$a, 72, 0, 1725);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$a, 73, 0, 1801);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$a, 74, 0, 1901);
-    			attr_dev(div, "id", "container");
-    			attr_dev(div, "class", "svelte-1u5s9ap");
-    			add_location(div, file$a, 80, 4, 2048);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$a, 81, 4, 2080);
-    			attr_dev(figure, "class", "highcharts-figure svelte-1u5s9ap");
-    			add_location(figure, file$a, 79, 0, 2008);
-    			add_location(main, file$a, 78, 0, 2000);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
+    			add_location(figure, file$a, 80, 0, 2113);
+    			add_location(main, file$a, 79, 0, 2105);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9702,12 +9625,12 @@ var app = (function () {
     			append_dev(figure, div);
     			append_dev(figure, t1);
     			append_dev(figure, p);
+    			append_dev(p, i);
     			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$2, false, false, false);
-<<<<<<< HEAD
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
@@ -9726,8 +9649,6 @@ var app = (function () {
     		o: function outro(local) {
     			transition_out(button.$$.fragment, local);
     			current = false;
-=======
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     		},
     		d: function destroy(detaching) {
     			detach_dev(script0);
@@ -9779,22 +9700,19 @@ var app = (function () {
     		xAxis: {
     			categories: [
     				"",
-    				"Personas en riesgo de pobreza",
-    				"Umbral de personas",
-    				"Umbral de pobreza",
+    				"Personas en riesgo de pobreza (millones)",
+    				"Umbral de personas (Euros)",
+    				"Umbral de pobreza (Euros)",
     				""
     			],
     			title: { text: null }
     		},
     		yAxis: {
     			min: 0,
-    			title: {
-    				text: "Población (millions)",
-    				align: "high"
-    			},
+    			title: { text: "miles", align: "high" },
     			labels: { overflow: "justify" }
     		},
-    		tooltip: { valueSuffix: " millions" },
+    		tooltip: {}, // valueSuffix: ' miles'
     		plotOptions: { bar: { dataLabels: { enabled: true } } },
     		legend: {
     			layout: "vertical",
@@ -9821,11 +9739,7 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("GraphPoverty", $$slots, []);
-<<<<<<< HEAD
     	$$self.$capture_state = () => ({ Button, pop, loadGraph: loadGraph$2 });
-=======
-    	$$self.$capture_state = () => ({ loadGraph: loadGraph$2 });
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     	return [];
     }
 
@@ -9846,7 +9760,6 @@ var app = (function () {
     /* src\front\povertyApi\GraphPoverty2.svelte generated by Svelte v3.22.2 */
     const file$b = "src\\front\\povertyApi\\GraphPoverty2.svelte";
 
-<<<<<<< HEAD
     // (64:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$7(ctx) {
     	let i;
@@ -9857,7 +9770,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$b, 63, 56, 2346);
+    			add_location(i, file$b, 63, 56, 2353);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9880,10 +9793,6 @@ var app = (function () {
     	return block;
     }
 
-=======
-    const file$b = "src\\front\\povertyApi\\GraphPoverty2.svelte";
-
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     function create_fragment$c(ctx) {
     	let script0;
     	let script0_src_value;
@@ -9896,7 +9805,7 @@ var app = (function () {
     	let t0;
     	let main;
     	let h3;
-    	let i;
+    	let i0;
     	let t1;
     	let t2;
     	let div;
@@ -9904,8 +9813,9 @@ var app = (function () {
     	let p;
     	let br0;
     	let t4;
-    	let t5;
+    	let i1;
     	let t6;
+    	let t7;
     	let br1;
     	let current;
     	let dispose;
@@ -9931,20 +9841,21 @@ var app = (function () {
     			t0 = space();
     			main = element("main");
     			h3 = element("h3");
-    			i = element("i");
+    			i0 = element("i");
     			t1 = text(" Personas en riesgo pobreza en 2017");
     			t2 = space();
     			div = element("div");
     			t3 = space();
     			p = element("p");
     			br0 = element("br");
-    			t4 = text("\r\n        La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.");
-    			t5 = space();
-    			create_component(button.$$.fragment);
+    			t4 = space();
+    			i1 = element("i");
+    			i1.textContent = "La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.";
     			t6 = space();
+    			create_component(button.$$.fragment);
+    			t7 = space();
     			br1 = element("br");
     			if (script0.src !== (script0_src_value = "https://www.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
     			add_location(script0, file$b, 48, 8, 1645);
     			if (script1.src !== (script1_src_value = "https://www.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$b, 49, 8, 1717);
@@ -9952,37 +9863,19 @@ var app = (function () {
     			add_location(script2, file$b, 50, 8, 1791);
     			if (script3.src !== (script3_src_value = "https://www.amcharts.com/lib/4/themes/animated.js")) attr_dev(script3, "src", script3_src_value);
     			add_location(script3, file$b, 51, 8, 1871);
-    			attr_dev(i, "class", "fas fa-bicycle");
-    			add_location(i, file$b, 56, 37, 2033);
+    			attr_dev(i0, "class", "fas fa-bicycle");
+    			add_location(i0, file$b, 56, 37, 2033);
     			set_style(h3, "text-align", "center");
     			add_location(h3, file$b, 56, 4, 2000);
     			attr_dev(div, "id", "chartdiv");
     			attr_dev(div, "class", "svelte-16neavo");
     			add_location(div, file$b, 58, 4, 2112);
     			add_location(br0, file$b, 60, 8, 2187);
+    			add_location(i1, file$b, 61, 8, 2201);
     			attr_dev(p, "class", "highcharts-description");
     			add_location(p, file$b, 59, 4, 2143);
-    			add_location(br1, file$b, 64, 4, 2408);
+    			add_location(br1, file$b, 64, 4, 2415);
     			add_location(main, file$b, 55, 0, 1988);
-=======
-    			add_location(script0, file$b, 47, 8, 1622);
-    			if (script1.src !== (script1_src_value = "https://www.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 48, 8, 1694);
-    			if (script2.src !== (script2_src_value = "https://www.amcharts.com/lib/4/themes/kelly.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 49, 8, 1768);
-    			if (script3.src !== (script3_src_value = "https://www.amcharts.com/lib/4/themes/animated.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 50, 8, 1848);
-    			attr_dev(i, "class", "fas fa-bicycle");
-    			add_location(i, file$b, 55, 37, 2010);
-    			set_style(h3, "text-align", "center");
-    			add_location(h3, file$b, 55, 4, 1977);
-    			attr_dev(div, "id", "chartdiv");
-    			attr_dev(div, "class", "svelte-16neavo");
-    			add_location(div, file$b, 57, 4, 2089);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 58, 4, 2120);
-    			add_location(main, file$b, 54, 0, 1965);
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9995,7 +9888,7 @@ var app = (function () {
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, h3);
-    			append_dev(h3, i);
+    			append_dev(h3, i0);
     			append_dev(h3, t1);
     			append_dev(main, t2);
     			append_dev(main, div);
@@ -10003,14 +9896,14 @@ var app = (function () {
     			append_dev(main, p);
     			append_dev(p, br0);
     			append_dev(p, t4);
-    			append_dev(main, t5);
-    			mount_component(button, main, null);
+    			append_dev(p, i1);
     			append_dev(main, t6);
+    			mount_component(button, main, null);
+    			append_dev(main, t7);
     			append_dev(main, br1);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$3, false, false, false);
-<<<<<<< HEAD
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
@@ -10029,8 +9922,6 @@ var app = (function () {
     		o: function outro(local) {
     			transition_out(button.$$.fragment, local);
     			current = false;
-=======
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     		},
     		d: function destroy(detaching) {
     			detach_dev(script0);
@@ -10110,11 +10001,7 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("GraphPoverty2", $$slots, []);
-<<<<<<< HEAD
     	$$self.$capture_state = () => ({ Button, pop, loadGraph: loadGraph$3 });
-=======
-    	$$self.$capture_state = () => ({ loadGraph: loadGraph$3 });
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     	return [];
     }
 
@@ -12511,11 +12398,7 @@ var app = (function () {
     }
 
     // (94:4) <Button outline color="secondary" on:click="{pop}">
-<<<<<<< HEAD
     function create_default_slot$9(ctx) {
-=======
-    function create_default_slot$7(ctx) {
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
     	let t;
 
     	const block = {

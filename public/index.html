@@ -15,32 +15,88 @@
 	
 	<script defer src='/build/bundle.js'></script>
 
-<<<<<<< HEAD
-	    	<!-- ANGELA GRAPH2 -->
-			<script src="https://www.amcharts.com/lib/4/core.js"></script>
-			<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-			<script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
-			<script src="https://www.amcharts.com/lib/4/themes/animated.js" on:load="{loadGraph}"></script>
-=======
 	<!-- JUANFRAN GRAPH2 Billboard  -->
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="lib/billboard.js"></script>
 	<link rel="stylesheet" href="css/billboard.css">
 
-	<!-- ANGELA GRAPH2 -->
+	<!-- ANGELA GRAPH2 amCharts -->
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js" on:load="{loadGraph}"></script>
 
->>>>>>> 3a3ad6e5b3366c72de3a18c1e637721dcd7c3a13
 </head>
 
-<body style="padding: 3%;">
+<body style="padding: 3%;" background= "fondo.jpg">
+	
 	
 	
 	<img class="logo" src="graphics.png" alt="Logo G" style="position: center; top: 1%; left: 1%; width: 20%;"><br>
 	<h1 class="display-1 main-title" style="color:orangered;text-align: center;">SOS1920-01</h1>
-    <div id ='SvelteApp'></div>
+	
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 5%; margin-bottom: 5%;">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/">Inicio <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  APIs
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				<a class="dropdown-item" href="#/natality-stats">API de Riesgo de Pobreza</a>
+				<a class="dropdown-item" href="#/poverty-stats">API de Tasa de Natalidad</a>
+				<a class="dropdown-item" href="#/emigrant-stats">API de Tasa de Emigración</a>
+				<!---->
+				</div>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Gráficas con Highchart
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#/poverty-stats/graph">Gráfica de Riesgo de pobreza</a>
+				<!---->
+				</div>
+			</li>
+	
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Gráficas con bibliotecas externas
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#/poverty-stats/graph2">Gráfica de Riesgo de pobreza (amCharts)</a>
+				<!---->
+				</div>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link" href="#/analytics">Analytics</a>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMain" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Integraciones
+				</a>
+
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMain">
+					<a class="dropdown-item" href="#/integrationsPoverty">Riesgo de pobreza</a>
+					<!---->
+				</div>
+			</li>
+	
+			<li class="nav-item ">
+				<a class="nav-link" href="#/about">Sobre nosotros</a>
+			</li>
+			
+			</ul>
+		</div>
+		</nav>
+
+	<div id="SvelteApp"></div>
 </body>
 </html>
