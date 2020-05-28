@@ -1543,19 +1543,23 @@ var app = (function () {
     	let t86;
     	let button1;
     	let t88;
-    	let br2;
-    	let t89;
-    	let li23;
     	let button2;
+    	let t90;
+    	let br2;
     	let t91;
+    	let li23;
     	let button3;
     	let t93;
     	let button4;
     	let t95;
-    	let br3;
-    	let t96;
-    	let li24;
     	let button5;
+    	let t97;
+    	let br3;
+    	let t98;
+    	let li24;
+    	let button6;
+    	let t100;
+    	let br4;
 
     	const block = {
     		c: function create() {
@@ -1714,28 +1718,33 @@ var app = (function () {
     			t84 = space();
     			li22 = element("li");
     			button0 = element("button");
-    			button0.textContent = "Natalidad";
+    			button0.textContent = "Tabla Natalidad";
     			t86 = space();
     			button1 = element("button");
-    			button1.textContent = "Natalidad";
+    			button1.textContent = "Gráfica Natalidad";
     			t88 = space();
-    			br2 = element("br");
-    			t89 = space();
-    			li23 = element("li");
     			button2 = element("button");
-    			button2.textContent = "Riesgo de pobreza";
+    			button2.textContent = "Gráfica Natalidad por Billboard.js";
+    			t90 = space();
+    			br2 = element("br");
     			t91 = space();
+    			li23 = element("li");
     			button3 = element("button");
-    			button3.textContent = "Graph Riesgo de pobreza";
+    			button3.textContent = "Riesgo de pobreza";
     			t93 = space();
     			button4 = element("button");
-    			button4.textContent = "Graph2 Riesgo de pobreza";
+    			button4.textContent = "Graph Riesgo de pobreza";
     			t95 = space();
-    			br3 = element("br");
-    			t96 = space();
-    			li24 = element("li");
     			button5 = element("button");
-    			button5.textContent = "Emigración";
+    			button5.textContent = "Graph2 Riesgo de pobreza";
+    			t97 = space();
+    			br3 = element("br");
+    			t98 = space();
+    			li24 = element("li");
+    			button6 = element("button");
+    			button6.textContent = "Emigración";
+    			t100 = space();
+    			br4 = element("br");
     			add_location(br0, file, 4, 3, 75);
     			add_location(strong0, file, 7, 8, 104);
     			add_location(li0, file, 7, 4, 100);
@@ -1827,42 +1836,48 @@ var app = (function () {
     			add_location(ul2, file, 30, 4, 2388);
     			add_location(strong6, file, 40, 8, 3576);
     			add_location(li21, file, 40, 4, 3572);
-    			add_location(br1, file, 42, 4, 3625);
+    			add_location(br1, file, 42, 5, 3626);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-success");
     			attr_dev(button0, "onclick", "window.location.href='#/natality-stats'");
     			set_style(button0, "width", "25%");
-    			add_location(button0, file, 44, 5, 3647);
+    			add_location(button0, file, 44, 6, 3649);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-success");
-    			attr_dev(button1, "onclick", "window.location.href='#/natality-stats'");
+    			attr_dev(button1, "onclick", "window.location.href='#/natality-stats/graph'");
     			set_style(button1, "width", "25%");
-    			add_location(button1, file, 45, 5, 3791);
-    			add_location(li22, file, 43, 5, 3636);
-    			add_location(br2, file, 46, 4, 3939);
+    			add_location(button1, file, 45, 6, 3800);
     			attr_dev(button2, "type", "button");
-    			attr_dev(button2, "class", "btn btn-info");
-    			attr_dev(button2, "onclick", "window.location.href='#/poverty-stats'");
-    			set_style(button2, "width", "25%");
-    			add_location(button2, file, 48, 5, 3963);
+    			attr_dev(button2, "class", "btn btn-success");
+    			attr_dev(button2, "onclick", "window.location.href='#/natality-stats/graphV2'");
+    			set_style(button2, "width", "30%");
+    			add_location(button2, file, 46, 6, 3958);
+    			add_location(li22, file, 43, 5, 3637);
+    			add_location(br2, file, 48, 5, 4146);
     			attr_dev(button3, "type", "button");
     			attr_dev(button3, "class", "btn btn-info");
-    			attr_dev(button3, "onclick", "window.location.href='#/poverty-stats/graph'");
+    			attr_dev(button3, "onclick", "window.location.href='#/poverty-stats'");
     			set_style(button3, "width", "25%");
-    			add_location(button3, file, 49, 5, 4108);
+    			add_location(button3, file, 50, 5, 4169);
     			attr_dev(button4, "type", "button");
     			attr_dev(button4, "class", "btn btn-info");
-    			attr_dev(button4, "onclick", "window.location.href='#/poverty-stats/graph2'");
+    			attr_dev(button4, "onclick", "window.location.href='#/poverty-stats/graph'");
     			set_style(button4, "width", "25%");
-    			add_location(button4, file, 50, 5, 4265);
-    			add_location(li23, file, 47, 5, 3952);
-    			add_location(br3, file, 52, 4, 4435);
+    			add_location(button4, file, 51, 5, 4314);
     			attr_dev(button5, "type", "button");
-    			attr_dev(button5, "class", "btn btn-warning");
-    			attr_dev(button5, "onclick", "window.location.href='#/emigrants-stats'");
+    			attr_dev(button5, "class", "btn btn-info");
+    			attr_dev(button5, "onclick", "window.location.href='#/poverty-stats/graph2'");
     			set_style(button5, "width", "25%");
-    			add_location(button5, file, 53, 9, 4450);
-    			add_location(li24, file, 53, 5, 4446);
+    			add_location(button5, file, 52, 5, 4471);
+    			add_location(li23, file, 49, 5, 4158);
+    			add_location(br3, file, 54, 4, 4641);
+    			attr_dev(button6, "type", "button");
+    			attr_dev(button6, "class", "btn btn-warning");
+    			attr_dev(button6, "onclick", "window.location.href='#/emigrants-stats'");
+    			set_style(button6, "width", "25%");
+    			add_location(button6, file, 55, 9, 4656);
+    			add_location(li24, file, 55, 5, 4652);
+    			add_location(br4, file, 56, 5, 4805);
     			add_location(ul3, file, 41, 4, 3615);
     			add_location(ul4, file, 5, 3, 84);
     			set_style(div0, "margin-left", "12.5%");
@@ -1996,20 +2011,24 @@ var app = (function () {
     			append_dev(li22, button0);
     			append_dev(li22, t86);
     			append_dev(li22, button1);
-    			append_dev(ul3, t88);
+    			append_dev(li22, t88);
+    			append_dev(li22, button2);
+    			append_dev(ul3, t90);
     			append_dev(ul3, br2);
-    			append_dev(ul3, t89);
+    			append_dev(ul3, t91);
     			append_dev(ul3, li23);
-    			append_dev(li23, button2);
-    			append_dev(li23, t91);
     			append_dev(li23, button3);
     			append_dev(li23, t93);
     			append_dev(li23, button4);
-    			append_dev(ul3, t95);
+    			append_dev(li23, t95);
+    			append_dev(li23, button5);
+    			append_dev(ul3, t97);
     			append_dev(ul3, br3);
-    			append_dev(ul3, t96);
+    			append_dev(ul3, t98);
     			append_dev(ul3, li24);
-    			append_dev(li24, button5);
+    			append_dev(li24, button6);
+    			append_dev(ul3, t100);
+    			append_dev(ul3, br4);
     		},
     		p: noop,
     		i: noop,
@@ -6142,10 +6161,454 @@ var app = (function () {
     	}
     }
 
-    /* src\front\povertyApi\PovertyTable.svelte generated by Svelte v3.22.2 */
+    /* src\front\natalityApi\GraphNatality.svelte generated by Svelte v3.22.2 */
+    const file$6 = "src\\front\\natalityApi\\GraphNatality.svelte";
+
+    // (81:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$2(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$6, 80, 56, 2596);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$2.name,
+    		type: "slot",
+    		source: "(81:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$7(ctx) {
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
+    	let t0;
+    	let main;
+    	let figure;
+    	let div;
+    	let t1;
+    	let p0;
+    	let i;
+    	let t3;
+    	let p1;
+    	let t4;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
+    			t0 = space();
+    			main = element("main");
+    			figure = element("figure");
+    			div = element("div");
+    			t1 = space();
+    			p0 = element("p");
+    			i = element("i");
+    			i.textContent = "En la gráfica podemos observar la representación de la natalidad, \r\n                en número de nacimientos, total, en hombres y mujeres de algunos países del mundo.";
+    			t3 = space();
+    			p1 = element("p");
+    			t4 = space();
+    			create_component(button.$$.fragment);
+    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$6, 63, 8, 1772);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$6, 64, 8, 1847);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$6, 65, 8, 1929);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$6, 66, 8, 2013);
+    			attr_dev(div, "id", "container");
+    			attr_dev(div, "class", "svelte-1hzettu");
+    			add_location(div, file$6, 72, 12, 2217);
+    			add_location(i, file$6, 74, 16, 2309);
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$6, 73, 12, 2257);
+    			attr_dev(figure, "class", "highcharts-figure svelte-1hzettu");
+    			add_location(figure, file$6, 71, 8, 2169);
+    			add_location(p1, file$6, 79, 8, 2531);
+    			add_location(main, file$6, 70, 4, 2153);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor, remount) {
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t1);
+    			append_dev(figure, p0);
+    			append_dev(p0, i);
+    			append_dev(main, t3);
+    			append_dev(main, p1);
+    			append_dev(main, t4);
+    			mount_component(button, main, null);
+    			current = true;
+    			if (remount) dispose();
+    			dispose = listen_dev(script3, "load", loadGraph, false, false, false);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(button);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$7.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    async function loadGraph() {
+    	let MyData = [];
+    	let MyDataGraph = [];
+    	const resData = await fetch("/api/v2/natality-stats");
+    	MyData = await resData.json();
+
+    	MyData.forEach(x => {
+    		MyDataGraph.push({
+    			name: x.country + " " + x.year,
+    			data: [
+    				"",
+    				parseInt(x.natality_men),
+    				parseInt(x.natality_women),
+    				parseInt(x.natality_totals),
+    				""
+    			],
+    			pointPlacement: "on"
+    		});
+    	});
+
+    	//Las dos comillas son para que me salgan todas las barras, meto una varibale vacía para ello.
+    	Highcharts.chart("container", {
+    		chart: { type: "column" },
+    		title: { text: "🤰NATALIDAD🤰" },
+    		xAxis: {
+    			categories: ["", "Natalidad en Hombres", "Natalidad en Mujeres", "Natalidad Total", ""],
+    			crosshair: true
+    		},
+    		yAxis: {
+    			min: 0,
+    			title: { text: "Número de nacimientos" }
+    		},
+    		tooltip: {
+    			headerFormat: "<span style=\"font-size:10px\">{point.key}</span><table>",
+    			pointFormat: "<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td>" + "<td style=\"padding:0\"><b>{point.y:.1f} mil personas</b></td></tr>",
+    			footerFormat: "</table>",
+    			shared: true,
+    			useHTML: true
+    		},
+    		plotOptions: {
+    			column: { pointPadding: 0.2, borderWidth: 0 }
+    		},
+    		series: MyDataGraph
+    	});
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<GraphNatality> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("GraphNatality", $$slots, []);
+    	$$self.$capture_state = () => ({ Button, pop, loadGraph });
+    	return [];
+    }
+
+    class GraphNatality extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "GraphNatality",
+    			options,
+    			id: create_fragment$7.name
+    		});
+    	}
+    }
+
+    /* src\front\natalityApi\GraphNatalityV2.svelte generated by Svelte v3.22.2 */
 
     const { console: console_1$3 } = globals;
-    const file$6 = "src\\front\\povertyApi\\PovertyTable.svelte";
+    const file$7 = "src\\front\\natalityApi\\GraphNatalityV2.svelte";
+
+    // (77:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$3(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$7, 76, 56, 1957);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$3.name,
+    		type: "slot",
+    		source: "(77:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$8(ctx) {
+    	let t0;
+    	let main;
+    	let div;
+    	let t1;
+    	let p0;
+    	let t2;
+    	let p1;
+    	let t4;
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			t0 = space();
+    			main = element("main");
+    			div = element("div");
+    			t1 = space();
+    			p0 = element("p");
+    			t2 = space();
+    			p1 = element("p");
+    			p1.textContent = "Gráfica utilizando billboard.js que representa el porcentaje de energía renovables por países de 2016.";
+    			t4 = space();
+    			create_component(button.$$.fragment);
+    			attr_dev(div, "id", "gaugeChart");
+    			add_location(div, file$7, 72, 4, 1742);
+    			add_location(p0, file$7, 74, 4, 1777);
+    			add_location(p1, file$7, 75, 4, 1790);
+    			add_location(main, file$7, 69, 0, 1722);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div);
+    			append_dev(main, t1);
+    			append_dev(main, p0);
+    			append_dev(main, t2);
+    			append_dev(main, p1);
+    			append_dev(main, t4);
+    			mount_component(button, main, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$8.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    async function loadGraph$1() {
+    	const resData = await fetch("/api/v2/natality-stats");
+    	let MyData = await resData.json();
+
+    	let datachart = MyData.filter(y => y.year == 2017).map(y => {
+    		return [y.country, y["natality_totals"]];
+    	});
+
+    	var chart = bb.generate({
+    		data: {
+    			columns: [],
+    			type: "gauge",
+    			onclick(y, i) {
+    				console.log("onclick", y, i);
+    			}
+    		},
+    		gauge: {},
+    		color: {
+    			pattern: ["#FF0000", "#F97600", "#F6C600", "#60B044"],
+    			threshold: { values: [30, 60, 90, 100] }
+    		},
+    		size: { height: 300 },
+    		bindto: "#gaugeChart"
+    	});
+
+    	/* Recursive function because settimeout doesnt work properly in loop  */
+    	function loop_charting(i) {
+    		setTimeout(
+    			function () {
+    				chart.load({ columns: [datachart[i]] });
+
+    				if (i < datachart.length) {
+    					loop_charting(i + 1);
+    				}
+    			},
+    			1000
+    		);
+    	}
+
+    	loop_charting(0);
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	loadGraph$1();
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<GraphNatalityV2> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("GraphNatalityV2", $$slots, []);
+    	$$self.$capture_state = () => ({ Button, pop, loadGraph: loadGraph$1 });
+    	return [];
+    }
+
+    class GraphNatalityV2 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "GraphNatalityV2",
+    			options,
+    			id: create_fragment$8.name
+    		});
+    	}
+    }
+
+    /* src\front\povertyApi\PovertyTable.svelte generated by Svelte v3.22.2 */
+
+    const { console: console_1$4 } = globals;
+    const file$8 = "src\\front\\povertyApi\\PovertyTable.svelte";
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
@@ -6350,14 +6813,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/poverty-stats/" + /*stat*/ ctx[36].country + "/" + /*stat*/ ctx[36].year);
-    			add_location(a, file$6, 270, 7, 8890);
-    			add_location(td0, file$6, 269, 6, 8877);
-    			add_location(td1, file$6, 272, 6, 8982);
-    			add_location(td2, file$6, 273, 6, 9010);
-    			add_location(td3, file$6, 274, 6, 9045);
-    			add_location(td4, file$6, 275, 6, 9079);
-    			add_location(td5, file$6, 276, 6, 9113);
-    			add_location(tr, file$6, 268, 5, 8865);
+    			add_location(a, file$8, 270, 7, 8890);
+    			add_location(td0, file$8, 269, 6, 8877);
+    			add_location(td1, file$8, 272, 6, 8982);
+    			add_location(td2, file$8, 273, 6, 9010);
+    			add_location(td3, file$8, 274, 6, 9045);
+    			add_location(td4, file$8, 275, 6, 9079);
+    			add_location(td5, file$8, 276, 6, 9113);
+    			add_location(tr, file$8, 268, 5, 8865);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -6536,32 +6999,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$6, 250, 5, 8163);
-    			add_location(th1, file$6, 251, 5, 8183);
-    			add_location(th2, file$6, 252, 5, 8202);
-    			add_location(th3, file$6, 253, 5, 8247);
-    			add_location(th4, file$6, 254, 5, 8277);
-    			add_location(th5, file$6, 255, 5, 8305);
-    			add_location(tr0, file$6, 249, 4, 8152);
-    			add_location(thead, file$6, 248, 3, 8139);
+    			add_location(th0, file$8, 250, 5, 8163);
+    			add_location(th1, file$8, 251, 5, 8183);
+    			add_location(th2, file$8, 252, 5, 8202);
+    			add_location(th3, file$8, 253, 5, 8247);
+    			add_location(th4, file$8, 254, 5, 8277);
+    			add_location(th5, file$8, 255, 5, 8305);
+    			add_location(tr0, file$8, 249, 4, 8152);
+    			add_location(thead, file$8, 248, 3, 8139);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$6, 260, 9, 8379);
-    			add_location(td0, file$6, 260, 5, 8375);
+    			add_location(input0, file$8, 260, 9, 8379);
+    			add_location(td0, file$8, 260, 5, 8375);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$6, 261, 9, 8449);
-    			add_location(td1, file$6, 261, 5, 8445);
+    			add_location(input1, file$8, 261, 9, 8449);
+    			add_location(td1, file$8, 261, 5, 8445);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$6, 262, 9, 8518);
-    			add_location(td2, file$6, 262, 5, 8514);
+    			add_location(input2, file$8, 262, 9, 8518);
+    			add_location(td2, file$8, 262, 5, 8514);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$6, 263, 9, 8594);
-    			add_location(td3, file$6, 263, 5, 8590);
+    			add_location(input3, file$8, 263, 9, 8594);
+    			add_location(td3, file$8, 263, 5, 8590);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$6, 264, 9, 8669);
-    			add_location(td4, file$6, 264, 5, 8665);
-    			add_location(td5, file$6, 265, 5, 8740);
-    			add_location(tr1, file$6, 259, 4, 8364);
-    			add_location(tbody, file$6, 258, 3, 8351);
+    			add_location(input4, file$8, 264, 9, 8669);
+    			add_location(td4, file$8, 264, 5, 8665);
+    			add_location(td5, file$8, 265, 5, 8740);
+    			add_location(tr1, file$8, 259, 4, 8364);
+    			add_location(tbody, file$8, 258, 3, 8351);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -6759,7 +7222,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$6, 283, 2, 9300);
+    			add_location(p, file$8, 283, 2, 9300);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6795,7 +7258,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$6, 286, 8, 9381);
+    			add_location(p, file$8, 286, 8, 9381);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7108,7 +7571,7 @@ var app = (function () {
     }
 
     // (312:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">
-    function create_default_slot$2(ctx) {
+    function create_default_slot$4(ctx) {
     	let t;
 
     	const block = {
@@ -7125,7 +7588,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$2.name,
+    		id: create_default_slot$4.name,
     		type: "slot",
     		source: "(312:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}\\\">",
     		ctx
@@ -7134,7 +7597,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$7(ctx) {
+    function create_fragment$9(ctx) {
     	let main;
     	let h3;
     	let t1;
@@ -7240,7 +7703,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$2] },
+    				$$slots: { default: [create_default_slot$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7319,36 +7782,36 @@ var app = (function () {
     			t27 = space();
     			h61 = element("h6");
     			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
-    			add_location(h3, file$6, 243, 1, 8031);
-    			add_location(h60, file$6, 297, 1, 10283);
-    			add_location(input0, file$6, 299, 19, 10382);
-    			add_location(label0, file$6, 299, 6, 10369);
-    			add_location(td0, file$6, 299, 2, 10365);
-    			add_location(input1, file$6, 300, 54, 10487);
-    			add_location(label1, file$6, 300, 6, 10439);
-    			add_location(td1, file$6, 300, 2, 10435);
-    			add_location(input2, file$6, 301, 36, 10575);
-    			add_location(label2, file$6, 301, 6, 10545);
-    			add_location(td2, file$6, 301, 2, 10541);
-    			add_location(input3, file$6, 302, 34, 10660);
-    			add_location(label3, file$6, 302, 6, 10632);
-    			add_location(td3, file$6, 302, 2, 10628);
-    			add_location(tr0, file$6, 298, 1, 10357);
-    			add_location(input4, file$6, 305, 18, 10744);
-    			add_location(label4, file$6, 305, 6, 10732);
-    			add_location(td4, file$6, 305, 2, 10728);
-    			add_location(input5, file$6, 306, 54, 10846);
-    			add_location(label5, file$6, 306, 6, 10798);
-    			add_location(td5, file$6, 306, 2, 10794);
-    			add_location(input6, file$6, 307, 36, 10934);
-    			add_location(label6, file$6, 307, 6, 10904);
-    			add_location(td6, file$6, 307, 2, 10900);
-    			add_location(input7, file$6, 308, 34, 11019);
-    			add_location(label7, file$6, 308, 6, 10991);
-    			add_location(td7, file$6, 308, 2, 10987);
-    			add_location(tr1, file$6, 304, 1, 10720);
-    			add_location(h61, file$6, 312, 1, 11273);
-    			add_location(main, file$6, 242, 0, 8022);
+    			add_location(h3, file$8, 243, 1, 8031);
+    			add_location(h60, file$8, 297, 1, 10283);
+    			add_location(input0, file$8, 299, 19, 10382);
+    			add_location(label0, file$8, 299, 6, 10369);
+    			add_location(td0, file$8, 299, 2, 10365);
+    			add_location(input1, file$8, 300, 54, 10487);
+    			add_location(label1, file$8, 300, 6, 10439);
+    			add_location(td1, file$8, 300, 2, 10435);
+    			add_location(input2, file$8, 301, 36, 10575);
+    			add_location(label2, file$8, 301, 6, 10545);
+    			add_location(td2, file$8, 301, 2, 10541);
+    			add_location(input3, file$8, 302, 34, 10660);
+    			add_location(label3, file$8, 302, 6, 10632);
+    			add_location(td3, file$8, 302, 2, 10628);
+    			add_location(tr0, file$8, 298, 1, 10357);
+    			add_location(input4, file$8, 305, 18, 10744);
+    			add_location(label4, file$8, 305, 6, 10732);
+    			add_location(td4, file$8, 305, 2, 10728);
+    			add_location(input5, file$8, 306, 54, 10846);
+    			add_location(label5, file$8, 306, 6, 10798);
+    			add_location(td5, file$8, 306, 2, 10794);
+    			add_location(input6, file$8, 307, 36, 10934);
+    			add_location(label6, file$8, 307, 6, 10904);
+    			add_location(td6, file$8, 307, 2, 10900);
+    			add_location(input7, file$8, 308, 34, 11019);
+    			add_location(label7, file$8, 308, 6, 10991);
+    			add_location(td7, file$8, 308, 2, 10987);
+    			add_location(tr1, file$8, 304, 1, 10720);
+    			add_location(h61, file$8, 312, 1, 11273);
+    			add_location(main, file$8, 242, 0, 8022);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7620,7 +8083,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$7.name,
+    		id: create_fragment$9.name,
     		type: "component",
     		source: "",
     		ctx
@@ -7629,7 +8092,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$7($$self, $$props, $$invalidate) {
+    function instance$9($$self, $$props, $$invalidate) {
     	let stats = [];
 
     	let newStat = {
@@ -7916,7 +8379,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<PovertyTable> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<PovertyTable> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
@@ -8081,21 +8544,21 @@ var app = (function () {
     class PovertyTable extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {}, [-1, -1]);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "PovertyTable",
     			options,
-    			id: create_fragment$7.name
+    			id: create_fragment$9.name
     		});
     	}
     }
 
     /* src\front\povertyApi\EditPoverty.svelte generated by Svelte v3.22.2 */
 
-    const { console: console_1$4 } = globals;
-    const file$7 = "src\\front\\povertyApi\\EditPoverty.svelte";
+    const { console: console_1$5 } = globals;
+    const file$9 = "src\\front\\povertyApi\\EditPoverty.svelte";
 
     // (1:0) <script>      import {    onMount      }
     function create_catch_block$3(ctx) {
@@ -8291,28 +8754,28 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$7, 81, 5, 2600);
-    			add_location(th1, file$7, 82, 5, 2620);
-    			add_location(th2, file$7, 83, 5, 2639);
-    			add_location(th3, file$7, 84, 5, 2684);
-    			add_location(th4, file$7, 85, 5, 2714);
-    			add_location(th5, file$7, 86, 5, 2742);
-    			add_location(tr0, file$7, 80, 4, 2589);
-    			add_location(thead, file$7, 79, 3, 2576);
-    			add_location(td0, file$7, 91, 5, 2812);
-    			add_location(td1, file$7, 92, 5, 2844);
+    			add_location(th0, file$9, 81, 5, 2600);
+    			add_location(th1, file$9, 82, 5, 2620);
+    			add_location(th2, file$9, 83, 5, 2639);
+    			add_location(th3, file$9, 84, 5, 2684);
+    			add_location(th4, file$9, 85, 5, 2714);
+    			add_location(th5, file$9, 86, 5, 2742);
+    			add_location(tr0, file$9, 80, 4, 2589);
+    			add_location(thead, file$9, 79, 3, 2576);
+    			add_location(td0, file$9, 91, 5, 2812);
+    			add_location(td1, file$9, 92, 5, 2844);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$7, 93, 9, 2877);
-    			add_location(td2, file$7, 93, 5, 2873);
+    			add_location(input0, file$9, 93, 9, 2877);
+    			add_location(td2, file$9, 93, 5, 2873);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$7, 94, 9, 2952);
-    			add_location(td3, file$7, 94, 5, 2948);
+    			add_location(input1, file$9, 94, 9, 2952);
+    			add_location(td3, file$9, 94, 5, 2948);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$7, 95, 9, 3026);
-    			add_location(td4, file$7, 95, 5, 3022);
-    			add_location(td5, file$7, 96, 5, 3096);
-    			add_location(tr1, file$7, 90, 4, 2801);
-    			add_location(tbody, file$7, 89, 3, 2788);
+    			add_location(input2, file$9, 95, 9, 3026);
+    			add_location(td4, file$9, 95, 5, 3022);
+    			add_location(td5, file$9, 96, 5, 3096);
+    			add_location(tr1, file$9, 90, 4, 2801);
+    			add_location(tbody, file$9, 89, 3, 2788);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8455,7 +8918,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$7, 102, 2, 3252);
+    			add_location(p, file$9, 102, 2, 3252);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8491,7 +8954,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[7]);
     			set_style(p, "color", "green");
-    			add_location(p, file$7, 105, 8, 3330);
+    			add_location(p, file$9, 105, 8, 3330);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8517,7 +8980,7 @@ var app = (function () {
     }
 
     // (108:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$3(ctx) {
+    function create_default_slot$5(ctx) {
     	let t;
 
     	const block = {
@@ -8534,7 +8997,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$3.name,
+    		id: create_default_slot$5.name,
     		type: "slot",
     		source: "(108:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -8543,7 +9006,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$8(ctx) {
+    function create_fragment$a(ctx) {
     	let main;
     	let h3;
     	let t0;
@@ -8579,7 +9042,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$3] },
+    				$$slots: { default: [create_default_slot$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8604,9 +9067,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$7, 74, 26, 2443);
-    			add_location(h3, file$7, 74, 4, 2421);
-    			add_location(main, file$7, 73, 0, 2409);
+    			add_location(strong, file$9, 74, 26, 2443);
+    			add_location(h3, file$9, 74, 4, 2421);
+    			add_location(main, file$9, 73, 0, 2409);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8705,7 +9168,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$8.name,
+    		id: create_fragment$a.name,
     		type: "component",
     		source: "",
     		ctx
@@ -8714,7 +9177,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$8($$self, $$props, $$invalidate) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let { params = {} } = $$props;
     	let stats = {};
     	let updatedCountry = "";
@@ -8785,7 +9248,7 @@ var app = (function () {
     	const writable_props = ["params"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<EditPoverty> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<EditPoverty> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
@@ -8865,13 +9328,13 @@ var app = (function () {
     class EditPoverty extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$8, create_fragment$8, safe_not_equal, { params: 0 });
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { params: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "EditPoverty",
     			options,
-    			id: create_fragment$8.name
+    			id: create_fragment$a.name
     		});
     	}
 
@@ -8886,9 +9349,9 @@ var app = (function () {
 
     /* src\front\povertyApi\GraphPoverty.svelte generated by Svelte v3.22.2 */
 
-    const file$8 = "src\\front\\povertyApi\\GraphPoverty.svelte";
+    const file$a = "src\\front\\povertyApi\\GraphPoverty.svelte";
 
-    function create_fragment$9(ctx) {
+    function create_fragment$b(ctx) {
     	let script0;
     	let script0_src_value;
     	let script1;
@@ -8922,23 +9385,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "En la gráfica se puede observar como afecta el riesgo de pobreza en la poblacion mundial.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 70, 0, 1584);
+    			add_location(script0, file$a, 70, 0, 1584);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 71, 0, 1651);
+    			add_location(script1, file$a, 71, 0, 1651);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 72, 0, 1725);
+    			add_location(script2, file$a, 72, 0, 1725);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 73, 0, 1801);
+    			add_location(script3, file$a, 73, 0, 1801);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$8, 74, 0, 1901);
+    			add_location(script4, file$a, 74, 0, 1901);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1u5s9ap");
-    			add_location(div, file$8, 80, 4, 2048);
+    			add_location(div, file$a, 80, 4, 2048);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$8, 81, 4, 2080);
+    			add_location(p, file$a, 81, 4, 2080);
     			attr_dev(figure, "class", "highcharts-figure svelte-1u5s9ap");
-    			add_location(figure, file$8, 79, 0, 2008);
-    			add_location(main, file$8, 78, 0, 2000);
+    			add_location(figure, file$a, 79, 0, 2008);
+    			add_location(main, file$a, 78, 0, 2000);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8956,7 +9419,7 @@ var app = (function () {
     			append_dev(figure, t1);
     			append_dev(figure, p);
     			if (remount) dispose();
-    			dispose = listen_dev(script3, "load", loadGraph, false, false, false);
+    			dispose = listen_dev(script3, "load", loadGraph$2, false, false, false);
     		},
     		p: noop,
     		i: noop,
@@ -8975,7 +9438,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$9.name,
+    		id: create_fragment$b.name,
     		type: "component",
     		source: "",
     		ctx
@@ -8984,7 +9447,7 @@ var app = (function () {
     	return block;
     }
 
-    async function loadGraph() {
+    async function loadGraph$2() {
     	let MyData = [];
     	let MyDataGraph = [];
     	const resData = await fetch("/api/v2/poverty-stats");
@@ -9043,7 +9506,7 @@ var app = (function () {
     	});
     }
 
-    function instance$9($$self, $$props, $$invalidate) {
+    function instance$b($$self, $$props, $$invalidate) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -9052,29 +9515,61 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("GraphPoverty", $$slots, []);
-    	$$self.$capture_state = () => ({ loadGraph });
+    	$$self.$capture_state = () => ({ loadGraph: loadGraph$2 });
     	return [];
     }
 
     class GraphPoverty extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "GraphPoverty",
     			options,
-    			id: create_fragment$9.name
+    			id: create_fragment$b.name
     		});
     	}
     }
 
     /* src\front\povertyApi\GraphPoverty2.svelte generated by Svelte v3.22.2 */
+    const file$b = "src\\front\\povertyApi\\GraphPoverty2.svelte";
 
-    const file$9 = "src\\front\\povertyApi\\GraphPoverty2.svelte";
+    // (64:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$6(ctx) {
+    	let i;
+    	let t;
 
-    function create_fragment$a(ctx) {
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$b, 63, 56, 2342);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$6.name,
+    		type: "slot",
+    		source: "(64:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$c(ctx) {
     	let script0;
     	let script0_src_value;
     	let script1;
@@ -9092,7 +9587,21 @@ var app = (function () {
     	let div;
     	let t3;
     	let p;
+    	let t5;
+    	let current;
     	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$6] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -9110,24 +9619,26 @@ var app = (function () {
     			t3 = space();
     			p = element("p");
     			p.textContent = "La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.";
+    			t5 = space();
+    			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://www.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 46, 8, 1546);
+    			add_location(script0, file$b, 47, 8, 1644);
     			if (script1.src !== (script1_src_value = "https://www.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 47, 8, 1618);
+    			add_location(script1, file$b, 48, 8, 1716);
     			if (script2.src !== (script2_src_value = "https://www.amcharts.com/lib/4/themes/kelly.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 48, 8, 1692);
+    			add_location(script2, file$b, 49, 8, 1790);
     			if (script3.src !== (script3_src_value = "https://www.amcharts.com/lib/4/themes/animated.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 49, 8, 1772);
+    			add_location(script3, file$b, 50, 8, 1870);
     			attr_dev(i, "class", "fas fa-bicycle");
-    			add_location(i, file$9, 54, 37, 1934);
+    			add_location(i, file$b, 55, 37, 2032);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$9, 54, 4, 1901);
+    			add_location(h3, file$b, 55, 4, 1999);
     			attr_dev(div, "id", "chartdiv");
     			attr_dev(div, "class", "svelte-16neavo");
-    			add_location(div, file$9, 56, 4, 2013);
+    			add_location(div, file$b, 57, 4, 2111);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 57, 4, 2044);
-    			add_location(main, file$9, 53, 0, 1889);
+    			add_location(p, file$b, 58, 4, 2142);
+    			add_location(main, file$b, 54, 0, 1987);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9146,12 +9657,30 @@ var app = (function () {
     			append_dev(main, div);
     			append_dev(main, t3);
     			append_dev(main, p);
+    			append_dev(main, t5);
+    			mount_component(button, main, null);
+    			current = true;
     			if (remount) dispose();
-    			dispose = listen_dev(script3, "load", loadGraph$1, false, false, false);
+    			dispose = listen_dev(script3, "load", loadGraph$3, false, false, false);
     		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
@@ -9159,13 +9688,14 @@ var app = (function () {
     			detach_dev(script3);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
+    			destroy_component(button);
     			dispose();
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$c.name,
     		type: "component",
     		source: "",
     		ctx
@@ -9174,7 +9704,7 @@ var app = (function () {
     	return block;
     }
 
-    async function loadGraph$1() {
+    async function loadGraph$3() {
     	let MyData = [];
     	let MyDataGraph = [];
     	const resData = await fetch("/api/v2/poverty-stats");
@@ -9219,8 +9749,8 @@ var app = (function () {
     	});
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
-    	loadGraph$1();
+    function instance$c($$self, $$props, $$invalidate) {
+    	loadGraph$3();
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -9229,28 +9759,28 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("GraphPoverty2", $$slots, []);
-    	$$self.$capture_state = () => ({ loadGraph: loadGraph$1 });
+    	$$self.$capture_state = () => ({ Button, pop, loadGraph: loadGraph$3 });
     	return [];
     }
 
     class GraphPoverty2 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {});
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "GraphPoverty2",
     			options,
-    			id: create_fragment$a.name
+    			id: create_fragment$c.name
     		});
     	}
     }
 
     /* src\front\emigrantApi\EmigrantTable.svelte generated by Svelte v3.22.2 */
 
-    const { console: console_1$5 } = globals;
-    const file$a = "src\\front\\emigrantApi\\EmigrantTable.svelte";
+    const { console: console_1$6 } = globals;
+    const file$c = "src\\front\\emigrantApi\\EmigrantTable.svelte";
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
@@ -9455,14 +9985,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/emigrants-stats/" + /*emistat*/ ctx[36].country + "/" + /*emistat*/ ctx[36].year);
-    			add_location(a, file$a, 267, 10, 9581);
-    			add_location(td0, file$a, 267, 6, 9577);
-    			add_location(td1, file$a, 268, 6, 9676);
-    			add_location(td2, file$a, 269, 6, 9707);
-    			add_location(td3, file$a, 270, 6, 9740);
-    			add_location(td4, file$a, 271, 6, 9775);
-    			add_location(td5, file$a, 272, 6, 9811);
-    			add_location(tr, file$a, 266, 5, 9565);
+    			add_location(a, file$c, 267, 10, 9581);
+    			add_location(td0, file$c, 267, 6, 9577);
+    			add_location(td1, file$c, 268, 6, 9676);
+    			add_location(td2, file$c, 269, 6, 9707);
+    			add_location(td3, file$c, 270, 6, 9740);
+    			add_location(td4, file$c, 271, 6, 9775);
+    			add_location(td5, file$c, 272, 6, 9811);
+    			add_location(tr, file$c, 266, 5, 9565);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -9641,32 +10171,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$a, 248, 5, 8842);
-    			add_location(th1, file$a, 249, 5, 8862);
-    			add_location(th2, file$a, 250, 5, 8881);
-    			add_location(th3, file$a, 251, 5, 8917);
-    			add_location(th4, file$a, 252, 5, 8953);
-    			add_location(th5, file$a, 253, 5, 8989);
-    			add_location(tr0, file$a, 247, 4, 8831);
-    			add_location(thead, file$a, 246, 3, 8818);
+    			add_location(th0, file$c, 248, 5, 8842);
+    			add_location(th1, file$c, 249, 5, 8862);
+    			add_location(th2, file$c, 250, 5, 8881);
+    			add_location(th3, file$c, 251, 5, 8917);
+    			add_location(th4, file$c, 252, 5, 8953);
+    			add_location(th5, file$c, 253, 5, 8989);
+    			add_location(tr0, file$c, 247, 4, 8831);
+    			add_location(thead, file$c, 246, 3, 8818);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$a, 258, 9, 9063);
-    			add_location(td0, file$a, 258, 5, 9059);
+    			add_location(input0, file$c, 258, 9, 9063);
+    			add_location(td0, file$c, 258, 5, 9059);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$a, 259, 9, 9136);
-    			add_location(td1, file$a, 259, 5, 9132);
+    			add_location(input1, file$c, 259, 9, 9136);
+    			add_location(td1, file$c, 259, 5, 9132);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$a, 260, 9, 9208);
-    			add_location(td2, file$a, 260, 5, 9204);
+    			add_location(input2, file$c, 260, 9, 9208);
+    			add_location(td2, file$c, 260, 5, 9204);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$a, 261, 9, 9282);
-    			add_location(td3, file$a, 261, 5, 9278);
+    			add_location(input3, file$c, 261, 9, 9282);
+    			add_location(td3, file$c, 261, 5, 9278);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$a, 262, 9, 9358);
-    			add_location(td4, file$a, 262, 5, 9354);
-    			add_location(td5, file$a, 263, 5, 9431);
-    			add_location(tr1, file$a, 257, 4, 9048);
-    			add_location(tbody, file$a, 256, 3, 9035);
+    			add_location(input4, file$c, 262, 9, 9358);
+    			add_location(td4, file$c, 262, 5, 9354);
+    			add_location(td5, file$c, 263, 5, 9431);
+    			add_location(tr1, file$c, 257, 4, 9048);
+    			add_location(tbody, file$c, 256, 3, 9035);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -9864,7 +10394,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$a, 278, 15, 10003);
+    			add_location(p, file$c, 278, 15, 10003);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -9902,7 +10432,7 @@ var app = (function () {
     			t0 = text("ÉXITO: ");
     			t1 = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$a, 279, 16, 10069);
+    			add_location(p, file$c, 279, 16, 10069);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10216,7 +10746,7 @@ var app = (function () {
     }
 
     // (304:1) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}">
-    function create_default_slot$4(ctx) {
+    function create_default_slot$7(ctx) {
     	let t;
 
     	const block = {
@@ -10233,7 +10763,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$4.name,
+    		id: create_default_slot$7.name,
     		type: "slot",
     		source: "(304:1) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, em_manMin, em_manMax, em_womanMin, em_womanMax, em_totalsMin, em_totalsMax)}\\\">",
     		ctx
@@ -10242,7 +10772,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
+    function create_fragment$d(ctx) {
     	let main;
     	let h3;
     	let t1;
@@ -10348,7 +10878,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot$4] },
+    				$$slots: { default: [create_default_slot$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -10427,36 +10957,36 @@ var app = (function () {
     			t27 = space();
     			h61 = element("h6");
     			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
-    			add_location(h3, file$a, 241, 1, 8695);
-    			add_location(h60, file$a, 289, 1, 10941);
-    			add_location(input0, file$a, 291, 19, 11040);
-    			add_location(label0, file$a, 291, 6, 11027);
-    			add_location(td0, file$a, 291, 2, 11023);
-    			add_location(input1, file$a, 292, 45, 11136);
-    			add_location(label1, file$a, 292, 6, 11097);
-    			add_location(td1, file$a, 292, 2, 11093);
-    			add_location(input2, file$a, 293, 45, 11228);
-    			add_location(label2, file$a, 293, 6, 11189);
-    			add_location(td2, file$a, 293, 2, 11185);
-    			add_location(input3, file$a, 294, 45, 11322);
-    			add_location(label3, file$a, 294, 6, 11283);
-    			add_location(td3, file$a, 294, 2, 11279);
-    			add_location(tr0, file$a, 290, 1, 11015);
-    			add_location(input4, file$a, 297, 18, 11405);
-    			add_location(label4, file$a, 297, 6, 11393);
-    			add_location(td4, file$a, 297, 2, 11389);
-    			add_location(input5, file$a, 298, 45, 11498);
-    			add_location(label5, file$a, 298, 6, 11459);
-    			add_location(td5, file$a, 298, 2, 11455);
-    			add_location(input6, file$a, 299, 45, 11590);
-    			add_location(label6, file$a, 299, 6, 11551);
-    			add_location(td6, file$a, 299, 2, 11547);
-    			add_location(input7, file$a, 300, 45, 11684);
-    			add_location(label7, file$a, 300, 6, 11645);
-    			add_location(td7, file$a, 300, 2, 11641);
-    			add_location(tr1, file$a, 296, 1, 11381);
-    			add_location(h61, file$a, 304, 1, 11921);
-    			add_location(main, file$a, 240, 0, 8686);
+    			add_location(h3, file$c, 241, 1, 8695);
+    			add_location(h60, file$c, 289, 1, 10941);
+    			add_location(input0, file$c, 291, 19, 11040);
+    			add_location(label0, file$c, 291, 6, 11027);
+    			add_location(td0, file$c, 291, 2, 11023);
+    			add_location(input1, file$c, 292, 45, 11136);
+    			add_location(label1, file$c, 292, 6, 11097);
+    			add_location(td1, file$c, 292, 2, 11093);
+    			add_location(input2, file$c, 293, 45, 11228);
+    			add_location(label2, file$c, 293, 6, 11189);
+    			add_location(td2, file$c, 293, 2, 11185);
+    			add_location(input3, file$c, 294, 45, 11322);
+    			add_location(label3, file$c, 294, 6, 11283);
+    			add_location(td3, file$c, 294, 2, 11279);
+    			add_location(tr0, file$c, 290, 1, 11015);
+    			add_location(input4, file$c, 297, 18, 11405);
+    			add_location(label4, file$c, 297, 6, 11393);
+    			add_location(td4, file$c, 297, 2, 11389);
+    			add_location(input5, file$c, 298, 45, 11498);
+    			add_location(label5, file$c, 298, 6, 11459);
+    			add_location(td5, file$c, 298, 2, 11455);
+    			add_location(input6, file$c, 299, 45, 11590);
+    			add_location(label6, file$c, 299, 6, 11551);
+    			add_location(td6, file$c, 299, 2, 11547);
+    			add_location(input7, file$c, 300, 45, 11684);
+    			add_location(label7, file$c, 300, 6, 11645);
+    			add_location(td7, file$c, 300, 2, 11641);
+    			add_location(tr1, file$c, 296, 1, 11381);
+    			add_location(h61, file$c, 304, 1, 11921);
+    			add_location(main, file$c, 240, 0, 8686);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10728,7 +11258,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$b.name,
+    		id: create_fragment$d.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10737,7 +11267,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$b($$self, $$props, $$invalidate) {
+    function instance$d($$self, $$props, $$invalidate) {
     	let emistats = [];
 
     	let newEmiStat = {
@@ -11025,7 +11555,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<EmigrantTable> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<EmigrantTable> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
@@ -11190,21 +11720,21 @@ var app = (function () {
     class EmigrantTable extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {}, [-1, -1]);
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {}, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "EmigrantTable",
     			options,
-    			id: create_fragment$b.name
+    			id: create_fragment$d.name
     		});
     	}
     }
 
     /* src\front\emigrantApi\EditEmigrant.svelte generated by Svelte v3.22.2 */
 
-    const { console: console_1$6 } = globals;
-    const file$b = "src\\front\\emigrantApi\\EditEmigrant.svelte";
+    const { console: console_1$7 } = globals;
+    const file$d = "src\\front\\emigrantApi\\EditEmigrant.svelte";
 
     // (1:0) <script>      import {onMount}
     function create_catch_block$5(ctx) {
@@ -11400,28 +11930,28 @@ var app = (function () {
     			t18 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$b, 71, 5, 2369);
-    			add_location(th1, file$b, 72, 5, 2389);
-    			add_location(th2, file$b, 73, 5, 2408);
-    			add_location(th3, file$b, 74, 5, 2444);
-    			add_location(th4, file$b, 75, 5, 2480);
-    			add_location(th5, file$b, 76, 5, 2516);
-    			add_location(tr0, file$b, 70, 4, 2358);
-    			add_location(thead, file$b, 69, 3, 2345);
-    			add_location(td0, file$b, 81, 5, 2586);
-    			add_location(td1, file$b, 82, 5, 2618);
+    			add_location(th0, file$d, 71, 5, 2369);
+    			add_location(th1, file$d, 72, 5, 2389);
+    			add_location(th2, file$d, 73, 5, 2408);
+    			add_location(th3, file$d, 74, 5, 2444);
+    			add_location(th4, file$d, 75, 5, 2480);
+    			add_location(th5, file$d, 76, 5, 2516);
+    			add_location(tr0, file$d, 70, 4, 2358);
+    			add_location(thead, file$d, 69, 3, 2345);
+    			add_location(td0, file$d, 81, 5, 2586);
+    			add_location(td1, file$d, 82, 5, 2618);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$b, 83, 9, 2651);
-    			add_location(td2, file$b, 83, 5, 2647);
+    			add_location(input0, file$d, 83, 9, 2651);
+    			add_location(td2, file$d, 83, 5, 2647);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$b, 84, 9, 2721);
-    			add_location(td3, file$b, 84, 5, 2717);
+    			add_location(input1, file$d, 84, 9, 2721);
+    			add_location(td3, file$d, 84, 5, 2717);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$b, 85, 9, 2793);
-    			add_location(td4, file$b, 85, 5, 2789);
-    			add_location(td5, file$b, 86, 5, 2862);
-    			add_location(tr1, file$b, 80, 4, 2575);
-    			add_location(tbody, file$b, 79, 3, 2562);
+    			add_location(input2, file$d, 85, 9, 2793);
+    			add_location(td4, file$d, 85, 5, 2789);
+    			add_location(td5, file$d, 86, 5, 2862);
+    			add_location(tr1, file$d, 80, 4, 2575);
+    			add_location(tbody, file$d, 79, 3, 2562);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -11564,7 +12094,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$b, 91, 18, 3014);
+    			add_location(p, file$d, 91, 18, 3014);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11600,7 +12130,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[7]);
     			set_style(p, "color", "green");
-    			add_location(p, file$b, 92, 16, 3080);
+    			add_location(p, file$d, 92, 16, 3080);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11626,7 +12156,7 @@ var app = (function () {
     }
 
     // (94:4) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot$5(ctx) {
+    function create_default_slot$8(ctx) {
     	let t;
 
     	const block = {
@@ -11643,7 +12173,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$5.name,
+    		id: create_default_slot$8.name,
     		type: "slot",
     		source: "(94:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -11652,7 +12182,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$c(ctx) {
+    function create_fragment$e(ctx) {
     	let main;
     	let h3;
     	let t0;
@@ -11688,7 +12218,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot$5] },
+    				$$slots: { default: [create_default_slot$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11713,9 +12243,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t7 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$b, 64, 26, 2211);
-    			add_location(h3, file$b, 64, 4, 2189);
-    			add_location(main, file$b, 63, 0, 2177);
+    			add_location(strong, file$d, 64, 26, 2211);
+    			add_location(h3, file$d, 64, 4, 2189);
+    			add_location(main, file$d, 63, 0, 2177);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11814,7 +12344,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -11823,7 +12353,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$c($$self, $$props, $$invalidate) {
+    function instance$e($$self, $$props, $$invalidate) {
     	let { params = {} } = $$props;
     	let eStat = {};
     	let updatedCountry = "";
@@ -11890,7 +12420,7 @@ var app = (function () {
     	const writable_props = ["params"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<EditEmigrant> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$7.warn(`<EditEmigrant> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
@@ -11970,13 +12500,13 @@ var app = (function () {
     class EditEmigrant extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, { params: 0 });
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, { params: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "EditEmigrant",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$e.name
     		});
     	}
 
@@ -11990,9 +12520,9 @@ var app = (function () {
     }
 
     /* src\front\App.svelte generated by Svelte v3.22.2 */
-    const file$c = "src\\front\\App.svelte";
+    const file$e = "src\\front\\App.svelte";
 
-    function create_fragment$d(ctx) {
+    function create_fragment$f(ctx) {
     	let main;
     	let current;
 
@@ -12005,7 +12535,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file$c, 38, 0, 1227);
+    			add_location(main, file$e, 42, 0, 1472);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12033,7 +12563,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$f.name,
     		type: "component",
     		source: "",
     		ctx
@@ -12042,12 +12572,14 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props, $$invalidate) {
+    function instance$f($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
-    		// JUANFRA
+    		// JUANFRAN
     		"/natality-stats": NatalityTable,
     		"/natality-stats/:country/:year": EditNatality,
+    		"/natality-stats/graph": GraphNatality,
+    		"/natality-stats/graphV2": GraphNatalityV2,
     		// ANGELA
     		"/poverty-stats": PovertyTable,
     		"/poverty-stats/:country/:year": EditPoverty,
@@ -12074,6 +12606,8 @@ var app = (function () {
     		NotFound,
     		NatalityTable,
     		EditNatality,
+    		GraphNatality,
+    		GraphNatalityV2,
     		PovertyTable,
     		EditPoverty,
     		GraphPoverty,
@@ -12089,13 +12623,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$f.name
     		});
     	}
     }

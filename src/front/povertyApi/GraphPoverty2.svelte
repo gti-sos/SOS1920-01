@@ -1,4 +1,5 @@
 <script>
+    import Button from "sveltestrap/src/Button.svelte"; import { pop } from "svelte-spa-router";
     async function loadGraph() {
 
         let MyData = [];
@@ -60,6 +61,7 @@
         La gráfica representa el porcentaje de personas en riesgo de pobreza en 2017.
 
     </p>
+    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>
 
 <style>
