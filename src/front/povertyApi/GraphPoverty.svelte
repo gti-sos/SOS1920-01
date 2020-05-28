@@ -1,4 +1,5 @@
 <script>
+import Button from "sveltestrap/src/Button.svelte"; import { pop } from "svelte-spa-router";
 async function loadGraph() {
 	
 	let MyData = [];
@@ -80,10 +81,11 @@ async function loadGraph() {
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En la gráfica se puede observar como afecta el riesgo de pobreza en la poblacion mundial.
+       <i> En la gráfica se puede observar como afecta el riesgo de pobreza en la poblacion mundial.</i>
 
     </p>
 </figure>
+    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>
 
 <style>

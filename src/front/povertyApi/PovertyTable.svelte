@@ -1,4 +1,5 @@
 <script>
+import Button from "sveltestrap/src/Button.svelte"; import { pop } from "svelte-spa-router";
 	import {
 		onMount
 	} from "svelte";
@@ -311,4 +312,5 @@
 
 	<Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht)}">Buscar</Button>
 	<h6>Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar. </h6>
+	 <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>
