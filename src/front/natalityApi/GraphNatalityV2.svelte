@@ -73,6 +73,6 @@
     <div id="gaugeChart"></div>
 
     <p></p>
-    <p>Gráfica utilizando billboard.js que representa el porcentaje de energía renovables por países de 2016.</p>
+    <p>Esta Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2017.</p>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>

@@ -73,7 +73,7 @@
             <div id="container"></div>
             <p class="highcharts-description">
                 <i>En la gráfica podemos observar la representación de la natalidad, 
-                en número de nacimientos, total, en hombres y mujeres de algunos países del mundo.</i>
+                con número de nacimientos, en hombres y mujeres de algunos países del mundo.</i>
             </p>
         </figure>
 
