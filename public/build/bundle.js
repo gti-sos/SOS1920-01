@@ -3487,14 +3487,14 @@ var app = (function () {
     	return block;
     }
 
-    // (249:1) {:then natalitystats}
+    // (252:1) {:then natalitystats}
     function create_then_block(ctx) {
     	let current;
 
     	const table = new Table({
     			props: {
     				bordered: true,
-    				$$slots: { default: [create_default_slot_6] },
+    				$$slots: { default: [create_default_slot_7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -3535,15 +3535,15 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(249:1) {:then natalitystats}",
+    		source: "(252:1) {:then natalitystats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (268:9) <Button outline color="primary" on:click={insertStat}>
-    function create_default_slot_8(ctx) {
+    // (271:9) <Button outline color="primary" on:click={insertStat}>
+    function create_default_slot_9(ctx) {
     	let t;
 
     	const block = {
@@ -3560,17 +3560,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8.name,
+    		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(268:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
+    		source: "(271:9) <Button outline color=\\\"primary\\\" on:click={insertStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (279:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
-    function create_default_slot_7(ctx) {
+    // (282:10) <Button outline color="danger" on:click="{deleteStat(stat.country,stat.year)}">
+    function create_default_slot_8(ctx) {
     	let t;
 
     	const block = {
@@ -3587,16 +3587,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7.name,
+    		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(279:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
+    		source: "(282:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStat(stat.country,stat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:4) {#each natalitystats as stat}
+    // (273:4) {#each natalitystats as stat}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -3629,7 +3629,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_7] },
+    				$$slots: { default: [create_default_slot_8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -3662,14 +3662,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/natality-stats/" + /*stat*/ ctx[36].country + "/" + /*stat*/ ctx[36].year);
-    			add_location(a, file$4, 272, 7, 9064);
-    			add_location(td0, file$4, 271, 6, 9051);
-    			add_location(td1, file$4, 274, 6, 9157);
-    			add_location(td2, file$4, 275, 6, 9185);
-    			add_location(td3, file$4, 276, 6, 9224);
-    			add_location(td4, file$4, 277, 6, 9260);
-    			add_location(td5, file$4, 278, 6, 9298);
-    			add_location(tr, file$4, 270, 5, 9039);
+    			add_location(a, file$4, 275, 7, 9121);
+    			add_location(td0, file$4, 274, 6, 9108);
+    			add_location(td1, file$4, 277, 6, 9214);
+    			add_location(td2, file$4, 278, 6, 9242);
+    			add_location(td3, file$4, 279, 6, 9281);
+    			add_location(td4, file$4, 280, 6, 9317);
+    			add_location(td5, file$4, 281, 6, 9355);
+    			add_location(tr, file$4, 273, 5, 9096);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -3733,15 +3733,15 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(270:4) {#each natalitystats as stat}",
+    		source: "(273:4) {#each natalitystats as stat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (250:2) <Table bordered>
-    function create_default_slot_6(ctx) {
+    // (253:2) <Table bordered>
+    function create_default_slot_7(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -3782,7 +3782,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_8] },
+    				$$slots: { default: [create_default_slot_9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -3848,32 +3848,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$4, 252, 5, 8325);
-    			add_location(th1, file$4, 253, 5, 8345);
-    			add_location(th2, file$4, 254, 5, 8364);
-    			add_location(th3, file$4, 255, 5, 8395);
-    			add_location(th4, file$4, 256, 5, 8428);
-    			add_location(th5, file$4, 257, 5, 8461);
-    			add_location(tr0, file$4, 251, 4, 8314);
-    			add_location(thead, file$4, 250, 3, 8301);
+    			add_location(th0, file$4, 255, 5, 8382);
+    			add_location(th1, file$4, 256, 5, 8402);
+    			add_location(th2, file$4, 257, 5, 8421);
+    			add_location(th3, file$4, 258, 5, 8452);
+    			add_location(th4, file$4, 259, 5, 8485);
+    			add_location(th5, file$4, 260, 5, 8518);
+    			add_location(tr0, file$4, 254, 4, 8371);
+    			add_location(thead, file$4, 253, 3, 8358);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$4, 262, 9, 8535);
-    			add_location(td0, file$4, 262, 5, 8531);
+    			add_location(input0, file$4, 265, 9, 8592);
+    			add_location(td0, file$4, 265, 5, 8588);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$4, 263, 9, 8605);
-    			add_location(td1, file$4, 263, 5, 8601);
+    			add_location(input1, file$4, 266, 9, 8662);
+    			add_location(td1, file$4, 266, 5, 8658);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$4, 264, 9, 8674);
-    			add_location(td2, file$4, 264, 5, 8670);
+    			add_location(input2, file$4, 267, 9, 8731);
+    			add_location(td2, file$4, 267, 5, 8727);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$4, 265, 9, 8754);
-    			add_location(td3, file$4, 265, 5, 8750);
+    			add_location(input3, file$4, 268, 9, 8811);
+    			add_location(td3, file$4, 268, 5, 8807);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$4, 266, 9, 8831);
-    			add_location(td4, file$4, 266, 5, 8827);
-    			add_location(td5, file$4, 267, 5, 8906);
-    			add_location(tr1, file$4, 261, 4, 8520);
-    			add_location(tbody, file$4, 260, 3, 8507);
+    			add_location(input4, file$4, 269, 9, 8888);
+    			add_location(td4, file$4, 269, 5, 8884);
+    			add_location(td5, file$4, 270, 5, 8963);
+    			add_location(tr1, file$4, 264, 4, 8577);
+    			add_location(tbody, file$4, 263, 3, 8564);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -4020,16 +4020,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6.name,
+    		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(250:2) <Table bordered>",
+    		source: "(253:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (247:23)     Loading natalitystats...   {:then natalitystats}
+    // (250:23)     Loading natalitystats...   {:then natalitystats}
     function create_pending_block(ctx) {
     	let t;
 
@@ -4052,14 +4052,14 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(247:23)     Loading natalitystats...   {:then natalitystats}",
+    		source: "(250:23)     Loading natalitystats...   {:then natalitystats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:1) {#if errorMsg}
+    // (288:1) {#if errorMsg}
     function create_if_block_3$1(ctx) {
     	let p;
     	let t0;
@@ -4071,7 +4071,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$4, 285, 8, 9491);
+    			add_location(p, file$4, 288, 8, 9548);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -4090,14 +4090,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(285:1) {#if errorMsg}",
+    		source: "(288:1) {#if errorMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (288:1) {#if exitoMsg}
+    // (291:1) {#if exitoMsg}
     function create_if_block_2$1(ctx) {
     	let p;
     	let t;
@@ -4107,7 +4107,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$4, 288, 8, 9569);
+    			add_location(p, file$4, 291, 8, 9626);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -4125,15 +4125,15 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(288:1) {#if exitoMsg}",
+    		source: "(291:1) {#if exitoMsg}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:1) <Button outline color="secondary" on:click="{loadInitialData}">
-    function create_default_slot_5(ctx) {
+    // (294:1) <Button outline color="secondary" on:click="{loadInitialData}">
+    function create_default_slot_6(ctx) {
     	let t;
 
     	const block = {
@@ -4150,17 +4150,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5.name,
+    		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(291:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(294:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (292:1) <Button outline color="danger" on:click="{deleteStats}">
-    function create_default_slot_4(ctx) {
+    // (295:1) <Button outline color="danger" on:click="{deleteStats}">
+    function create_default_slot_5(ctx) {
     	let t;
 
     	const block = {
@@ -4177,16 +4177,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4.name,
+    		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(292:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
+    		source: "(295:1) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteStats}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (293:1) {#if numeroDePagina==0}
+    // (296:1) {#if numeroDePagina==0}
     function create_if_block_1$1(ctx) {
     	let current;
 
@@ -4194,7 +4194,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3] },
+    				$$slots: { default: [create_default_slot_4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4240,15 +4240,15 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(293:1) {#if numeroDePagina==0}",
+    		source: "(296:1) {#if numeroDePagina==0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">
-    function create_default_slot_3(ctx) {
+    // (297:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">
+    function create_default_slot_4(ctx) {
     	let t;
 
     	const block = {
@@ -4265,16 +4265,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3.name,
+    		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(294:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}\\\">",
+    		source: "(297:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (297:1) {#if numeroDePagina>0}
+    // (300:1) {#if numeroDePagina>0}
     function create_if_block$3(ctx) {
     	let t;
     	let current;
@@ -4283,7 +4283,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_2] },
+    				$$slots: { default: [create_default_slot_3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4297,7 +4297,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_1] },
+    				$$slots: { default: [create_default_slot_2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4358,15 +4358,15 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(297:1) {#if numeroDePagina>0}",
+    		source: "(300:1) {#if numeroDePagina>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (298:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 1)}">
-    function create_default_slot_2(ctx) {
+    // (301:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 1)}">
+    function create_default_slot_3(ctx) {
     	let t;
 
     	const block = {
@@ -4383,17 +4383,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2.name,
+    		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(298:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 1)}\\\">",
+    		source: "(301:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">
-    function create_default_slot_1(ctx) {
+    // (303:2) <Button outline color="primary" on:click="{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}">
+    function create_default_slot_2(ctx) {
     	let t;
 
     	const block = {
@@ -4410,17 +4410,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1.name,
+    		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(300:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}\\\">",
+    		source: "(303:2) <Button outline color=\\\"primary\\\" on:click=\\\"{paginacion(searchCountry, searchYear, natality_totalsMin,      natality_totalsMax, natality_menMin, natality_menMax, natality_womenMin, natality_womenMax, 2)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:4) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax,           natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}">
-    function create_default_slot(ctx) {
+    // (320:4) <Button outline color="primary" on:click="{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax,           natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}">
+    function create_default_slot_1(ctx) {
     	let t;
 
     	const block = {
@@ -4437,9 +4437,42 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_default_slot_1.name,
+    		type: "slot",
+    		source: "(320:4) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax,           natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (324:1) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$4, 323, 53, 11874);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(317:4) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (searchCountry, searchYear, natality_totalsMin, natality_totalsMax,           natality_menMin, natality_menMax, natality_womenMin, natality_womenMax)}\\\">",
+    		source: "(324:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -4504,6 +4537,11 @@ var app = (function () {
     	let t26;
     	let t27;
     	let h61;
+    	let t29;
+    	let br0;
+    	let t30;
+    	let t31;
+    	let br1;
     	let current;
     	let dispose;
 
@@ -4526,7 +4564,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot_5] },
+    				$$slots: { default: [create_default_slot_6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4538,7 +4576,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_4] },
+    				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4552,7 +4590,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot] },
+    				$$slots: { default: [create_default_slot_1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -4561,6 +4599,18 @@ var app = (function () {
     	button2.$on("click", function () {
     		if (is_function(/*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*natality_totalsMin*/ ctx[4], /*natality_totalsMax*/ ctx[5], /*natality_menMin*/ ctx[6], /*natality_menMax*/ ctx[7], /*natality_womenMin*/ ctx[8], /*natality_womenMax*/ ctx[9]))) /*busqueda*/ ctx[13](/*searchCountry*/ ctx[2], /*searchYear*/ ctx[3], /*natality_totalsMin*/ ctx[4], /*natality_totalsMax*/ ctx[5], /*natality_menMin*/ ctx[6], /*natality_menMax*/ ctx[7], /*natality_womenMin*/ ctx[8], /*natality_womenMax*/ ctx[9]).apply(this, arguments);
     	});
+
+    	const button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -4631,36 +4681,44 @@ var app = (function () {
     			t27 = space();
     			h61 = element("h6");
     			h61.textContent = "¡¡NOTA!! Si quieres volver a ver todos los datos antes de la búsqueda, borre los datos de los filtros y pulse Buscar";
-    			add_location(h2, file$4, 245, 1, 8168);
-    			add_location(h60, file$4, 302, 1, 10546);
-    			add_location(input0, file$4, 304, 19, 10632);
-    			add_location(label0, file$4, 304, 6, 10619);
-    			add_location(td0, file$4, 304, 2, 10615);
-    			add_location(input1, file$4, 305, 47, 10730);
-    			add_location(label1, file$4, 305, 6, 10689);
-    			add_location(td1, file$4, 305, 2, 10685);
-    			add_location(input2, file$4, 306, 52, 10838);
-    			add_location(label2, file$4, 306, 6, 10792);
-    			add_location(td2, file$4, 306, 2, 10788);
-    			add_location(input3, file$4, 307, 52, 10943);
-    			add_location(label3, file$4, 307, 6, 10897);
-    			add_location(td3, file$4, 307, 2, 10893);
-    			add_location(tr0, file$4, 303, 1, 10607);
-    			add_location(input4, file$4, 310, 18, 11031);
-    			add_location(label4, file$4, 310, 6, 11019);
-    			add_location(td4, file$4, 310, 2, 11015);
-    			add_location(input5, file$4, 311, 47, 11126);
-    			add_location(label5, file$4, 311, 6, 11085);
-    			add_location(td5, file$4, 311, 2, 11081);
-    			add_location(input6, file$4, 312, 52, 11234);
-    			add_location(label6, file$4, 312, 6, 11188);
-    			add_location(td6, file$4, 312, 2, 11184);
-    			add_location(input7, file$4, 313, 52, 11339);
-    			add_location(label7, file$4, 313, 6, 11293);
-    			add_location(td7, file$4, 313, 2, 11289);
-    			add_location(tr1, file$4, 309, 1, 11007);
-    			add_location(h61, file$4, 318, 1, 11630);
-    			add_location(main, file$4, 244, 0, 8159);
+    			t29 = space();
+    			br0 = element("br");
+    			t30 = space();
+    			create_component(button3.$$.fragment);
+    			t31 = space();
+    			br1 = element("br");
+    			add_location(h2, file$4, 248, 1, 8225);
+    			add_location(h60, file$4, 305, 1, 10603);
+    			add_location(input0, file$4, 307, 19, 10689);
+    			add_location(label0, file$4, 307, 6, 10676);
+    			add_location(td0, file$4, 307, 2, 10672);
+    			add_location(input1, file$4, 308, 47, 10787);
+    			add_location(label1, file$4, 308, 6, 10746);
+    			add_location(td1, file$4, 308, 2, 10742);
+    			add_location(input2, file$4, 309, 52, 10895);
+    			add_location(label2, file$4, 309, 6, 10849);
+    			add_location(td2, file$4, 309, 2, 10845);
+    			add_location(input3, file$4, 310, 52, 11000);
+    			add_location(label3, file$4, 310, 6, 10954);
+    			add_location(td3, file$4, 310, 2, 10950);
+    			add_location(tr0, file$4, 306, 1, 10664);
+    			add_location(input4, file$4, 313, 18, 11088);
+    			add_location(label4, file$4, 313, 6, 11076);
+    			add_location(td4, file$4, 313, 2, 11072);
+    			add_location(input5, file$4, 314, 47, 11183);
+    			add_location(label5, file$4, 314, 6, 11142);
+    			add_location(td5, file$4, 314, 2, 11138);
+    			add_location(input6, file$4, 315, 52, 11291);
+    			add_location(label6, file$4, 315, 6, 11245);
+    			add_location(td6, file$4, 315, 2, 11241);
+    			add_location(input7, file$4, 316, 52, 11396);
+    			add_location(label7, file$4, 316, 6, 11350);
+    			add_location(td7, file$4, 316, 2, 11346);
+    			add_location(tr1, file$4, 312, 1, 11064);
+    			add_location(h61, file$4, 321, 1, 11687);
+    			add_location(br0, file$4, 322, 1, 11815);
+    			add_location(br1, file$4, 324, 1, 11933);
+    			add_location(main, file$4, 247, 0, 8216);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4740,6 +4798,12 @@ var app = (function () {
     			mount_component(button2, main, null);
     			append_dev(main, t27);
     			append_dev(main, h61);
+    			append_dev(main, t29);
+    			append_dev(main, br0);
+    			append_dev(main, t30);
+    			mount_component(button3, main, null);
+    			append_dev(main, t31);
+    			append_dev(main, br1);
     			current = true;
     			if (remount) run_all(dispose);
 
@@ -4890,6 +4954,13 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 256) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -4899,6 +4970,7 @@ var app = (function () {
     			transition_in(if_block2);
     			transition_in(if_block3);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -4912,6 +4984,7 @@ var app = (function () {
     			transition_out(if_block2);
     			transition_out(if_block3);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -4926,6 +4999,7 @@ var app = (function () {
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
     			destroy_component(button2);
+    			destroy_component(button3);
     			run_all(dispose);
     		}
     	};
@@ -5293,6 +5367,7 @@ var app = (function () {
     		onMount,
     		Table,
     		Button,
+    		pop,
     		natalitystats,
     		newStat,
     		numeroDePagina,
@@ -6431,7 +6506,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$7 = "src\\front\\natalityApi\\GraphNatalityV2.svelte";
 
-    // (77:4) <Button outline color="secondary" on:click="{pop}">
+    // (76:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$3(ctx) {
     	let i;
     	let t;
@@ -6441,7 +6516,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$7, 76, 56, 1979);
+    			add_location(i, file$7, 75, 56, 1984);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -6457,7 +6532,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(77:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(76:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -6469,10 +6544,9 @@ var app = (function () {
     	let main;
     	let div;
     	let t1;
-    	let p0;
-    	let t2;
-    	let p1;
-    	let t4;
+    	let p;
+    	let i;
+    	let t3;
     	let current;
 
     	const button = new Button({
@@ -6493,17 +6567,16 @@ var app = (function () {
     			main = element("main");
     			div = element("div");
     			t1 = space();
-    			p0 = element("p");
-    			t2 = space();
-    			p1 = element("p");
-    			p1.textContent = "Esta Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2017.";
-    			t4 = space();
+    			p = element("p");
+    			i = element("i");
+    			i.textContent = "Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2010.";
+    			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(div, "id", "gaugeChart");
-    			add_location(div, file$7, 72, 4, 1742);
-    			add_location(p0, file$7, 74, 4, 1777);
-    			add_location(p1, file$7, 75, 4, 1790);
-    			add_location(main, file$7, 69, 0, 1722);
+    			add_location(div, file$7, 72, 4, 1758);
+    			add_location(i, file$7, 74, 7, 1796);
+    			add_location(p, file$7, 74, 4, 1793);
+    			add_location(main, file$7, 69, 0, 1738);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6513,10 +6586,9 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
     			append_dev(main, t1);
-    			append_dev(main, p0);
-    			append_dev(main, t2);
-    			append_dev(main, p1);
-    			append_dev(main, t4);
+    			append_dev(main, p);
+    			append_dev(p, i);
+    			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
     		},
@@ -6560,7 +6632,7 @@ var app = (function () {
     	const resData = await fetch("/api/v2/natality-stats");
     	let MyData = await resData.json();
 
-    	let datachart = MyData.filter(y => y.year == 2017).map(y => {
+    	let datachart = MyData.filter(y => y.year == 2010).map(y => {
     		return [y.country, y["natality_totals"]];
     	});
 
@@ -6575,7 +6647,9 @@ var app = (function () {
     		gauge: {},
     		color: {
     			pattern: ["#FF0000", "#F97600", "#F6C600", "#60B044"],
-    			threshold: { values: [30, 60, 90, 100] }
+    			threshold: {
+    				values: [500000, 700000, 820000, 1000000]
+    			}
     		},
     		size: { height: 300 },
     		bindto: "#gaugeChart"

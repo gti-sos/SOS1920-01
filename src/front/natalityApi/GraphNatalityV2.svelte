@@ -8,7 +8,7 @@
         
         const resData = await fetch("/api/v2/natality-stats");
         let MyData = await resData.json();   
-        let datachart = MyData.filter(y => y.year == 2017).map((y) => {return [y.country, y["natality_totals"]];})
+        let datachart = MyData.filter(y => y.year == 2010).map((y) => {return [y.country, y["natality_totals"]];})
         
         var chart = bb.generate({
             data: {
@@ -28,10 +28,10 @@
                 ],
                 threshold: {
                 values: [
-                    30,
-                    60,
-                    90,
-                    100
+                    500000,
+                    700000,
+                    820000,
+                    1000000
                 ]
                 }
             },
@@ -72,7 +72,6 @@
 
     <div id="gaugeChart"></div>
 
-    <p></p>
-    <p>Esta Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2017.</p>
+    <p><i>Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2010.</i></p>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>
