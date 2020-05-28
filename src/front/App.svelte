@@ -6,6 +6,8 @@
 // API JUANFRAN
     import NatalityTable from './natalityApi/NatalityTable.svelte';
     import EditNatality from './natalityApi/EditNatality.svelte';
+    import GraphNatality from './natalityApi/GraphNatality.svelte';
+    import GraphNatalityV2 from './natalityApi/GraphNatalityV2.svelte';
 // API ANGELA
     import PovertyTable from './povertyApi/PovertyTable.svelte';
     import EditPoverty from './povertyApi/EditPoverty.svelte';
@@ -17,9 +19,11 @@
 
     const routes = {
 		"/": Home,
-    // JUANFRA
+    // JUANFRAN
         "/natality-stats": NatalityTable,
 		"/natality-stats/:country/:year": EditNatality,
+        "/natality-stats/graph": GraphNatality,
+        "/natality-stats/graphV2": GraphNatalityV2,
     // ANGELA
 		"/poverty-stats": PovertyTable,
 		"/poverty-stats/:country/:year": EditPoverty,
