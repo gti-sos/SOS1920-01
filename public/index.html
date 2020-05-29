@@ -15,6 +15,8 @@
 	
 	<script defer src='/build/bundle.js'></script>
 
+	<link rel="stylesheet" href="css/menu.css">
+
 	<!-- JUANFRAN GRAPH2 Billboard  -->
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="lib/billboard.js"></script>
@@ -34,9 +36,42 @@
 	
 	<img class="logo" src="graphics.png" alt="Logo G" style="position: center; top: 1%; left: 1%; width: 20%;"><br>
 	<h1 class="display-1 main-title" style="color:orangered;text-align: center;">SOS1920-01</h1>
+	<header>
 	
+		<ul class="menu">
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">APIs</a>
+			   <ul>
+				<li><a href="#/natality-stats">Natalidad</a></li>
+				<li><a href="#/poverty-stats">Pobreza</a></li>
+				<li><a href="#/emigrant-stats">Emigración</a></li>
+			   </ul>
+			</li>
+			<li><a href="#">Gráficas Highchart</a>
+			   <ul>
+						<li><a href="#/natality-stats">Natalidad</a></li>
+						<li><a href="#/poverty-stats/graph">Pobreza</a></li>
+						<li><a href="#/emigrant-stats">Emigración</a></li>
+				</ul></li>
+			<li><a href="#">Gráficas Bibliotecas externas</a>
+				   <ul>
+					<li><a href="#/natality-stats">Natalidad</a></li>
+					<li><a href="#/poverty-stats/graph2">Pobreza</a></li>
+					<li><a href="#/emigrant-stats">Emigración</a></li>
+				   </ul></li>
+			<li><a href="#/analytic">Analytics</a></li>
+			   
+			</li>
+			<li><a href="#">Integraciones</a>
+			<ul>
+					<li><a href="#/natality-stats">Natalidad</a></li>
+					<li><a href="#/poverty-stats/graph2">Pobreza</a></li>
+					<li><a href="#/emigrant-stats">Emigración</a></li>
+				   </ul></li>
+			
+	   </ul>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 5%; margin-bottom: 5%;">
+	<!--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 5%; margin-bottom: 5%;">
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
@@ -50,7 +85,7 @@
 				<a class="dropdown-item" href="#/natality-stats">API de Riesgo de Pobreza</a>
 				<a class="dropdown-item" href="#/poverty-stats">API de Tasa de Natalidad</a>
 				<a class="dropdown-item" href="#/emigrant-stats">API de Tasa de Emigración</a>
-				<!---->
+				
 				</div>
 			</li>
 			
@@ -60,7 +95,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="#/poverty-stats/graph">Gráfica de Riesgo de pobreza</a>
-				<!---->
+				
 				</div>
 			</li>
 	
@@ -70,7 +105,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="#/poverty-stats/graph2">Gráfica de Riesgo de pobreza (amCharts)</a>
-				<!---->
+				
 				</div>
 			</li>
 			
@@ -85,7 +120,7 @@
 
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMain">
 					<a class="dropdown-item" href="#/integrationsPoverty">Riesgo de pobreza</a>
-					<!---->
+					
 				</div>
 			</li>
 	
@@ -95,8 +130,8 @@
 			
 			</ul>
 		</div>
-		</nav>
-
+		</nav> -->
+	</header>
 	<div id="SvelteApp"></div>
 </body>
 </html>
