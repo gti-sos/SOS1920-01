@@ -1,4 +1,6 @@
-.dropdown-submenu {
+  /* For the drop down */
+
+  .dropdown-submenu {
     position: relative;
   }
   
@@ -15,87 +17,3 @@
     margin-left: .1rem;
     margin-right: .1rem;
   }
-
-  /* menu desplegable */
-
-  .menu, .menu ul, .menu li, .menu a {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-  }
-  
-  .menu {
-    height: 40px;
-    width: 90%;
-    background-color: #ccc;
-    border-radius: 7px;
-  }
-  
-  .menu li {
-    position: relative;
-    list-style: none;
-    float: left;
-    display: block;
-    height: 40px;
-  }
-  
-  .menu a {
-    display: block;
-    padding: 0 16px;
-    margin: 6px 0;
-    line-height: 28px;
-    text-decoration: none;
-    
-    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 13px;
-    color: #fff;
-    
-    /*border-left: 1px solid #393942;
-    border-right: 1px solid #4f5058;*/
-    transition: color .2s ease-in-out;
-  }
-  
-  .menu li:firs-child a {border-left: none;}
-  .menu li:last-child a {border-right: none;}
-  
-  .menu li:hover > a {color: orangered}
-  
-  .menu ul {
-    position: absolute;
-    top: 40px;
-    left: 0px;
-    
-    opacity: 0;
-    background: rgba(248, 186, 93, 0.795);
-    
-    border-radius: 0 0 5px 5px;
-    transition: opacity .20s ease .1s;
-  }
-  
-  .menu li:hover > ul {opacity: 1;}
-  
-  .menu ul li {
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    
-    transition: height .25s ease .1s;
-  }
-  
-  .menu li:hover > ul li {
-    height: 50px;
-    overflow: visible;
-    padding: 40;
-  }
-  
-  .menu ul li a {
-    width: 130px;
-    padding: 4px 10px;
-    margin: 0;
-    border: none;
-    border-bottom: 1px solid #ffdfb4;
-  }
-  .menu ul li:last-child a { border: none; }
-  
