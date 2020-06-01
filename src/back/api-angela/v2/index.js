@@ -35,8 +35,19 @@ var poverty_stats = [
 	{country: "france",year: 2017,poverty_prp:8474, poverty_pt:12849,poverty_ht:26983},
 	{country: "unitedKingdom",year: 2017,poverty_prp:10648, poverty_pt:12617,poverty_ht:26495}
 ];
+/////////////////////////PROXY
+const request = require('request');
+const express = require ("express");
 
-/////////LoadInitialData  
+var api09 = 'https://sos1920-09.herokuapp.com';
+var path09 = 'api/v2/oil-coal-nuclear-energy-consumption-stats';
+
+app.use(path09, function(req, res) {
+	var url = api09 + req.baseUrl + req.url;
+	console.log('piped: ' + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res);
+});
+app.use(express.static('.'));
 
 	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
