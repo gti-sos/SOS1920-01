@@ -39,11 +39,11 @@ var poverty_stats = [
 const request = require('request');
 const express = require ("express");
 
-var api09 = 'https://sos1920-09.herokuapp.com';
-var path09 = 'api/v2/oil-coal-nuclear-energy-consumption-stats';
+var api28 = 'https://sos1920-28.herokuapp.com';
+var path28 = '/api/v1/ppas';
 
-app.use(path09, function(req, res) {
-	var url = api09 + req.baseUrl + req.url;
+app.use(path28, function(req, res) {
+	var url = api28 + req.baseUrl + req.url;
 	console.log('piped: ' + req.baseUrl + req.url);
 	req.pipe(request(url)).pipe(res);
 });
