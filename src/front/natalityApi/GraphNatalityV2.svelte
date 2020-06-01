@@ -71,7 +71,7 @@
     
 
     <div id="gaugeChart"></div>
-
+    <br>
     <p><i>Gráfica, representada mediante Billboard.js, presenta el porcentje de natalidad total de algunos países en el año 2010.</i></p>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>

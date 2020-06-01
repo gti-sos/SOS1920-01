@@ -1,35 +1,57 @@
 <script>
-	import Button from "sveltestrap/src/Button.svelte";
-    import {
-        pop
-    } from "svelte-spa-router";
-    async function loadGraph() {
-        
-        let MyData = [];
-        let MyDataGraph = [];
-        
-        const resData = await fetch("/api/v2/natality-stats");
-        MyData = await resData.json();
-        MyData.forEach( (x) => {
-                MyDataGraph.push({name: x.country + " " + x.year, data: ['',parseInt(x.natality_men), parseInt(x.natality_women), 
-                parseInt(x.natality_totals),''], pointPlacement: 'on'});
-            });
-            //Las dos comillas son para que me salgan todas las barras, meto una varibale vacía para ello.
+	import {pop} from "svelte-spa-router";
+    import Button from "sveltestrap/src/Button.svelte";
 
+	let MyData = [];
+	let API_G02 = [];
+	
+	async function loadGraph(){
+		
+		const resData = await fetch("/api/v2/natality-stats");
+		MyData = await resData.json();
+		const resDataI = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
+		if (resDataI.ok) {
+			const json = await resDataI.json();
+            API_G02 = json;
+        }
 
-    Highcharts.chart('container', {
+		let aux = []
+		let valores = []
+		MyData.forEach((x) => {
+        	if(x.year==2010 && (x.country=="spain"||x.country=="germany")){	
+				aux={
+					name: x.country,
+					data: [0,0,x.natality_men,x.natality_women]
+				}
+				valores.push(aux)
+			}
+        });
+		API_G02.forEach((x) => {
+            if(x.year==2010 && (x.province=="sevilla"||x.province=="malaga")){	
+				aux={
+					name: x.province,
+					data: [x.traveller,x.overnightstay,0,0]
+				}
+				valores.push(aux)
+			}  	
+		
+
+        });
+
+        Highcharts.chart('container', {
     chart: {
         type: 'column'
     },
     title: {
-        text: '🤰NATALIDAD🤰',
+        text: '🤰NATALIDAD Y TURISMO RURAL EN 2010',
     },
     xAxis: {
         categories: [
             '',
             'Natalidad en Hombres',
             'Natalidad en Mujeres',
-            'Natalidad Total',
+            'Viajeros',
+            'Pernoctaciones',
             ''
         ],
         crosshair: true
@@ -120,4 +142,6 @@
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+
+
 </style>
