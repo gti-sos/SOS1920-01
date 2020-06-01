@@ -1,5 +1,6 @@
 <script>
-import Button from "sveltestrap/src/Button.svelte"; import { pop } from "svelte-spa-router";
+import Button from "sveltestrap/src/Button.svelte"; 
+import { pop } from "svelte-spa-router";
 async function loadGraph() {
 	
 	let MyData = [];
@@ -7,7 +8,9 @@ async function loadGraph() {
 	
 	const resData = await fetch("/api/v2/poverty-stats");
 	MyData = await resData.json();
-	MyData.forEach( (x) => {
+    
+    
+    MyData.forEach( (x) => {
             MyDataGraph.push(
             {name:x.country + " " + x.year, 
             data: ['',parseInt(x.poverty_prp), parseInt(x.poverty_pt), parseInt(x.poverty_ht),''],
@@ -73,7 +76,7 @@ async function loadGraph() {
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js" ></script>
+
 
 </svelte:head>
 

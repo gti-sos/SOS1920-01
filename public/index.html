@@ -15,6 +15,12 @@
 	
 	<script defer src='/build/bundle.js'></script>
 
+	<!--MENU-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="css/menu.css">
 
 	<!-- JUANFRAN GRAPH2 Billboard  -->
@@ -30,13 +36,14 @@
 
 </head>
 
-<body style="padding: 3%;" background= "fondo.jpg">
+<body style="padding: 3%;" >
 	
 	
 	
 	<img class="logo" src="graphics.png" alt="Logo G" style="position: center; top: 1%; left: 1%; width: 20%;"><br>
 	<h1 class="display-1 main-title" style="color:orangered;text-align: center;">SOS1920-01</h1>
 	<header>
+<<<<<<< HEAD
 	
 		<ul class="menu">
 			<li><a href="#">Inicio</a></li>
@@ -69,6 +76,74 @@
 	   <br>
 	   <br><br><br><br><br>
 
+=======
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin-top: 5%; margin-bottom: 5%;">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/">Inicio <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  APIs
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				<a class="dropdown-item" href="#/natality-stats">API de Tasa de Natalidad</a>
+				<a class="dropdown-item" href="#/poverty-stats">API de Riesgo de Pobreza</a>
+				<a class="dropdown-item" href="#/emigrants-stats">API de Tasa de Emigración</a>
+				
+				</div>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Gráficas con Highchart
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#/natality-stats/graph">Gráfica de Natalidad</a>
+				<a class="dropdown-item" href="#/poverty-stats/graph">Gráfica de Riesgo de pobreza</a>
+				<a class="dropdown-item" href="#/emigrants-stats/graph">Gráfica de Emigración</a>
+				
+				</div>
+			</li>
+	
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Gráficas con bibliotecas externas
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#/natality-stats/graph2">Gráfica de Natalidad</a>
+				<a class="dropdown-item" href="#/poverty-stats/graph2">Gráfica de Riesgo de pobreza (amCharts)</a>
+				<a class="dropdown-item" href="#/emigrants-stats/graph2">Gráfica de Emigración</a>
+				</div>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link" href="#/Analytics">Analytics</a>
+			</li>
+			
+			<li class="nav-item ">
+				<a class="nav-link dropdown-toggle" href="#/Integrations" id="navbarDropdownMain" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Integraciones
+				</a>
+
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMain">
+					<a class="dropdown-item" href="#/natality-stats/Integrations">natalidad</a>
+					<a class="dropdown-item" href="#/poverty-stats/Integrations">Riesgo de pobreza</a>
+					<a class="dropdown-item" href="#/emigrants-stats/Integrations"> emigrantes</a>
+					
+				</div>
+			</li>
+	
+			<li class="nav-item ">
+				<a class="nav-link" href="#/about">Videos</a>
+			</li>
+			
+			</ul>
+		</div>
+		</nav>
+>>>>>>> 2be32023a8e1192c86d008f76aaa4e9ffce74d81
 	</header>
 	<div id="SvelteApp"></div>
 </body>

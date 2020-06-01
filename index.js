@@ -1,16 +1,17 @@
 
 const express = require ("express");
 const bodyParser = require("body-parser");
-const app = express();
+var app = express();
 const BASE_PATH = "/api";
 const cors = require("cors");
 
 const port = process.env.PORT || 9999;
 
-app.use(cors());
-app.use("/",express.static("./public")); 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
+app.use("/",express.static("./public")); 
 app.get("/public",(request,response) => {
     response.send("index.html");
 });
