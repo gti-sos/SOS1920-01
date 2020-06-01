@@ -21,35 +21,27 @@
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
+            API_09.forEach((y) => {
+        	if(x.year==2017 && ((x.country=="spain" && y.country=="Spain")||(x.country=="germany" && y.country=="Germany")||(x.country=="unitedKingdom" && y.country=="United Kingdom"))){	
 				aux={
-					name: x.country,
-					data: [0,0,parseInt(x.poverty_pt), parseInt(x.poverty_ht)]
+					name: y.country,
+					data: [y.coal-consumption,y.nuclear-energy-consumption,parseInt(x.poverty_prp),parseInt(x.poverty_ht)]
 				}
 				valores.push(aux)
-			}
+            }
         });
-		API_09.forEach((x) => {
-            if(x.year==2017 && (x.country=="Spain"||x.country=="Germany")){	
-				aux={
-					name: x.country,
-					data: [parseInt(x.oil-consumption),parseInt(x.coal-consumption),0,0]
-				}
-				valores.push(aux)
-			}  	
+        });
 		
-
-        });
 
 		Highcharts.chart('container', {
 			chart: {
 				type: 'bar'
 			},
 			title: {
-				text: 'Enegías primaria y riesgo de pobreza en el año 2017'
+				text: 'Energías primarias y Riesgo de pobreza'
 			},
 			xAxis: {
-				categories: ['Consumo de Gasolina', 'Consumo de Carbón', 'Umbral de persona', 'Umbral de hogar'],
+				categories: ['Consumo de Carbón', 'Consumo de Energía Nuclear', 'Personas en riesgo de pobreza', 'Umbral de hogar'],
 				title: {
 					text: null
 				}
@@ -81,12 +73,12 @@
 		<script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 	</svelte:head>
 <main>
-	<h3 style="text-align: center;"> Integración con la API Enegías primarias del grupo 09</h3>
-	<Button outline color="secondary" on:click="{pop}">Volver</Button>
+	<h3 style="text-align: center;"> Integración con Energías primarias del grupo 09</h3>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
-			Enegías primaria y riesgo de pobreza en el año 2017.
+			Energías primarias y Riesgo de pobreza.
 		</p>
 	</figure>
 

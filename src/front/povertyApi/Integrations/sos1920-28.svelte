@@ -21,25 +21,17 @@
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
+        	API_28.forEach((y) => {
+        	if(x.year==2017 && ((x.country=="france" && y.country=="France")||(x.country=="germany" && y.country=="Germany")||(x.country=="unitedKingdom" && y.country=="United Kingdom")||(x.country=="spain" && y.country=="Spain"))){	
 				aux={
-					name: x.country,
-					data: [0,0,parseInt(x.poverty_pt), parseInt(x.poverty_ht)]
+					name: y.country,
+					data: [parseInt(y.aas_net),parseInt(y.ppa_per_capita),parseInt(x.poverty_pt),parseInt(x.poverty_ht)]
 				}
 				valores.push(aux)
-			}
+            }
         });
-		API_28.forEach((x) => {
-            if(x.year==2017 && (x.country=="France"||x.country=="United States of America")){	
-				aux={
-					name: x.country,
-					data: [parseInt(x.aas_net),parseInt(x.ppa_per_capita),0,0]
-				}
-				valores.push(aux)
-			}  	
+        });
 		
-
-        });
 
 		Highcharts.chart('container', {
 			chart: {
