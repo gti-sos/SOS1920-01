@@ -105,5 +105,5 @@
 	{#if exitoMsg}
         <p style="color: green">{exitoMsg}</p>
     {/if}
-    <Button outline color="secondary" on:click="{pop}">Volver</Button>
+    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>

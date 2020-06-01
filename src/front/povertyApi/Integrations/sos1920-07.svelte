@@ -82,11 +82,11 @@
 	</svelte:head>
 <main>
 	<h3 style="text-align: center;"> Integración con la API Importaciones del grupo 07</h3>
-	<Button outline color="secondary" on:click="{pop}">Volver</Button>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
-			Importaciones y riesgo de pobreza en el año 2017.
+			Importaciones y riesgo de pobreza en el año 2010.
 		</p>
 	</figure>
 

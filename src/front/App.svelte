@@ -4,6 +4,8 @@
     import NotFound from './NotFound.svelte';
     import Integrations from './Integrations.svelte';
 
+    import Analytics from './Analytics.svelte';
+
 // API JUANFRAN
     import NatalityTable from './natalityApi/NatalityTable.svelte';
     import EditNatality from './natalityApi/EditNatality.svelte';
@@ -39,7 +41,11 @@
 
     const routes = {
         "/": Home,
+<<<<<<< HEAD
         "/integrations": Integrations,
+=======
+        "/Analytics": Analytics,
+>>>>>>> 5e246aed9fe02c7ec7a26b81fa55174687657bdd
     // JUANFRAN
         "/natality-stats": NatalityTable,
 		"/natality-stats/:country/:year": EditNatality,
