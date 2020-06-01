@@ -2,14 +2,15 @@
 	import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
-	let MyData = [];
-	let API_G02 = [];
-	
 	async function loadGraph(){
+
+        let MyData = [];
+	    let API_G02 = [];
 		
 		const resData = await fetch("/api/v2/natality-stats");
 		MyData = await resData.json();
-		const resDataI = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
+		
+        const resDataI = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
 		if (resDataI.ok) {
 			const json = await resDataI.json();
             API_G02 = json;
@@ -18,19 +19,19 @@
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2010 && (x.country=="spain"||x.country=="germany")){	
+        	if(x.year==2015 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country,
-					data: [0,0,x.natality_men,x.natality_women]
+					data: [0,0,parseInt(x.natality_men),parseInt(x.natality_women)]
 				}
 				valores.push(aux)
 			}
         });
 		API_G02.forEach((x) => {
-            if(x.year==2010 && (x.province=="sevilla"||x.province=="malaga")){	
+            if(x.year==2015 && (x.province=="sevilla"||x.province=="malaga")){	
 				aux={
 					name: x.province,
-					data: [x.traveller,x.overnightstay,0,0]
+					data: [parseInt(x.traveller),parteInt(x.overnightstay),0,0]
 				}
 				valores.push(aux)
 			}  	
@@ -47,12 +48,10 @@
     },
     xAxis: {
         categories: [
-            '',
             'Natalidad en Hombres',
             'Natalidad en Mujeres',
             'Viajeros',
-            'Pernoctaciones',
-            ''
+            'Pernoctaciones'
         ],
         crosshair: true
     },
