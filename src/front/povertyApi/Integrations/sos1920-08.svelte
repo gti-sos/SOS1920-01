@@ -33,7 +33,7 @@
             if(x.year==2018 && (x.state=="Hawaii"||x.state=="California")){	
 				aux={
 					name: x.state,
-					data: [parseInt(x.solar),parseInt(x.coal),0,0]
+					data: [parseInt(x.solar/1000),parseInt(x.coal/1000),0,0]
 				}
 				valores.push(aux)
 			}  	

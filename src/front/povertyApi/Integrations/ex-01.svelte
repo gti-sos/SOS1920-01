@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/poverty-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("/v2/countries?yesterday=false&sort=deaths&allowNull=true");
+    const resData2 = await fetch("https://disease.sh/v2/countries?yesterday=false&sort=deaths&allowNull=true");
 		if (resData2.ok) {
 			console.log("Ok, api ex01 loaded");
 			const json = await resData2.json();

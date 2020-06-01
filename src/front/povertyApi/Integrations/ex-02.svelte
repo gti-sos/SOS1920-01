@@ -25,7 +25,7 @@
         	if(x.year==2010 && ((x.country=="spain" && y.name=="Spain") ||(x.country=="france" && y.name=="France")||(x.country=="italy" && y.name=="Italy")||(x.country=="germany" && y.name=="Germany"))){	
 				aux={
 					name: y.name,
-					data: [parseInt(y.population),parseInt(x.poverty_prp)]
+					data: [parseInt(y.population/1000),parseInt(x.poverty_prp)]
 				}
 				valores.push(aux)
             }
