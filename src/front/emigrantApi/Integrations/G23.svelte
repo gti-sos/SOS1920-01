@@ -6,7 +6,7 @@
 	    let MisDatos = [];
 	    let G23 = [];
     
-	    const EmigrantDatos = await fetch("/api/v2/poverty-stats");
+	    const EmigrantDatos = await fetch("/api/v1/emigrants-stats");
 	    MisDatos = await EmigrantDatos.json();
 
         const DatosExternos = await fetch("/api/v2/fires-stats");
@@ -89,14 +89,14 @@
                 fillOpacity: 0.5
             }
         },
-        series: valores
-        // [{
-        //    name: 'John',
-        //    data: [3, 4, 3, 5, 4, 10, 12]
-        //}, {
-        //   name: 'Jane',
-        //    data: [1, 3, 4, 3, 3, 5, 4]
-        //}]
+        series: // valores
+         [{
+            name: 'John',
+            data: [3, 4, 3, 5, 4, 10, 12]
+        }, {
+           name: 'Jane',
+            data: [1, 3, 4, 3, 3, 5, 4]
+        }]
     });
 }
 </script>
@@ -111,10 +111,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            This demo shows a smoothed area chart with an x-axis plot band
-            highlighting an area of interest at the last two points. Plot bands
-            and plot lines are commonly used to draw attention to certain areas or
-            thresholds.
+            Funciona
         </p>
     </figure>
 </main>
