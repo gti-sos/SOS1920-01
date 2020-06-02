@@ -121,11 +121,11 @@ var initialNatality_stats = [
 const request = require('request'); 
 const express = require ("express"); 
 
-var api06= 'https://sos1920-09.herokuapp.com'; 
-var path06 = '/api/v2/accstats'; 
+var api28 = 'https://sos1920-28.herokuapp.com'; 
+var path28 = '/api/v1/gce'; 
 
-app.use(path06, function(req, res) { 
-	var url = api06 + req.baseUrl + req.url; 
+app.use(path05, function(req, res) { 
+	var url = api28 + req.baseUrl + req.url; 
 	console.log('piped: ' + req.baseUrl + req.url); 
 	req.pipe(request(url)).pipe(res); 
 }); 

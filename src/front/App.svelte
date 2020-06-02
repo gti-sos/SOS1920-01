@@ -22,8 +22,8 @@
     import API_G21 from './natalityApi/Integrations/Api-G21.svelte';
     import API_G23 from './natalityApi/Integrations/Api-G23.svelte';
     import API_G28 from './natalityApi/Integrations/Api-G28.svelte';
-    //import API_Ext1 from './natalityApi/Integrations/Api-Ext1.svelte';
-   // import API_Ext2 from './natalityApi/Integrations/Api-Ext2.svelte';
+    import API_Ext1 from './natalityApi/Integrations/Api-Ext1.svelte';
+    import API_Ext2 from './natalityApi/Integrations/Api-Ext2.svelte';
 
     
 
@@ -81,8 +81,8 @@
         "/natality-stats/API-G21" : API_G21,
         "/natality-stats/API-G23" : API_G23,
         "/natality-stats/API-G28" : API_G28,
-        //"/natality-stats/API-Ext1" : API_Ext1,
-       // "/natality-stats/API-Ext2" : API_Ext2,
+        "/natality-stats/API-Ext1" : API_Ext1,
+        "/natality-stats/API-Ext2" : API_Ext2,
 
       
         
