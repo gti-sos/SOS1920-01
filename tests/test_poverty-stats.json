@@ -1,0 +1,1588 @@
+{
+	"info": {
+		"_postman_id": "47ec8443-09d6-4c31-bd04-2256bae9018d",
+		"name": "SOS1920-01_poverty-stats-V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f05ff76-d6e3-4f4e-a2be-6cd5a5f2ccd1",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET General (Todos los recursos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c281b912-0eec-446c-be3d-e532523f968b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - RECURSO CONCRETO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9846def4-3841-4531-bcbe-a3deb07a6ae2",
+						"exec": [
+							"pm.test(\"Status code is 201 \", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8474,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country & Year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2562077f-4064-4043-a1a9-a2b4fb3e9ebf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"It return a country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country & Year (Query Params)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c09b364-3373-43a8-8de1-8864af796a1f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?country=france&year=2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "france"
+						},
+						{
+							"key": "year",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a8402a5c-141a-4943-89bf-ffd6e31d0bcc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country (Query Params)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac5481a-b652-4ba6-91e0-4b27989cd74b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?country=france",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "france"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Year (Query Params)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0d5db87-8c8d-4b5e-aed7-ef375ae2a713",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 year\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?year=2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Con paginacion(limit)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae5f1b2c-453a-4371-ba5d-a9ecced1ff0b",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?limit=5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Con paginacion (offset)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de3ff451-11d5-48c2-ac13-2dcac7bd2904",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?offset=13",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Con paginacion(limit y offset)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c136143-923c-4619-a819-da1e63f8090a",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?limit=5&offset=3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_1 Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af44976b-c5c5-4632-9692-64f9dfa2da5d",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_prpMin=13428",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_prpMin",
+							"value": "13428"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_1 Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e7b8098-7ff8-43b8-b7e7-2a2ee55224ff",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_prpMax=9551",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_prpMax",
+							"value": "9551"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_1 Min & Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "13c951f3-a9e9-41d1-80c0-7ec17b12a27a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_prpMin=13428&poverty_prpMax=13428",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_prpMin",
+							"value": "13428"
+						},
+						{
+							"key": "poverty_prpMax",
+							"value": "13428"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_2 Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b4947f2-b833-40f8-83ae-518d1df738e1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_ptMin=13428",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_ptMin",
+							"value": "13428"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_2 Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02ca8d72-fdb4-4b5a-92c6-cb573fd5e522",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_ptMax=13428",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_ptMax",
+							"value": "13428"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_2 Min & Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a63d5f5-01eb-4603-9598-71d083d8c06b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_ptMin=9508&poverty_ptMax=9508",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_ptMin",
+							"value": "9508"
+						},
+						{
+							"key": "poverty_ptMax",
+							"value": "9508"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_3 Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8d84df4-45bc-42d3-ac0e-4f294aab4e1e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_htMin=23684",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_htMin",
+							"value": "23684"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_3 Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d630c28d-cd86-494f-a9b7-22c0bb76ef8d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_htMax=26983",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_htMax",
+							"value": "26983"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Propiedad_3 Min & Max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4b912eaf-e603-427e-9986-f3e245c40294",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats?poverty_htMin=19966&poverty_htMax=19966",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					],
+					"query": [
+						{
+							"key": "poverty_htMin",
+							"value": "19966"
+						},
+						{
+							"key": "poverty_htMax",
+							"value": "19966"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a7a636bc-42f7-4e21-bdb0-4832364b0275",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2020,\r\n\"poverty_prp\": 8474,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Country & Year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "31e4f6d5-d24d-4079-bab8-d260bf6b377d",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2020,\r\n\"poverty_prp\": 8474,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france/2010",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france",
+						"2010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - CONFLICT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c92b43e0-dd1b-4a8a-9807-422daf6c7b11",
+						"exec": [
+							"pm.test(\"Status code is 409 \", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8474,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - BAD REQUEST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "747fd7f5-4406-48e7-a95a-c294682e7ad0",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\r\n\"poverty_prp\": 10178,\r\n\"poverty_pt\": 8011,\r\n\"poverty_ht\": 16823\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - METHOD NOT ALLOWED_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b2dabdde-8250-42a5-8e1b-495226724631",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8000,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - METHOD NOT ALLOWED_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0445105-90a9-428d-bc28-24c78c16315b",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8000,\r\n\"poverty_pt\": 12849,\r\n\"poverty_ht\": 26983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - CONFLICT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "deea7a6c-8dce-4d68-9c48-1be939094cf3",
+						"exec": [
+							"pm.test(\"Status code is 409 \", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"francia\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8000,\r\n\"poverty_pt\": 12000,\r\n\"poverty_ht\": 26000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Country & Year CONCRETO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f93b1886-59d5-4520-928a-32fe77770431",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"france\",\r\n\"year\": 2019,\r\n\"poverty_prp\": 8000,\r\n\"poverty_pt\": 12000,\r\n\"poverty_ht\": 26000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country & Year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a564f6a-d648-4ef4-a9ac-d4359d4f7464",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"It return a country\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"country\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/france/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"france",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Country & Year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2423158e-a555-425b-8579-682f254dbe15",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/italy/2010",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"italy",
+						"2010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country & Year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18070fe8-f089-4d7e-8d35-54ac47650bee",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/italy/2010",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"italy",
+						"2010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "609510a7-852d-403b-8e83-d19e0f65fea7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "76f5def5-578b-49ac-8991-49505ec8277e",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - General",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45d15a3b-3735-4b9c-9c5a-2afce6eb79ad",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET General (Todos los recursos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1483347-bed8-41da-8381-a0844011e7c3",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fa55b84-5dc7-42de-95ee-a842e0356516",
+						"exec": [
+							"pm.test(\"Status code is 200 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET General (Todos los recursos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39ba9f4a-c346-40f1-a4d8-bbf1df11870a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/poverty-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"poverty-stats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

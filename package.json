@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "node index"
+    "start": "node index",
+    "test": "npx newman run tests/test_poverty-stats.json"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
