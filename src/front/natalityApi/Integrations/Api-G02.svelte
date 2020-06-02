@@ -1,76 +1,61 @@
 <script>
 	import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
-
 	async function loadGraph(){
 
-        let MyData = [];
-	    let API_G02 = [];
+	let MyData = [];
+	let API_02 = [];
 		
-		const resData = await fetch("/api/v2/natality-stats");
-		MyData = await resData.json();
-		
-        const resDataI = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
-		if (resDataI.ok) {
-            console.log("Ok, api 02 loaded");
-			const json = await resDataI.json();
-           
-         API_G02 = json;
-            console.log(API_G02)
-        } else {
+	const resData = await fetch("/api/v2/natality-stats");
+	MyData = await resData.json();
+    
+    const resData2 = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
+		if (resData2.ok) {
+			console.log("Ok, api 02 loaded");
+			const json = await resData2.json();
+            API_02 = json;
+			console.log(API_02)
+		} else {
 			console.log("ERROR!");
         }
-
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2015 && (x.country=="spain"||x.country=="germany")){	
+        	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
-					name: x.country,
-					data: [0,0,parseInt(x.natality_men),parseInt(x.natality_women)]
+					name: x.country +" " +x.year,
+					data: [0,0,parseInt(x.natality_men), parseInt(x.natality_women)]
 				}
 				valores.push(aux)
 			}
         });
-		API_G02.forEach((x) => {
-            if(x.year==2015 && (x.province=="sevilla"||x.province=="malaga")){	
+		API_02.forEach((x) => {
+            if(x.year==2016 && (x.province=="almeria"||x.province=="cadiz")){	
 				aux={
-					name: x.province,
-					data: [parseInt(x.traveller),parteInt(x.overnightstay),0,0]
+					name: x.province +" " +x.year,
+					data: [parseInt(x.traveller),parseInt(x.overnightstay),0,0]
 				}
 				valores.push(aux)
-			}  	
+			}  
 		
 
-        });
-
-        Highcharts.chart('container', {
+		});
+		
+		Highcharts.chart('container', {
 			chart: {
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Energías Renovables'
+				text: 'Natalidad y Turismo Rural'
 			},
 			xAxis: {
-				categories: ["Porcentaje H", "Porcentaje SFs", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Viajeros", "Pernoctaciones", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
 				title: {
 					text: 'Numero'
-				},
-			},
-			legend: {
-				align: 'right',
-				x: -30,
-				verticalAlign: 'top',
-				y: 25,
-				floating: true,
-				backgroundColor:
-					Highcharts.defaultOptions.legend.backgroundColor || 'white',
-				borderColor: '#CCC',
-				borderWidth: 1,
-				shadow: false
+				}
 			},
 			tooltip: {
 				headerFormat: '<b>{point.x}</b><br/>',
@@ -84,10 +69,11 @@
 					}
 				}
 			},
-			series: parsed_data
+			series: valores
 		});
 	};
 </script>
+
 
 <svelte:head>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
@@ -95,6 +81,14 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 </svelte:head>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        En esta gráfica podemos ver la integracion con la API del G02.
+	</p>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
+</figure>
+
 <style>
 	#container {
     height: 400px; 

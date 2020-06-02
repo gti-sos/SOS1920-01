@@ -121,7 +121,7 @@ var initialNatality_stats = [
 const request = require('request'); 
 const express = require ("express"); 
 
-var api06= 'https://sos1920-06.herokuapp.com'; 
+var api06= 'https://sos1920-09.herokuapp.com'; 
 var path06 = '/api/v2/accstats'; 
 
 app.use(path06, function(req, res) { 

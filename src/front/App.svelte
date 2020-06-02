@@ -14,8 +14,10 @@
 // INTEGRACIONES 
     import HomeIntegrations from './natalityApi/Integrations/HomeIntegrations.svelte';
     import API_G02 from './natalityApi/Integrations/Api-G02.svelte';
-    import API_G09 from './natalityApi/Integrations/Api-G09.svelte';
     import API_G06 from './natalityApi/Integrations/Api-G06.svelte';
+    import API_G08 from './natalityApi/Integrations/Api-G08.svelte';
+    import API_G09 from './natalityApi/Integrations/Api-G09.svelte';
+    
 
     
 // API ANGELA
@@ -62,9 +64,11 @@
         "/natality-stats/graphV2": GraphNatalityV2,
     // INTEGRACIONES JUANFRAN    
         "/natality-stats/integrations": HomeIntegrations,
-        "/natality-stats/integrations/API-G02" : API_G02,
-        "/natality-stats/integrations/API-G09" : API_G09,
-        "/natality-stats/integrations/API-G06" : API_G06,
+        "/natality-stats/API-G02" : API_G02,
+        "/natality-stats/API-G06" : API_G06,
+        "/natality-stats/API-G08" : API_G08,
+        "/natality-stats/API-G09" : API_G09,
+      
         
     // ANGELA
 		"/poverty-stats": PovertyTable,

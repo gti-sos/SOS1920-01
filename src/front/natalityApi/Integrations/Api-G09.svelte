@@ -24,7 +24,7 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="italy")){	
 				aux={
 					name: x.country,
-					data: [0,0,parseInt(x.natality_men),parseInt(x.natality_women)]
+					data: [0,0,parseInt(x.natality_men)/1000,parseInt(x.natality_women)/1000]
 				}
 				valores.push(aux)
 			}
@@ -33,7 +33,7 @@
             if(x.year==2016 && (x.country=="Italy"||x.country=="Spain")){	
 				aux={
 					name: x.country,
-					data: [x.percentage-hydropower-total*100,x.percentage-wind-power-total*100,0,0]
+					data: [x["percentage-hydropower-total"],x["percentage-wind-power-total"],0,0]
 				}
 				valores.push(aux)
 			}  	
@@ -41,7 +41,7 @@
 
         });
 
-        Highcharts.chart('container', {
+		Highcharts.chart('container', {
 			chart: {
 				type: 'column'
 			},
@@ -49,35 +49,13 @@
 				text: 'Natalidad y Energías Renovables'
 			},
 			xAxis: {
-				categories: ["Porcentaje H", "Porcentaje SFs", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["% Hidroeléctrica", "% Eólica", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
 				title: {
 					text: 'Numero'
-				},
-				stackLabels: {
-					enabled: true,
-					style: {
-						fontWeight: 'bold',
-						color: ( // theme
-							Highcharts.defaultOptions.title.style &&
-							Highcharts.defaultOptions.title.style.color
-						) || 'gray'
-					}
 				}
-			},
-			legend: {
-				align: 'right',
-				x: -30,
-				verticalAlign: 'top',
-				y: 25,
-				floating: true,
-				backgroundColor:
-					Highcharts.defaultOptions.legend.backgroundColor || 'white',
-				borderColor: '#CCC',
-				borderWidth: 1,
-				shadow: false
 			},
 			tooltip: {
 				headerFormat: '<b>{point.x}</b><br/>',
@@ -91,10 +69,11 @@
 					}
 				}
 			},
-			series: parsed_data
+			series: valores
 		});
 	};
 </script>
+
 
 <svelte:head>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
@@ -102,6 +81,15 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 </svelte:head>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        En esta gráfica podemos ver la integracion con la API del G09.
+	</p>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
+</figure>
+
 <style>
 	#container {
     height: 400px; 
@@ -138,5 +126,6 @@
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+
 
 </style>

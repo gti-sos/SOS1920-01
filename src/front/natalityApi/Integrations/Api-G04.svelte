@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://sos1920-06.herokuapp.com/api/v2/accstats");
+    const resData2 = await fetch("https://sos1920-04.herokuapp.com/api/v1/vehicles");
 		if (resData2.ok) {
 			console.log("Ok, api 02 loaded");
 			const json = await resData2.json();

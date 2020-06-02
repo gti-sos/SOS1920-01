@@ -4,17 +4,17 @@
 	async function loadGraph(){
 
 	let MyData = [];
-	let API_02 = [];
+	let API_08 = [];
 		
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://sos1920-06.herokuapp.com/api/v2/accstats");
+    const resData2 = await fetch("http://sos1920-08.herokuapp.com/api/v2/ucl_stats");
 		if (resData2.ok) {
-			console.log("Ok, api 02 loaded");
+			console.log("Ok, api 08 loaded");
 			const json = await resData2.json();
-            API_02 = json;
-			console.log(API_02)
+            API_08 = json;
+			console.log(API_08)
 		} else {
 			console.log("ERROR!");
         }
@@ -29,11 +29,11 @@
 				valores.push(aux)
 			}
         });
-		API_02.forEach((x) => {
-            if(x.year==2016 && (x.province=="almeria"||x.province=="cadiz")){	
+		API_08.forEach((x) => {
+            if((x.country=="Spain")){	
 				aux={
-					name: x.province +" " +x.year,
-					data: [parseInt(x.traveller),parseInt(x.overnightstay),0,0]
+					name: x.country +" " +x.team,
+					data: [parseInt(x.title),parseInt(x.victory),0,0]
 				}
 				valores.push(aux)
 			}  
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Turismo Rural'
+				text: 'Natalidad y UCL'
 			},
 			xAxis: {
-				categories: ["Viajeros", "Pernoctaciones", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Titulos", "Victorias", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
@@ -84,7 +84,7 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En esta gráfica podemos ver la integracion con la API del G02.
+        En esta gráfica podemos ver la integracion con la API del G08.
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>
