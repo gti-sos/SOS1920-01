@@ -1,0 +1,1301 @@
+{
+	"info": {
+		"_postman_id": "2a4e621c-4905-4d25-95bc-4e90e709be13",
+		"name": "SOS1920-02-rural-tourism-stats Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef64f9ed-baa0-4529-bd63-8ee6ba032215",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /rural-tourism-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1837f907-ed06-494c-a7c0-9fb6f3f1ceb8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 stat\", function () {",
+							"    var jsonData = pm.response.json()",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /rural-tourism-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f83a6758-00b2-4940-b51a-de1d6cbc8df3",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"province\": \"madrid\",\r\n        \"year\": 2015,\r\n        \"traveller\": 100,\r\n        \"overnightstay\": 200,\r\n        \"averagestay\": 2.7\r\n    }",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET .../madrid/2015",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "011a0904-6e2d-4885-8e3e-eec1c3ec4de2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There is 1 stat\", function () {",
+							"    var jsonData = pm.response.json()",
+							"    pm.expect(jsonData).to.have.property('province')",
+							"});",
+							"pm.test(\"Payload must be valid and have a body\", function () { ",
+							"    pm.response.to.be.withBody; // body tiene que exitir",
+							"    pm.response.to.be.json; // además que sea un JSON válido",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/madrid/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"madrid",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE .../madrid/2015",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f7407b3f-98d2-4483-add1-6ae75d991750",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/madrid/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"madrid",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT .../cadiz/2015",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "76df23a7-a761-4ce2-b048-0a6ef54d6d20",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"cadiz\",\r\n    \"year\": 2015,\r\n    \"traveller\": 1,\r\n    \"overnightstay\": 2,\r\n    \"averagestay\": 3\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/cadiz/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"cadiz",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST error 405 (post a un recurso concreto 1 param)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eeb503dd-13d9-4b98-92dd-601d97159b99",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"madrid\",\r\n    \"year\": 2015,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652,\r\n    \"averagestay\": 2.7\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/madrid/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"madrid",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST error 405 (post a un recurso concreto 2 param)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83b521ce-31c0-475d-8e76-033dbf766037",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"madrid\",\r\n    \"year\": 2015,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652,\r\n    \"averagestay\": 2.7\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/madrid/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"madrid",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT error 405 (put al conjunto)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a56ab1cf-890a-4431-9483-9f4c4c96ac86",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"cadiz\",\r\n    \"year\": 2015,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652,\r\n    \"averagestay\": 2.7\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET error 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14afe64e-2caf-40ef-8201-d8879de09a36",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/francia/2001",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"francia",
+						"2001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE error 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6606091b-3ce4-44c5-adb7-bdcd8fb2d8a5",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/francia/2001",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"francia",
+						"2001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT error 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8fef9085-eb36-4000-a9ea-6e309f3bfeb1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"francia\",\r\n    \"year\": 2001,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652,\r\n    \"averagestay\": 2.7\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/francia/2001",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"francia",
+						"2001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT error 409 (cambiar provincia)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3daa4d7-d142-469e-a4db-5c009b2de635",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"francia\",\r\n    \"year\": 2015,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652,\r\n    \"averagestay\": 2.7\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/cadiz/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"cadiz",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT error 400 (falta un campo)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c4c8970-a338-4cd4-b0dd-da7ccdc53291",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province\": \"cadiz\",\r\n    \"year\": 2015,\r\n    \"traveller\": 200,\r\n    \"overnightstay\": 77652\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/cadiz/2015",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"cadiz",
+						"2015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST error 409 (recurso ya existente)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4245bc22-a50f-40d1-86ef-b4cc381f12c7",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"province\": \"sevilla\",\r\n\"year\": 2015,\r\n\"traveller\": 22454,\r\n\"overnightstay\": 55880,\r\n\"averagestay\": 2.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST error 400 (falta un campo)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f53387c-6322-40e6-a6d2-9348ddb745a4",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"province\": \"Murcia\",\r\n\"year\": 2015,\r\n\"traveller\": 22454,\r\n\"overnightstay\": 55880\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginación (3 primeros)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aba3c316-b52e-40e2-b287-bb20b921b73b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?limit=3&offset=0",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginación (2 intermedios)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c40a8c41-744f-4cda-a42a-dfcd9861cfc6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?limit=2&offset=3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginación (3 últimos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1cece75-14c1-461f-906c-3f5d3b9016a0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?limit=3&offset=5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET busqueda (province)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed22d545-41da-4c2d-8f1a-736a64417bd5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?province=almeria",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "province",
+							"value": "almeria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET busqueda (year y traveller)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f50c85d0-fe57-498a-9968-e61654fee34b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?year=2015&traveller=22365",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2015"
+						},
+						{
+							"key": "traveller",
+							"value": "22365"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET busqueda (overnightstay)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc3f0e91-fbb1-412d-8581-f0ac977fa2bd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?overnightstay=63311",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "overnightstay",
+							"value": "63311"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET busqueda (averagestay)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70e0a299-4134-4762-a545-c7447375e032",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats?averagestay=2.5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					],
+					"query": [
+						{
+							"key": "averagestay",
+							"value": "2.5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2af9cb33-c6c9-4109-b5e1-2895c8089b65",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc0e82ad-4a34-4b82-b456-142066cdb5d2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/rural-tourism-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rural-tourism-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
