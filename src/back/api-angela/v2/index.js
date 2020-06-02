@@ -68,7 +68,7 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 	pdb.insert(poverty_stats);
 	
 	
-	res.sendStatus(200);
+	res.sendStatus(200);//
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
 
