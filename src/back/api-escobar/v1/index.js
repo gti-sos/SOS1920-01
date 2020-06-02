@@ -1,5 +1,5 @@
 module.exports = function(app,BASE_PATH){
-
+const request = require("request");
 const path = require("path");
 const dataStore = require("nedb");
 	
@@ -10,7 +10,7 @@ const edb = new dataStore({
         filename: emigrantsdb,
         autoload: true
     });
-	
+
 ////////////////////////////
 ///////////DATOS////////////
 ////////////////////////////
@@ -36,6 +36,18 @@ var emigrants_stats = [
 	{country:"france",year:2010,em_man:943996,em_woman:1013973,em_totals:1957969}
 	
 ];
+
+//////////// PROXY///////////////
+
+var eproxy = "/api/v2/fires-stats";
+var urlEProxy = "http://sos1920-23.herokuapp.com/"
+
+app.use(eproxy, function(req, res){
+	var url = urlEProxy + req.baseUrl + req.url;
+	console.log("piped: " + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res)
+})	
+
 
 /////////////////////////////////
 /////////LoadInitialData/////////
