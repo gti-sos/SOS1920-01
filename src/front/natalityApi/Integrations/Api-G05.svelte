@@ -3,18 +3,18 @@
     import Button from "sveltestrap/src/Button.svelte";
 
 	let MyData = [];
-	let API_09 = [];
+	let API_05 = [];
 	
 	async function loadGraph(){
 		
 		const resData = await fetch("/api/v2/natality-stats");
 		MyData = await resData.json();
-		const resData2 = await fetch("https://sos1920-09.herokuapp.com/api/v2/renewable-sources-stats");
+		const resData2 = await fetch("https://sos1920-05.herokuapp.com/api/v1/health_public");
 		if (resData2.ok) {
-			console.log("Ok, api 09 loaded");
+			console.log("Ok, api 05 loaded");
 			const json = await resData2.json();
-            API_09 = json;
-			console.log(API_09)
+            API_05 = json;
+			console.log(API_05)
 		} else {
 			console.log("ERROR!");
         }
@@ -25,15 +25,15 @@
 				aux={
 					name: x.country,
 					data: [0,0,parseInt(x.natality_men)/1000,parseInt(x.natality_women)/1000]
-				}
+				}//Dividemos el valor de los datos para que salga una mejor representación.
 				valores.push(aux)
 			}
         });
-		API_09.forEach((x) => {
-            if(x.year==2016 && (x.country=="Italy"||x.country=="Spain")){	
+		API_05.forEach((x) => {
+            if(x.year==2016 && (x.country=="italy"||x.country=="uk")){	
 				aux={
 					name: x.country,
-					data: [x["percentage-hydropower-total"],x["percentage-wind-power-total"],0,0]
+					data: [x["public_spending"],x["public_spending_pib"],0,0]
 				}//Datos pequeños y no se pueden mostrar todos a la vez
 				valores.push(aux)
 			}  	
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Energías Renovables'
+				text: 'Natalidad y Salud Pública'
 			},
 			xAxis: {
-				categories: ["% Hidroeléctrica", "% Eólica", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Gasto público", "Gasto públoco pib", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
@@ -85,9 +85,9 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-		En esta gráfica podemos ver la integracion con la API del G09.
-		<br>
-		<i>NOTA: Los valores de "Natalidad Hombres" y "Natalidad Mujeres" están dividos entre 1000 para una representación visual.</i>
+        En esta gráfica podemos ver la integracion con la API del G05.
+        <br>
+        <i>NOTA: Los valores de "Natalidad Hombres" y "Natalidad Mujeres" están dividos entre 1000 para una representación más visual.</i>
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>

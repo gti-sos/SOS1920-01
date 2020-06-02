@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("http://sos1920-08.herokuapp.com/api/v2/ucl_stats");
+    const resData2 = await fetch("https://sos1920-08.herokuapp.com/api/v2/ucl_stats");
 		if (resData2.ok) {
 			console.log("Ok, api 08 loaded");
 			const json = await resData2.json();
@@ -24,7 +24,7 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country +" " +x.year,
-					data: [0,0,parseInt(x.natality_men), parseInt(x.natality_women)]
+					data: [0,0,parseInt(x.natality_men)/1000, parseInt(x.natality_women)/1000]
 				}
 				valores.push(aux)
 			}
@@ -32,8 +32,8 @@
 		API_08.forEach((x) => {
             if((x.country=="Spain")){	
 				aux={
-					name: x.country +" " +x.team,
-					data: [parseInt(x.title),parseInt(x.victory),0,0]
+					name: x.country +" " +x.team + " " + x.year,
+					data: [parseInt(x.title),parseInt(x.victory),0,0] //Datos pequeños pinchar en el equipo correspondiente
 				}
 				valores.push(aux)
 			}  
@@ -84,7 +84,9 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En esta gráfica podemos ver la integracion con la API del G08.
+		En esta gráfica podemos ver la integracion con la API del G08.
+		<br>
+		<i>NOTA: Los valores de "Natalidad Hombres" y "Natalidad Mujeres" están dividos entre 1000 para una representación visual.</i>
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>

@@ -4,17 +4,17 @@
 	async function loadGraph(){
 
 	let MyData = [];
-	let API_02 = [];
+	let API_06 = [];
 		
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
     const resData2 = await fetch("https://sos1920-06.herokuapp.com/api/v2/accstats");
 		if (resData2.ok) {
-			console.log("Ok, api 02 loaded");
+			console.log("Ok, api 06 loaded");
 			const json = await resData2.json();
-            API_02 = json;
-			console.log(API_02)
+            API_06 = json;
+			console.log(API_06)
 		} else {
 			console.log("ERROR!");
         }
@@ -24,16 +24,16 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country +" " +x.year,
-					data: [0,0,parseInt(x.natality_men), parseInt(x.natality_women)]
+					data: [0,0,parseInt(x.natality_men)/100, parseInt(x.natality_women)/100]
 				}
 				valores.push(aux)
 			}
         });
-		API_02.forEach((x) => {
-            if(x.year==2016 && (x.province=="almeria"||x.province=="cadiz")){	
+		API_06.forEach((x) => {
+            if(x.year==2017 && (x.province=="Pontevedra"||x.province=="Segovia")){	
 				aux={
 					name: x.province +" " +x.year,
-					data: [parseInt(x.traveller),parseInt(x.overnightstay),0,0]
+					data: [parseInt(x.accvictotal),parseInt(x.accfall),0,0] //Datos muy pequeños, si pinchamos en la provincia que queremos nos salen dichos datos.
 				}
 				valores.push(aux)
 			}  
@@ -49,7 +49,7 @@
 				text: 'Natalidad y Turismo Rural'
 			},
 			xAxis: {
-				categories: ["Viajeros", "Pernoctaciones", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Accidentes Totales", "Accidentes Fallecidos", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
@@ -84,7 +84,9 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En esta gráfica podemos ver la integracion con la API del G02.
+		En esta gráfica podemos ver la integracion con la API del G06.
+		<br>
+		<i>NOTA: Los valores de "Natalidad Hombres" y "Natalidad Mujeres" están dividos entre 100 para una representación más visual.</i>
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>
