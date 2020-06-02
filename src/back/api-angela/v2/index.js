@@ -74,7 +74,8 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
 ///GET
-app.get(BASE_URL + "/poverty-stats", (req,res)=>{
+/// GET COUNTRY
+app.get(BASE_PATH + "/poverty-stats", (req,res)=>{
 	var dbquery = {};
 	let offset = 0;
 	let limit = Number.MAX_SAFE_INTEGER;
