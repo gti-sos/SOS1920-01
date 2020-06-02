@@ -4,49 +4,49 @@
 	async function loadGraph(){
 
 	    let MisDatos = [];
-	    let G23 = [];
+	    let G09 = [];
     
 	    const EmigrantDatos = await fetch("/api/v1/emigrants-stats");
 	    MisDatos = await EmigrantDatos.json();
 
-        const DatosExternos = await fetch("/api/v2/fires-stats");
+        const DatosExternos = await fetch("https://sos1920-09.herokuapp.com/api/v3/plugin-vehicles-stats");
 		if (DatosExternos.ok) {
-			console.log("G23 cargado");
+			console.log("G09 cargado");
 			const json = await DatosExternos.json();
-            G23 = json;
-			console.log(G23)
+            G09 = json;
+			console.log(G09)
 		} else {
 			console.log("ERROR!");
         }
 		let aux = []
-		let valores = []
-		MisDatos.forEach((x) => {
+        let valores = []
+        
+        MisDatos.forEach((x) => {
         	if(x.year==2010 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country,
-					data: [0,0,parseInt(x.em_man)/1000, parseInt(x.em_woman)/1000]
+					data: [0,0,parseInt(x.em_man)/100, parseInt(x.em_woman)/100]
 				}
 				valores.push(aux)
 			}
         });
-		G23.forEach((x) => {
-            if(x.year==2008 && (x.community=="aragon"||x.community=="canarias")){	
+		G09.forEach((x) => {
+            if((x.country=="Netherlands"||x.country=="Canada")){	
 				aux={
-					name: x.community,
-					data: [x["total_fire"],x["forest_area"],0,0]
+					name: x.country,
+					data: [x["pev-stock"],x["annual-sale"],0,0]
 				}
 				valores.push(aux)
 			}  	
 		
 
         });
-
     Highcharts.chart('container', {
         chart: {
             type: 'areaspline'
         },
         title: {
-            text: 'G01 - G23'
+            text: 'G01 - G09'
         },
         legend: {
             layout: 'vertical',
@@ -61,8 +61,8 @@
         },
         xAxis: {
             categories: [
-                'total_fire',
-                'forest_area',
+                'pev-stock',
+                'annual-sale:',
                 'em_man',
                 'em_woman'
             ],
@@ -105,7 +105,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Relación entre emigrantes(/1000 para observar mejor los datos en la gráfica) y incendios
+            Relación entre emigrantes(/100 para observar mejor los datos en la gráfica) y estadísticas de vehículos
         </p>
     </figure>
 </main>
