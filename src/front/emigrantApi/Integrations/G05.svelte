@@ -31,7 +31,7 @@
 			}
         });
 		G05.forEach((x) => {
-            if((x.country=="uruguay"||x.country=="paraguay")){	
+            if((x.country=="france"||x.country=="portugal")){	
 				aux={
 					name: x.country,
 					data: [parseInt(x.exp_book),parseInt(x.exp_editorial),0,0]

@@ -40,7 +40,7 @@ var emigrants_stats = [
 //////////// PROXY///////////////
 
 var eproxy = "/api/v2/fires-stats";
-var urlEProxy = "https://sos1920-23.herokuapp.com/"
+var urlEProxy = "https://sos1920-23.herokuapp.com"
 
 app.use(eproxy, function(req, res){
 	var url = urlEProxy + req.baseUrl + req.url;

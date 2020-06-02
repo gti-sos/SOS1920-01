@@ -124,7 +124,7 @@ const express = require ("express");
 var api28 = 'https://sos1920-28.herokuapp.com'; 
 var path28 = '/api/v1/gce'; 
 
-app.use(path05, function(req, res) { 
+app.use(path28, function(req, res) { 
 	var url = api28 + req.baseUrl + req.url; 
 	console.log('piped: ' + req.baseUrl + req.url); 
 	req.pipe(request(url)).pipe(res); 

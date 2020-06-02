@@ -105,7 +105,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Relación entre emigrantes(/1000 para observar mejor los datos en la gráfica) y incendios
+            Relación(con proxy) entre emigrantes(/1000 para observar mejor los datos en la gráfica) y incendios
         </p>
     </figure>
 </main>
