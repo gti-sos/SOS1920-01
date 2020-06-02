@@ -39,7 +39,17 @@
 // API ESCOBAR
     import EmigrantTable from './emigrantApi/EmigrantTable.svelte';
     import EditEmigrant from './emigrantApi/EditEmigrant.svelte';
-
+    //import G05 from './emigrantApi/Integrations/G05.svelte';
+    //import G06 from './emigrantApi/Integrations/G06.svelte';
+    //import G07 from './emigrantApi/Integrations/G07.svelte';
+    //import G08 from './emigrantApi/Integrations/G08.svelte';
+    //import G09 from './emigrantApi/Integrations/G09.svelte';
+    //import G12 from './emigrantApi/Integrations/G12.svelte';
+    //import G22 from './emigrantApi/Integrations/G22.svelte';
+    import G23 from './emigrantApi/Integrations/G23.svelte';
+    //import G26 from './emigrantApi/Integrations/G26.svelte';
+    //import G30 from './emigrantApi/Integrations/G30.svelte';
+    
 
     const routes = {
         "/": Home,
@@ -76,7 +86,17 @@
         "/poverty-stats/ex-02":APIex2,
 	// ESCOBAR	
         "/emigrants-stats": EmigrantTable,
-		"/emigrants-stats/:country/:year": EditEmigrant,
+        "/emigrants-stats/:country/:year": EditEmigrant,
+        //"/emigrants-stats/G05:":G05,
+        //"/emigrants-stats/G06:":G06,
+        //"/emigrants-stats/G07:":G07,
+        //"/emigrants-stats/G08:":G08,
+        //"/emigrants-stats/G09:":G09,
+        //"/emigrants-stats/G12:":G12,
+        //"/emigrants-stats/G22:":G22,
+        "/emigrants-stats/G23:":G23,
+        //"/emigrants-stats/G26:":G26,
+        //"/emigrants-stats/G30:":G30,
     
 
 		"*": NotFound

@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/poverty-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("http://sos1920-22.herokuapp.com/api/v1/swim-stats");
+    const resData2 = await fetch("/api/v1/swim-stats");
 		if (resData2.ok) {
 			console.log("Ok, api 22 loaded");
 			const json = await resData2.json();
@@ -21,32 +21,24 @@
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2017 && (x.country=="france"||x.country=="italy")){	
+            API_22.forEach((y) => {
+        	if(x.year==2010 && ((x.country=="france" && y.country=="france")||(x.country=="italy" && y.country=="italy")||(x.country=="unitedKingdom" && y.country=="united kingdom"))){	
 				aux={
-					name: x.country + x.year,
-					data: [0,0,parseInt(x.poverty_pt), parseInt(x.poverty_ht)]
+					name: y.country,
+					data: [parseInt(y.yearofbirth),parseInt(y.position),parseInt(x.poverty_pt),parseInt(x.poverty_ht)]
 				}
 				valores.push(aux)
-			}
+            }
         });
-		API_22.forEach((x) => {
-            if(x.year==2009 && (x.country=="france"||x.country=="italy")){	
-				aux={
-					name: x.country + x.year,
-					data: [parseInt(x.yearofbirth),parseInt(x.position),0,0]
-				}
-				valores.push(aux)
-			}  	
+        });
 		
-
-        });
 
 		Highcharts.chart('container', {
 			chart: {
 				type: 'bar'
 			},
 			title: {
-				text: 'Natación y riesgo de pobreza en Italia y Francia'
+				text: 'Natación y riesgo de pobreza en Italia, Francia y Reino Unido'
 			},
 			xAxis: {
 				categories: ['Años Nacimiento', 'Posición', 'Umbral de persona', 'Umbral de hogar'],
@@ -86,7 +78,7 @@
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
-			Natación y riesgo de pobreza en Italia y Francia.
+			Natación y riesgo de pobreza en Italia, Francia y Reino Unido.
 		</p>
 	</figure>
 
