@@ -95,7 +95,7 @@ app.get(BASE_PATH + "/poverty-stats", (req,res)=>{
 	if(req.query.overnightstay) dbquery["poverty_pt"] = parseFloat(req.query.poverty_pt);
 	if(req.query.averagestay) dbquery["poverty_ht"] = parseFloat(req.query.poverty_ht);	
 	
-	db.find(dbquery).sort({country:1,year:-1}).skip(offset).limit(limit).exec((error, poverty) =>{
+	pdb.find(dbquery).sort({country:1,year:-1}).skip(offset).limit(limit).exec((error, poverty) =>{
 
 		poverty.forEach((t)=>{
 			delete t._id
