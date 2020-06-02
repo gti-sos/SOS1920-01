@@ -12397,24 +12397,24 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Esperanza de vida y Riesgo de pobreza.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$k, 69, 2, 1664);
+    			add_location(script0, file$k, 69, 2, 1665);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$k, 70, 2, 1733);
+    			add_location(script1, file$k, 70, 2, 1734);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$k, 71, 2, 1809);
+    			add_location(script2, file$k, 71, 2, 1810);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$k, 72, 2, 1887);
+    			add_location(script3, file$k, 72, 2, 1888);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$k, 75, 1, 2013);
+    			add_location(h3, file$k, 75, 1, 2014);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
-    			add_location(div, file$k, 78, 2, 2206);
+    			add_location(div, file$k, 78, 2, 2207);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$k, 79, 2, 2236);
+    			add_location(p, file$k, 79, 2, 2237);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
-    			add_location(figure, file$k, 77, 1, 2168);
-    			add_location(main, file$k, 74, 0, 2004);
+    			add_location(figure, file$k, 77, 1, 2169);
+    			add_location(main, file$k, 74, 0, 2005);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12484,7 +12484,7 @@ var app = (function () {
     	let API_05 = [];
     	const resData = await fetch("/api/v2/poverty-stats");
     	MyData = await resData.json();
-    	const resData2 = await fetch("http://sos1920-05.herokuapp.com/api/v1/life_expectancies");
+    	const resData2 = await fetch("https://sos1920-05.herokuapp.com/api/v1/life_expectancies");
 
     	if (resData2.ok) {
     		console.log("Ok, api 05 loaded");
@@ -13653,24 +13653,24 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Datos de Suicidios y Riesgo de pobreza.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$p, 77, 2, 1677);
+    			add_location(script0, file$p, 77, 2, 1678);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$p, 78, 2, 1746);
+    			add_location(script1, file$p, 78, 2, 1747);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$p, 79, 2, 1822);
+    			add_location(script2, file$p, 79, 2, 1823);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$p, 80, 2, 1900);
+    			add_location(script3, file$p, 80, 2, 1901);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$p, 83, 1, 2026);
+    			add_location(h3, file$p, 83, 1, 2027);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
-    			add_location(div, file$p, 86, 2, 2227);
+    			add_location(div, file$p, 86, 2, 2228);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$p, 87, 2, 2257);
+    			add_location(p, file$p, 87, 2, 2258);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
-    			add_location(figure, file$p, 85, 1, 2189);
-    			add_location(main, file$p, 82, 0, 2017);
+    			add_location(figure, file$p, 85, 1, 2190);
+    			add_location(main, file$p, 82, 0, 2018);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13740,7 +13740,7 @@ var app = (function () {
     	let API_10 = [];
     	const resData = await fetch("/api/v2/poverty-stats");
     	MyData = await resData.json();
-    	const resData2 = await fetch("http://sos1920-10.herokuapp.com/api/v2/global-suicides");
+    	const resData2 = await fetch("https://sos1920-10.herokuapp.com/api/v2/global-suicides");
 
     	if (resData2.ok) {
     		console.log("Ok, api 10 loaded");
