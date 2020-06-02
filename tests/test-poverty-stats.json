@@ -244,10 +244,7 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"There are more than 1 country\", function() {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -1472,8 +1469,8 @@
 					"script": {
 						"id": "a1483347-bed8-41da-8381-a0844011e7c3",
 						"exec": [
-							"pm.test(\"Status code is 404\", function() {",
-							"    pm.response.to.have.status(404);",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
 							"});"
 						],
 						"type": "text/javascript"
