@@ -146,6 +146,11 @@
 							"pm.test(\"It return a country\", function() {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});",
+							"",
+							"pm.test(\"Payload must be valid and have a body\", function () { ",
+							"    pm.response.to.be.withBody; ",
+							"    pm.response.to.be.json; ",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1244,6 +1249,11 @@
 							"pm.test(\"It return a country\", function() {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData).to.have.property(\"country\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Payload must be valid and have a body\", function () { \r",
+							"    pm.response.to.be.withBody; \r",
+							"    pm.response.to.be.json; \r",
 							"});"
 						],
 						"type": "text/javascript"
