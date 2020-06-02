@@ -13,9 +13,18 @@
 // INTEGRACIONES 
     import HomeIntegrations from './natalityApi/Integrations/HomeIntegrations.svelte';
     import API_G02 from './natalityApi/Integrations/Api-G02.svelte';
+    import API_G04 from './natalityApi/Integrations/Api-G04.svelte';
+    import API_G05 from './natalityApi/Integrations/Api-G05.svelte';
     import API_G06 from './natalityApi/Integrations/Api-G06.svelte';
     import API_G08 from './natalityApi/Integrations/Api-G08.svelte';
     import API_G09 from './natalityApi/Integrations/Api-G09.svelte';
+    import API_G11 from './natalityApi/Integrations/Api-G11.svelte';
+    import API_G21 from './natalityApi/Integrations/Api-G21.svelte';
+    import API_G23 from './natalityApi/Integrations/Api-G23.svelte';
+    import API_G28 from './natalityApi/Integrations/Api-G28.svelte';
+    //import API_Ext1 from './natalityApi/Integrations/Api-Ext1.svelte';
+   // import API_Ext2 from './natalityApi/Integrations/Api-Ext2.svelte';
+
     
 
     
@@ -63,9 +72,18 @@
     // INTEGRACIONES JUANFRAN    
         "/natality-stats/integrations": HomeIntegrations,
         "/natality-stats/API-G02" : API_G02,
+        "/natality-stats/API-G04" : API_G04,
+        "/natality-stats/API-G05" : API_G05,
         "/natality-stats/API-G06" : API_G06,
         "/natality-stats/API-G08" : API_G08,
         "/natality-stats/API-G09" : API_G09,
+        "/natality-stats/API-G11" : API_G11,
+        "/natality-stats/API-G21" : API_G21,
+        "/natality-stats/API-G23" : API_G23,
+        "/natality-stats/API-G28" : API_G28,
+        //"/natality-stats/API-Ext1" : API_Ext1,
+       // "/natality-stats/API-Ext2" : API_Ext2,
+
       
         
     // ANGELA

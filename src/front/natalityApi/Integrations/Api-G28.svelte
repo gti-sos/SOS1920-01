@@ -1,55 +1,55 @@
 <script>
 	import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
+	async function loadGraph(){
 
 	let MyData = [];
-	let API_09 = [];
-	
-	async function loadGraph(){
+	let API_28 = [];
 		
-		const resData = await fetch("/api/v2/natality-stats");
-		MyData = await resData.json();
-		const resData2 = await fetch("https://sos1920-09.herokuapp.com/api/v2/renewable-sources-stats");
+	const resData = await fetch("/api/v2/natality-stats");
+	MyData = await resData.json();
+    
+    const resData2 = await fetch("https://sos1920-28.herokuapp.com/api/v1/gce");
 		if (resData2.ok) {
-			console.log("Ok, api 09 loaded");
+			console.log("Ok, api 28 loaded");
 			const json = await resData2.json();
-            API_09 = json;
-			console.log(API_09)
+            API_28 = json;
+			console.log(API_28)
 		} else {
 			console.log("ERROR!");
         }
 		let aux = []
 		let valores = []
 		MyData.forEach((x) => {
-        	if(x.year==2017 && (x.country=="spain"||x.country=="italy")){	
+        	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
-					name: x.country,
-					data: [0,0,parseInt(x.natality_men)/1000,parseInt(x.natality_women)/1000]
+					name: x.country +" " +x.year,
+					data: [0,0,parseInt(x.natality_men), parseInt(x.natality_women)]
 				}
 				valores.push(aux)
 			}
         });
-		API_09.forEach((x) => {
-            if(x.year==2016 && (x.country=="Italy"||x.country=="Spain")){	
+		API_28.forEach((x) => {
+            if(x.year==2014 && (x.country=="Spain" || x.country=="Germany")){	
 				aux={
-					name: x.country,
-					data: [x["percentage-hydropower-total"],x["percentage-wind-power-total"],0,0]
-				}//Datos pequeños y no se pueden mostrar todos a la vez
+					name: x.country +" " +x.year,
+					data: [parseInt(x.gce_country),parseInt(x.gce_cars),0,0]
+				}
 				valores.push(aux)
-			}  	
+			}  
 		
 
-        });
-
+		});
+		
 		Highcharts.chart('container', {
 			chart: {
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Energías Renovables'
+				text: 'Natalidad y GCE'
 			},
 			xAxis: {
-				categories: ["% Hidroeléctrica", "% Eólica", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Medias Países por producción", "Media de producción Coches", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
@@ -81,13 +81,10 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 </svelte:head>
-
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-		En esta gráfica podemos ver la integracion con la API del G09.
-		<br>
-		<i>NOTA: Los valores de "Natalidad Hombres" y "Natalidad Mujeres" están dividos entre 1000 para una representación visual.</i>
+        En esta gráfica podemos ver la integracion con la API del G28.
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>
@@ -128,6 +125,5 @@
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
-
 
 </style>
