@@ -13,8 +13,10 @@
     import GraphNatalityV2 from './natalityApi/GraphNatalityV2.svelte';
 // INTEGRACIONES 
     import HomeIntegrations from './natalityApi/Integrations/HomeIntegrations.svelte';
-    import Api_G09 from './natalityApi/Integrations/Api-G09.svelte';
-    import Api_G02 from './natalityApi/Integrations/Api-G02.svelte';
+    import API_G02 from './natalityApi/Integrations/Api-G02.svelte';
+    import API_G09 from './natalityApi/Integrations/Api-G09.svelte';
+    import API_G06 from './natalityApi/Integrations/Api-G06.svelte';
+
     
 // API ANGELA
     import PovertyTable from './povertyApi/PovertyTable.svelte';
@@ -41,20 +43,18 @@
 
     const routes = {
         "/": Home,
-<<<<<<< HEAD
-        "/integrations": Integrations,
-=======
         "/Analytics": Analytics,
->>>>>>> 5e246aed9fe02c7ec7a26b81fa55174687657bdd
+        
     // JUANFRAN
         "/natality-stats": NatalityTable,
 		"/natality-stats/:country/:year": EditNatality,
         "/natality-stats/graph": GraphNatality,
         "/natality-stats/graphV2": GraphNatalityV2,
     // INTEGRACIONES JUANFRAN    
-        "/integrations/natality-stats": HomeIntegrations,
-        "/integrations/natality-stats/Api-G02" : Api_G02,
-        "/integrations/natality-stats/Api-G09" : Api_G09,
+        "/natality-stats/integrations": HomeIntegrations,
+        "/natality-stats/integrations/API-G02" : API_G02,
+        "/natality-stats/integrations/API-G09" : API_G09,
+        "/natality-stats/integrations/API-G06" : API_G06,
         
     // ANGELA
 		"/poverty-stats": PovertyTable,

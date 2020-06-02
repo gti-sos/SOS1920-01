@@ -12,8 +12,13 @@
 		
         const resDataI = await fetch("https://sos1920-02.herokuapp.com/api/v2/rural-tourism-stats");
 		if (resDataI.ok) {
+            console.log("Ok, api 02 loaded");
 			const json = await resDataI.json();
-            API_G02 = json;
+           
+         API_G02 = json;
+            console.log(API_G02)
+        } else {
+			console.log("ERROR!");
         }
 
 		let aux = []
@@ -40,80 +45,65 @@
         });
 
         Highcharts.chart('container', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: '🤰NATALIDAD Y TURISMO RURAL EN 2010',
-    },
-    xAxis: {
-        categories: [
-            'Natalidad en Hombres',
-            'Natalidad en Mujeres',
-            'Viajeros',
-            'Pernoctaciones'
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Número de nacimientos'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mil personas</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-            
-            series: MyDataGraph
-        });
-    }
-    </script>
-    
-    <svelte:head>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
-        
-    </svelte:head>
-    
-    <main>
-        <figure class="highcharts-figure">
-            <div id="container"></div>
-            <p class="highcharts-description">
-                <br>
-                <i>En la gráfica podemos observar la representación de la natalidad, 
-                con número de nacimientos, en hombres y mujeres de algunos países del mundo.</i>
-            </p>
-        </figure>
+			chart: {
+				type: 'column'
+			},
+			title: {
+				text: 'Natalidad y Energías Renovables'
+			},
+			xAxis: {
+				categories: ["Porcentaje H", "Porcentaje SFs", "Natalidad Hombres", "Natalidad Mujeres"]
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Numero'
+				},
+			},
+			legend: {
+				align: 'right',
+				x: -30,
+				verticalAlign: 'top',
+				y: 25,
+				floating: true,
+				backgroundColor:
+					Highcharts.defaultOptions.legend.backgroundColor || 'white',
+				borderColor: '#CCC',
+				borderWidth: 1,
+				shadow: false
+			},
+			tooltip: {
+				headerFormat: '<b>{point.x}</b><br/>',
+				pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+			},
+			plotOptions: {
+				column: {
+					stacking: 'normal',
+					dataLabels: {
+						enabled: true
+					}
+				}
+			},
+			series: parsed_data
+		});
+	};
+</script>
 
-        <p></p>
-    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-    
-    </main>
-    <style>
-        #container {
-    height: 450px; 
+<svelte:head>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+</svelte:head>
+<style>
+	#container {
+    height: 400px; 
 }
-
 .highcharts-figure, .highcharts-data-table table {
     min-width: 310px; 
     max-width: 800px;
-    margin: 2em auto;
+    margin: 1em auto;
 }
-
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
@@ -141,6 +131,5 @@
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
-
 
 </style>
