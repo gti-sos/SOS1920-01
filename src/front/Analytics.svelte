@@ -21,9 +21,9 @@
                     if (x.country == y.country && x.country == z.country && x.year == y.year && x.year == z.year) {
                         MyDataGraph.push({name: x.country+" "+x.year, children: [
                             {name: "Natalidad", children: [
-                                {name: "Total", value: parseInt(x.natality_totals)},
-                                {name: "Hombres", value: parseInt(x.natality_men)},
-                                {name: "Mujeres", value: parseInt(x.natality_women)}
+                                {name: "Total", value: parseInt(x.natality_totals/100)},
+                                {name: "Hombres", value: parseInt(x.natality_men/100)},
+                                {name: "Mujeres", value: parseInt(x.natality_women/100)}
                             ]},
                             {name: "Riesgo de Pobreza", children: [
                                 {name: "Personas", value: parseInt(y.poverty_prp)},
@@ -31,9 +31,9 @@
                                 {name: "Umbral del hogar", value: parseInt(y.poverty_ht)}
                             ]},
                             {name: "Emigracion", children: [
-                                {name: "Total", value: parseFloat(z.em_totals)},
-                                {name: "Hombres", value: parseFloat(z.em_man)},
-                                {name: "Mujeres", value: parseFloat(z.em_woman)}
+                                {name: "Total", value: parseFloat(z.em_totals/100)},
+                                {name: "Hombres", value: parseFloat(z.em_man/100)},
+                                {name: "Mujeres", value: parseFloat(z.em_woman/100)}
                             ]}
                         ]});
                     } 
@@ -117,7 +117,7 @@ loadGraph();
     <p class="highcharts-description">
         <br>
         <i>Gráfica común a las tres APIs. Representa la natalidad, la emigración y el riesgo de pobreza. Los datos de 
-            Riesgo de pobreza son tan pequeños que apenas se aprecian. Para verlo deja marcado un solo país.</i>
+            natalidad e emigración han sido divididos entre 100 para la visualizacion óptima. </i>
     </p>
     <div id="chartdiv"></div>
     
