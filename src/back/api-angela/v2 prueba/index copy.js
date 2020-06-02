@@ -64,21 +64,26 @@ app.use(path22, function(req, res) {
 });
 app.use(express.static('.'));
 
-////////POSTMAN GET
-	///loadInitialData
+
+	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 	pdb.remove({}, { multi: true });
 	pdb.insert(poverty_stats);
 	res.sendStatus(200);
-
+	
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
-///GET
+
+////////POSTMAN GET
+
+//-  /api/v1/poverty-stats
+
 app.get(BASE_API_URL + "/poverty-stats", (req,res)=>{
 	var dbquery = {};
 	let offset = 0;
 	let limit = Number.MAX_SAFE_INTEGER;
-
+	
+	//PAGINACIÓN
 	if (req.query.offset) {
 		offset = parseInt(req.query.offset);
 		delete req.query.offset;
@@ -87,7 +92,8 @@ app.get(BASE_API_URL + "/poverty-stats", (req,res)=>{
 		limit = parseInt(req.query.limit);
 		delete req.query.limit;
 	}
-
+	
+	//BUSQUEDA
 	if(req.query.country) dbquery["country"]= req.query.country;
 	if(req.query.year) dbquery["year"] = parseInt(req.query.year);
 	if(req.query.traveller) dbquery["poverty_prp"] = parseFloat(req.query.poverty_prp);
@@ -101,56 +107,74 @@ app.get(BASE_API_URL + "/poverty-stats", (req,res)=>{
 		});
 
 		res.send(JSON.stringify(poverty,null,2));
-		console.log("Data sent:"+JSON.stringify(poverty_stats,null,2));
-			
+		console.log("Recursos");
 	});
 });
 
-/// GET COUNTRY
+//- /api/v1/poverty-stats/country
 app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
     var country = req.params.country;
 	
 	pdb.find({country: country}, (err, pov) => {
-		
-		if(pov.length >= 1) {
-				
-			pov.forEach( (t) => {
-				delete t._id;
-			});
-			
-			res.send(JSON.stringify(pov[0],null,2));
-			console.log("Data sent:"+JSON.stringify(pov,null,2));
-			
-		}else {
-			console.log("Recurso no encontrado");
-			res.sendStatus(404, "PROVINCE NOT FOUND");
-		}
-	});	
 
+		
+		if(pov.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			pov.forEach(e => {
+			delete e._id;	
+			});
+			res.send(JSON.stringify(pov, null, 2)); //En este get me saca un objeto no el array de los objetos
+		}
+	});		
+
+/*	var poverty = poverty_stats.filter((e) => {return (e.country == country);});
+	
+	
+	if(poverty.length >= 1){
+		res.send(poverty);
+	}else{
+		res.sendStatus(404,"Not found");
+	}*/
 });
 
+//- /api/v1/poverty-stats/country/year
 app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
     var country = req.params.country;
 	var year = parseInt(req.params.year);  
 	
 	pdb.find({country: country, year: year}, (err, pov) => {
 		
-		if(pov.length >= 1) {
-				
-			pov.forEach( (t) => {
-				delete t._id;
+		if(pov.length==0){
+		   	console.log("ERROR 404. NOT FOUND");
+			res.sendStatus(404);
+		 }
+		
+		else{		
+		
+			pov.forEach(e => {
+			delete e._id;	
 			});
-			
-			res.send(JSON.stringify(pov[0],null,2));
-			console.log("Data sent:"+JSON.stringify(pov[0],null,2));
-			
-		}else {
-			console.log("Recurso no encontrado");
-			res.sendStatus(404, "PROVINCE NOT FOUND");
+			res.send(JSON.stringify(pov[0], null, 2)); //En este get me saca un objeto no el array de los objetos
 		}
-	});
 	});		
-
+	/*
+	var povertyC = poverty_stats.filter((c) => {return (c.country == country);});
+	
+	var povertyY = poverty_stats.filter((y) => {return(y.year == year);});
+	
+	
+	if(povertyC.length >= 1 && povertyY.length >=1){
+		var sol = povertyC.filter((s) => {return(s.year == year);});
+		res.send(sol);
+	}else{
+		res.sendStatus(404,"Not found");
+	}*/
+});
 
 ////////POSTMAN POST
 
