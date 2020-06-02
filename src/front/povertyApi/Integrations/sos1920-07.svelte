@@ -33,7 +33,7 @@
             if(x.year==2010 && (x.country=="south-korea"||x.country=="china")){	
 				aux={
 					name: x.country,
-					data: [parseInt(x.gdawaste),parseInt(x.gdaethylalcohol),0,0]
+					data: [parseInt(x.gdawaste/100),parseInt(x.gdaethylalcohol/100),0,0]
 				}
 				valores.push(aux)
 			}  	

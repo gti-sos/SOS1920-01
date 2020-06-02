@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/poverty-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://sos1920-04.herokuapp.com/api/v2");
+    const resData2 = await fetch("https://sos1920-04.herokuapp.com/api/v1/traffic_accidents");
 		if (resData2.ok) {
 			console.log("Ok, api 04 loaded");
 			const json = await resData2.json();
@@ -23,17 +23,17 @@
 		MyData.forEach((x) => {
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
-					name: x.country,
+					name: x.country +" " +x.year,
 					data: [0,0,parseInt(x.poverty_pt), parseInt(x.poverty_ht)]
 				}
 				valores.push(aux)
 			}
         });
 		API_04.forEach((x) => {
-            if(x.year==2017 && (x.country=="Spain"||x.country=="Germany")){	
+            if(x.year==2016 && (x.province=="Pontevedra"||x.province=="Cadiz")){	
 				aux={
-					name: x.country,
-					data: [parseInt(x.oil-consumption),parseInt(x.coal-consumption),0,0]
+					name: x.province +" " +x.year,
+					data: [parseInt(x.accidentWithVictims),parseInt(x.notHospitalizedWounded),0,0]
 				}
 				valores.push(aux)
 			}  	
@@ -46,10 +46,10 @@
 				type: 'bar'
 			},
 			title: {
-				text: 'Enegías primaria y riesgo de pobreza en el año 2017'
+				text: 'Análisis del tráfico en España y riesgo de pobreza en Europa en el año 2015'
 			},
 			xAxis: {
-				categories: ['Consumo de Gasolina', 'Consumo de Carbón', 'Umbral de persona', 'Umbral de hogar'],
+				categories: ['Accidentes con víctimas', 'No hospitalizados', 'Umbral de persona', 'Umbral de hogar'],
 				title: {
 					text: null
 				}
@@ -81,12 +81,13 @@
 		<script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 	</svelte:head>
 <main>
-	<h3 style="text-align: center;"> Integración con la API Enegías primarias del grupo 04</h3>
-	<Button outline color="secondary" on:click="{pop}">Volver</Button>
+	<h3 style="text-align: center;"> Integración con la API Análisis del tráfico en España del grupo 04</h3>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
-			Enegías primaria y riesgo de pobreza en el año 2017.
+			Análisis del tráfico en España y riesgo de pobreza en Europa en el año 2015.
+
 		</p>
 	</figure>
 

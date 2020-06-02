@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/poverty-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://sos1920-09.herokuapp.com/api/v2/oil-coal-nuclear-energy-consumption-stats");
+    const resData2 = await fetch("https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats");
 		if (resData2.ok) {
 			console.log("Ok, api 09 loaded");
 			const json = await resData2.json();
@@ -24,16 +24,16 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country,
-					data: [0,0,parseInt(x.poverty_pt), parseInt(x.poverty_ht)]
+					data: [0,0,parseInt(x.poverty_pt/100), parseInt(x.poverty_ht/100)]
 				}
 				valores.push(aux)
 			}
         });
 		API_09.forEach((x) => {
-            if(x.year==2017 && (x.country=="Spain"||x.country=="Germany")){	
+            if(x.year==2017 && (x.country=="Belgium"||x.country=="China")){	
 				aux={
 					name: x.country,
-					data: [parseInt(x.oil-consumption),parseInt(x.coal-consumption),0,0]
+					data: [x["oil-consumption"],x["coal-consumption"],0,0]
 				}
 				valores.push(aux)
 			}  	
@@ -46,7 +46,7 @@
 				type: 'bar'
 			},
 			title: {
-				text: 'Enegías primaria y riesgo de pobreza en el año 2017'
+				text: 'Energías primarias y Riesgo de pobreza'
 			},
 			xAxis: {
 				categories: ['Consumo de Gasolina', 'Consumo de Carbón', 'Umbral de persona', 'Umbral de hogar'],
@@ -81,12 +81,12 @@
 		<script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 	</svelte:head>
 <main>
-	<h3 style="text-align: center;"> Integración con la API Enegías primarias del grupo 09</h3>
-	<Button outline color="secondary" on:click="{pop}">Volver</Button>
+	<h3 style="text-align: center;"> Integración con la API Energías primarias del grupo 09</h3>
+	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
-			Enegías primaria y riesgo de pobreza en el año 2017.
+			Energías primarias y Riesgo de pobreza.
 		</p>
 	</figure>
 

@@ -39,6 +39,8 @@ var poverty_stats = [
 const request = require('request');
 const express = require ("express");
 
+
+/////API28
 var api28 = 'https://sos1920-28.herokuapp.com';
 var path28 = '/api/v1/ppas';
 
@@ -48,6 +50,17 @@ app.use(path28, function(req, res) {
 	req.pipe(request(url)).pipe(res);
 });
 app.use(express.static('.'));
+/////API22
+var api22 = 'https://sos1920-22.herokuapp.com';
+var path22 = '/api/v1/swim-stats';
+
+app.use(path22, function(req, res) {
+	var url = api22 + req.baseUrl + req.url;
+	console.log('piped: ' + req.baseUrl + req.url);
+	req.pipe(request(url)).pipe(res);
+});
+app.use(express.static('.'));
+
 
 	//- /api/v1/poverty-stats/loadInitialData
 app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
