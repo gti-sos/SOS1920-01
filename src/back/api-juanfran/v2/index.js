@@ -117,6 +117,20 @@ var initialNatality_stats = [
 	}
 ];
 
+// --------------- Proxy -------------------
+const request = require('request'); 
+const express = require ("express"); 
+
+var api06= 'https://sos1920-06.herokuapp.com'; 
+var path06 = '/api/v2/accstats'; 
+
+app.use(path06, function(req, res) { 
+	var url = api06 + req.baseUrl + req.url; 
+	console.log('piped: ' + req.baseUrl + req.url); 
+	req.pipe(request(url)).pipe(res); 
+}); 
+	app.use(express.static('.'));
+
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
 	 dbn.remove({}, {multi:true});

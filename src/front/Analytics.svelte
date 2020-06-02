@@ -21,7 +21,7 @@
                     if (x.country == y.country && x.country == z.country && x.year == y.year && x.year == z.year) {
                         MyDataGraph.push({name: x.country+" "+x.year, children: [
                             {name: "Natalidad", children: [
-                                {name: "Total", value: parseInt(x.matality_totals)},
+                                {name: "Total", value: parseInt(x.natality_totals)},
                                 {name: "Hombres", value: parseInt(x.natality_men)},
                                 {name: "Mujeres", value: parseInt(x.natality_women)}
                             ]},

@@ -1,43 +1,51 @@
 <script>
-	import Button from "sveltestrap/src/Button.svelte";
-    import {
-        pop
-    } from "svelte-spa-router";
+    import {pop} from "svelte-spa-router";
+	import Table from "sveltestrap/src/Table.svelte";
+    import Button from "sveltestrap/src/Button.svelte";
     async function loadGraph() {
-        
+    
         let MyData = [];
         let MyDataGraph = [];
-        
+        let Data06 = [];
+        console.log("Loading integration API 06...");
+        const res = await fetch("/api/v2/accstats");
+        if (res.ok) {
+            console.log("Loaded correctly");
+            const json = await res.json();
+            Data06 = json;
+        } else {
+            console.log("ERROR!");
+        }
         const resData = await fetch("/api/v2/natality-stats");
         MyData = await resData.json();
         MyData.forEach( (x) => {
-                MyDataGraph.push({name: x.country + " " + x.year, data: ['',parseInt(x.natality_men), parseInt(x.natality_women), 
-                parseInt(x.natality_totals),''], pointPlacement: 'on'});
+            Data06.forEach( (y) => {
+                if (y.province.toLowerCase() == x.country && x.year != 2015) {
+                    MyDataGraph.push({name: x.province, data: [parseInt(x.natality_totals), parseInt(x.natality_men), parseInt(x.natality_women), parseInt(y.accvictotal), parseInt(y.accvicinter), parseInt(y.accfall)]});
+                }
             });
-            //Las dos comillas son para que me salgan todas las barras, meto una varibale vacía para ello.
-
-
-    Highcharts.chart('container', {
+        });
+        Highcharts.chart('container', {
     chart: {
         type: 'column'
     },
     title: {
-        text: '🤰NATALIDAD🤰',
+        text: '🤰NATALIDAD Y TURISMO RURAL EN 2010',
     },
     xAxis: {
         categories: [
-            '',
+            'Viajeros',
+            'Pernoctaciones',
             'Natalidad en Hombres',
-            'Natalidad en Mujeres',
-            'Natalidad Total',
-            ''
+            'Natalidad en Mujeres'
+
         ],
         crosshair: true
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Número de nacimientos'
+            text: ''
         }
     },
     tooltip: {
@@ -55,7 +63,7 @@
         }
     },
             
-            series: MyDataGraph
+            series: valores
         });
     }
     </script>
@@ -120,4 +128,6 @@
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+
+
 </style>
