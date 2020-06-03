@@ -1,0 +1,1531 @@
+{
+	"info": {
+		"_postman_id": "2d50dec7-a295-4d7b-baf9-606d2c9a453a",
+		"name": "SOS1920-natality-stats v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6783fac3-7e78-472a-b503-dccd29a8635c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET todos los recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5893f57d-68b1-4539-9db2-522dc38da5e7",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "spain",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST añade => EEUU",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa515ea5-2532-4815-9cca-597a79adad7a",
+						"exec": [
+							"pm.test(\"Status code is 201\", function() {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"EEUU\",\r\n\"year\": 2020,\r\n\"natality_totals\": 754754,\r\n\"natality_men\": 387030,\r\n\"natality_women\": 367754\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET por country y un año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ce764b6e-f3b0-4415-a7ce-476d38bceaae",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"It return a country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"EEUU\",\r\n\"year\": 2010,\r\n\"natality_totals\": 833654,\r\n\"natality_men\": 426270,\r\n\"natality_women\": 407384\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET country year PARAMS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a07c39c-e65e-403e-b171-a36d01ef15d9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?country=EEUU&year=2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "EEUU"
+						},
+						{
+							"key": "year",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET solo por un country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be6ca960-9f8d-4435-9a6d-939160773847",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET por country PARAMS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "574fd5cc-192c-4e54-8913-63a93b7fc075",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?country=spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET solo year PARAMS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be6ca960-9f8d-4435-9a6d-939160773847",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?year=2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion LIMIT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "627f3224-f86f-4ed4-a3f5-226c417d4e32",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?limit=4",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion OFFSET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d08ba72b-cbab-416a-8b9a-5f84cbbfcdb5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?offset=13",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion OFFSET & LIMIT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3427e090-f3a1-4532-a106-73cb5ad35347",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?limit=4&offset=14",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "offset",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_totalsMax 500000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d197c7d2-bec8-46df-a227-65c2d71b74b1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_totalsMax=500000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_totalsMax",
+							"value": "500000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_totalsMin 500000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "277d991f-f0ba-49a3-8524-2c060fbe4396",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_totalsMin=500000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_totalsMin",
+							"value": "500000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_menMin 300000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc298b74-6eaf-4c6d-853a-b01103f341a2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_menMin=300000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_menMin",
+							"value": "300000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_menMax 300000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3271f5d3-1d30-4012-b726-088819188a1d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_menMax=300000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_menMax",
+							"value": "300000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_womenMax 300000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91f9c201-5020-4ef7-a5a7-42d33de7423d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_womenMax=300000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_womenMax",
+							"value": "300000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_womenMin 300000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94fdc72f-a7fc-47ba-bcd5-378429c9d6cf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_womenMin=300000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_womenMin",
+							"value": "300000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_totals MIN & MAX (200000-600000)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d513b7e8-147b-4fc3-882e-83c4d67eb496",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_totalsMin=200000&natality_totalsMax=600000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_totalsMin",
+							"value": "200000"
+						},
+						{
+							"key": "natality_totalsMax",
+							"value": "600000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_men MIN & MAX (200000-400000)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "61db9d6a-291b-4978-9a83-b6d2fc121536",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_menMin=200000&natality_menMax=400000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_menMin",
+							"value": "200000"
+						},
+						{
+							"key": "natality_menMax",
+							"value": "400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET natality_women MIN & MAX (300000-400000)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f65be8d4-690a-4a40-b175-476b07c05c54",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats?natality_womenMin=300000&natality_womenMax=400000",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "natality_womenMin",
+							"value": "300000"
+						},
+						{
+							"key": "natality_womenMax",
+							"value": "400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST EEUU NOT ALLOWED",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b122e6a6-415f-4fc1-80ab-f3f2f686a5a6",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "EEUU",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2020",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST EEUU/2020 NOT ALLOWED",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7619213-f77a-4c2a-ba53-d53fa6a0ea92",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU",
+						"2020"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "EEUU",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2020",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST BAD REQUEST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9cf506a2-68e5-4a99-bb20-af59810addbe",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\r\n\"natality_totals\": 486575,\r\n\"natality_men\": 250727,\r\n\"natality_women\": 235848\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST CONFLICT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d219122-b7e8-4149-bb22-cbd01c174487",
+						"exec": [
+							"pm.test(\"Status code is 409\", function() {",
+							"    pm.response.to.have.status(409);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"EEUU\",\r\n\"year\": 2020,\r\n\"natality_totals\": 754754,\r\n\"natality_men\": 387030,\r\n\"natality_women\": 367754\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT NOT ALLOWED",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e914e1f7-5254-41b5-8a25-9498eea3be8d",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"EEUU\",\r\n\"year\": 2020,\r\n\"natality_totals\": 1000000,\r\n\"natality_men\": 10000005,\r\n\"natality_women\": 10000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT NOT ALLOWED country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5541d746-4c52-4e2c-a3e4-55f514be7e1d",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"EEUU\",\r\n\"year\": 2020,\r\n\"natality_totals\": 1000000,\r\n\"natality_men\": 10000005,\r\n\"natality_women\": 10000002\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT CONFLICT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3101b70-39df-4a3b-aead-d3b52b4a26a7",
+						"exec": [
+							"pm.test(\"Status code is 409\", function() {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"china\",\r\n\"year\": 2022,\r\n\"natality_totals\": 1000000,\r\n\"natality_men\": 10000005,\r\n\"natality_women\": 10000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain/2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT country/year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec88fc82-e6cb-4337-b193-8c00526a2246",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2017,\r\n\"natality_totals\": 1111,\r\n\"natality_men\": 202478,\r\n\"natality_women\": 190703\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain/2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET prueba PUT country/year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8009cd6f-282f-400c-84a3-de2f1d421ac9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"It return a country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain/2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a EEUU/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7cd35eb-bdba-4a36-a4b3-e305fc6728bb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET comprobacion DELETE country/year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea061e85-c3ee-424b-9134-36b6ca37e59a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/EEUU/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"EEUU",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a todos country spain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa830a61-beb6-43e2-bbe5-3770619fb829",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET comprobacion DELETE country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "665dac49-772f-4857-a59f-cca990b577d6",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"spain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b74eef73-29b7-4f12-aa03-6b465c0a30e8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET comprobacion DELETE todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0dd3c122-0c6a-4565-8741-2f47cfb37bc7",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadInitialData Final",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1096cc2-f7fc-4071-ab19-35ed3eaf87cf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET todos los recursos Final",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a947f53f-9f23-4843-8f59-c9a87335679f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/natality-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"natality-stats"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "spain",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
