@@ -149,18 +149,15 @@ app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {
 	
 	pdb.find({country: country}, (err, pov) => {
 		
-		if(pov.length >= 1) {
-				
+		if(pov.length == 0) {
+			console.log("Recurso no encontrado");
+			res.sendStatus(404, "PROVINCE NOT FOUND");
+		}else{	
 			pov.forEach( (t) => {
 				delete t._id;
 			});
 			
-			res.send(JSON.stringify(pov[0],null,2));
-			console.log("Data sent:"+JSON.stringify(pov,null,2));
-			
-		}else {
-			console.log("Recurso no encontrado");
-			res.sendStatus(404, "PROVINCE NOT FOUND");
+			res.send(JSON.stringify(pov,null,2));
 		}
 	});	
 
@@ -172,21 +169,19 @@ app.get(BASE_PATH+"/poverty-stats/:country/:year", (req,res) => {
 	
 	pdb.find({country: country, year: year}, (err, pov) => {
 		
-		if(pov.length >= 1) {
-				
+		if(pov.length == 0) {
+			console.log("Recurso no encontrado");
+			res.sendStatus(404, "PROVINCE NOT FOUND");
+		}else{	
 			pov.forEach( (t) => {
 				delete t._id;
 			});
 			
 			res.send(JSON.stringify(pov[0],null,2));
-			console.log("Data sent:"+JSON.stringify(pov[0],null,2));
-			
-		}else {
-			console.log("Recurso no encontrado");
-			res.sendStatus(404, "PROVINCE NOT FOUND");
 		}
-	});
-	});		
+	});	
+
+});	
 
 
 ////////POSTMAN POST

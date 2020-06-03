@@ -10479,14 +10479,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/poverty-stats/" + /*stat*/ ctx[36].country + "/" + /*stat*/ ctx[36].year);
-    			add_location(a, file$m, 271, 7, 8932);
-    			add_location(td0, file$m, 270, 6, 8919);
-    			add_location(td1, file$m, 273, 6, 9024);
-    			add_location(td2, file$m, 274, 6, 9052);
-    			add_location(td3, file$m, 275, 6, 9087);
-    			add_location(td4, file$m, 276, 6, 9121);
-    			add_location(td5, file$m, 277, 6, 9155);
-    			add_location(tr, file$m, 269, 5, 8907);
+    			add_location(a, file$m, 271, 7, 8899);
+    			add_location(td0, file$m, 270, 6, 8886);
+    			add_location(td1, file$m, 273, 6, 8991);
+    			add_location(td2, file$m, 274, 6, 9019);
+    			add_location(td3, file$m, 275, 6, 9054);
+    			add_location(td4, file$m, 276, 6, 9088);
+    			add_location(td5, file$m, 277, 6, 9122);
+    			add_location(tr, file$m, 269, 5, 8874);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -10665,32 +10665,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$m, 251, 5, 8205);
-    			add_location(th1, file$m, 252, 5, 8225);
-    			add_location(th2, file$m, 253, 5, 8244);
-    			add_location(th3, file$m, 254, 5, 8289);
-    			add_location(th4, file$m, 255, 5, 8319);
-    			add_location(th5, file$m, 256, 5, 8347);
-    			add_location(tr0, file$m, 250, 4, 8194);
-    			add_location(thead, file$m, 249, 3, 8181);
+    			add_location(th0, file$m, 251, 5, 8172);
+    			add_location(th1, file$m, 252, 5, 8192);
+    			add_location(th2, file$m, 253, 5, 8211);
+    			add_location(th3, file$m, 254, 5, 8256);
+    			add_location(th4, file$m, 255, 5, 8286);
+    			add_location(th5, file$m, 256, 5, 8314);
+    			add_location(tr0, file$m, 250, 4, 8161);
+    			add_location(thead, file$m, 249, 3, 8148);
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$m, 261, 9, 8421);
-    			add_location(td0, file$m, 261, 5, 8417);
+    			add_location(input0, file$m, 261, 9, 8388);
+    			add_location(td0, file$m, 261, 5, 8384);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$m, 262, 9, 8491);
-    			add_location(td1, file$m, 262, 5, 8487);
+    			add_location(input1, file$m, 262, 9, 8458);
+    			add_location(td1, file$m, 262, 5, 8454);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$m, 263, 9, 8560);
-    			add_location(td2, file$m, 263, 5, 8556);
+    			add_location(input2, file$m, 263, 9, 8527);
+    			add_location(td2, file$m, 263, 5, 8523);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$m, 264, 9, 8636);
-    			add_location(td3, file$m, 264, 5, 8632);
+    			add_location(input3, file$m, 264, 9, 8603);
+    			add_location(td3, file$m, 264, 5, 8599);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$m, 265, 9, 8711);
-    			add_location(td4, file$m, 265, 5, 8707);
-    			add_location(td5, file$m, 266, 5, 8782);
-    			add_location(tr1, file$m, 260, 4, 8406);
-    			add_location(tbody, file$m, 259, 3, 8393);
+    			add_location(input4, file$m, 265, 9, 8678);
+    			add_location(td4, file$m, 265, 5, 8674);
+    			add_location(td5, file$m, 266, 5, 8749);
+    			add_location(tr1, file$m, 260, 4, 8373);
+    			add_location(tbody, file$m, 259, 3, 8360);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -10888,7 +10888,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[10]);
     			set_style(p, "color", "red");
-    			add_location(p, file$m, 284, 2, 9342);
+    			add_location(p, file$m, 284, 2, 9309);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10924,7 +10924,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*exitoMsg*/ ctx[11]);
     			set_style(p, "color", "green");
-    			add_location(p, file$m, 287, 8, 9423);
+    			add_location(p, file$m, 287, 8, 9390);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11273,7 +11273,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$m, 314, 54, 11486);
+    			add_location(i, file$m, 314, 54, 11453);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11496,36 +11496,36 @@ var app = (function () {
     			h61.textContent = "Si quiere ver todos los datos después de una búsqueda, quite todo los filtros y pulse el botón de buscar.";
     			t29 = space();
     			create_component(button3.$$.fragment);
-    			add_location(h3, file$m, 244, 1, 8073);
-    			add_location(h60, file$m, 298, 1, 10325);
-    			add_location(input0, file$m, 300, 19, 10424);
-    			add_location(label0, file$m, 300, 6, 10411);
-    			add_location(td0, file$m, 300, 2, 10407);
-    			add_location(input1, file$m, 301, 54, 10529);
-    			add_location(label1, file$m, 301, 6, 10481);
-    			add_location(td1, file$m, 301, 2, 10477);
-    			add_location(input2, file$m, 302, 36, 10617);
-    			add_location(label2, file$m, 302, 6, 10587);
-    			add_location(td2, file$m, 302, 2, 10583);
-    			add_location(input3, file$m, 303, 34, 10702);
-    			add_location(label3, file$m, 303, 6, 10674);
-    			add_location(td3, file$m, 303, 2, 10670);
-    			add_location(tr0, file$m, 299, 1, 10399);
-    			add_location(input4, file$m, 306, 18, 10786);
-    			add_location(label4, file$m, 306, 6, 10774);
-    			add_location(td4, file$m, 306, 2, 10770);
-    			add_location(input5, file$m, 307, 54, 10888);
-    			add_location(label5, file$m, 307, 6, 10840);
-    			add_location(td5, file$m, 307, 2, 10836);
-    			add_location(input6, file$m, 308, 36, 10976);
-    			add_location(label6, file$m, 308, 6, 10946);
-    			add_location(td6, file$m, 308, 2, 10942);
-    			add_location(input7, file$m, 309, 34, 11061);
-    			add_location(label7, file$m, 309, 6, 11033);
-    			add_location(td7, file$m, 309, 2, 11029);
-    			add_location(tr1, file$m, 305, 1, 10762);
-    			add_location(h61, file$m, 313, 1, 11315);
-    			add_location(main, file$m, 243, 0, 8064);
+    			add_location(h3, file$m, 244, 1, 8040);
+    			add_location(h60, file$m, 298, 1, 10292);
+    			add_location(input0, file$m, 300, 19, 10391);
+    			add_location(label0, file$m, 300, 6, 10378);
+    			add_location(td0, file$m, 300, 2, 10374);
+    			add_location(input1, file$m, 301, 54, 10496);
+    			add_location(label1, file$m, 301, 6, 10448);
+    			add_location(td1, file$m, 301, 2, 10444);
+    			add_location(input2, file$m, 302, 36, 10584);
+    			add_location(label2, file$m, 302, 6, 10554);
+    			add_location(td2, file$m, 302, 2, 10550);
+    			add_location(input3, file$m, 303, 34, 10669);
+    			add_location(label3, file$m, 303, 6, 10641);
+    			add_location(td3, file$m, 303, 2, 10637);
+    			add_location(tr0, file$m, 299, 1, 10366);
+    			add_location(input4, file$m, 306, 18, 10753);
+    			add_location(label4, file$m, 306, 6, 10741);
+    			add_location(td4, file$m, 306, 2, 10737);
+    			add_location(input5, file$m, 307, 54, 10855);
+    			add_location(label5, file$m, 307, 6, 10807);
+    			add_location(td5, file$m, 307, 2, 10803);
+    			add_location(input6, file$m, 308, 36, 10943);
+    			add_location(label6, file$m, 308, 6, 10913);
+    			add_location(td6, file$m, 308, 2, 10909);
+    			add_location(input7, file$m, 309, 34, 11028);
+    			add_location(label7, file$m, 309, 6, 11000);
+    			add_location(td7, file$m, 309, 2, 10996);
+    			add_location(tr1, file$m, 305, 1, 10729);
+    			add_location(h61, file$m, 313, 1, 11282);
+    			add_location(main, file$m, 243, 0, 8031);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11916,7 +11916,7 @@ var app = (function () {
     			console.log("Found " + stats.length + " stats");
 
     			//window.alert("Se han encontrado datos.");
-    			$$invalidate(11, exitoMsg = res.status + ": " + res.statusText + ". Dato encontrado con éxito.");
+    			$$invalidate(11, exitoMsg = res.status + ": " + res.statusText);
     		} else if (res.status == 404) {
     			window.alert("No se encuentran datos.");
     			$$invalidate(10, errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText + ". No se encuentran datos.");
@@ -14755,7 +14755,9 @@ var app = (function () {
     	let figure;
     	let div;
     	let t4;
-    	let p;
+    	let p0;
+    	let p1;
+    	let i;
     	let current;
     	let dispose;
 
@@ -14787,8 +14789,11 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t4 = space();
-    			p = element("p");
-    			p.textContent = "Importaciones y riesgo de pobreza en el año 2010.";
+    			p0 = element("p");
+    			p0.textContent = "Importaciones y riesgo de pobreza en el año 2010.\r\n\t\t\t";
+    			p1 = element("p");
+    			i = element("i");
+    			i.textContent = "NOTA: Los valores de 'Residuos'y 'Alcohol' están dividos entre 100 para una representación visual.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$u, 77, 2, 1700);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
@@ -14802,9 +14807,11 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
     			add_location(div, file$u, 86, 2, 2245);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$u, 87, 2, 2275);
+    			set_style(p0, "text-align", "center");
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$u, 87, 2, 2275);
+    			add_location(i, file$u, 89, 10, 2402);
+    			add_location(p1, file$u, 89, 7, 2399);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
     			add_location(figure, file$u, 85, 1, 2207);
     			add_location(main, file$u, 82, 0, 2040);
@@ -14826,7 +14833,9 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t4);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
+    			append_dev(figure, p1);
+    			append_dev(p1, i);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$i, false, false, false);
@@ -15005,7 +15014,9 @@ var app = (function () {
     	let figure;
     	let div;
     	let t4;
-    	let p;
+    	let p0;
+    	let p1;
+    	let i;
     	let current;
     	let dispose;
 
@@ -15037,8 +15048,11 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t4 = space();
-    			p = element("p");
-    			p.textContent = "Electricidad Producida y Riesgo de pobreza en el año 2015 y 2018.";
+    			p0 = element("p");
+    			p0.textContent = "Electricidad Producida y Riesgo de pobreza en el año 2015 y 2018.\r\n\t\t";
+    			p1 = element("p");
+    			i = element("i");
+    			i.textContent = "NOTA: Los valores de 'Energia solar'y 'Carbon' están dividos entre 1000 para una representación visual.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$v, 77, 2, 1721);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
@@ -15052,9 +15066,11 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
     			add_location(div, file$v, 86, 2, 2275);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$v, 87, 2, 2305);
+    			set_style(p0, "text-align", "center");
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$v, 87, 2, 2305);
+    			add_location(i, file$v, 89, 9, 2447);
+    			add_location(p1, file$v, 89, 6, 2444);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
     			add_location(figure, file$v, 85, 1, 2237);
     			add_location(main, file$v, 82, 0, 2061);
@@ -15076,7 +15092,9 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t4);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
+    			append_dev(figure, p1);
+    			append_dev(p1, i);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$j, false, false, false);
@@ -15255,7 +15273,9 @@ var app = (function () {
     	let figure;
     	let div;
     	let t4;
-    	let p;
+    	let p0;
+    	let p1;
+    	let i;
     	let current;
     	let dispose;
 
@@ -15287,8 +15307,11 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t4 = space();
-    			p = element("p");
-    			p.textContent = "Energías primarias y Riesgo de pobreza.";
+    			p0 = element("p");
+    			p0.textContent = "Energías primarias y Riesgo de pobreza.\r\n\t\t\t";
+    			p1 = element("p");
+    			i = element("i");
+    			i.textContent = "NOTA: Los valores de Riesgo de pobreza están dividos entre 100 para una representación visual.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$w, 77, 2, 1735);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
@@ -15302,9 +15325,11 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
     			add_location(div, file$w, 86, 2, 2285);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$w, 87, 2, 2315);
+    			set_style(p0, "text-align", "center");
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$w, 87, 2, 2315);
+    			add_location(i, file$w, 89, 10, 2432);
+    			add_location(p1, file$w, 89, 7, 2429);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
     			add_location(figure, file$w, 85, 1, 2247);
     			add_location(main, file$w, 82, 0, 2075);
@@ -15326,7 +15351,9 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t4);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
+    			append_dev(figure, p1);
+    			append_dev(p1, i);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$k, false, false, false);
@@ -15510,7 +15537,9 @@ var app = (function () {
     	let figure;
     	let div;
     	let t4;
-    	let p;
+    	let p0;
+    	let p1;
+    	let i;
     	let current;
     	let dispose;
 
@@ -15542,8 +15571,11 @@ var app = (function () {
     			figure = element("figure");
     			div = element("div");
     			t4 = space();
-    			p = element("p");
-    			p.textContent = "Datos de Suicidios y Riesgo de pobreza.";
+    			p0 = element("p");
+    			p0.textContent = "Datos de Suicidios y Riesgo de pobreza.\r\n\t\t\t";
+    			p1 = element("p");
+    			i = element("i");
+    			i.textContent = "NOTA: Los valores de Riesgode pobreza están dividos entre 1000 para una representación visual.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$x, 77, 2, 1678);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
@@ -15557,9 +15589,11 @@ var app = (function () {
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-mzn03e");
     			add_location(div, file$x, 86, 2, 2228);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$x, 87, 2, 2258);
+    			set_style(p0, "text-align", "center");
+    			attr_dev(p0, "class", "highcharts-description");
+    			add_location(p0, file$x, 87, 2, 2258);
+    			add_location(i, file$x, 89, 10, 2375);
+    			add_location(p1, file$x, 89, 7, 2372);
     			attr_dev(figure, "class", "highcharts-figure svelte-mzn03e");
     			add_location(figure, file$x, 85, 1, 2190);
     			add_location(main, file$x, 82, 0, 2018);
@@ -15581,7 +15615,9 @@ var app = (function () {
     			append_dev(main, figure);
     			append_dev(figure, div);
     			append_dev(figure, t4);
-    			append_dev(figure, p);
+    			append_dev(figure, p0);
+    			append_dev(figure, p1);
+    			append_dev(p1, i);
     			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$l, false, false, false);
