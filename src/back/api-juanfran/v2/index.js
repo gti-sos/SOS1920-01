@@ -208,7 +208,7 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 				delete n._id;
 			});
 		if(natality == 0){
-			res.sendStatus(404, "NOT FOUND");
+			res.send(JSON.stringify(natality,null,2));
 		}else{
 			res.send(JSON.stringify(natality,null,2));
 			console.log("Datos enviados: " + JSON.stringify(natality,null,2));
