@@ -107,6 +107,7 @@
         <p class="highcharts-description">
             Relación entre emigrantes(/10000 para observar mejor los datos en la gráfica) y muertes por sobredosis
         </p>
+        <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
     </figure>
 </main>
 

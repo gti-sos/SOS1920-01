@@ -107,6 +107,7 @@
         <p class="highcharts-description">
             Relación(con proxy) entre emigrantes(/1000 para observar mejor los datos en la gráfica) y incendios
         </p>
+        <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
     </figure>
 </main>
 

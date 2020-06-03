@@ -47,6 +47,7 @@
     import APIex1 from './povertyApi/Integrations/ex-01.svelte';
     import APIex2 from './povertyApi/Integrations/ex-02.svelte';
 // API ESCOBAR
+    import EmigrantsIntegrations from './emigrantApi/Integrations/Home.svelte';
     import EmigrantTable from './emigrantApi/EmigrantTable.svelte';
     import EditEmigrant from './emigrantApi/EditEmigrant.svelte';
     import GraphEmigrant from './emigrantApi/GraphEmigrant.svelte';
@@ -107,7 +108,8 @@
         "/poverty-stats/sos1920-28":API28,
         "/poverty-stats/ex-01":APIex1,
         "/poverty-stats/ex-02":APIex2,
-	// ESCOBAR	
+    // ESCOBAR	
+        "/emigrants-stats/integrations": EmigrantsIntegrations,
         "/emigrants-stats": EmigrantTable,
         "/emigrants-stats/:country/:year": EditEmigrant,
         "/emigrants-stats/graph": GraphEmigrant,

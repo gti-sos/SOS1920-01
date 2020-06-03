@@ -107,6 +107,7 @@
         <p class="highcharts-description">
             Relación entre emigrantes y la venta de loterias(/10 para observar mejor los datos en la gráfica)
         </p>
+    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
     </figure>
 </main>
 
