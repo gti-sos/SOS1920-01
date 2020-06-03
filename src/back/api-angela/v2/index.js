@@ -127,8 +127,9 @@ app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
 		if(pov == 0){
 			res.send(JSON.stringify(pov, null, 2));
 		}else{
-			console.log("Data sent: "+JSON.stringify(pov, null,2));
 			res.send(JSON.stringify(pov, null, 2));
+			console.log("Data sent: "+JSON.stringify(pov, null,2));
+			
 			
 		}	
 	});

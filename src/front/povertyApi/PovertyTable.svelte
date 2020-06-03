@@ -73,16 +73,12 @@
 			const json = await res.json();
 			stats = json;
 			console.log("Found "+ stats.length + " stats");
-			//window.alert("Se han encontrado datos.");
-			exitoMsg = res.status + ": " + res.statusText;
-		
+			//window.alert("Dato encontrado con éxito");
+			exitoMsg = "Datos encontrados con estos parametros."
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
-				errorMsg = " El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText+". No se encuentran datos.";
-					
-		}else{
-			console.log("ERROR:"+" El tipo de error es: " + res.status + ", y quiere decir: " + res.statusText);
-		};
+				errorMsg = res.status + "quiere decir: " + res.statusText + ".Dato no encontrado";
+		}
 	}
 	//////////////////////PAGINACION
 	async function paginacion(searchCountry, searchYear, minPoverty_prp, maxPoverty_prp, minPoverty_pt, maxPoverty_pt, minPoverty_ht, maxPoverty_ht,num){
