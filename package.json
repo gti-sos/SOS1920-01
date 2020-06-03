@@ -7,7 +7,11 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "node index",
+<<<<<<< HEAD
     "test": "npx newman run tests/test-emigrant-stats.json --environment tests/heroku.json"
+=======
+    "test": "npx newman run tests/test-poverty-stats.json --environment tests/heroku.json && npx newman run tests/test-natality-stats.json --environment tests/heroku.json && npx newman run tests/test-emigrant-stats.json --environment tests/heroku.json"
+>>>>>>> 3e7f81e71052bbb5abeb91ed5d33b17384ae4e81
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
