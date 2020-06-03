@@ -9,7 +9,7 @@
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://restcountries.eu/rest/v2/all");
+    const resData2 = await fetch("https://restcountries.eu/rest/v2/region/europe");
 		if (resData2.ok) {
 			console.log("Ok, api ext1 loaded");
 			const json = await resData2.json();
@@ -30,10 +30,10 @@
 			}
         });
 		API_Ext1.forEach((x) => {
-            if((x.name=="Afghanistan"||x.name=="Åland Islands")){	
+            if(x.name=="Albania"||x.name=="Andorra"){	
 				aux={
-					name: x.region,
-					data: [parseInt(x.area), 0]
+					name: x.name,
+					data: [parseInt(x.population), 0]
 				}
 				valores.push(aux)
 			}  
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Area'
+				text: 'Natalidad y Población'
 			},
 			xAxis: {
-				categories: ["Area", "Nacimiento Totales",]
+				categories: ["Población", "Nacimiento Totales"]
 			},
 			yAxis: {
 				min: 0,
@@ -84,7 +84,7 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En esta gráfica podemos ver la integracion con una API Externa a traves de "https://restcountries.eu/rest/v2/all".
+        En esta gráfica podemos ver la integracion con una API Externa a traves de https://restcountries.eu/rest/v2/region/europe.
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>

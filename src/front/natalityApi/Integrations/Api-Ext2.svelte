@@ -4,17 +4,17 @@
 	async function loadGraph(){
 
 	let MyData = [];
-	let API_Ext1 = [];
+	let API_Ext2 = [];
 		
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
     const resData2 = await fetch("https://disease.sh/v2/countries?yesterday=false&sort=deaths&allowNull=true");
 		if (resData2.ok) {
-			console.log("Ok, api ext1 loaded");
+			console.log("Ok, api ext2 loaded");
 			const json = await resData2.json();
-            API_Ext1 = json;
-			console.log(API_Ext1)
+            API_Ext2 = json;
+			console.log(API_Ext2)
 		} else {
 			console.log("ERROR!");
         }
@@ -29,11 +29,11 @@
 				valores.push(aux)
 			}
         });
-		API_Ext1.forEach((x) => {
+		API_Ext2.forEach((x) => {
             if((x.country=="USA"|| x.country=="Italy")){	
 				aux={
 					name: x.country,
-					data: [parseInt(x.deaths), 0]
+					data: [parseInt(x.cases), 0]
 				}
 				valores.push(aux)
 			}  
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Muertes'
+				text: 'Natalidad y Casos'
 			},
 			xAxis: {
-				categories: ["Area", "Nacimiento Totales",]
+				categories: ["Casos", "Nacimiento Totales",]
 			},
 			yAxis: {
 				min: 0,
