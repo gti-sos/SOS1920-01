@@ -87,6 +87,7 @@
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
 			Datos de Suicidios y Riesgo de pobreza.
+			</p><p><i>NOTA: Los valores de Riesgode pobreza están dividos entre 1000 para una representación visual.</i>
 		</p>
 	</figure>
 
