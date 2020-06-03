@@ -39,25 +39,6 @@
 					<li><a href="https://documenter.getpostman.com/view/6902825/Szme4JDL">SOS1920-01-emigrants-stats v2</a> (developed by <a href="https://github.com/Escobar1993">Antonio Escobar</a>)</li>
 				</ul>
 				<br>
-
-				<li><strong>FRONT END: </strong></li>
-				<ul>
-					<br>
-					<li>
-						<button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats'" style=" width: 25%;"> Tabla Natalidad </button>
-						<button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats/graph'" style=" width: 25%;"> Gráfica Natalidad</button>
-						<button type="button" class="btn btn-success" onclick="window.location.href='#/natality-stats/graphV2'" style=" width: 30%;"> Gráfica Natalidad por Billboard.js</button>
-					</li>
-					<br> 
-					<li>
-						<button type="button" class="btn btn-primary" onclick="window.location.href='#/poverty-stats'"style="width: 25%;"> Riesgo de pobreza</button>
-						<button type="button" class="btn btn-primary" onclick="window.location.href='#/poverty-stats/graph'"style="width: 25%;"> Graph Riesgo de pobreza</button>
-						<button type="button" class="btn btn-primary" onclick="window.location.href='#/poverty-stats/graph2'"style="width: 25%;"> Graph2 Riesgo de pobreza</button>
-					</li>
-				<br>
-					<li><button type="button" class="btn btn-warning" onclick="window.location.href='#/emigrants-stats'"style="width: 25%;"> Emigración </button></li>
-					<br>
-                </ul>
 			</ul>
 		</div>
 		
