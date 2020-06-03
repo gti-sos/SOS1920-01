@@ -107,6 +107,7 @@
         <p class="highcharts-description">
             Relación entre emigrantes(/10 para observar mejor los datos en la gráfica) y pruebas del covid de grado de calidad D
         </p>
+        <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
     </figure>
 </main>
 
