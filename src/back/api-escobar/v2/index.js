@@ -101,6 +101,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
         });
 		
 		if(emi == 0){
+			res.send(JSON.stringify(emi, null, 2));
 			res.sendStatus(404, "EMI NOT FOUND");
 		}else{
 			res.send(JSON.stringify(emi, null, 2));
