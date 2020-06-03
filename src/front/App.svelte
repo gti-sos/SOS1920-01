@@ -62,7 +62,7 @@
     import G26 from './emigrantApi/Integrations/G26.svelte';
     import G30 from './emigrantApi/Integrations/G30.svelte';
     import Externa1 from './emigrantApi/Integrations/Externa1.svelte';
-    
+    import Externa2 from './emigrantApi/Integrations/Externa2.svelte';
 
     const routes = {
         "/": Home,
@@ -123,7 +123,7 @@
         "/emigrants-stats/G26":G26,
         "/emigrants-stats/G30":G30,
         "/emigrants-stats/Externa1":Externa1,
-
+        "/emigrants-stats/Externa2":Externa2,
 		"*": NotFound
 	};
 </script>

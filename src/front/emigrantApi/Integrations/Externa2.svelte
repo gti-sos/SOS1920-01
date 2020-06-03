@@ -9,7 +9,7 @@
 	    const EmigrantDatos = await fetch("/api/v1/emigrants-stats");
 	    MisDatos = await EmigrantDatos.json();
 
-        const DatosExternos = await fetch("https://gorest.co.in/public-api/posts?_format=json&access-token=Txxe3peKuwlIRmgLbQ_Os75NHe5I5qoerKBc");
+        const DatosExternos = await fetch("https://coronavirus-19-api.herokuapp.com/countries");
 		if (DatosExternos.ok) {
 			console.log("Externa2 cargado");
 			const json = await DatosExternos.json();
@@ -31,10 +31,10 @@
 			}
         });
 		Externa2.forEach((x) => {
-            if((x.country=="france"||x.country=="portugal")){	
+            if((x.country=="Mexico"||x.country=="Canada")){	
 				aux={
 					name: x.country,
-					data: [parseInt(x.totalCount),parseInt(x.pageCount),0,0]
+					data: [parseInt(x.deaths),parseInt(x.recovered),0,0]
 				}
 				valores.push(aux)
 			}  	
@@ -61,8 +61,8 @@
         },
         xAxis: {
             categories: [
-                'exp_book',
-                'exp_editorial',
+                'deaths',
+                'recovered',
                 'em_man',
                 'em_woman'
             ],
@@ -105,7 +105,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Relación entre emigrantes(/10 para observar mejor los datos en la gráfica) e incendios
+            Relación entre emigrantes(/10 para observar mejor los datos en la gráfica) e las muertes y recuperaciones a causa del covid-19
         </p>
     </figure>
 </main>

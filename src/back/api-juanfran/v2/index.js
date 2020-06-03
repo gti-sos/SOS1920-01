@@ -117,7 +117,7 @@ var initialNatality_stats = [
 	}
 ];
 
-// --------------- Proxy -------------------
+// --------------- Proxy G28 -------------------
 const request = require('request'); 
 const express = require ("express"); 
 
@@ -130,7 +130,7 @@ app.use(path28, function(req, res) {
 	req.pipe(request(url)).pipe(res); 
 }); 
 	app.use(express.static('.'));
-
+	
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
 	 dbn.remove({}, {multi:true});
