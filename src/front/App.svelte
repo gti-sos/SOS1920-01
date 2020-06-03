@@ -49,6 +49,8 @@
 // API ESCOBAR
     import EmigrantTable from './emigrantApi/EmigrantTable.svelte';
     import EditEmigrant from './emigrantApi/EditEmigrant.svelte';
+    import GraphEmigrant from './emigrantApi/GraphEmigrant.svelte';
+    import GraphEmigrant2 from './emigrantApi/GraphEmigrant2.svelte';
     import G05 from './emigrantApi/Integrations/G05.svelte';
     import G06 from './emigrantApi/Integrations/G06.svelte';
     import G07 from './emigrantApi/Integrations/G07.svelte';
@@ -59,7 +61,8 @@
     import G23 from './emigrantApi/Integrations/G23.svelte';
     import G26 from './emigrantApi/Integrations/G26.svelte';
     import G30 from './emigrantApi/Integrations/G30.svelte';
-    
+    import Externa1 from './emigrantApi/Integrations/Externa1.svelte';
+    import Externa2 from './emigrantApi/Integrations/Externa2.svelte';
 
     const routes = {
         "/": Home,
@@ -107,6 +110,8 @@
 	// ESCOBAR	
         "/emigrants-stats": EmigrantTable,
         "/emigrants-stats/:country/:year": EditEmigrant,
+        "/emigrants-stats/graph": GraphEmigrant,
+        "/emigrants-stats/graph2": GraphEmigrant2,
         "/emigrants-stats/G05":G05,
         "/emigrants-stats/G06":G06,
         "/emigrants-stats/G07":G07,
@@ -117,8 +122,8 @@
         "/emigrants-stats/G23":G23,
         "/emigrants-stats/G26":G26,
         "/emigrants-stats/G30":G30,
-    
-
+        "/emigrants-stats/Externa1":Externa1,
+        "/emigrants-stats/Externa2":Externa2,
 		"*": NotFound
 	};
 </script>
