@@ -74,7 +74,7 @@
 			stats = json;
 			console.log("Found "+ stats.length + " stats");
 			//window.alert("Se han encontrado datos.");
-			exitoMsg = res.status + ": " + res.statusText;
+			exitoMsg = "Datos encontrados con estos parametros";
 		
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
