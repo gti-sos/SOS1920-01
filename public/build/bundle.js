@@ -23018,6 +23018,39 @@ var app = (function () {
     const { console: console_1$G } = globals;
     const file$S = "src\\front\\emigrantApi\\Integrations\\Externa1.svelte";
 
+    // (110:8) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$M(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$S, 109, 60, 3249);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$M.name,
+    		type: "slot",
+    		source: "(110:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$T(ctx) {
     	let script0;
     	let script0_src_value;
@@ -23033,7 +23066,21 @@ var app = (function () {
     	let div;
     	let t1;
     	let p;
+    	let t3;
+    	let current;
     	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$M] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -23048,6 +23095,8 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = "Relación entre emigrantes(/10 para observar mejor los datos en la gráfica) y pruebas del covid de grado de calidad D";
+    			t3 = space();
+    			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$S, 98, 8, 2556);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script1, "src", script1_src_value);
@@ -23079,12 +23128,30 @@ var app = (function () {
     			append_dev(figure, div);
     			append_dev(figure, t1);
     			append_dev(figure, p);
+    			append_dev(figure, t3);
+    			mount_component(button, figure, null);
+    			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$C, false, false, false);
     		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
@@ -23092,6 +23159,7 @@ var app = (function () {
     			detach_dev(script3);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
+    			destroy_component(button);
     			dispose();
     		}
     	};
@@ -23212,6 +23280,39 @@ var app = (function () {
     const { console: console_1$H } = globals;
     const file$T = "src\\front\\emigrantApi\\Integrations\\Externa2.svelte";
 
+    // (110:8) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$N(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$T, 109, 60, 3191);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$N.name,
+    		type: "slot",
+    		source: "(110:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$U(ctx) {
     	let script0;
     	let script0_src_value;
@@ -23227,7 +23328,21 @@ var app = (function () {
     	let div;
     	let t1;
     	let p;
+    	let t3;
+    	let current;
     	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$N] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -23242,6 +23357,8 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = "Relación entre emigrantes(/10 para observar mejor los datos en la gráfica) e las muertes y recuperaciones a causa del covid-19";
+    			t3 = space();
+    			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$T, 98, 8, 2488);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script1, "src", script1_src_value);
@@ -23273,12 +23390,30 @@ var app = (function () {
     			append_dev(figure, div);
     			append_dev(figure, t1);
     			append_dev(figure, p);
+    			append_dev(figure, t3);
+    			mount_component(button, figure, null);
+    			current = true;
     			if (remount) dispose();
     			dispose = listen_dev(script3, "load", loadGraph$D, false, false, false);
     		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
+    		p: function update(ctx, [dirty]) {
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
@@ -23286,6 +23421,7 @@ var app = (function () {
     			detach_dev(script3);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
+    			destroy_component(button);
     			dispose();
     		}
     	};
