@@ -87,6 +87,7 @@
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
 			Energías primarias y Riesgo de pobreza.
+			</p><p><i>NOTA: Los valores de Riesgo de pobreza están dividos entre 100 para una representación visual.</i>
 		</p>
 	</figure>
 

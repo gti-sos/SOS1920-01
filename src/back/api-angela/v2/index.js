@@ -74,38 +74,74 @@ app.get(BASE_PATH+"/poverty-stats/loadInitialData", (req, res) => {
 	console.log("Initial poverty_stats loaded:" +JSON.stringify(poverty_stats,null,2));
 });
 ///GET
-/// GET COUNTRY
-app.get(BASE_PATH + "/poverty-stats", (req,res)=>{
-	var dbquery = {};
-	let offset = 0;
-	let limit = Number.MAX_SAFE_INTEGER;
-
-	if (req.query.offset) {
-		offset = parseInt(req.query.offset);
-		delete req.query.offset;
-	}
-	if (req.query.limit) {
-		limit = parseInt(req.query.limit);
-		delete req.query.limit;
-	}
-
-	if(req.query.country) dbquery["country"]= req.query.country;
-	if(req.query.year) dbquery["year"] = parseInt(req.query.year);
-	if(req.query.traveller) dbquery["poverty_prp"] = parseFloat(req.query.poverty_prp);
-	if(req.query.overnightstay) dbquery["poverty_pt"] = parseFloat(req.query.poverty_pt);
-	if(req.query.averagestay) dbquery["poverty_ht"] = parseFloat(req.query.poverty_ht);	
+//-  /api/v1/poverty-stats
+app.get(BASE_PATH+"/poverty-stats",(req,res) =>{
+	var limit = parseInt(req.query.limit);
+	var offset = parseInt(req.query.offset);
+	var search = {};
 	
-	pdb.find(dbquery).sort({country:1,year:-1}).skip(offset).limit(limit).exec((error, poverty) =>{
-
-		poverty.forEach((t)=>{
-			delete t._id
-		});
-
-		res.send(JSON.stringify(poverty,null,2));
-		console.log("Data sent:"+JSON.stringify(poverty_stats,null,2));
+	if(req.query.country) search['country'] = req.query.country;
+	if(req.query.year) search['year'] = parseInt(req.query.year);
+	
+	/////primer atributo --- poverty_prp
+	
+	if(req.query.poverty_prpMin && req.query.poverty_prpMax)
+		search['poverty_prp'] = {
+			$gte: parseInt(req.query.poverty_prpMin),
+			$lte: parseInt(req.query.poverty_prpMax)
+		}
+	if(req.query.poverty_prpMin && !req.query.poverty_prpMax)
+		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_prpMin)};
+	if(!req.query.poverty_prpMin && req.query.poverty_prpMax)
+		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_prpMax)}
+	
+	/////segundo atributo --- poverty_pt
+	
+	if(req.query.poverty_ptMin && req.query.poverty_ptMax)
+		search['poverty_pt'] = {
+			$gte: parseInt(req.query.poverty_ptMin),
+			$lte: parseInt(req.query.poverty_ptMax)
+		}
+	if(req.query.poverty_ptMin && !req.query.poverty_ptMax)
+		search['poverty_prp'] = {$gte: parseInt(req.query.poverty_ptMin)};
+	if(!req.query.poverty_ptMin && req.query.poverty_ptMax)
+		search['poverty_prp'] = {$lte: parseInt(req.query.poverty_ptMax)}
+	
+	/////tercer atrbuto --- poverty_ht
+	
+	if(req.query.poverty_htMin && req.query.poverty_htMax)
+		search['poverty_ht'] = {
+			$gte: parseInt(req.query.poverty_htMin),
+			$lte: parseInt(req.query.poverty_htMax)
+		}
+	if(req.query.poverty_htMin && !req.query.poverty_htMax)
+		search['poverty_ht'] = {$gte: parseInt(req.query.poverty_htMin)};
+	if(!req.query.poverty_htMin && req.query.poverty_htMax)
+		search['poverty_ht'] = {$lte: parseInt(req.query.poverty_htMax)}
+	
+	pdb.find(search).skip(offset).limit(limit).exec(function(err, pov){
+			pov.forEach((i)=>{
+				delete i._id
+			});
+		
+		if(pov == 0){
+			res.send(JSON.stringify(pov, null, 2));
+		}else{
+			console.log("Data sent: "+JSON.stringify(pov, null,2));
+			res.send(JSON.stringify(pov, null, 2));
 			
+		}	
 	});
+	/*	console.log("New GET .../poverty_stats");
+    pdb.find({}, (error, pov) => { 
+		pov.forEach((i)=>{
+				delete i._id
+			});
+		res.send(JSON.stringify(pov,null,2));
+		
+	});*/
 });
+
 
 /// GET COUNTRY
 app.get(BASE_PATH+"/poverty-stats/:country", (req,res) => {

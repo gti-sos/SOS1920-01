@@ -87,6 +87,7 @@
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
 			Electricidad Producida y Riesgo de pobreza en el año 2015 y 2018.
+		</p><p><i>NOTA: Los valores de 'Energia solar'y 'Carbon' están dividos entre 1000 para una representación visual.</i>
 		</p>
 	</figure>
 

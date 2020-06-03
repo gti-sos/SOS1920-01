@@ -87,6 +87,7 @@
 		<div id="container"></div>
 		<p style="text-align:center;" class="highcharts-description">
 			Importaciones y riesgo de pobreza en el año 2010.
+			</p><p><i>NOTA: Los valores de 'Residuos'y 'Alcohol' están dividos entre 100 para una representación visual.</i>
 		</p>
 	</figure>
 
