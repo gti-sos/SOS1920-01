@@ -9266,20 +9266,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$h, 78, 1, 1743);
+    			add_location(script0, file$h, 78, 1, 1746);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$h, 79, 1, 1811);
+    			add_location(script1, file$h, 79, 1, 1814);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$h, 80, 1, 1886);
+    			add_location(script2, file$h, 80, 1, 1889);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$h, 81, 4, 1966);
+    			add_location(script3, file$h, 81, 4, 1969);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$h, 84, 4, 2122);
+    			add_location(div, file$h, 84, 4, 2125);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$h, 85, 4, 2154);
+    			add_location(p, file$h, 85, 4, 2157);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$h, 83, 0, 2082);
+    			add_location(figure, file$h, 83, 0, 2085);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9372,10 +9372,10 @@ var app = (function () {
     	});
 
     	API_21.forEach(x => {
-    		if (x.year == 2016 && x.country == "Venezuela") {
+    		if (x.year == 2017 && x.aut_com == "andalusia") {
     			aux = {
-    				name: x.country + " " + x.year,
-    				data: [parseInt(x.cr_homicount), 0, 0]
+    				name: x.aut_com + " " + x.year,
+    				data: [parseInt(x.total_cars), 0, 0]
     			};
 
     			valores.push(aux);
@@ -9386,7 +9386,7 @@ var app = (function () {
     		chart: { type: "column" },
     		title: { text: "Natalidad y Licencia Conducción" },
     		xAxis: {
-    			categories: ["Licencias", "Natalidad Hombres", "Natalidad Mujeres"]
+    			categories: ["Coches Totales", "Natalidad Hombres", "Natalidad Mujeres"]
     		},
     		yAxis: { min: 0, title: { text: "Numero" } },
     		tooltip: {
@@ -9757,22 +9757,6 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$j, 78, 1, 1795);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$j, 79, 1, 1863);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$j, 80, 1, 1938);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$j, 81, 4, 2018);
-    			attr_dev(div, "id", "container");
-    			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$j, 84, 4, 2174);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$j, 85, 4, 2206);
-    			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$j, 83, 0, 2134);
-=======
     			add_location(script0, file$j, 78, 1, 1775);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$j, 79, 1, 1843);
@@ -9787,7 +9771,6 @@ var app = (function () {
     			add_location(p, file$j, 85, 4, 2186);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
     			add_location(figure, file$j, 83, 0, 2114);
->>>>>>> 40575670317f20c81799c08d6d4828ecd9d4883e
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9854,11 +9837,7 @@ var app = (function () {
     	let API_28 = [];
     	const resData = await fetch("/api/v2/natality-stats");
     	MyData = await resData.json();
-<<<<<<< HEAD
-    	const resData2 = await fetch("/api/v1/gce"); //REALIZA CON PROXY
-=======
     	const resData2 = await fetch("/api/v1/gce");
->>>>>>> 40575670317f20c81799c08d6d4828ecd9d4883e
 
     	if (resData2.ok) {
     		console.log("Ok, api 28 loaded");
@@ -10021,24 +10000,24 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "En esta gráfica podemos ver la integracion con una API Externa a traves de \"https://restcountries.eu/rest/v2/all\".";
+    			p.textContent = "En esta gráfica podemos ver la integracion con una API Externa a traves de https://restcountries.eu/rest/v2/region/europe.";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$k, 78, 1, 1656);
+    			add_location(script0, file$k, 78, 1, 1667);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$k, 79, 1, 1724);
+    			add_location(script1, file$k, 79, 1, 1735);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$k, 80, 1, 1799);
+    			add_location(script2, file$k, 80, 1, 1810);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$k, 81, 4, 1879);
+    			add_location(script3, file$k, 81, 4, 1890);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$k, 84, 4, 2035);
+    			add_location(div, file$k, 84, 4, 2046);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$k, 85, 4, 2067);
+    			add_location(p, file$k, 85, 4, 2078);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$k, 83, 0, 1995);
+    			add_location(figure, file$k, 83, 0, 2006);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10105,7 +10084,7 @@ var app = (function () {
     	let API_Ext1 = [];
     	const resData = await fetch("/api/v2/natality-stats");
     	MyData = await resData.json();
-    	const resData2 = await fetch("https://restcountries.eu/rest/v2/all");
+    	const resData2 = await fetch("https://restcountries.eu/rest/v2/region/europe");
 
     	if (resData2.ok) {
     		console.log("Ok, api ext1 loaded");
@@ -10131,10 +10110,10 @@ var app = (function () {
     	});
 
     	API_Ext1.forEach(x => {
-    		if (x.name == "Afghanistan" || x.name == "Åland Islands") {
+    		if (x.name == "Albania" || x.name == "Andorra") {
     			aux = {
-    				name: x.region,
-    				data: [parseInt(x.area), 0]
+    				name: x.name,
+    				data: [parseInt(x.population), 0]
     			};
 
     			valores.push(aux);
@@ -10143,9 +10122,9 @@ var app = (function () {
 
     	Highcharts.chart("container", {
     		chart: { type: "column" },
-    		title: { text: "Natalidad y Area" },
+    		title: { text: "Natalidad y Población" },
     		xAxis: {
-    			categories: ["Area", "Nacimiento Totales"]
+    			categories: ["Población", "Nacimiento Totales"]
     		},
     		yAxis: { min: 0, title: { text: "Numero" } },
     		tooltip: {
@@ -10267,20 +10246,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$l, 78, 1, 1691);
+    			add_location(script0, file$l, 78, 1, 1689);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$l, 79, 1, 1759);
+    			add_location(script1, file$l, 79, 1, 1757);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$l, 80, 1, 1834);
+    			add_location(script2, file$l, 80, 1, 1832);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$l, 81, 4, 1914);
+    			add_location(script3, file$l, 81, 4, 1912);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$l, 84, 4, 2070);
+    			add_location(div, file$l, 84, 4, 2068);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$l, 85, 4, 2102);
+    			add_location(p, file$l, 85, 4, 2100);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$l, 83, 0, 2030);
+    			add_location(figure, file$l, 83, 0, 2028);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10344,16 +10323,16 @@ var app = (function () {
 
     async function loadGraph$c() {
     	let MyData = [];
-    	let API_Ext1 = [];
+    	let API_Ext2 = [];
     	const resData = await fetch("/api/v2/natality-stats");
     	MyData = await resData.json();
     	const resData2 = await fetch("https://disease.sh/v2/countries?yesterday=false&sort=deaths&allowNull=true");
 
     	if (resData2.ok) {
-    		console.log("Ok, api ext1 loaded");
+    		console.log("Ok, api ext2 loaded");
     		const json = await resData2.json();
-    		API_Ext1 = json;
-    		console.log(API_Ext1);
+    		API_Ext2 = json;
+    		console.log(API_Ext2);
     	} else {
     		console.log("ERROR!");
     	}
@@ -10372,11 +10351,11 @@ var app = (function () {
     		}
     	});
 
-    	API_Ext1.forEach(x => {
+    	API_Ext2.forEach(x => {
     		if (x.country == "USA" || x.country == "Italy") {
     			aux = {
     				name: x.country,
-    				data: [parseInt(x.deaths), 0]
+    				data: [parseInt(x.cases), 0]
     			};
 
     			valores.push(aux);
@@ -10385,9 +10364,9 @@ var app = (function () {
 
     	Highcharts.chart("container", {
     		chart: { type: "column" },
-    		title: { text: "Natalidad y Muertes" },
+    		title: { text: "Natalidad y Casos" },
     		xAxis: {
-    			categories: ["Area", "Nacimiento Totales"]
+    			categories: ["Casos", "Nacimiento Totales"]
     		},
     		yAxis: { min: 0, title: { text: "Numero" } },
     		tooltip: {

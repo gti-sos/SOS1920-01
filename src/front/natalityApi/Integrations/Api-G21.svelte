@@ -30,10 +30,10 @@
 			}
         });
 		API_21.forEach((x) => {
-            if(x.year==2016 && x.country=="Venezuela"){	
+            if(x.year==2017 && x.aut_com=="andalusia"){	
 				aux={
-					name: x.country +" " +x.year,
-					data: [parseInt(x.cr_homicount),0,0]
+					name: x.aut_com +" " +x.year,
+					data: [parseInt(x.total_cars),0,0]
 				}
 				valores.push(aux)
 			}  
@@ -49,7 +49,7 @@
 				text: 'Natalidad y Licencia Conducción'
 			},
 			xAxis: {
-				categories: ["Licencias", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Coches Totales", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,
