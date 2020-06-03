@@ -3130,29 +3130,29 @@ var app = (function () {
     			br = element("br");
     			t4 = space();
     			i = element("i");
-    			i.textContent = "Gráfica común a las tres APIs. Representa la natalidad, la emigración y el riesgo de pobreza. Los datos de \r\n            Riesgo de pobreza son tan pequeños que apenas se aprecian. Para verlo deja marcado un solo país.";
+    			i.textContent = "Gráfica común a las tres APIs. Representa la natalidad, la emigración y el riesgo de pobreza. Los datos de \r\n            natalidad e emigración han sido divididos entre 100 para la visualizacion óptima.";
     			t6 = space();
     			div = element("div");
     			if (script0.src !== (script0_src_value = "https://www.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 105, 4, 3858);
+    			add_location(script0, file$3, 105, 4, 3882);
     			if (script1.src !== (script1_src_value = "https://www.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 106, 4, 3926);
+    			add_location(script1, file$3, 106, 4, 3950);
     			if (script2.src !== (script2_src_value = "https://www.amcharts.com/lib/4/plugins/sunburst.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 107, 4, 3996);
+    			add_location(script2, file$3, 107, 4, 4020);
     			if (script3.src !== (script3_src_value = "https://www.amcharts.com/lib/4/themes/kelly.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 108, 4, 4076);
+    			add_location(script3, file$3, 108, 4, 4100);
     			if (script4.src !== (script4_src_value = "https://www.amcharts.com/lib/4/themes/animated.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 109, 4, 4152);
+    			add_location(script4, file$3, 109, 4, 4176);
     			set_style(h2, "text-align", "center");
-    			add_location(h2, file$3, 113, 4, 4279);
-    			add_location(br, file$3, 117, 8, 4500);
-    			add_location(i, file$3, 118, 8, 4514);
+    			add_location(h2, file$3, 113, 4, 4303);
+    			add_location(br, file$3, 117, 8, 4524);
+    			add_location(i, file$3, 118, 8, 4538);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 116, 4, 4456);
+    			add_location(p, file$3, 116, 4, 4480);
     			attr_dev(div, "id", "chartdiv");
     			attr_dev(div, "class", "svelte-4y09ai");
-    			add_location(div, file$3, 121, 4, 4754);
-    			add_location(main, file$3, 112, 0, 4267);
+    			add_location(div, file$3, 121, 4, 4764);
+    			add_location(main, file$3, 112, 0, 4291);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3245,15 +3245,15 @@ var app = (function () {
     								children: [
     									{
     										name: "Total",
-    										value: parseInt(x.natality_totals)
+    										value: parseInt(x.natality_totals / 100)
     									},
     									{
     										name: "Hombres",
-    										value: parseInt(x.natality_men)
+    										value: parseInt(x.natality_men / 100)
     									},
     									{
     										name: "Mujeres",
-    										value: parseInt(x.natality_women)
+    										value: parseInt(x.natality_women / 100)
     									}
     								]
     							},
@@ -3279,15 +3279,15 @@ var app = (function () {
     								children: [
     									{
     										name: "Total",
-    										value: parseFloat(z.em_totals)
+    										value: parseFloat(z.em_totals / 100)
     									},
     									{
     										name: "Hombres",
-    										value: parseFloat(z.em_man)
+    										value: parseFloat(z.em_man / 100)
     									},
     									{
     										name: "Mujeres",
-    										value: parseFloat(z.em_woman)
+    										value: parseFloat(z.em_woman / 100)
     									}
     								]
     							}
@@ -9757,20 +9757,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$j, 78, 1, 1807);
+    			add_location(script0, file$j, 78, 1, 1795);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$j, 79, 1, 1875);
+    			add_location(script1, file$j, 79, 1, 1863);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$j, 80, 1, 1950);
+    			add_location(script2, file$j, 80, 1, 1938);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$j, 81, 4, 2030);
+    			add_location(script3, file$j, 81, 4, 2018);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$j, 84, 4, 2186);
+    			add_location(div, file$j, 84, 4, 2174);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$j, 85, 4, 2218);
+    			add_location(p, file$j, 85, 4, 2206);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$j, 83, 0, 2146);
+    			add_location(figure, file$j, 83, 0, 2134);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9837,7 +9837,7 @@ var app = (function () {
     	let API_28 = [];
     	const resData = await fetch("/api/v2/natality-stats");
     	MyData = await resData.json();
-    	const resData2 = await fetch("https://sos1920-28.herokuapp.com/api/v1/gce");
+    	const resData2 = await fetch("/api/v1/gce"); //REALIZA CON PROXY
 
     	if (resData2.ok) {
     		console.log("Ok, api 28 loaded");

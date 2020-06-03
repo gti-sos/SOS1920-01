@@ -117,20 +117,20 @@ var initialNatality_stats = [
 	}
 ];
 
-// --------------- Proxy -------------------
+// --------------- Proxy G28 -------------------
 const request = require('request'); 
 const express = require ("express"); 
 
 var api28 = 'https://sos1920-28.herokuapp.com'; 
 var path28 = '/api/v1/gce'; 
 
-app.use(path05, function(req, res) { 
+app.use(path28, function(req, res) { 
 	var url = api28 + req.baseUrl + req.url; 
 	console.log('piped: ' + req.baseUrl + req.url); 
 	req.pipe(request(url)).pipe(res); 
 }); 
 	app.use(express.static('.'));
-
+	
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
 	 dbn.remove({}, {multi:true});
