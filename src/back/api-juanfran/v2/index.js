@@ -117,20 +117,20 @@ var initialNatality_stats = [
 	}
 ];
 
-// --------------- Proxy -------------------
+// --------------- Proxy G28 -------------------
 const request = require('request'); 
 const express = require ("express"); 
 
-var api06= 'https://sos1920-09.herokuapp.com'; 
-var path06 = '/api/v2/accstats'; 
+var api28 = 'https://sos1920-28.herokuapp.com'; 
+var path28 = '/api/v1/gce'; 
 
-app.use(path06, function(req, res) { 
-	var url = api06 + req.baseUrl + req.url; 
+app.use(path28, function(req, res) { 
+	var url = api28 + req.baseUrl + req.url; 
 	console.log('piped: ' + req.baseUrl + req.url); 
 	req.pipe(request(url)).pipe(res); 
 }); 
 	app.use(express.static('.'));
-
+	
 // --------------- loadInitialData ----------------------
  app.get(BASE_PATH + "/natality-stats/loadInitialData", (req, res) => {
 	 dbn.remove({}, {multi:true});
@@ -208,7 +208,7 @@ app.get(BASE_PATH +"/natality-stats",(req,res) =>{
 				delete n._id;
 			});
 		if(natality == 0){
-			res.sendStatus(404, "NOT FOUND");
+			res.send(JSON.stringify(natality,null,2));
 		}else{
 			res.send(JSON.stringify(natality,null,2));
 			console.log("Datos enviados: " + JSON.stringify(natality,null,2));

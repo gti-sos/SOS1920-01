@@ -23,7 +23,7 @@
     <button type="button" class="btn btn-primary" onclick="window.location.href='#/emigrants-stats/G26'"style="margin-left: 10%; width: 20%;">API Grupo 26</button>
     <br><br>
     <button type="button" class="btn btn-primary" onclick="window.location.href='#/emigrants-stats/G30'"style="margin-left: 10%; width: 20%;">API Grupo 30</button>
-    <button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats/ex-01'"style="margin-left: 10%; width: 20%;">API Externo 01</button>
-    <button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats/ex-02'"style="margin-left: 10%; width: 20%;">API Externo 02</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats/Externa1'"style="margin-left: 10%; width: 20%;">API Externo 01</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='#/emigrants-stats/Externa2'"style="margin-left: 10%; width: 20%;">API Externo 02</button>
     <br><br>
     </p>

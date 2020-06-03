@@ -4,56 +4,36 @@
 	async function loadGraph(){
 
 	    let MisDatos = [];
-	    let G23 = [];
     
 	    const EmigrantDatos = await fetch("/api/v1/emigrants-stats");
 	    MisDatos = await EmigrantDatos.json();
 
-        const DatosExternos = await fetch("/api/v2/fires-stats");
-		if (DatosExternos.ok) {
-			console.log("G23 cargado");
-			const json = await DatosExternos.json();
-            G23 = json;
-			console.log(G23)
-		} else {
-			console.log("ERROR!");
-        }
 		let aux = []
-		let valores = []
-		MisDatos.forEach((x) => {
-        	if(x.year==2010 && (x.country=="spain"||x.country=="germany")){	
+        let valores = []
+        
+        MisDatos.forEach((x) => {
+        		
 				aux={
-					name: x.country,
-					data: [0,0,parseInt(x.em_man)/1000, parseInt(x.em_woman)/1000]
+					name: x.country+"" +x.year,
+					data: [parseInt(x.em_man), parseInt(x.em_woman),parseInt(x.em_totals)]
 				}
 				valores.push(aux)
-			}
         });
-		G23.forEach((x) => {
-            if(x.year==2008 && (x.community=="aragon"||x.community=="canarias")){	
-				aux={
-					name: x.community,
-					data: [x["total_fire"],x["forest_area"],0,0]
-				}
-				valores.push(aux)
-			}  	
-		
-
-        });
+        
 
     Highcharts.chart('container', {
         chart: {
             type: 'areaspline'
         },
         title: {
-            text: 'G01 - G23'
+            text: ''
         },
         legend: {
-            layout: 'vertical',
+            layout: 'horizontal',
             align: 'left',
             verticalAlign: 'top',
-            x: 150,
-            y: 100,
+            x: 50,
+            y: 0,
             floating: true,
             borderWidth: 1,
             backgroundColor:
@@ -61,10 +41,9 @@
         },
         xAxis: {
             categories: [
-                'total_fire',
-                'forest_area',
                 'em_man',
-                'em_woman'
+                'em_woman',
+                'em_totals'
             ],
             plotBands: [{ // visualize the weekend
                 from: 4.5,
@@ -105,9 +84,8 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Relación(con proxy) entre emigrantes(/1000 para observar mejor los datos en la gráfica) y incendios
+            Gráfica sobre emigrantes en varios países
         </p>
-        <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
     </figure>
 </main>
 

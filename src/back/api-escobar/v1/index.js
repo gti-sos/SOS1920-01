@@ -40,7 +40,7 @@ var emigrants_stats = [
 //////////// PROXY///////////////
 
 var eproxy = "/api/v2/fires-stats";
-var urlEProxy = "http://sos1920-23.herokuapp.com/"
+var urlEProxy = "https://sos1920-23.herokuapp.com"
 
 app.use(eproxy, function(req, res){
 	var url = urlEProxy + req.baseUrl + req.url;
@@ -113,7 +113,7 @@ app.get(BASE_PATH+"/emigrants-stats",(req,res) =>{
         });
 		
 		if(emi == 0){
-			res.sendStatus(404, "EMI NOT FOUND");
+			res.send(JSON.stringify(emi, null, 2));
 		}else{
 			res.send(JSON.stringify(emi, null, 2));
 			console.log("Data send: "+JSON.stringify(emi, null,2));

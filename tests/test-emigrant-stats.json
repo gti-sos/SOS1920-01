@@ -1,0 +1,1562 @@
+{
+	"info": {
+		"_postman_id": "97924b27-04a5-42c5-9762-e2a642074720",
+		"name": "SOS1920-01-emigrants_stats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "902d87b2-c46a-4a22-8188-abe6dcef0130",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"loadInitialData"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/loadInitialData"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general con todos los recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "049b4735-6879-4db5-8f80-1570a7536837",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Post , recurso concreto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1dcfdce-9562-471d-8151-cc4e82f8efc0",
+						"exec": [
+							"pm.test(\"Status code is 201\", function() {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"country\": \"spain\",\r\n        \"year\": 2020,\r\n        \"em_man\": 609615,\r\n        \"em_woman\": 736247,\r\n        \"em_totals\": 1345862\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get country && year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f4c04fcb-a101-46a1-ab26-052e0113a9bb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"It return a country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Get country && year, Query Params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbeaa08c-71e2-4bf5-b670-23e7891a1fde",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?country=spain&year=2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						},
+						{
+							"key": "year",
+							"value": "2020"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Get por pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f558917d-c0e1-4115-9757-d7b6235355e5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Get por pais Query Params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f558917d-c0e1-4115-9757-d7b6235355e5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?country=spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Get por año, Query Params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fcd85ef2-c63c-4bde-af44-2cbee704bd36",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?year=2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general con paginación (limit)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "707abb76-9ad2-422b-8f9b-75a49d4058d0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?limit=4",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general con paginación (offset)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81f4d983-aa5b-41f1-a6a3-77637478af78",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?offset=13",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "13"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general con paginación (offset)  && (limit)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "923d4cc4-142e-4594-99b4-b4c1db2b03ce",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?limit=4&offset=14",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "offset",
+							"value": "14"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 1 max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ef6f54b-a874-43cf-b5cf-2e15099a43e3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_manMax=1416896",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_manMax",
+							"value": "1416896"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 1 min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20bf7161-8098-4f8a-9f95-d6995a210d25",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_manMin=943997",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_manMin",
+							"value": "943997"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 1 Max && Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f456b60-bf41-4778-a14f-ee28bf41e17a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_manMax=943996&em_manMin=943996",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_manMax",
+							"value": "943996"
+						},
+						{
+							"key": "em_manMin",
+							"value": "943996"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 2 max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49e401b4-72dc-4ed1-aa11-66c65dde8d6e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_womanMax=1275166",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_womanMax",
+							"value": "1275166"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 2 min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93cecd66-30ec-4c61-b0e4-a0e63cd70482",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_womanMin=1275168",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_womanMin",
+							"value": "1275168"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 2 Max && Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b1114224-2eb9-436e-a0e0-7c14fad9aa3b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_womanMax=1275167&em_womanMin=1275167",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_womanMax",
+							"value": "1275167"
+						},
+						{
+							"key": "em_womanMin",
+							"value": "1275167"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 3 max",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "61f3e476-d35f-49db-84fa-b34d5fd6af4a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_totalsMax=2692063",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_totalsMax",
+							"value": "2692063"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 3 min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96561c2a-fd5e-48e7-a38e-077129de365f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_totalsMin=2692065",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_totalsMin",
+							"value": "2692065"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get propiedad 3 Max && Min",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f2dcf0d-dd6b-4a88-9816-b218b088271e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats?em_totalsMax=4028281&em_totalsMin=4028281",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					],
+					"query": [
+						{
+							"key": "em_totalsMax",
+							"value": "4028281"
+						},
+						{
+							"key": "em_totalsMin",
+							"value": "4028281"
+						}
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Post, Method not allowed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c65c107c-62a9-4a95-9cfb-ce925e3e9bdf",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"italy\",\r\n\"year\": 2017,\r\n\"em_man\": 1588733,\r\n\"em_woman\": 1440435,\r\n\"em_totals\": 3029168\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/italy",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"italy"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/italy"
+			},
+			"response": []
+		},
+		{
+			"name": "Post, Method not allowed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb23b5ad-fc7d-43f6-b076-ee64f7b52fb0",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"country\": \"italy\",\r\n        \"year\": 2019,\r\n        \"em_man\": 1588733,\r\n        \"em_woman\": 1440435,\r\n        \"em_totals\": 3029168\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/italy/2017",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"italy",
+						"2017"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/italy/2017"
+			},
+			"response": []
+		},
+		{
+			"name": "Post , Bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1dcfdce-9562-471d-8151-cc4e82f8efc0",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"country\": \"spain\",\r\n     \r\n        \"em_man\": 609615,\r\n        \"em_woman\": 736247,\r\n        \"em_totals\": 1345862\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Post , Conflict",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1dcfdce-9562-471d-8151-cc4e82f8efc0",
+						"exec": [
+							"pm.test(\"Status code is 409\", function() {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"country\": \"spain\",\r\n        \"year\": 2020,\r\n        \"em_man\": 609615,\r\n        \"em_woman\": 736247,\r\n        \"em_totals\": 1345862\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT method not allowed 1 general",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bbbc14d5-cc36-457e-ac2c-3b988011b84b",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2020,\r\n\"em_man\": 1000003,\r\n\"em_woman\": 1000005,\r\n\"em_totals\": 3000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT method not allowed 2 country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "36464cc6-22e9-408f-8f95-0e16d978cded",
+						"exec": [
+							"pm.test(\"Status code is 405\", function() {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2020,\r\n\"em_man\": 1000003,\r\n\"em_woman\": 1000005,\r\n\"em_totals\": 3000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT conflict",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0b2ea73-c23e-4ae9-9f6b-e4291769b6ce",
+						"exec": [
+							"pm.test(\"Status code is 409\", function() {",
+							"    pm.response.to.have.status(409);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"andalucia\",\r\n\"year\": 2011,\r\n\"em_man\": 1000003,\r\n\"em_woman\": 1000005,\r\n\"em_totals\": 3000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT spain/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83743d2f-13c1-4f7a-b718-67664b53c36c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2020,\r\n\"em_man\": 1000003,\r\n\"em_woman\": 1000005,\r\n\"em_totals\": 3000008\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get prueba put spain/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17e4aca5-5c44-42db-a115-99dd3d28d4ca",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"It return a country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"country\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete, spain/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ec4ef73-fb03-4032-825b-37782cfa0df5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/italy/2017"
+			},
+			"response": []
+		},
+		{
+			"name": "Get  prueba delete, spain/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccc0977e-a4d6-4600-be73-8b59a093c024",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/spain/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"spain",
+						"2020"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete general, por pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57d552c0-a7a6-497a-8020-e452e272b97a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/italy",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"italy"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/italy"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general (prueba delete por país)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bee67bb3-d005-4132-84ce-ed0c92560e11",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/italy",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"italy"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/spain"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete general",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d238769-8227-4114-b287-80c3bdc9daf9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get general (prueba delete general)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c5250a73-6e49-4e04-80fd-d5c604118fd0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "LoadInitialData estado final",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "902d87b2-c46a-4a22-8188-abe6dcef0130",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats",
+						"loadInitialData"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats/loadInitialData"
+			},
+			"response": []
+		},
+		{
+			"name": "Get estado final",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "049b4735-6879-4db5-8f80-1570a7536837",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"There are more than 1 country\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/emigrants-stats",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emigrants-stats"
+					]
+				},
+				"description": "https://sos1920-01.herokuapp.com/api/v1/emigrants-stats"
+			},
+			"response": []
+		}
+	]
+}

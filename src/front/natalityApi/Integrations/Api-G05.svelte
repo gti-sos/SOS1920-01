@@ -49,7 +49,7 @@
 				text: 'Natalidad y Salud Pública'
 			},
 			xAxis: {
-				categories: ["Gasto público", "Gasto públoco pib", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Gasto público", "Gasto público pib", "Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,

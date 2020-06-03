@@ -22,8 +22,8 @@
     import API_G21 from './natalityApi/Integrations/Api-G21.svelte';
     import API_G23 from './natalityApi/Integrations/Api-G23.svelte';
     import API_G28 from './natalityApi/Integrations/Api-G28.svelte';
-    //import API_Ext1 from './natalityApi/Integrations/Api-Ext1.svelte';
-   // import API_Ext2 from './natalityApi/Integrations/Api-Ext2.svelte';
+    import API_Ext1 from './natalityApi/Integrations/Api-Ext1.svelte';
+    import API_Ext2 from './natalityApi/Integrations/Api-Ext2.svelte';
 
     
 
@@ -47,19 +47,23 @@
     import APIex1 from './povertyApi/Integrations/ex-01.svelte';
     import APIex2 from './povertyApi/Integrations/ex-02.svelte';
 // API ESCOBAR
+    import EmigrantsIntegrations from './emigrantApi/Integrations/Home.svelte';
     import EmigrantTable from './emigrantApi/EmigrantTable.svelte';
     import EditEmigrant from './emigrantApi/EditEmigrant.svelte';
-    //import G05 from './emigrantApi/Integrations/G05.svelte';
-    //import G06 from './emigrantApi/Integrations/G06.svelte';
-    //import G07 from './emigrantApi/Integrations/G07.svelte';
-    //import G08 from './emigrantApi/Integrations/G08.svelte';
-    //import G09 from './emigrantApi/Integrations/G09.svelte';
-    //import G12 from './emigrantApi/Integrations/G12.svelte';
-    //import G22 from './emigrantApi/Integrations/G22.svelte';
+    import GraphEmigrant from './emigrantApi/GraphEmigrant.svelte';
+    import GraphEmigrant2 from './emigrantApi/GraphEmigrant2.svelte';
+    import G05 from './emigrantApi/Integrations/G05.svelte';
+    import G06 from './emigrantApi/Integrations/G06.svelte';
+    import G07 from './emigrantApi/Integrations/G07.svelte';
+    import G08 from './emigrantApi/Integrations/G08.svelte';
+    import G09 from './emigrantApi/Integrations/G09.svelte';
+    import G12 from './emigrantApi/Integrations/G12.svelte';
+    import G22 from './emigrantApi/Integrations/G22.svelte';
     import G23 from './emigrantApi/Integrations/G23.svelte';
-    //import G26 from './emigrantApi/Integrations/G26.svelte';
-    //import G30 from './emigrantApi/Integrations/G30.svelte';
-    
+    import G26 from './emigrantApi/Integrations/G26.svelte';
+    import G30 from './emigrantApi/Integrations/G30.svelte';
+    import Externa1 from './emigrantApi/Integrations/Externa1.svelte';
+    import Externa2 from './emigrantApi/Integrations/Externa2.svelte';
 
     const routes = {
         "/": Home,
@@ -81,8 +85,8 @@
         "/natality-stats/API-G21" : API_G21,
         "/natality-stats/API-G23" : API_G23,
         "/natality-stats/API-G28" : API_G28,
-        //"/natality-stats/API-Ext1" : API_Ext1,
-       // "/natality-stats/API-Ext2" : API_Ext2,
+        "/natality-stats/API-Ext1" : API_Ext1,
+        "/natality-stats/API-Ext2" : API_Ext2,
 
       
         
@@ -104,21 +108,24 @@
         "/poverty-stats/sos1920-28":API28,
         "/poverty-stats/ex-01":APIex1,
         "/poverty-stats/ex-02":APIex2,
-	// ESCOBAR	
+    // ESCOBAR	
+        "/emigrants-stats/integrations": EmigrantsIntegrations,
         "/emigrants-stats": EmigrantTable,
         "/emigrants-stats/:country/:year": EditEmigrant,
-        //"/emigrants-stats/G05:":G05,
-        //"/emigrants-stats/G06:":G06,
-        //"/emigrants-stats/G07:":G07,
-        //"/emigrants-stats/G08:":G08,
-        //"/emigrants-stats/G09:":G09,
-        //"/emigrants-stats/G12:":G12,
-        //"/emigrants-stats/G22:":G22,
-        "/emigrants-stats/G23:":G23,
-        //"/emigrants-stats/G26:":G26,
-        //"/emigrants-stats/G30:":G30,
-    
-
+        "/emigrants-stats/graph": GraphEmigrant,
+        "/emigrants-stats/graph2": GraphEmigrant2,
+        "/emigrants-stats/G05":G05,
+        "/emigrants-stats/G06":G06,
+        "/emigrants-stats/G07":G07,
+        "/emigrants-stats/G08":G08,
+        "/emigrants-stats/G09":G09,
+        "/emigrants-stats/G12":G12,
+        "/emigrants-stats/G22":G22,
+        "/emigrants-stats/G23":G23,
+        "/emigrants-stats/G26":G26,
+        "/emigrants-stats/G30":G30,
+        "/emigrants-stats/Externa1":Externa1,
+        "/emigrants-stats/Externa2":Externa2,
 		"*": NotFound
 	};
 </script>

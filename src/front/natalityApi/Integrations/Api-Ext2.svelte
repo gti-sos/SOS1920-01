@@ -4,17 +4,17 @@
 	async function loadGraph(){
 
 	let MyData = [];
-	let API_21 = [];
+	let API_Ext2 = [];
 		
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
     
-    const resData2 = await fetch("https://sos1920-21.herokuapp.com/api/v2/driving-licenses");
+    const resData2 = await fetch("https://disease.sh/v2/countries?yesterday=false&sort=deaths&allowNull=true");
 		if (resData2.ok) {
-			console.log("Ok, api 21 loaded");
+			console.log("Ok, api ext2 loaded");
 			const json = await resData2.json();
-            API_21 = json;
-			console.log(API_21)
+            API_Ext2 = json;
+			console.log(API_Ext2)
 		} else {
 			console.log("ERROR!");
         }
@@ -24,16 +24,16 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country +" " +x.year,
-					data: [0,parseInt(x.natality_men), parseInt(x.natality_women)]
+					data: [0,parseInt(x.natality_totals)]
 				}
 				valores.push(aux)
 			}
         });
-		API_21.forEach((x) => {
-            if(x.year==2017 && x.aut_com=="andalusia"){	
+		API_Ext2.forEach((x) => {
+            if((x.country=="USA"|| x.country=="Italy")){	
 				aux={
-					name: x.aut_com +" " +x.year,
-					data: [parseInt(x.total_cars),0,0]
+					name: x.country,
+					data: [parseInt(x.cases), 0]
 				}
 				valores.push(aux)
 			}  
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Licencia Conducción'
+				text: 'Natalidad y Casos'
 			},
 			xAxis: {
-				categories: ["Coches Totales", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Casos", "Nacimiento Totales",]
 			},
 			yAxis: {
 				min: 0,
@@ -84,7 +84,8 @@
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        En esta gráfica podemos ver la integracion con la API del G21.
+        En esta gráfica podemos ver la integracion con una API 
+        Externa a traves de "https://disease.sh/v2/countries?yesterday=false&sort=deaths&allowNull=true".
 	</p>
 	<Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </figure>
