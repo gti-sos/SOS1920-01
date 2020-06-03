@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"0Q5PQTCYapBiy0dC"}
 {"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"8cR1UXxGVhhL2ffC"}
 {"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"9TWVVf5XH7CGd579"}
@@ -76,3 +77,20 @@
 {"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"j1oCBWiaQo6VckP0"}
 {"country":"unitedKingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"cuY3peOnRpG2801u"}
 {"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"lWlfxcXaTtksWJTt"}
+=======
+{"country":"spain","year":2015,"em_man":579112,"em_woman":691908,"em_totals":1271020,"_id":"2WFpYnDXP6OY2oaK"}
+{"country":"italy","year":2017,"em_man":1588733,"em_woman":1440435,"em_totals":3029168,"_id":"6tukXS2BQgx8oISE"}
+{"country":"unitedKingdom","year":2015,"em_man":2048936,"em_woman":1979345,"em_totals":4028281,"_id":"CafLFVu69nv7xruj"}
+{"country":"italy","year":2015,"em_man":1416897,"em_woman":1275167,"em_totals":2692064,"_id":"FSVY2zlnGqSlTh8D"}
+{"country":"france","year":2010,"em_man":943996,"em_woman":1013973,"em_totals":1957969,"_id":"Fmed1dm6B0ME0Mtl"}
+{"country":"italy","year":2010,"em_man":1332956,"em_woman":1230383,"em_totals":2563339,"_id":"HaDgZrk96sBn4n4H"}
+{"country":"spain","year":2010,"em_man":489494,"em_woman":597058,"em_totals":1086552,"_id":"YsmHpsyfgXpJP91u"}
+{"country":"germany","year":2015,"em_man":1749064,"em_woman":2007072,"em_totals":3756136,"_id":"Zj9jkLCAdFDvQqwH"}
+{"country":"france","year":2015,"em_man":1033824,"em_woman":1101224,"em_totals":2135048,"_id":"iSuY2ixdhihWhVfN"}
+{"country":"unitedKingdom","year":2010,"em_man":2237000,"em_woman":2213254,"em_totals":4450254,"_id":"lGuNulWhcbuMonYq"}
+{"country":"france","year":2017,"em_man":1068275,"em_woman":1138938,"em_totals":2207213,"_id":"nXn9detFJYpLrQaT"}
+{"country":"germany","year":2010,"em_man":1734554,"em_woman":1992779,"em_totals":3727333,"_id":"pBEk6JWiWwXhbfYr"}
+{"country":"germany","year":2017,"em_man":1934294,"em_woman":2273789,"em_totals":4208083,"_id":"uVRZbUbUq9VdQRN3"}
+{"country":"spain","year":2017,"em_man":609615,"em_woman":736247,"em_totals":1345862,"_id":"ufWANgRJ2eK0c5kh"}
+{"country":"unitedKingdom","year":2017,"em_man":2449446,"em_woman":2471863,"em_totals":4921309,"_id":"xA97iOUfnMfPQxiS"}
+>>>>>>> 4c22b2de017e6724181533644e3b769b98b230ee
