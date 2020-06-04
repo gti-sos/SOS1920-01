@@ -3549,57 +3549,54 @@ var app = (function () {
     			set_style(h1, "text-align", "center");
     			add_location(h1, file$5, 9, 2, 150);
     			add_location(p0, file$5, 12, 2, 324);
+    			attr_dev(iframe0, "title", "Video Natalidad");
     			attr_dev(iframe0, "width", "816");
     			attr_dev(iframe0, "height", "441");
-    			if (iframe0.src !== (iframe0_src_value = "")) attr_dev(iframe0, "src", iframe0_src_value);
-    			attr_dev(iframe0, "frameborder", "0");
-    			attr_dev(iframe0, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			if (iframe0.src !== (iframe0_src_value = "https://youtu.be/AGzRzDOGhd0")) attr_dev(iframe0, "src", iframe0_src_value);
     			iframe0.allowFullscreen = true;
     			add_location(iframe0, file$5, 16, 14, 475);
     			attr_dev(div0, "class", "embed-responsive embed-responsive-16by9 video");
     			add_location(div0, file$5, 15, 12, 400);
     			attr_dev(h50, "class", "card-title");
-    			add_location(h50, file$5, 19, 12, 705);
+    			add_location(h50, file$5, 19, 12, 661);
     			attr_dev(p1, "class", "card-text");
-    			add_location(p1, file$5, 20, 12, 756);
+    			add_location(p1, file$5, 20, 12, 712);
     			attr_dev(div1, "class", "card-body");
-    			add_location(div1, file$5, 18, 10, 668);
+    			add_location(div1, file$5, 18, 10, 624);
     			attr_dev(div2, "class", "card");
     			add_location(div2, file$5, 14, 8, 368);
+    			attr_dev(iframe1, "title", "Video Natalidad");
     			attr_dev(iframe1, "width", "900");
     			attr_dev(iframe1, "height", "506");
-    			if (iframe1.src !== (iframe1_src_value = "")) attr_dev(iframe1, "src", iframe1_src_value);
-    			attr_dev(iframe1, "frameborder", "0");
-    			attr_dev(iframe1, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			if (iframe1.src !== (iframe1_src_value = "https://youtu.be/cBhaOamldPU")) attr_dev(iframe1, "src", iframe1_src_value);
     			iframe1.allowFullscreen = true;
-    			add_location(iframe1, file$5, 26, 16, 996);
+    			add_location(iframe1, file$5, 26, 16, 952);
     			attr_dev(div3, "class", "embed-responsive embed-responsive-16by9 video");
-    			add_location(div3, file$5, 25, 12, 919);
+    			add_location(div3, file$5, 25, 12, 875);
     			attr_dev(h51, "class", "card-title");
-    			add_location(h51, file$5, 29, 12, 1226);
+    			add_location(h51, file$5, 29, 12, 1138);
     			attr_dev(p2, "class", "card-text");
-    			add_location(p2, file$5, 30, 12, 1275);
+    			add_location(p2, file$5, 30, 12, 1187);
     			attr_dev(div4, "class", "card-body");
-    			add_location(div4, file$5, 28, 10, 1189);
+    			add_location(div4, file$5, 28, 10, 1101);
     			attr_dev(div5, "class", "card");
-    			add_location(div5, file$5, 24, 8, 887);
+    			add_location(div5, file$5, 24, 8, 843);
+    			attr_dev(iframe2, "title", "Video Natalidad");
     			attr_dev(iframe2, "width", "757");
     			attr_dev(iframe2, "height", "409");
-    			if (iframe2.src !== (iframe2_src_value = "")) attr_dev(iframe2, "src", iframe2_src_value);
-    			attr_dev(iframe2, "frameborder", "0");
-    			attr_dev(iframe2, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			if (iframe2.src !== (iframe2_src_value = "https://youtu.be/QsQudV-kSQE")) attr_dev(iframe2, "src", iframe2_src_value);
     			iframe2.allowFullscreen = true;
-    			add_location(iframe2, file$5, 36, 14, 1516);
+    			add_location(iframe2, file$5, 36, 14, 1428);
     			attr_dev(div6, "class", "embed-responsive embed-responsive-16by9 video");
-    			add_location(div6, file$5, 35, 12, 1441);
+    			add_location(div6, file$5, 35, 12, 1353);
     			attr_dev(h52, "class", "card-title");
-    			add_location(h52, file$5, 39, 12, 1746);
+    			add_location(h52, file$5, 39, 12, 1614);
     			attr_dev(p3, "class", "card-text");
-    			add_location(p3, file$5, 40, 12, 1798);
+    			add_location(p3, file$5, 40, 12, 1666);
     			attr_dev(div7, "class", "card-body");
-    			add_location(div7, file$5, 38, 10, 1709);
+    			add_location(div7, file$5, 38, 10, 1577);
     			attr_dev(div8, "class", "card");
-    			add_location(div8, file$5, 34, 8, 1409);
+    			add_location(div8, file$5, 34, 8, 1321);
     			attr_dev(div9, "class", "card-deck");
     			add_location(div9, file$5, 13, 2, 335);
     			add_location(main, file$5, 8, 0, 140);
@@ -8042,20 +8039,20 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$d, 78, 1, 1794);
+    			add_location(script0, file$d, 78, 1, 1718);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$d, 79, 1, 1862);
+    			add_location(script1, file$d, 79, 1, 1786);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$d, 80, 1, 1937);
+    			add_location(script2, file$d, 80, 1, 1861);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$d, 81, 4, 2017);
+    			add_location(script3, file$d, 81, 4, 1941);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1lu4j7c");
-    			add_location(div, file$d, 84, 4, 2173);
+    			add_location(div, file$d, 84, 4, 2097);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$d, 85, 4, 2205);
+    			add_location(p, file$d, 85, 4, 2129);
     			attr_dev(figure, "class", "highcharts-figure svelte-1lu4j7c");
-    			add_location(figure, file$d, 83, 0, 2133);
+    			add_location(figure, file$d, 83, 0, 2057);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8119,7 +8116,7 @@ var app = (function () {
 
     async function loadGraph$4() {
     	let MyData = [];
-    	let API_02 = [];
+    	let API_04 = [];
     	const resData = await fetch("/api/v2/natality-stats");
     	MyData = await resData.json();
     	const resData2 = await fetch("https://sos1920-04.herokuapp.com/api/v1/vehicles");
@@ -8127,8 +8124,8 @@ var app = (function () {
     	if (resData2.ok) {
     		console.log("Ok, api 02 loaded");
     		const json = await resData2.json();
-    		API_02 = json;
-    		console.log(API_02);
+    		API_04 = json;
+    		console.log(API_04);
     	} else {
     		console.log("ERROR!");
     	}
@@ -8140,18 +8137,18 @@ var app = (function () {
     		if (x.year == 2017 && (x.country == "spain" || x.country == "germany")) {
     			aux = {
     				name: x.country + " " + x.year,
-    				data: [0, 0, parseInt(x.natality_men), parseInt(x.natality_women)]
+    				data: [0, parseInt(x.natality_men), parseInt(x.natality_women)]
     			};
 
     			valores.push(aux);
     		}
     	});
 
-    	API_02.forEach(x => {
-    		if (x.year == 2016 && (x.province == "almeria" || x.province == "cadiz")) {
+    	API_04.forEach(x => {
+    		if (x.province == "Pontevedra" || x.province == "Cadiz") {
     			aux = {
-    				name: x.province + " " + x.year,
-    				data: [parseInt(x.traveller), parseInt(x.overnightstay), 0, 0]
+    				name: x.province,
+    				data: [parseInt(x.total), 0, 0]
     			};
 
     			valores.push(aux);
@@ -8160,9 +8157,9 @@ var app = (function () {
 
     	Highcharts.chart("container", {
     		chart: { type: "column" },
-    		title: { text: "Natalidad y Turismo Rural" },
+    		title: { text: "Natalidad y Vehiculos" },
     		xAxis: {
-    			categories: ["Viajeros", "Pernoctaciones", "Natalidad Hombres", "Natalidad Mujeres"]
+    			categories: ["Total Vehiculos", "Natalidad Hombres", "Natalidad Mujeres"]
     		},
     		yAxis: { min: 0, title: { text: "Numero" } },
     		tooltip: {

@@ -4,7 +4,7 @@
 	async function loadGraph(){
 
 	let MyData = [];
-	let API_02 = [];
+	let API_04 = [];
 		
 	const resData = await fetch("/api/v2/natality-stats");
 	MyData = await resData.json();
@@ -13,8 +13,8 @@
 		if (resData2.ok) {
 			console.log("Ok, api 02 loaded");
 			const json = await resData2.json();
-            API_02 = json;
-			console.log(API_02)
+            API_04 = json;
+			console.log(API_04)
 		} else {
 			console.log("ERROR!");
         }
@@ -24,16 +24,16 @@
         	if(x.year==2017 && (x.country=="spain"||x.country=="germany")){	
 				aux={
 					name: x.country +" " +x.year,
-					data: [0,0,parseInt(x.natality_men), parseInt(x.natality_women)]
+					data: [0,parseInt(x.natality_men), parseInt(x.natality_women)]
 				}
 				valores.push(aux)
 			}
         });
-		API_02.forEach((x) => {
-            if(x.year==2016 && (x.province=="almeria"||x.province=="cadiz")){	
+		API_04.forEach((x) => {
+            if(x.province=="Pontevedra"||x.province=="Cadiz"){	
 				aux={
-					name: x.province +" " +x.year,
-					data: [parseInt(x.traveller),parseInt(x.overnightstay),0,0]
+					name: x.province,
+					data: [parseInt(x.total),0,0]
 				}
 				valores.push(aux)
 			}  
@@ -46,10 +46,10 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Natalidad y Turismo Rural'
+				text: 'Natalidad y Vehiculos'
 			},
 			xAxis: {
-				categories: ["Viajeros", "Pernoctaciones", "Natalidad Hombres", "Natalidad Mujeres"]
+				categories: ["Total Vehiculos","Natalidad Hombres", "Natalidad Mujeres"]
 			},
 			yAxis: {
 				min: 0,

@@ -14,7 +14,7 @@
   <div class="card-deck">
         <div class="card">
             <div class="embed-responsive embed-responsive-16by9 video">
-              <iframe width="816" height="441" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe title="Video Natalidad" width="816" height="441" src="https://youtu.be/AGzRzDOGhd0" allowfullscreen></iframe>
             </div>
           <div class="card-body">
             <h5 class="card-title">Natalidad</h5>
@@ -24,7 +24,7 @@
 
         <div class="card">
             <div class="embed-responsive embed-responsive-16by9 video">
-                <iframe width="900" height="506" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="Video Natalidad" width="900" height="506" src="https://youtu.be/cBhaOamldPU" allowfullscreen></iframe>
             </div>
           <div class="card-body">
             <h5 class="card-title">Pobreza</h5>
@@ -34,7 +34,7 @@
 
         <div class="card">
             <div class="embed-responsive embed-responsive-16by9 video">
-              <iframe width="757" height="409" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe title="Video Natalidad" width="757" height="409" src="https://youtu.be/QsQudV-kSQE" allowfullscreen></iframe>
             </div>
           <div class="card-body">
             <h5 class="card-title">Emigración</h5>
