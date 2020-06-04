@@ -2,8 +2,9 @@
     import Router from 'svelte-spa-router';
     import Home from './Home.svelte';
     import NotFound from './NotFound.svelte';
-
+    import Integrations from './Integrations.svelte';
     import Analytics from './Analytics.svelte';
+    import About from './About.svelte';
 
 // API JUANFRAN
     import NatalityTable from './natalityApi/NatalityTable.svelte';
@@ -68,6 +69,8 @@
     const routes = {
         "/": Home,
         "/Analytics": Analytics,
+        "/integrations": Integrations,
+        "/about": About,
     // JUANFRAN
         "/natality-stats": NatalityTable,
 		"/natality-stats/:country/:year": EditNatality,
