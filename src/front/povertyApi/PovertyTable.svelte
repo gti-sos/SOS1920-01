@@ -73,14 +73,9 @@
 			const json = await res.json();
 			stats = json;
 			console.log("Found "+ stats.length + " stats");
-<<<<<<< HEAD
-			//window.alert("Dato encontrado con éxito");
-			exitoMsg = "Datos encontrados con estos parametros."
-=======
 			//window.alert("Se han encontrado datos.");
 			exitoMsg = "Datos encontrados con estos parametros";
 		
->>>>>>> 151edbd161e45c9b7b119a9116877e3778ba2a93
 		}else if(res.status==404){
 				window.alert("No se encuentran datos.");
 				errorMsg = res.status + "quiere decir: " + res.statusText + ".Dato no encontrado";
